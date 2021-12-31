@@ -2,6 +2,10 @@ import React from "react";
 import arrow from "../../assets/images/arrow.png";
 import woman from "../../assets/images/woman.png";
 import man from "../../assets/images/man.png";
+import image1 from "../../assets/images/image1.png";
+import image2 from "../../assets/images/image2.png";
+import image3 from "../../assets/images/image3.png";
+import image4 from "../../assets/images/image4.png";
 
 const HeaderItem = () => {
   return (
@@ -36,6 +40,12 @@ const HeaderItem = () => {
         <p className="font-Lato text-base font-semibold tracking-wide leading-normal">
           Trusted by companies of all sizes
         </p>
+      </div>
+      <div className="flex justify-around mt-3">
+        <img src={image1} alt="" />
+        <img src={image2} alt="" />
+        <img src={image3} alt="" />
+        <img src={image4} alt="" />
       </div>
     </div>
   );
