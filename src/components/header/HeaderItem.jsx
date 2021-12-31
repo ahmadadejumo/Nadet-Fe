@@ -9,8 +9,8 @@ const HeaderItem = () => {
           Efficiently.
         </h6>
       </div>
-      <div>
-        <p className="font-Lato">
+      <div className="mt-5">
+        <p className="font-Lato text-tcolor text-lg tracking-wide leading-normal">
           We bring everything you will need to monetize your contents under one
           platform.
         </p>
