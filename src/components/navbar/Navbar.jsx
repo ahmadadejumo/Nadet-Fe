@@ -11,8 +11,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex mx-5 md:mx-5 lg:mx-20 pt-8 items-center">
-      <img src={logo} alt="Nadet Logo" className="pr-28 md:pr-72 lg:pr-0" />
+    <div className="flex mx-5 md:mx-3 lg:mx-16 pt-8 items-center">
+      <div className="">
+        <img
+          src={logo}
+          alt="Nadet Logo"
+          className="pr-36 md:pr-64 lg:pr-0 object-contain h-20 w-30"
+        />
+      </div>
       <div className="lg:flex space-x-10 px-28 cursor-pointer hidden">
         <p className="hover:text-bcolor">How it works</p>
         <p className="hover:text-bcolor">Products</p>
