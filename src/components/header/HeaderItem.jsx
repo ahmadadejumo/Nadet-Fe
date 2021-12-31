@@ -10,8 +10,8 @@ import image4 from "../../assets/images/image4.png";
 const HeaderItem = () => {
   return (
     <div className="mt-24 md:mt-20 ml-4 mr-5 pb-16 md:mx-4 lg:mx-16">
-      <div className="md:flex md:items-center">
-        <div className="bg-bcolor mr-96">
+      <div className="md:flex md:items-center lg:mx-16">
+        <div className="">
           <div>
             <h6 className="font-Lato text-3xl font-extrabold leading-normal md:leading-relaxed tracking-wide">
               A Simple, Powerful Solution To Sell Your Digital Products Quickly
@@ -31,7 +31,7 @@ const HeaderItem = () => {
             <img src={arrow} alt="arrow" className="w-4 h-3 " />
           </div>
         </div>
-        <div className=" mt-10 flex justify-around space-x-6 ">
+        <div className=" mt-10 flex justify-around space-x-6 lg:mx-16">
           <div className="bg-scolor h-48 w-40 md:h-60 md:w-48 lg:h-96 lg:w-72 rounded-b-full rounded-tl-half rounded-tr-bleft overflow-hidden">
             <img src={man} alt="man" className="pt-1 pl-3 md:pt-12 md:pl-7" />
           </div>
@@ -40,16 +40,18 @@ const HeaderItem = () => {
           </div>
         </div>
       </div>
-      <div className="mt-16 md:mr-96">
-        <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
-          Trusted by companies of all sizes
-        </p>
-      </div>
-      <div className="flex justify-around md:justify-between mt-3 md:mt-5">
-        <img src={image1} alt="logo" className="md:h-10 md:w-36" />
-        <img src={image2} alt="logo" className="md:h-10 md:w-36" />
-        <img src={image3} alt="logo" className="md:h-10 md:w-36" />
-        <img src={image4} alt="logo" className="md:h-10 md:w-36" />
+      <div className="flex justify-center">
+        <div className="mt-16 md:mr-96">
+          <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
+            Trusted by companies of all sizes
+          </p>
+        </div>
+        <div className="flex justify-around md:justify-between mt-3 md:mt-5 lg:mt-16">
+          <img src={image1} alt="logo" className="md:h-10 md:w-36" />
+          <img src={image2} alt="logo" className="md:h-10 md:w-36" />
+          <img src={image3} alt="logo" className="md:h-10 md:w-36" />
+          <img src={image4} alt="logo" className="md:h-10 md:w-36" />
+        </div>
       </div>
     </div>
   );
