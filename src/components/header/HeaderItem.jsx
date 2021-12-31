@@ -9,7 +9,7 @@ import image4 from "../../assets/images/image4.png";
 
 const HeaderItem = () => {
   return (
-    <div className="mt-24 ml-4 mr-5">
+    <div className="mt-24 ml-4 mr-5 pb-16">
       <div>
         <h6 className="font-Lato text-3xl font-extrabold leading-relaxed tracking-normal">
           A Simple, Powerful Solution To Sell Your Digital Products Quickly &
@@ -36,7 +36,7 @@ const HeaderItem = () => {
           <img src={woman} alt="woman" className="pt-6" />
         </div>
       </div>
-      <div className="mt-20">
+      <div className="mt-16">
         <p className="font-Lato text-base font-semibold tracking-wide leading-normal">
           Trusted by companies of all sizes
         </p>
