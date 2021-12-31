@@ -6,9 +6,14 @@ module.exports = {
         hcolor: "#FFF8E8",
         bcolor: "#FBBC15",
         tcolor: "#555557",
+        scolor: "#EFD07C",
       },
       fontFamily: {
         Lato: ["'Lato', sans-serif"],
+      },
+      borderRadius: {
+        half: "10000px",
+        bleft: "4000px",
       },
     },
   },
