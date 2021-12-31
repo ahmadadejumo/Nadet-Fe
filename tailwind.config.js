@@ -6,6 +6,9 @@ module.exports = {
         hcolor: "#FFF8E8",
         bcolor: "#FBBC15",
       },
+      fontFamily: {
+        Lato: ["'Lato', sans-serif"],
+      },
     },
   },
   plugins: [],
