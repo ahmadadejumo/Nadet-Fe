@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex mx-5 md:mx-3 lg:mx-16 pt-8 items-center justify-evenly">
+    <div className="flex mx-5 md:mx-3 lg:mx-14 pt-8 items-center justify-evenly">
       <div className="">
         <img
           src={logo}

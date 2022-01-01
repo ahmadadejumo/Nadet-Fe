@@ -9,9 +9,9 @@ import image4 from "../../assets/images/image4.png";
 
 const HeaderItem = () => {
   return (
-    <div className="mt-24 md:mt-20 ml-4 mr-5 pb-16 md:mx-4 lg:mx-16">
-      <div className="md:flex md:items-center lg:mx-16">
-        <div className="">
+    <div className="mt-24 md:mt-20 ml-4 mr-5 pb-14 md:mx-4 lg:mx-16">
+      <div className="md:flex md:items-center ">
+        <div className="lg:w-96">
           <div>
             <h6 className="font-Lato text-3xl font-extrabold leading-normal md:leading-relaxed tracking-wide">
               A Simple, Powerful Solution To Sell Your Digital Products Quickly
@@ -31,26 +31,32 @@ const HeaderItem = () => {
             <img src={arrow} alt="arrow" className="w-4 h-3 " />
           </div>
         </div>
-        <div className=" mt-10 flex justify-around space-x-6 lg:mx-16">
+        <div className=" mt-10 flex space-x-6 lg:space-x-10 lg:pl-32">
           <div className="bg-scolor h-48 w-40 md:h-60 md:w-48 lg:h-96 lg:w-72 rounded-b-full rounded-tl-half rounded-tr-bleft overflow-hidden">
-            <img src={man} alt="man" className="pt-1 pl-3 md:pt-12 md:pl-7" />
+            <img
+              src={man}
+              alt="man"
+              className="pt-1 pl-3 md:pt-12 md:pl-7 lg:h-96 lg:w-64"
+            />
           </div>
           <div className="bg-bcolor h-48 w-40 md:h-60 md:w-48 lg:h-96 lg:w-72 rounded-t-full rounded-br-half rounded-bl-bleft overflow-hidden">
-            <img src={woman} alt="woman" className="pt-2 md:pt-10 md:pl-5" />
+            <img
+              src={woman}
+              alt="woman"
+              className="pt-2 md:pt-10 md:pl-5 lg:h-96 lg:w-64"
+            />
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="mt-16 md:mr-96">
-          <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
-            Trusted by companies of all sizes
-          </p>
-        </div>
-        <div className="flex justify-around md:justify-between mt-3 md:mt-5 lg:mt-16">
+      <div className="mt-16 lg:flex lg:space-x-5">
+        <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
+          Trusted by companies of all sizes
+        </p>
+        <div className="flex justify-around md:justify-between mt-3 md:mt-5 lg:space-x-20 lg:mr-96 ">
           <img src={image1} alt="logo" className="md:h-10 md:w-36" />
-          <img src={image2} alt="logo" className="md:h-10 md:w-36" />
-          <img src={image3} alt="logo" className="md:h-10 md:w-36" />
-          <img src={image4} alt="logo" className="md:h-10 md:w-36" />
+          <img src={image2} alt="logo" className="md:h-10 md:w-36 lg:w-28" />
+          <img src={image3} alt="logo" className="md:h-10 md:w-36 lg:w-32" />
+          <img src={image4} alt="logo" className="md:h-10 md:w-36 lg:w-32" />
         </div>
       </div>
     </div>
