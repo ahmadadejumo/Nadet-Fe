@@ -1,4 +1,5 @@
 import "./App.css";
+import Discover from "./components/discover/Discover";
 import Header from "./components/header/Header";
 import ProductList from "./components/product-list/ProductList";
 
@@ -7,6 +8,7 @@ function App() {
     <div className="">
       <Header />
       <ProductList />
+      <Discover />
     </div>
   );
 }
