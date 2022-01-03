@@ -14,7 +14,7 @@ const ProductList = () => {
         Sell any kind of product, starting from digital courses down to ebooks
         etc.
       </h1>
-      <div className="flex justify-center lg:space-x-10">
+      <div className="flex justify-center lg:space-x-10 mx-7">
         <div className="hidden lg:contents items-center">
           <img src={rectangle} alt="ladyimage" className="h-[31rem] mt-24" />
         </div>
