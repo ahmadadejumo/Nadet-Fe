@@ -9,12 +9,12 @@ import rectangle from "../../assets/images/rectangle.png";
 
 const ProductList = () => {
   return (
-    <div className="mt-16 mx-5 md:mx-7 mb-20 md:mb-24">
-      <h1 className="font-Lato font-bold text-center text-2xl md:text-3xl lg:text-4xl tracking-normal leading-relaxed md:mx-16 lg:mx-60">
+    <div className="mt-16 mb-20 md:mb-24">
+      <h1 className="font-Lato font-bold text-center text-2xl md:text-3xl lg:text-4xl tracking-normal leading-relaxed mx-5 md:mx-20 lg:mx-60">
         Sell any kind of product, starting from digital courses down to ebooks
         etc.
       </h1>
-      <div className="flex items-center lg:space-x-10 lg:mx-10">
+      <div className="flex justify-center lg:space-x-10">
         <div className="hidden lg:contents items-center">
           <img src={rectangle} alt="ladyimage" className="h-[31rem] mt-24" />
         </div>
