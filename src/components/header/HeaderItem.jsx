@@ -52,7 +52,7 @@ const HeaderItem = () => {
         <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
           Trusted by companies of all sizes
         </p>
-        <div className="flex justify-around md:justify-between mt-3 md:mt-5 lg:space-x-20 lg:mr-96 ">
+        <div className="flex justify-between mt-3 md:mt-5 lg:space-x-20 lg:mr-96 ">
           <img src={image1} alt="logo" className="md:h-10 md:w-36" />
           <img src={image2} alt="logo" className="md:h-10 md:w-36 lg:w-28" />
           <img src={image3} alt="logo" className="md:h-10 md:w-36 lg:w-32" />
