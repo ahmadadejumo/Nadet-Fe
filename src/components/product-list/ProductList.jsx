@@ -14,11 +14,11 @@ const ProductList = () => {
         Sell any kind of product, starting from digital courses down to ebooks
         etc.
       </h1>
-      <div className="flex justify-center lg:space-x-10">
+      <div className="flex justify-center lg:space-x-10 lg:mx-10">
         <div className="hidden lg:contents items-center">
           <img src={rectangle} alt="ladyimage" className="h-[31rem] mt-24" />
         </div>
-        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:mt-5">
+        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10">
           <ProductItem
             image={vector3}
             text="We makes it easy for you to host unlimited videos and files of your courses and membership programs along with the right marketing plan for success."

@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductItem = ({ image, color, text, heading, padding }) => {
   return (
-    <div className="h-72 w-80 rounded-lg border border-[#EEEEF4] mt-5 mx-2">
+    <div className="h-72 w-80 md:h-full md:w-full rounded-lg border border-[#EEEEF4] mt-5 mx-2">
       <div
         className={`rounded-t-full rounded-b-full ${color} h-16 w-16 mt-9 flex justify-center mx-32`}
       >
