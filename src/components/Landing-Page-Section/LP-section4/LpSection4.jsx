@@ -1,11 +1,11 @@
 import React from "react";
-import ReasonItem from "./ReasonItem";
-import vector5 from "../../assets/images/vector5.png";
-import vector6 from "../../assets/images/vector6.png";
-import vector7 from "../../assets/images/vector7.png";
-import vector8 from "../../assets/images/vector8.png";
+import LpSection4Item from "./LpSection4Item";
+import vector5 from "../../../assets/images/vector5.png";
+import vector6 from "../../../assets/images/vector6.png";
+import vector7 from "../../../assets/images/vector7.png";
+import vector8 from "../../../assets/images/vector8.png";
 
-const Reasons = () => {
+const LpSection4 = () => {
   return (
     <div>
       <div className="mx-7 text-center mt-20">
@@ -19,32 +19,32 @@ const Reasons = () => {
         </p>
       </div>
       <div className="mx-2 space-y-5 pt-10 flex flex-col items-center md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-6 md:mx-3 lg:mx-20 lg:grid-cols-3">
-        <ReasonItem
+        <LpSection4Item
           heading="Reviews & Ratings"
           text="Creators understand the customer's evaluation of their products and learn new ways to improve the product."
           image={vector5}
         />
-        <ReasonItem
+        <LpSection4Item
           heading="LIVE Sessions"
           text="Conduct workshops, go LIVE with your members, have a one-on-one interaction with your audience and do much more."
           image={vector6}
         />
-        <ReasonItem
+        <LpSection4Item
           heading="Product listing"
           text="Use our simple listing tools to add your product and the enhanced content feature to display product information to your customers."
           image={vector5}
         />
-        <ReasonItem
+        <LpSection4Item
           heading="Seemless Payments"
           text="We make it easy for you to collect payment from your customers and get paid instantly and directly into your account."
           image={vector7}
         />
-        <ReasonItem
+        <LpSection4Item
           heading="Content Security"
           text="We give all sellers access to tools needed to protect intellectual property and report violations of your contents."
           image={vector5}
         />
-        <ReasonItem
+        <LpSection4Item
           heading="Automated Follow-ups"
           text="Communicate with your customers with a more advanced and automated reminder emails to personalize thier experience."
           image={vector8}
@@ -59,4 +59,4 @@ const Reasons = () => {
   );
 };
 
-export default Reasons;
+export default LpSection4;

@@ -1,8 +1,8 @@
 import React from "react";
-import profile1 from "../assets/images/profile1.png";
-import profile2 from "../assets/images/profile2.png";
+import profile1 from "../../../assets/images/profile1.png";
+import profile2 from "../../../assets/images/profile2.png";
 
-const SocialProfile = () => {
+const LpSection5 = () => {
   return (
     <div className="bg-[#FEF8E7]">
       <div className="mx-16 md:flex md:mx-5 md:space-x-5 md:justify-center lg:space-x-20 lg:mx-16">
@@ -33,4 +33,4 @@ const SocialProfile = () => {
   );
 };
 
-export default SocialProfile;
+export default LpSection5;

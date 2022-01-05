@@ -16,7 +16,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Nadet Logo"
-          className="pr-36 md:pr-64 lg:pr-0 object-contain h-20 w-30"
+          className="pr-36 md:pr-64 lg:pr-0 object-contain w-full"
         />
       </div>
       <div className="lg:flex space-x-10 px-28 cursor-pointer hidden">

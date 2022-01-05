@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductItem = ({ image, color, text, heading, padding }) => {
+const LpSection2Item = ({ image, color, text, heading, padding }) => {
   return (
     <div className="h-72 w-80 md:h-full md:w-full rounded-lg border border-[#EEEEF4] mt-5 mx-2">
       <div
@@ -22,4 +22,4 @@ const ProductItem = ({ image, color, text, heading, padding }) => {
   );
 };
 
-export default ProductItem;
+export default LpSection2Item;

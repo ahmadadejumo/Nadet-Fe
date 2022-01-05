@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReasonItem = ({ heading, text, image }) => {
+const LpSection4Item = ({ heading, text, image }) => {
   return (
     <div className="h-full w-full bg-[#F5F4FD] rounded-lg container">
       <div className="flex space-x-5 mx-3 pt-14">
@@ -20,4 +20,4 @@ const ReasonItem = ({ heading, text, image }) => {
   );
 };
 
-export default ReasonItem;
+export default LpSection4Item;

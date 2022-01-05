@@ -1,7 +1,7 @@
 import React from "react";
-import macbook from "../../assets/images/macbook.png";
+import macbook from "../../../assets/images/macbook.png";
 
-const Discover = () => {
+const LpSection3 = () => {
   return (
     <div className="bg-hcolor ">
       <div className="md:flex md:flex-row-reverse mx-2 lg:mx-7 md:pb-10 lg:pb-5">
@@ -27,4 +27,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export default LpSection3;
