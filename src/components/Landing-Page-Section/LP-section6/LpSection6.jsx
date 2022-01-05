@@ -7,8 +7,8 @@ import vector11 from "../../../assets/images/vector11.png";
 const LpSection6 = () => {
   return (
     <div className="mt-20 flex flex-col">
-      <div className="text-center mx-5 md:mx-40">
-        <h1 className="font-Lato font-bold text-2xl md:text-[26px] tracking-normal">
+      <div className="text-center mx-5 md:mx-40 lg:mx-[345px]">
+        <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl tracking-normal">
           Follow this simple steps to set up your account
         </h1>
         <p className="font-Lato font-normal text-base text-tcolor pt-4">
