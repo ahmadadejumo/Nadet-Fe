@@ -5,12 +5,20 @@ import profile2 from "../assets/images/profile2.png";
 const SocialProfile = () => {
   return (
     <div className="bg-[#FEF8E7]">
-      <div className="mx-16 md:flex md:mx-5 md:space-x-5 md:justify-center">
-        <div className="flex space-x-4 justify-center h-full w-full md:mt-[40px]">
-          <img src={profile1} alt="profile" className="pt-[83px]" />
-          <img src={profile2} alt="profile" className="pt-[50px] pb-9" />
+      <div className="mx-16 md:flex md:mx-5 md:space-x-5 md:justify-center lg:space-x-20 lg:mx-16">
+        <div className="flex space-x-4 justify-center h-full w-full md:mt-[40px] lg:space-x-10 lg:mb-[70px]">
+          <img
+            src={profile1}
+            alt="profile"
+            className="pt-[83px] w-full h-full"
+          />
+          <img
+            src={profile2}
+            alt="profile"
+            className="pt-[50px] pb-9 w-full h-full"
+          />
         </div>
-        <div className="mt-[60px]">
+        <div className="mt-[60px] lg:mt-[125px]">
           <h1 className="font-Lato font-bold md:text-[26px] text-2xl">
             Build a social profile
           </h1>
