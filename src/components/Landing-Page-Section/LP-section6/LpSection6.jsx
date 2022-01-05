@@ -7,8 +7,8 @@ import vector11 from "../../../assets/images/vector11.png";
 const LpSection6 = () => {
   return (
     <div className="mt-20 flex flex-col">
-      <div className="text-center mx-5">
-        <h1 className="font-Lato font-bold text-2xl tracking-normal">
+      <div className="text-center mx-5 md:mx-40">
+        <h1 className="font-Lato font-bold text-2xl md:text-[26px] tracking-normal">
           Follow this simple steps to set up your account
         </h1>
         <p className="font-Lato font-normal text-base text-tcolor pt-4">
@@ -17,7 +17,7 @@ const LpSection6 = () => {
           us forever.
         </p>
       </div>
-      <div className="mt-[40px] mx-5 space-y-5">
+      <div className="mt-[40px] mx-5 space-y-5 md:grid md:grid-cols-3 md:gap-x-6 md:m-10 lg:mx-24">
         <LpSection6Item
           image={vector9}
           header={"Setup an Account"}
