@@ -2,7 +2,7 @@ import React from "react";
 
 const LpSection4Item = ({ heading, text, image }) => {
   return (
-    <div className="h-full w-full bg-[#F5F4FD] rounded-lg container">
+    <div className="w-full bg-[#F5F4FD] rounded-lg container">
       <div className="flex space-x-5 mx-3 pt-14">
         <div className="mt-8">
           <div className="rounded-t-full rounded-b-full h-16 w-16 bg-[#F7E6C3]">
