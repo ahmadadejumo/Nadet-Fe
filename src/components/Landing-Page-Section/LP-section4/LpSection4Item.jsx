@@ -6,7 +6,9 @@ const LpSection4Item = ({ heading, text, image }) => {
       <div className="flex space-x-5 mx-3 pt-14">
         <div className="mt-8">
           <div className="rounded-t-full rounded-b-full h-16 w-16 bg-[#F7E6C3]">
-            <img src={image} alt="icon" className="pl-[18px] pt-4" />
+            <div className="flex justify-center pt-4">
+              <img src={image} alt="icon" className="" />
+            </div>
           </div>
         </div>
         <div className="">
