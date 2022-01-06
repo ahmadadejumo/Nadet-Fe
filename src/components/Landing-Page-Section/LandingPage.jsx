@@ -6,6 +6,7 @@ import LpSection5 from "./LP-section5/LpSection5";
 import LpSection4 from "./LP-section4/LpSection4";
 import LpSection6 from "./LP-section6/LpSection6";
 import LpSection7 from "./LP-section7/LpSection7";
+import LpSection8 from "./LP-section8/LpSection8";
 
 const LandingPage = () => {
   return (
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <LpSection5 />
       <LpSection6 />
       <LpSection7 />
+      <LpSection8 />
     </div>
   );
 };
