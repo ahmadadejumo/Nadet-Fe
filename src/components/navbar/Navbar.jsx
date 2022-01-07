@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/Logo.svg";
 import { MenuIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/solid";
 
@@ -33,8 +33,8 @@ const Navbar = () => {
         </button>
       </div>
       <div onClick={handleClick} className="pl-0 md:pl-5">
-        {!isOpen && <MenuIcon className="h-16 w-10 lg:hidden" />}
-        {isOpen && <XIcon className="h-16 w-10 lg:hidden" />}
+        {!isOpen && <MenuIcon className="h-8 w-8 lg:hidden" />}
+        {isOpen && <XIcon className="h-8 w-8 lg:hidden" />}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import React from "react";
 import LpSection2Item from "./LpSection2Item";
-import vector1 from "../../../assets/images/vector1.png";
-import vector2 from "../../../assets/images/vector2.png";
-import vector3 from "../../../assets/images/vector3.png";
-import vector4 from "../../../assets/images/vector4.png";
+import vector1 from "../../../assets/images/vector1.svg";
+import vector2 from "../../../assets/images/vector2.svg";
+import vector3 from "../../../assets/images/vector3.svg";
+import vector4 from "../../../assets/images/vector4.svg";
 import rectangle from "../../../assets/images/rectangle.png";
 
 const LpSection2 = () => {
@@ -16,11 +16,15 @@ const LpSection2 = () => {
       </h1>
       <div className="flex justify-center lg:space-x-10 lg:mx-10">
         <div className="hidden lg:contents items-center">
-          <img src={rectangle} alt="ladyimage" className="h-[31rem] mt-24" />
+          <img
+            src={rectangle}
+            alt="ladyimage"
+            className="h-[31rem] w-full mt-24"
+          />
         </div>
-        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10">
+        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10 mx-5">
           <LpSection2Item
-            image={vector3}
+            image={vector1}
             text="We makes it easy for you to host unlimited videos and files of your courses and membership programs along with the right marketing plan for success."
             color={`bg-[#FBF3DE]`}
             padding={`px-10`}
@@ -34,14 +38,14 @@ const LpSection2 = () => {
             heading="Events & Trainings"
           />
           <LpSection2Item
-            image={vector4}
+            image={vector3}
             text="We have developed the best platform for you to sell your programs and ebooks for both downloadable and non-downloadable in any format."
             color={`bg-[#C0E1FF]`}
             padding={`px-8`}
             heading="Programs & Ebooks"
           />
           <LpSection2Item
-            image={vector1}
+            image={vector4}
             text="Host and sell any kind of program subscription or service, from coaching services to consultations to counseling sessions to design services and more."
             color={`bg-[#D9ECD8]`}
             padding={`px-9`}

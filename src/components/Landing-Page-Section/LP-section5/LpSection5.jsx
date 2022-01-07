@@ -1,16 +1,20 @@
 import React from "react";
-import profile1 from "../../../assets/images/profile1.png";
-import profile2 from "../../../assets/images/profile2.png";
+import profile1 from "../../../assets/images/profile1.svg";
+import profile2 from "../../../assets/images/profile2.svg";
 
 const LpSection5 = () => {
   return (
     <div className="bg-[#FEF8E7]">
-      <div className="mx-16 md:flex md:mx-5 md:space-x-5 md:justify-center lg:space-x-20 lg:mx-16">
-        <div className="flex space-x-4 justify-center w-full md:mt-[40px] lg:space-x-10 lg:mb-[70px] object-cover">
-          <img src={profile1} alt="profile" className="pt-[83px] w-full" />
-          <img src={profile2} alt="profile" className="pt-[50px] pb-9 w-full" />
+      <div className="mx-5 md:flex md:mx-5 md:space-x-10 md:justify-center lg:space-x-20 lg:mx-16">
+        <div className="flex justify-center space-x-5 lg:space-x-10 md:pt-[45px] lg:pt-[25px] lg:pb-[50px]">
+          <div className="pt-[83px] w-full">
+            <img src={profile1} alt="profile" className="" />
+          </div>
+          <div className="pt-[50px] w-full">
+            <img src={profile2} alt="profile" className="rotate-180" />
+          </div>
         </div>
-        <div className="mt-[60px] lg:mt-[125px]">
+        <div className="mt-[60px] lg:mt-[100px] md:w-[450px]">
           <h1 className="font-Lato font-bold md:text-[26px] text-2xl">
             Build a social profile
           </h1>

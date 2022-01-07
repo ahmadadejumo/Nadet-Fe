@@ -1,9 +1,9 @@
 import React from "react";
 import LpSection4Item from "./LpSection4Item";
-import vector5 from "../../../assets/images/vector5.png";
-import vector6 from "../../../assets/images/vector6.png";
-import vector7 from "../../../assets/images/vector7.png";
-import vector8 from "../../../assets/images/vector8.png";
+import vector5 from "../../../assets/images/vector5.svg";
+import vector6 from "../../../assets/images/vector6.svg";
+import vector7 from "../../../assets/images/vector7.svg";
+import vector8 from "../../../assets/images/vector8.svg";
 
 const LpSection4 = () => {
   return (

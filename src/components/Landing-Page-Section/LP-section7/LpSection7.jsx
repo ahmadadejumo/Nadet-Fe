@@ -1,6 +1,6 @@
 import React from "react";
-import image5 from "../../../assets/images/image5.png";
-import image6 from "../../../assets/images/image6.png";
+import image5 from "../../../assets/images/image5.svg";
+import image6 from "../../../assets/images/image6.svg";
 
 const LpSection7 = () => {
   return (
