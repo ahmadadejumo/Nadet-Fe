@@ -13,7 +13,7 @@ const LpSection2Item = ({ image, color, text, heading, padding }) => {
           {heading}
         </h1>
         <p
-          className={`font-Lato font-normal text-center leading-5 text-base ${padding} text-tcolor pt-4`}
+          className={`font-Lato font-normal text-center leading-5 text-base ${padding} text-tcolor pt-4 pb-10`}
         >
           {text}
         </p>

@@ -32,7 +32,7 @@ const LpSection7 = () => {
         {/* two seperate cards */}
         <div className="container rounded-lg w-full bg-[#FDFAF2] mt-5">
           <div className="md:flex md:flex-row-reverse mx-5 md:mx-10 lg:mx-[65px]">
-            <div className="md:w-[450px] lg:w-[1200px]">
+            <div className="md:w-[450px] lg:w-[1200px] pt-10">
               <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl text-[#FBBC15] leading-9">
                 Keep receiving and never lose an international customer again!
               </h1>

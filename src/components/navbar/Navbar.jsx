@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex mx-5 md:mx-3 lg:mx-14 pt-8 items-center justify-evenly">
+    <div className="flex mx-5 md:mx-3 pt-8 justify-between lg:justify-center items-center">
       <div className="">
         <img
           src={logo}
@@ -33,8 +33,8 @@ const Navbar = () => {
         </button>
       </div>
       <div onClick={handleClick} className="pl-0 md:pl-5">
-        {!isOpen && <MenuIcon className="h-8 w-8 lg:hidden" />}
-        {isOpen && <XIcon className="h-8 w-8 lg:hidden" />}
+        {!isOpen && <MenuIcon className="h-7 w-8 lg:hidden" />}
+        {isOpen && <XIcon className="h-7 w-8 lg:hidden" />}
       </div>
     </div>
   );

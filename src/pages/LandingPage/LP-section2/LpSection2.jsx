@@ -22,7 +22,7 @@ const LpSection2 = () => {
             className="h-[31rem] w-full mt-24"
           />
         </div>
-        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10 mx-5">
+        <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10">
           <LpSection2Item
             image={vector1}
             text="We makes it easy for you to host unlimited videos and files of your courses and membership programs along with the right marketing plan for success."
