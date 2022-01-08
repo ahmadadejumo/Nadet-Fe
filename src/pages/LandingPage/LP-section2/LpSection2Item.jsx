@@ -3,11 +3,14 @@ import React from "react";
 const LpSection2Item = ({ image, color, text, heading, padding }) => {
   return (
     <div className="w-full rounded-lg border border-[#EEEEF4] mt-5">
-      <div
-        className={`rounded-t-full rounded-b-full ${color} h-16 w-16 mt-9 flex justify-center mx-40 md:mx-32`}
-      >
-        <img src={image} alt="book" className="w-10 h-10 mt-3" />
+      <div className="flex justify-center">
+        <div
+          className={`rounded-t-full rounded-b-full ${color} h-16 w-16 mt-9 flex justify-center`}
+        >
+          <img src={image} alt="book" className="w-10 h-10 mt-3" />
+        </div>
       </div>
+
       <div>
         <h1 className="font-Lato font-bold text-xl text-center leading-none mt-5">
           {heading}
