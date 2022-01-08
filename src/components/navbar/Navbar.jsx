@@ -37,7 +37,7 @@ const Navbar = () => {
         ) : (
           <div className="bg-white h-full w-full fixed top-0 left-0 overflow-x-hidden">
             <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
-            <div className="w-full text-center my-[300px] text-lg font-bold">
+            <div className="w-full text-center my-[250px] text-lg font-bold">
               <p className="">How it works</p>
               <p className="">Products</p>
               <p className="">Marketplace</p>

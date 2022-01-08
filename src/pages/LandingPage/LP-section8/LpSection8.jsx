@@ -2,6 +2,9 @@ import React from "react";
 import LpSection8Card from "./LpSection8Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import profile3 from "../../../assets/images/profile3.svg";
+import profile4 from "../../../assets/images/profile4.svg";
+import profile5 from "../../../assets/images/profile5.svg";
 
 const responsive = {
   desktop: {
@@ -30,7 +33,7 @@ const LpSection8 = () => {
           what they say
         </h1>
       </div>
-      <div className="mx-5 lg:mx-24 mt-[40px]">
+      <div className="mx-5 lg:mx-24 mt-[40px] pb-10">
         <Carousel
           swipeable={true}
           draggable={true}
@@ -46,16 +49,78 @@ const LpSection8 = () => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-100-px"
         >
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
-          <LpSection8Card />
+          <LpSection8Card
+            title={"“Truly Nadet Rocks”"}
+            text={
+              "I’ve used quite a number of e-commerce platforms, but Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={"https://avatars.githubusercontent.com/u/55682552?v=4"}
+            name={"Ahmad Adejumo"}
+            profession={"Software Developer"}
+          />
+          <LpSection8Card
+            title={"“Nadet It’s A Game Changer”"}
+            text={
+              "I’ve used other platforms that not quite good as nadet, Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile3}
+            name={"Daniel Akinleye"}
+            profession={"Digital Designer"}
+          />
+          <LpSection8Card
+            title={"“Truly Nadet Rocks”"}
+            text={
+              "I’ve used quite a number of e-commerce platforms, but Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile4}
+            name={"Marvelous Okpah"}
+            profession={"Product Designer"}
+          />
+          <LpSection8Card
+            title={"“A Dream Come Through”"}
+            text={
+              "Nadet is a dream come through platform for my business and goals! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile5}
+            name={"Precious Icardi"}
+            profession={"Content Creator"}
+          />
+          <LpSection8Card
+            title={"“Truly Nadet Rocks”"}
+            text={
+              "I’ve used quite a number of e-commerce platforms, but Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={"https://avatars.githubusercontent.com/u/55682552?v=4"}
+            name={"Ahmad Adejumo"}
+            profession={"Software Developer"}
+          />
+          <LpSection8Card
+            title={"“Nadet It’s A Game Changer”"}
+            text={
+              "I’ve used other platforms that not quite good as nadet, Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile3}
+            name={"Daniel Akinleye"}
+            profession={"Digital Designer"}
+          />
+          <LpSection8Card
+            title={"“Truly Nadet Rocks”"}
+            text={
+              "I’ve used quite a number of e-commerce platforms, but Nadet’s amazing! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile4}
+            name={"Marvelous Okpah"}
+            profession={"Product Designer"}
+          />
+          <LpSection8Card
+            title={"“A Dream Come Through”"}
+            text={
+              "Nadet is a dream come through platform for my business and goals! They’re truly interested in your growth and are constantly listening to the customers and giving support."
+            }
+            image={profile5}
+            name={"Precious Icardi"}
+            profession={"Content Creator"}
+          />
         </Carousel>
       </div>
     </div>
