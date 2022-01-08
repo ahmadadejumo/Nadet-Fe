@@ -39,7 +39,6 @@ const LpSection8 = () => {
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
-          keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
           containerClass="carousel-container"

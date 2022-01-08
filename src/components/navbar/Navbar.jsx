@@ -9,7 +9,6 @@ const Navbar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className="flex mx-5 md:mx-3 pt-8 justify-between lg:justify-center items-center">
       <div className="">
@@ -32,9 +31,21 @@ const Navbar = () => {
           Get Started
         </button>
       </div>
-      <div onClick={handleClick} className="pl-0 md:pl-5">
-        {!isOpen && <MenuIcon className="h-7 w-8 lg:hidden" />}
-        {isOpen && <XIcon className="h-7 w-8 lg:hidden" />}
+      <div className="pl-0 md:pl-5">
+        {!isOpen ? (
+          <MenuIcon className="h-8 w-8 lg:hidden" onClick={handleClick} />
+        ) : (
+          <div className="bg-white h-full w-full fixed top-0 left-0 overflow-x-hidden">
+            <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
+            <div className="w-full text-center my-[300px] text-lg font-bold">
+              <p className="">How it works</p>
+              <p className="">Products</p>
+              <p className="">Marketplace</p>
+              <p className="">FAQs</p>
+              <p className="">Pricing</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
