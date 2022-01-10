@@ -9,6 +9,7 @@ import LpSection7 from "./LP-section7/LpSection7";
 import LpSection8 from "./LP-section8/LpSection8";
 import LpSection9 from "./LP-section9/LpSection9";
 import LpSection10 from "./LP-section10/LpSection10";
+import Footer from "../../components/footer/Footer";
 
 const LandingPage = () => {
   return (
@@ -23,6 +24,7 @@ const LandingPage = () => {
       <LpSection8 />
       <LpSection9 />
       <LpSection10 />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,86 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
+import Logo from "../../assets/images/Logo.svg";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import visalogo from "../../assets/images/VisaLogo.svg";
+import paypal from "../../assets/images/PayPal.svg";
+import AmericanExpress from "../../assets/images/AmericanExpress.svg";
+import mclogo from "../../assets/images/mclogo.svg";
+
+const Footer = () => {
+  return (
+    <div className="bg-[#F5F4FD]">
+      <div className="mx-5 md:mx-5 md:flex md:justify-between lg:justify-center lg:space-x-24">
+        <div className="md:w-[250px] lg:w-[300px]">
+          <img src={Logo} alt="Logo" className="pt-[60px]" />
+          <p className="font-Lato text-base font-normal pt-[30px]">
+            Our mission is to help you build a massive connection with your fans
+            and followers and monetise them in one place.
+          </p>
+          <h1 className="font-Lato font-bold text-lg pt-[40px]">Contact Us</h1>
+          <p className="font-Lato font-normal text-base pt-[15px]">
+            hello@nadet.co
+          </p>
+          <div className="space-x-5 mt-[15px]">
+            <FacebookIcon />
+            <TwitterIcon />
+            <LinkedInIcon />
+            <InstagramIcon />
+          </div>
+        </div>
+        <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[60px]">
+          <h1 className="font-Lato text-lg font-bold">Sell with Nadet </h1>
+          <a href="#">Courses & Memberships</a>
+          <a href="#">Ebooks & Programs</a>
+          <a href="#">LIVE Sessions</a>
+          <a href="#">Event Tickets </a>
+          <a href="#">Subscriptions & Services</a>
+          <a href="#">Affiliate Program</a>
+          <a href="#">Refer a friend</a>
+        </div>
+        <div className="mt-[60px] md:mt-[35px] flex justify-between lg:space-x-16">
+          <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px]">
+            <h1 className="font-Lato text-lg font-bold">Company</h1>
+            <a href="#">About Us</a>
+            <a href="#">Company Values</a>
+            <a href="#">Careers</a>
+            <a href="#">Pricing</a>
+            <a href="#">FAQs</a>
+            <a href="#">Events</a>
+          </div>
+
+          <div className="md:hidden lg:flex lg:flex-col">
+            <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px]">
+              <h1 className="font-Lato text-lg font-bold">Legal</h1>
+              <a href="#">Terms of Services</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Affiliate Agreement</a>
+            </div>
+            <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[30px] ">
+              <h1 className="font-Lato text-lg font-bold">Learn</h1>
+              <a href="#">Blog</a>
+              <a href="#">Guides</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="bg-bcolor border-[1px] mt-[70px] mx-5 md:mx-[30px] lg:mx-[140px]" />
+      <div className="md:flex md:justify-between md:mx-[30px] lg:mx-[140px]">
+        <p className="font-Lato font-normal text-base text-center pt-[20px] pb-[30px] md:pt-[25px]">
+          © 2021 Nadet. All Rights Reserved.
+        </p>
+        <div className="flex justify-center space-x-3 md:space-x-5 pb-[35px] md:pt-[25px]">
+          <img src={visalogo} alt="logo" />
+          <img src={paypal} alt="logo" />
+          <img src={AmericanExpress} alt="logo" />
+          <img src={mclogo} alt="logo" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
