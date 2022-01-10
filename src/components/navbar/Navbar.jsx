@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/images/Logo.svg";
 import { MenuIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/solid";
+import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +20,23 @@ const Navbar = () => {
         />
       </div>
       <div className="lg:flex space-x-10 px-28 cursor-pointer hidden">
-        <p className="hover:text-bcolor">How it works</p>
-        <p className="hover:text-bcolor">Products</p>
-        <p className="hover:text-bcolor">Marketplace</p>
-        <p className="hover:text-bcolor">FAQs</p>
-        <p className="hover:text-bcolor">Pricing</p>
+        <Link to="/HowItWorks" className="hover:text-bcolor">
+          How it works
+        </Link>
+        <Link to="/products" className="hover:text-bcolor">
+          Products
+        </Link>
+        <Link to="/marketplace" className="hover:text-bcolor">
+          Marketplace
+        </Link>
+        <Link to="/faqs" className="hover:text-bcolor">
+          FAQs
+        </Link>
+        <Link to="/pricing" className="hover:text-bcolor">
+          Pricing
+        </Link>
       </div>
+      <Outlet />
       <div className="lg:flex flex-row space-x-5 cursor-pointer items-center hidden md:contents">
         <p>Log In</p>
         <button className="box-border h-9 w-32 rounded-md bg-bcolor">
@@ -38,12 +50,23 @@ const Navbar = () => {
           <div className="bg-white h-full w-full fixed top-0 left-0 overflow-x-hidden">
             <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
             <div className="w-full text-center my-[250px] text-lg font-bold">
-              <p className="">How it works</p>
-              <p className="">Products</p>
-              <p className="">Marketplace</p>
-              <p className="">FAQs</p>
-              <p className="">Pricing</p>
+              <Link to="/HowItWorks">
+                <p className="">How it works</p>
+              </Link>
+              <Link to="/products">
+                <p className="">Products</p>
+              </Link>
+              <Link to="/marketplace">
+                <p className="">Marketplace</p>
+              </Link>
+              <Link to="/faqs">
+                <p className="">FAQs</p>
+              </Link>
+              <Link to="/pricing">
+                <p className="">Pricing</p>
+              </Link>
             </div>
+            <Outlet />
           </div>
         )}
       </div>
