@@ -18,7 +18,7 @@ const LpSection4 = () => {
           their digital products.
         </p>
       </div>
-      <div className="mx-2 space-y-5 pt-10 flex flex-col items-center md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-6 md:mx-3 lg:mx-20 lg:grid-cols-3">
+      <div className="mx-2 pt-10 flex flex-col items-center md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-6 md:mx-3 lg:mx-20 lg:grid-cols-3">
         <LpSection4Item
           heading="Reviews & Ratings"
           text="Creators understand the customer's evaluation of their products and learn new ways to improve the product."
@@ -31,7 +31,7 @@ const LpSection4 = () => {
         />
         <LpSection4Item
           heading="Product listing"
-          text="Use our simple listing tools to add your product and the enhanced content feature to display product information to your customers."
+          text="Use our simple listing tools to add your product and the enhanced content feature to display product information."
           image={vector5}
         />
         <LpSection4Item
