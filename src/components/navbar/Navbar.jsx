@@ -47,7 +47,7 @@ const Navbar = () => {
         {!isOpen ? (
           <MenuIcon className="h-8 w-8 lg:hidden" onClick={handleClick} />
         ) : (
-          <div className="bg-white h-full w-full fixed top-0 left-0 overflow-x-hidden">
+          <div className="bg-white h-full w-full z-[1] fixed top-0 left-0 overflow-x-hidden">
             <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
             <div className="w-full text-center my-[250px] text-lg font-bold">
               <Link to="/HowItWorks">
