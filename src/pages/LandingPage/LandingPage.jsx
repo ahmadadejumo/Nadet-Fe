@@ -7,9 +7,9 @@ import LpSection4 from "./LP-section4/LpSection4";
 import LpSection6 from "./LP-section6/LpSection6";
 import LpSection7 from "./LP-section7/LpSection7";
 import LpSection8 from "./LP-section8/LpSection8";
-import LpSection9 from "./LP-section9/LpSection9";
+import YellowCard from "../../components/YellowCard";
 import LpSection10 from "./LP-section10/LpSection10";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/Footer";
 
 const LandingPage = () => {
   return (
@@ -22,7 +22,7 @@ const LandingPage = () => {
       <LpSection6 />
       <LpSection7 />
       <LpSection8 />
-      <LpSection9 />
+      <YellowCard />
       <LpSection10 />
       <Footer />
     </div>

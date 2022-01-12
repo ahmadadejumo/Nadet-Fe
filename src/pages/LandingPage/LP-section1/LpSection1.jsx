@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../../components/navbar/Navbar";
+import Navbar from "../../../components/Navbar";
 import HeaderItem from "./LpSection1Item";
 
 const LpSection1 = () => {
