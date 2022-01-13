@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import rectangle2 from "../../assets/images/rectangle2.svg";
+import rectangle2 from "../../assets/images/rectangle2.png";
+import ProductCard from "./ProductCard";
+import rectangle3 from "../../assets/images/rectangle3.png";
+import rectangle4 from "../../assets/images/rectangle4.png";
 
 const Products = () => {
   return (
@@ -24,7 +27,7 @@ const Products = () => {
           As long as you have a digital skill related to our products, selling
           becomes easy for you.
         </h1>
-        <div className="mt-[50px] md:flex lg:justify-center lg:space-x-36 mx-5">
+        <div className="mt-[50px] md:flex lg:justify-center lg:space-x-36">
           <div className="flex justify-center mx-5 md:mt-16 lg:mt-[30px]">
             <img src={rectangle2} alt="img" className="lg:w-[478px]" />
           </div>
@@ -46,6 +49,21 @@ const Products = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="md:flex md:mx-5 md:space-x-5 lg:mx-[140px] lg:space-x-8 mt-[120px]">
+        <ProductCard
+          image={rectangle3}
+          header="Events and trainings is much easier to sell on Nadet"
+          text="Start selling tickets for all kinds of events and access to
+        masterclasses, programs, workshops, training, webinars, and even much
+        more."
+        />
+        <ProductCard
+          image={rectangle4}
+          header="Sell ebooks multiple ways - downloadable and non-downloadable"
+          text="Selling ebooks can be a nice income stream or the start of a profitable online business. 
+        With the tools available in Nadet you can start selling in a matter of minutes."
+        />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import woman2 from "../../assets/images/woman2.svg";
+import woman2 from "../../assets/images/woman2.png";
 import HowItWorksCard from "./HowItWorksCard";
 import LpSection2Item from "../LandingPage/LP-section2/LpSection2Item";
 import vector1 from "../../assets/images/vector1.svg";
@@ -11,7 +11,7 @@ import visalogo from "../../assets/images/VisaLogo.svg";
 import paypal from "../../assets/images/PayPal.svg";
 import AmericanExpress from "../../assets/images/AmericanExpress.svg";
 import mclogo from "../../assets/images/mclogo.svg";
-import rectangle1 from "../../assets/images/rectangle1.svg";
+import rectangle1 from "../../assets/images/rectangle1.png";
 import YelloCard from "../../components/YellowCard";
 import Footer from "../../components/Footer";
 
@@ -30,7 +30,11 @@ const HowItWorks = () => {
       </h1>
       <div className="md:flex md:flex-row-reverse md:justify-evenly md:mx-2">
         <div className="flex justify-center mt-[50px] mx-5">
-          <img src={woman2} alt="woman" className="rotate-180" />
+          <img
+            src={woman2}
+            alt="woman"
+            className="lg:w-[450px] md:w-[350px] object-contain"
+          />
         </div>
         <div className="mt-[60px] md:w-[450px] lg:w-[600px]">
           <HowItWorksCard
@@ -119,7 +123,11 @@ const HowItWorks = () => {
       </div>
       <div className="mt-[80px] mx-5 md:flex lg:justify-center md:items-center md:space-x-10 lg:space-x-20">
         <div className="md:pt-16">
-          <img src={rectangle1} alt="Logo" />
+          <img
+            src={rectangle1}
+            alt="Logo"
+            className="lg:w-[464px] md:w-[450px]"
+          />
         </div>
         <div className="md:w-[450px]">
           <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">

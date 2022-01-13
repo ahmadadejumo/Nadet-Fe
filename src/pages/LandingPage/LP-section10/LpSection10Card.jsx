@@ -12,12 +12,12 @@ const LpSection10Card = ({ image, text }) => {
       </p>
       <div className="flex mx-[17px] mt-[46px] pb-[22px] justify-between">
         <div className="flex space-x-4">
-          <div className="flex space-x-1">
-            <img src={eye} alt="eye" />
+          <div className="flex items-center space-x-1">
+            <img src={eye} alt="eye" className="h-5 w-5" />
             <p>10</p>
           </div>
-          <div className="flex space-x-1">
-            <img src={comment} alt="comment" />
+          <div className="flex items-center space-x-1">
+            <img src={comment} alt="comment" className="h-5 w-5" />
             <p>0</p>
           </div>
         </div>
