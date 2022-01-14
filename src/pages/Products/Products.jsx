@@ -5,6 +5,8 @@ import ProductCard from "./ProductCard";
 import rectangle3 from "../../assets/images/rectangle3.png";
 import rectangle4 from "../../assets/images/rectangle4.png";
 import rectangle5 from "../../assets/images/rectangle5.png";
+import YellowCard from "../../components/YellowCard";
+import Footer from "../../components/Footer";
 
 const Products = () => {
   return (
@@ -97,6 +99,12 @@ const Products = () => {
             subscription, the whole process is seamless.
           </p>
         </div>
+      </div>
+      <div className="mt-[80px] md:mt-[120px]">
+        <YellowCard />
+      </div>
+      <div className="mt-[80px] md:mt-[120px]">
+        <Footer />
       </div>
     </div>
   );
