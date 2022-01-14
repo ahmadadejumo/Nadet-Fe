@@ -29,9 +29,13 @@ const Products = () => {
         </h1>
         <div className="mt-[50px] md:flex lg:justify-center lg:space-x-36">
           <div className="flex justify-center mx-5 md:mt-16 lg:mt-[30px]">
-            <img src={rectangle2} alt="img" className="lg:w-[478px]" />
+            <img
+              src={rectangle2}
+              alt="img"
+              className="lg:w-[478px] object-contain"
+            />
           </div>
-          <div className="mt-[60px] mx-[23px] md:w-[350px] lg:w-[400px] lg:mt-36">
+          <div className="mt-[60px] mx-[23px] md:w-[1000px] lg:w-[400px] lg:mt-36">
             <h1 className="font-Lato text-2xl lg:text-[26px] font-bold">
               Start selling your courses and memberships program in a grand
               style
@@ -64,6 +68,18 @@ const Products = () => {
           text="Selling ebooks can be a nice income stream or the start of a profitable online business. 
         With the tools available in Nadet you can start selling in a matter of minutes."
         />
+      </div>
+      <div className="md:mx-5 lg:mx-[140px]">
+        <div className="bg-[#FFF8E8] w-full rounded-lg mt-[80px] md:flex md:justify-evenly">
+          <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl text-center pt-[32px]">
+            Can’t wait to get started?
+          </h1>
+          <div className="flex justify-center">
+            <button className="bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[194px] mt-[30px] mb-[31px]">
+              Start Selling Now!
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
