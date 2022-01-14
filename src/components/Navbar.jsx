@@ -19,6 +19,7 @@ const Navbar = () => {
           className="pr-36 md:pr-64 lg:pr-0 object-contain w-full"
         />
       </div>
+      {/* tablet and desktop menu */}
       <div className="lg:flex space-x-10 px-28 cursor-pointer hidden">
         <Link to="/HowItWorks" className="hover:text-bcolor">
           How it works
@@ -39,10 +40,11 @@ const Navbar = () => {
       <Outlet />
       <div className="lg:flex flex-row space-x-5 cursor-pointer items-center hidden md:contents">
         <p>Log In</p>
-        <button className="box-border h-9 w-32 rounded-md bg-bcolor">
+        <button className="box-border h-9 w-32 rounded-md bg-bcolor hover:bg-yellow-500 transition duration-300">
           Get Started
         </button>
       </div>
+      {/* Mobile Menu */}
       <div className="pl-0 md:pl-5">
         {!isOpen ? (
           <MenuIcon className="h-8 w-8 lg:hidden" onClick={handleClick} />

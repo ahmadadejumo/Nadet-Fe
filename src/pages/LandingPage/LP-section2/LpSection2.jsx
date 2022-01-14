@@ -19,7 +19,7 @@ const LpSection2 = () => {
           <img
             src={rectangle}
             alt="ladyimage"
-            className="h-[31rem] w-full mt-24"
+            className="h-[31rem]  mt-24 object-contain"
           />
         </div>
         <div className="md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:mt-5 md:mx-10 mx-5">
