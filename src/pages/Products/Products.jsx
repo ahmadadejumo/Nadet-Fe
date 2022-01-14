@@ -4,6 +4,7 @@ import rectangle2 from "../../assets/images/rectangle2.png";
 import ProductCard from "./ProductCard";
 import rectangle3 from "../../assets/images/rectangle3.png";
 import rectangle4 from "../../assets/images/rectangle4.png";
+import rectangle5 from "../../assets/images/rectangle5.png";
 
 const Products = () => {
   return (
@@ -79,6 +80,22 @@ const Products = () => {
               Start Selling Now!
             </button>
           </div>
+        </div>
+      </div>
+      <div className="mx-5 mt-[80px] md:flex md:flex-row-reverse lg:mx-[140px]">
+        <div className="flex justify-center md:mt-10 ">
+          <img src={rectangle5} alt="img" className="object-contain" />
+        </div>
+        <div className="md:w-[900px] lg:w-[1200px] md:mr-5 lg:mr-[150px]">
+          <h1 className="font-Lato font-bold text-2xl lg:text-4xl pt-[60px] lg:leading-snug">
+            One-stop platform to sell and distribute any kind of subscription &
+            services
+          </h1>
+          <p className="font-Lato text-base font-normal text-tcolor pt-5 lg:leading-tight">
+            The process is simple and seamless. From coaching services to
+            counseling session down to design services including memebers - only
+            subscription, the whole process is seamless.
+          </p>
         </div>
       </div>
     </div>
