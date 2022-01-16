@@ -1,9 +1,15 @@
-import React from "react";
+import { React, useState } from "react";
 import Navbar from "../../components/Navbar";
 import vector12 from "../../assets/images/vector12.svg";
 import QuestionType from "./QuestionType";
+import FaqsQuestionCard from "./FaqsQuestionCard";
 
 const Faqs = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
       <div className="bg-[#FFF8E8]">
@@ -26,8 +32,40 @@ const Faqs = () => {
         </div>
       </div>
       <div className="mt-[43px]">
-        <QuestionType />
-        <QuestionType />
+        <QuestionType text="General Questions" />
+        <div onClick={handleClick}>
+          <QuestionType text="Payment Questions" />
+        </div>
+        {isOpen && (
+          <div className="space-y-5">
+            <h1 className="font-Lato font-bold text-xl pt-[30px] px-5 pb-5">
+              Payment Frequently Asked Questions
+            </h1>
+            <FaqsQuestionCard
+              question="How do I get paid as a content creator using Nadet to sell my product ?"
+              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+            />
+            <FaqsQuestionCard
+              question="What fees are included when receiving my payouts ?"
+              awnser="Detailed pricing and fees information can be viewed from our pricing page. Click here"
+            />
+            <FaqsQuestionCard
+              question="How do I know when any of my products is purchased ?"
+              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+            />
+            <FaqsQuestionCard
+              question="How long will it take to receive my payouts ?"
+              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+            />
+            <FaqsQuestionCard
+              question="Can customers buy my product anywhere in the world ?"
+              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+            />
+          </div>
+        )}
+
+        <QuestionType text="Support Questions" />
+        <QuestionType text="Buying Questions" />
       </div>
     </div>
   );
