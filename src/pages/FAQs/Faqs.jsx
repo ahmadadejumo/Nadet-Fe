@@ -3,6 +3,9 @@ import Navbar from "../../components/Navbar";
 import vector12 from "../../assets/images/vector12.svg";
 import QuestionType from "./QuestionType";
 import FaqsQuestionCard from "./FaqsQuestionCard";
+import vector13 from "../../assets/images/vector13.svg";
+import vector14 from "../../assets/images/vector14.svg";
+import Footer from "../../components/Footer";
 
 const Faqs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,9 +66,36 @@ const Faqs = () => {
             />
           </div>
         )}
-
         <QuestionType text="Support Questions" />
         <QuestionType text="Buying Questions" />
+      </div>
+      <div className="mx-5 md:mx-16 lg:mx-[140px]">
+        <div className="rounded-lg w-full bg-[#FFF8E8] mt-[80px]">
+          <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl text-center pt-[50px]">
+            Still Need Help?
+          </h1>
+          <p className="font-Lato font-normal text-tcolor text-base text-center pt-10 px-5 md:px-40 lg:px-72">
+            Our team is happy to answer your questions. Contact us and we’ll be
+            in touch as soon as possible.
+          </p>
+          <div className="md:flex md:justify-center md:space-x-5">
+            <div className="flex justify-center mt-5">
+              <button className="flex items-center justify-center bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[229px] ">
+                <img src={vector14} alt="img" className="pr-3" />
+                Shoot Us An Email
+              </button>
+            </div>
+            <div className="flex justify-center mt-5 pb-[50px]">
+              <button className="flex items-center justify-center bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[229px] ">
+                <img src={vector13} alt="img" className="pr-3" />
+                Give Us A Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[80px] lg:mt-[120px]">
+        <Footer />
       </div>
     </div>
   );
