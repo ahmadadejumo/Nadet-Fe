@@ -9,7 +9,7 @@ const FaqsQuestionCard = ({ question, awnser }) => {
     setIsUp(!isUp);
   };
   return (
-    <div className="mx-5">
+    <div className="mx-5 md:mx-40">
       <div
         onClick={openClick}
         className={`container border border-bcolor ${

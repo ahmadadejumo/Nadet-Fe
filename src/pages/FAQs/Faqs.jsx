@@ -17,11 +17,11 @@ const Faqs = () => {
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl text-center pt-[197px] px-10">
           Common Asked Questions
         </h1>
-        <p className="font-Lato font-normal text-lg text-center text-tcolor pt-5 px-14 pb-[30px] md:mx-32">
+        <p className="font-Lato font-normal text-lg text-center text-tcolor pt-5 px-14 pb-[30px] md:mx-32 lg:mx-96">
           You need help? Get quick answers to all your questions about Nadet
         </p>
       </div>
-      <div className="mx-5 mt-[50px] md:flex md:justify-center md:mx-32">
+      <div className="mx-5 mt-[50px] md:flex md:justify-center md:mx-32 lg:mx-72">
         <div className="flex justify-between items-center rounded-lg border-[1px] h-[60px] w-full border-[#FFF8E8] shadow-lg box-border px-5">
           <input
             type="text"
@@ -38,7 +38,7 @@ const Faqs = () => {
         </div>
         {isOpen && (
           <div className="space-y-5">
-            <h1 className="font-Lato font-bold text-xl pt-[30px] px-5 pb-5">
+            <h1 className="font-Lato font-bold text-xl pt-[30px] px-5 md:px-40 pb-5">
               Payment Frequently Asked Questions
             </h1>
             <FaqsQuestionCard

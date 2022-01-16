@@ -14,15 +14,17 @@ const QuestionType = ({ text }) => {
     <div>
       <div
         onClick={handleClick}
-        className="flex mx-10 items-center space-x-4 pb-5"
+        className="flex mx-10 items-center space-x-4 pb-5 lg:pl-14"
       >
         <img src={shape} alt="img" />
         <p className="font-Lato text-xl font-bold">{text}</p>
-        {!isUp ? (
-          <img src={dropdown} alt="img" />
-        ) : (
-          <img src={dropdownUp} alt="img" />
-        )}
+        <div className="md:hidden">
+          {!isUp ? (
+            <img src={dropdown} alt="img" />
+          ) : (
+            <img src={dropdownUp} alt="img" />
+          )}
+        </div>
       </div>
     </div>
   );
