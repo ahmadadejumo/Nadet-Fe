@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 import dropdown from "../../assets/images/dropdown.svg";
 import dropdownUp from "../../assets/images/dropdownUp.svg";
-import vector15 from "../../assets/images/vector15.svg";
+import star from "../../assets/images/star.svg";
 
-const PriceCard = () => {
+const PriceCard = ({ header, display, text, subHeading, listPlan }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -11,18 +11,23 @@ const PriceCard = () => {
   };
 
   return (
-    <div className="mx-5">
+    <div className="mx-5 mb-5">
       <div className=" bg-[#FDD773] px-[25px] rounded-t-lg">
-        <h1 className="font-Lato font-bold text-base pt-[35px]">
-          Starter plan
-        </h1>
+        <div className="flex items-center justify-between">
+          <h1 className="font-Lato font-bold text-base pt-[35px]">{header}</h1>
+          <div
+            className={`bg-white ${display} mt-5 h-[29px] w-[124px] rounded-tr-lg flex items-center justify-evenly`}
+          >
+            <img src={star} alt="img" />
+            <h1 className="font-Lato font-bold text-xs">Recommended</h1>
+          </div>
+        </div>
         <p className="font-Lato text-sm font-medium pt-[15px] pb-[27px]">
-          Share what you know. Get started on Nadet with our free set of
-          features
+          {text}
         </p>
       </div>
       <div className="px-5 pt-[15px] border border-[#FDD773] rounded-b-lg">
-        <h1 className="font-Lato font-bold text-lg">FREE</h1>
+        <h1 className="font-Lato font-bold text-lg">{subHeading}</h1>
         <div className="flex justify-between pt-[25px]">
           <button className="bg-bcolor h-[44px] w-[142px] rounded-lg">
             Get Started
@@ -38,12 +43,7 @@ const PriceCard = () => {
             )}
           </div>
         </div>
-        {isOpen && (
-          <div className="flex pt-[25px] items-center space-x-3">
-            <img src={vector15} alt="img" />
-            <p>Upload up to 5 courses (unlimited videos)</p>
-          </div>
-        )}
+        {isOpen && <div className="pb-[50px]">{listPlan}</div>}
       </div>
     </div>
   );

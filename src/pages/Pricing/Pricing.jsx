@@ -3,6 +3,13 @@ import Navbar from "../../components/Navbar";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
 import PriceCard from "./PriceCard";
+import vector15 from "../../assets/images/vector15.svg";
+import {
+  starterPlanList,
+  basicPlanList,
+  proPlanList,
+  premiumPlanList,
+} from "./Data";
 
 const Pricing = () => {
   return (
@@ -42,7 +49,41 @@ const Pricing = () => {
         </div>
       </div>
       <div className="pt-[50px]">
-        <PriceCard />
+        <PriceCard
+          header="Starter plan"
+          text="Share what you know. Get started on Nadet with our free set of features"
+          display="hidden"
+          subHeading="FREE"
+          listPlan={starterPlanList.map(({ id, title }) => (
+            <div className="flex pt-[25px] items-center space-x-3">
+              <img src={vector15} alt="img" />
+              <h1 key={id}>{title}</h1>
+            </div>
+          ))}
+        />
+        <PriceCard
+          header="Basic Plan"
+          text="Grow your business. Upgrade from the free plan with a more advanced feature. Includes everything in Starter Plan"
+          subHeading="$29 {10% off for Annual}"
+          listPlan={basicPlanList.map(({ id, title }) => (
+            <div className="flex pt-[25px] items-center space-x-3">
+              <img src={vector15} alt="img" />
+              <h1 key={id}>{title}</h1>
+            </div>
+          ))}
+        />
+        <PriceCard
+          header="Premium Plan"
+          text="Scale your business with our most powerful set of features Includes everything in Starter, Basic & Pro Plan"
+          subHeading="$99 {10% off for Annual} "
+          display={"hidden"}
+          listPlan={premiumPlanList.map(({ id, title }) => (
+            <div className="flex pt-[25px] items-center space-x-3">
+              <img src={vector15} alt="img" />
+              <h1 key={id}>{title}</h1>
+            </div>
+          ))}
+        />
       </div>
     </div>
   );
