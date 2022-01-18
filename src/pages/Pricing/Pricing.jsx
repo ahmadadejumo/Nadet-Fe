@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
+import PriceCard from "./PriceCard";
 
 const Pricing = () => {
   return (
@@ -39,6 +40,9 @@ const Pricing = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="pt-[50px]">
+        <PriceCard />
       </div>
     </div>
   );
