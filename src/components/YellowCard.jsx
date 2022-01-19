@@ -3,7 +3,7 @@ import arrow from "../assets/images/arrow.svg";
 
 const LpSection9 = () => {
   return (
-    <div className="mx-5 lg:mx-[140px]">
+    <div className="mx-5 flex justify-center lg:mx-[140px]">
       <div className="rounded-lg container bg-bcolor w-full">
         <div className="pt-[50px] pb-[50px] mx-8 md:mx-20 lg:mx-28">
           <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl text-center ">

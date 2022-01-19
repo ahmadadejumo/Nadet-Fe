@@ -10,18 +10,61 @@ import {
   proPlanList,
   premiumPlanList,
 } from "./Data";
+import FaqsQusetionCard from "../FAQs/FaqsQuestionCard";
+import YellowCard from "../../components/YellowCard";
+import Footer from "../../components/Footer";
 
 const Pricing = () => {
   const includedInAllPlans = [
     { key: 1, title: "Discount feature" },
-    { key: 1, title: "Unlimited student" },
-    { key: 1, title: "Sales page" },
-    { key: 1, title: "Integrated payment processing" },
-    { key: 1, title: "No fees on free products" },
-    { key: 1, title: "Payment processing fee" },
-    { key: 1, title: "Multicurrency feature" },
-    { key: 1, title: "Instant payouts" },
-    { key: 1, title: "24/7 Email support" },
+    { key: 2, title: "Unlimited student" },
+    { key: 3, title: "Sales page" },
+    { key: 4, title: "Integrated payment processing" },
+    { key: 5, title: "No fees on free products" },
+    { key: 6, title: "Payment processing fee" },
+    { key: 7, title: "Multicurrency feature" },
+    { key: 8, title: "Instant payouts" },
+    { key: 9, title: "24/7 Email support" },
+  ];
+
+  const questionAndAwnserList = [
+    {
+      key: 1,
+      question: "Who can use Nadet?",
+      awnser:
+        "Content creators like Authors, Educators, Online Tutors, Coaches, Instructors, Speakers, Bloggers, Youtubers, Consultants, Podcasters and Creatives.",
+    },
+    {
+      key: 2,
+      question:
+        "How do i get paid as a creator using Nadet to sell my products?",
+      awnser:
+        "Once a customer purchase any of your product you receive your payout to your Bank account after 24 hours or any other method you have chosen for your payout",
+    },
+    {
+      key: 3,
+      question: "How do i know when any of my products is purchased?",
+      awnser:
+        "Once a customer purchases any of your products, you receive an email notification and it’s added to your balance instantly in your dashboard.",
+    },
+    {
+      key: 4,
+      question: "How long will it take to receive my payout?",
+      awnser:
+        "Nadet content creators receive their payouts to their account instantly a purchase is made or not more than 48hrs for delayed transactions.",
+    },
+    {
+      key: 5,
+      question: "Can international customers also purchase my products?",
+      awnser:
+        "Yes, customers anywhere in the world can buy your products. Our payment system support both local and international cards.",
+    },
+    {
+      key: 6,
+      question: "What payment methods are supported for receiving payouts?",
+      awnser:
+        "Once you’ve clicked on the course you want to buy, it directs you to the checkout page where you get to select any of the payment method available. We support Bank transfers, Credit or Debit cards like Mastercard or Visa, Paystack transfers etc.",
+    },
   ];
   return (
     <div>
@@ -161,10 +204,26 @@ const Pricing = () => {
           </a>
         </h1>
       </div>
-      <div className="mt-[80px]">
-        <h1 className="font-Lato font-semibold text-2xl text-center">
+      <div className="mt-[80px] lg:mt-[100px]">
+        <h1 className="font-Lato font-semibold text-2xl md:text-3xl lg:text-4xl text-center">
           Frequently Asked Questions
         </h1>
+        <div className="mt-[40px] lg:mt-[60px] space-y-5 lg:mx-[150px]">
+          {questionAndAwnserList.map(({ id, question, awnser }) => (
+            <FaqsQusetionCard key={id} question={question} awnser={awnser} />
+          ))}
+        </div>
+        <div className="flex justify-center mt-10">
+          <button className="bg-bcolor w-[173px] h-[50px] font-Lato font-semibold text-base rounded-lg">
+            See More FAQs
+          </button>
+        </div>
+      </div>
+      <div className="mt-[80px] lg:mt-[120px]">
+        <YellowCard />
+      </div>
+      <div className="mt-[80px] lg:mt-[120px]">
+        <Footer />
       </div>
     </div>
   );
