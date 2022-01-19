@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Navbar from "../../components/Navbar";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
@@ -12,6 +12,7 @@ import {
 } from "./Data";
 
 const Pricing = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <div className="bg-[#FFF8E8]">
@@ -48,16 +49,19 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <div className="pt-[50px]">
+      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 lg:mx-16">
         <PriceCard
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"
           display="hidden"
           subHeading="FREE"
+          firstPlan="Upload up to 5 courses (unlimited videos)"
           listPlan={starterPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id}>{title}</h1>
+              <h1 key={id} className="font-Lato text-sm font-normal">
+                {title}
+              </h1>
             </div>
           ))}
         />
@@ -65,7 +69,21 @@ const Pricing = () => {
           header="Basic Plan"
           text="Grow your business. Upgrade from the free plan with a more advanced feature. Includes everything in Starter Plan"
           subHeading="$29 {10% off for Annual}"
+          firstPlan="Upload up to 20 courses (unlimited videos)"
           listPlan={basicPlanList.map(({ id, title }) => (
+            <div className="flex pt-[25px] items-center space-x-3">
+              <img src={vector15} alt="img" />
+              <h1 key={id}>{title}</h1>
+            </div>
+          ))}
+        />
+        <PriceCard
+          header="Pro Plan"
+          text="Build a profitable business with our best plan. Includes everything in Starter & Basic Plan"
+          subHeading="$49 {10% off for Annual}"
+          display={"hidden"}
+          firstPlan="Upload up to 30 courses (unlimited videos)"
+          listPlan={proPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
               <h1 key={id}>{title}</h1>
@@ -75,8 +93,9 @@ const Pricing = () => {
         <PriceCard
           header="Premium Plan"
           text="Scale your business with our most powerful set of features Includes everything in Starter, Basic & Pro Plan"
-          subHeading="$99 {10% off for Annual} "
+          subHeading="$99 {10% off for Annual}"
           display={"hidden"}
+          firstPlan="Upload unlimited courses (unlimited videos)"
           listPlan={premiumPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />

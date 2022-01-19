@@ -1,5 +1,4 @@
 export const starterPlanList = [
-  { id: 1, title: "Upload up to 5 courses (unlimited videos)" },
   { id: 2, title: "Unlimited students" },
   { id: 3, title: "10% + $0.24 per transaction {excl.  processing fee}" },
   { id: 4, title: "Sell read-online-only ebooks" },
@@ -23,7 +22,6 @@ export const starterPlanList = [
 ];
 
 export const basicPlanList = [
-  { id: 1, title: "Upload up to 20 courses (unlimited videos)" },
   { id: 2, title: "No transaction fee (excl. processing fee)" },
   { id: 3, title: "Sell multiple Ebook files" },
   { id: 4, title: "Courses Completion Certificate" },
@@ -43,7 +41,6 @@ export const basicPlanList = [
   { id: 18, title: "Refer & Earn" },
 ];
 export const proPlanList = [
-  { id: 1, title: "Upload up to 30 courses (unlimited videos)" },
   { id: 2, title: "No transaction fee {excl. processing fee}" },
   { id: 3, title: "Import Customers emails" },
   { id: 4, title: "LIVE Session" },
@@ -61,7 +58,6 @@ export const proPlanList = [
   { id: 9, title: "24/7 Phone call support" },
 ];
 export const premiumPlanList = [
-  { id: 1, title: "Upload unlimited courses (unlimited videos)" },
   {
     id: 2,
     title: "Add a Co-contributor to your course & pay him a commission",
