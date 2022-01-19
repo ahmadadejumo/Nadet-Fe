@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
@@ -12,7 +12,17 @@ import {
 } from "./Data";
 
 const Pricing = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const includedInAllPlans = [
+    { key: 1, title: "Discount feature" },
+    { key: 1, title: "Unlimited student" },
+    { key: 1, title: "Sales page" },
+    { key: 1, title: "Integrated payment processing" },
+    { key: 1, title: "No fees on free products" },
+    { key: 1, title: "Payment processing fee" },
+    { key: 1, title: "Multicurrency feature" },
+    { key: 1, title: "Instant payouts" },
+    { key: 1, title: "24/7 Email support" },
+  ];
   return (
     <div>
       <div className="bg-[#FFF8E8]">
@@ -49,7 +59,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 lg:mx-16">
+      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 md:mx-10 lg:mx-16">
         <PriceCard
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"
@@ -99,10 +109,62 @@ const Pricing = () => {
           listPlan={premiumPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id}>{title}</h1>
+              <h1 key={id} className="font-Lato font-normal text-sm">
+                {title}
+              </h1>
             </div>
           ))}
         />
+      </div>
+      <div className="mt-[80px]">
+        <h1 className="font-Lato text-center text-2xl md:text-3xl lg:text-4xl font-semibold">
+          Included in all plans
+        </h1>
+        <div className="mx-5 md:mx-16 lg:mx-[239px] mt-[40px] md:flex justify-between">
+          <div>
+            {includedInAllPlans.slice(0, 3).map(({ id, title }) => (
+              <div className="flex pt-5 items-center space-x-3">
+                <img src={vector15} alt="img" />
+                <h1 key={id} className="font-Lato text-base font-normal">
+                  {title}
+                </h1>
+              </div>
+            ))}
+          </div>
+          <div>
+            {includedInAllPlans.slice(3, 6).map(({ id, title }) => (
+              <div className="flex pt-5 items-center space-x-3">
+                <img src={vector15} alt="img" />
+                <h1 key={id} className="font-Lato text-base font-normal">
+                  {title}
+                </h1>
+              </div>
+            ))}
+          </div>
+          <div>
+            {includedInAllPlans.slice(6, 9).map(({ id, title }) => (
+              <div className="flex pt-5 items-center space-x-3">
+                <img src={vector15} alt="img" />
+                <h1 key={id} className="font-Lato text-base font-normal">
+                  {title}
+                </h1>
+              </div>
+            ))}
+          </div>
+        </div>
+        <h1 className="font-Lato font-normal text-center text-base pt-10 mx-5 md:mx-24 lg:mx-[326px]">
+          Nadet plans will automatically renew until canceled. Recurring charges
+          may be subject to changes. Plans can be canceled at anytime. Have any
+          questions? Contact{" "}
+          <a href="#333" className="text-bcolor">
+            support@nadet.co
+          </a>
+        </h1>
+      </div>
+      <div className="mt-[80px]">
+        <h1 className="font-Lato font-semibold text-2xl text-center">
+          Frequently Asked Questions
+        </h1>
       </div>
     </div>
   );

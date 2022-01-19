@@ -34,7 +34,7 @@ const PriceCard = ({
           {text}
         </p>
       </div>
-      <div className="px-5 pt-[15px] border lg:h-[1350px] border-[#FDD773] rounded-b-lg pb-5">
+      <div className="px-5 pt-[15px] border lg:h-[1300px] border-[#FDD773] rounded-b-lg pb-5">
         <h1 className="font-Lato font-bold text-lg">{subHeading}</h1>
         <div className="flex justify-between pt-[25px]">
           <button className="bg-bcolor h-[44px] w-[142px] rounded-lg">
@@ -55,7 +55,7 @@ const PriceCard = ({
           <img src={vector15} alt="img" />
           <h1>{firstPlan}</h1>
         </div>
-        {!isOpen && <div className="pb-[50px] md:hidden">{listPlan}</div>}
+        {isOpen && <div className="pb-[50px] md:hidden">{listPlan}</div>}
         <div className="pb-[50px] hidden md:contents">{listPlan}</div>
       </div>
     </div>
