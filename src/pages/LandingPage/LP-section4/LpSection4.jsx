@@ -4,6 +4,8 @@ import vector5 from "../../../assets/images/vector5.svg";
 import vector6 from "../../../assets/images/vector6.svg";
 import vector7 from "../../../assets/images/vector7.svg";
 import vector8 from "../../../assets/images/vector8.svg";
+import vector16 from "../../../assets/images/vector16.svg";
+import vector17 from "../../../assets/images/vector17.svg";
 
 const LpSection4 = () => {
   return (
@@ -32,7 +34,7 @@ const LpSection4 = () => {
         <LpSection4Item
           heading="Product listing"
           text="Use our simple listing tools to add your product and the enhanced content feature to display product information."
-          image={vector5}
+          image={vector17}
         />
         <LpSection4Item
           heading="Seemless Payments"
@@ -42,7 +44,7 @@ const LpSection4 = () => {
         <LpSection4Item
           heading="Content Security"
           text="We give all sellers access to tools needed to protect intellectual property and report violations of your contents."
-          image={vector5}
+          image={vector16}
         />
         <LpSection4Item
           heading="Automated Follow-ups"
