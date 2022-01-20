@@ -6,10 +6,13 @@ import HowItWorks from "./pages/HowItWorks/HowItWorks";
 import Products from "./pages/Products/Products";
 import Faqs from "./pages/FAQs/Faqs";
 import Pricing from "./pages/Pricing/Pricing";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="HowItWorks" element={<HowItWorks />} />
@@ -18,6 +21,7 @@ function App() {
         <Route path="faqs" element={<Faqs />} />
         <Route path="pricing" element={<Pricing />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

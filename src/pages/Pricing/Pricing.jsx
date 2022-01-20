@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
 import PriceCard from "./PriceCard";
@@ -12,7 +11,7 @@ import {
 } from "./Data";
 import FaqsQusetionCard from "../FAQs/FaqsQuestionCard";
 import YellowCard from "../../components/YellowCard";
-import Footer from "../../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
   const includedInAllPlans = [
@@ -66,10 +65,11 @@ const Pricing = () => {
         "Once you’ve clicked on the course you want to buy, it directs you to the checkout page where you get to select any of the payment method available. We support Bank transfers, Credit or Debit cards like Mastercard or Visa, Paystack transfers etc.",
     },
   ];
+
+  const navigate = useNavigate();
   return (
-    <div>
+    <div className="mb-[80px] lg:mb-[120px]">
       <div className="bg-[#FFF8E8]">
-        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[197px] mx-2">
           Our pricing is simple and fair
         </h1>
@@ -102,7 +102,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 md:mx-10 lg:mx-16">
+      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 md:mx-10">
         <PriceCard
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"
@@ -214,16 +214,18 @@ const Pricing = () => {
           ))}
         </div>
         <div className="flex justify-center mt-10">
-          <button className="bg-bcolor w-[173px] h-[50px] font-Lato font-semibold text-base rounded-lg">
+          <button
+            onClick={() => {
+              navigate("/faqs");
+            }}
+            className="bg-bcolor w-[173px] h-[50px] font-Lato font-semibold text-base rounded-lg"
+          >
             See More FAQs
           </button>
         </div>
       </div>
       <div className="mt-[80px] lg:mt-[120px]">
         <YellowCard />
-      </div>
-      <div className="mt-[80px] lg:mt-[120px]">
-        <Footer />
       </div>
     </div>
   );

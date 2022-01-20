@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import woman2 from "../../assets/images/woman2.png";
 import HowItWorksCard from "./HowItWorksCard";
 import LpSection2Item from "../LandingPage/LP-section2/LpSection2Item";
@@ -13,13 +12,11 @@ import AmericanExpress from "../../assets/images/AmericanExpress.svg";
 import mclogo from "../../assets/images/mclogo.svg";
 import rectangle1 from "../../assets/images/rectangle1.png";
 import YelloCard from "../../components/YellowCard";
-import Footer from "../../components/Footer";
 
 const HowItWorks = () => {
   return (
     <div>
       <div className="bg-[#FFF8E8]">
-        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] pt-[197px] md:pt-[168px] pb-[70px] md:pb-[133px] text-center">
           How It Works
         </h1>
@@ -145,7 +142,6 @@ const HowItWorks = () => {
       <div className="mt-[136px] md:mt-[120px] mb-[80px] md:mb-[120px]">
         <YelloCard />
       </div>
-      <Footer />
     </div>
   );
 };

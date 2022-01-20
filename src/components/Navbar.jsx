@@ -11,7 +11,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex mx-5 md:mx-3 pt-8 justify-between lg:justify-center items-center">
+    <div className="flex mx-5 md:mx-3 pt-8 justify-between lg:justify-center items-center bg-[#FFF8E8]">
       <div className="">
         <img
           src={logo}

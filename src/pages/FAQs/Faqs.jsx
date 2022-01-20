@@ -1,11 +1,9 @@
 import { React, useState } from "react";
-import Navbar from "../../components/Navbar";
 import vector12 from "../../assets/images/vector12.svg";
 import QuestionType from "./QuestionType";
 import FaqsQuestionCard from "./FaqsQuestionCard";
 import vector13 from "../../assets/images/vector13.svg";
 import vector14 from "../../assets/images/vector14.svg";
-import Footer from "../../components/Footer";
 
 const Faqs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +14,6 @@ const Faqs = () => {
   return (
     <div>
       <div className="bg-[#FFF8E8]">
-        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl text-center pt-[197px] px-10">
           Common Asked Questions
         </h1>
@@ -69,7 +66,7 @@ const Faqs = () => {
         <QuestionType text="Support Questions" />
         <QuestionType text="Buying Questions" />
       </div>
-      <div className="mx-5 md:mx-16 lg:mx-[140px]">
+      <div className="mx-5 md:mx-16 lg:mx-[140px] mb-[80px] lg:mb-[120px]">
         <div className="rounded-lg w-full bg-[#FFF8E8] mt-[80px]">
           <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl text-center pt-[50px]">
             Still Need Help?
@@ -93,9 +90,6 @@ const Faqs = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-[80px] lg:mt-[120px]">
-        <Footer />
       </div>
     </div>
   );

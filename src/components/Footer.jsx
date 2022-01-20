@@ -21,14 +21,25 @@ const Footer = () => {
             and followers and monetise them in one place.
           </p>
           <h1 className="font-Lato font-bold text-lg pt-[40px]">Contact Us</h1>
-          <p className="font-Lato font-normal text-base pt-[15px]">
+          <a
+            href="#222"
+            className="font-Lato font-normal  text-bcolor text-base pt-[15px]"
+          >
             hello@nadet.co
-          </p>
+          </a>
           <div className="space-x-5 mt-[15px]">
-            <FacebookIcon />
-            <TwitterIcon />
-            <LinkedInIcon />
-            <InstagramIcon />
+            <a href="#444">
+              <FacebookIcon />
+            </a>
+            <a href="#444">
+              <TwitterIcon />
+            </a>
+            <a href="#444">
+              <LinkedInIcon />
+            </a>
+            <a href="#444">
+              <InstagramIcon />
+            </a>
           </div>
         </div>
         <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[60px]">
