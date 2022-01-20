@@ -9,7 +9,7 @@ import image4 from "../../../assets/images/image4.svg";
 
 const LpSection1Item = () => {
   return (
-    <div className="mt-24 md:mt-20 pb-14 mx-5 md:mx-5">
+    <div className="pt-24 md:pt-20 pb-14 mx-5 md:mx-5">
       <div className="md:flex md:items-center justify-center md:mr-5">
         <div className="lg:w-[390px] md:w-[550px]">
           <div>
