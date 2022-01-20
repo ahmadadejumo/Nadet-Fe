@@ -83,7 +83,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="mx-5 md:flex md:flex-row-reverse lg:justify-around">
+      <div className="mx-5 lg:mx-36  md:flex md:flex-row-reverse lg:justify-between">
         <div className="flex justify-center md:w-[1000px] lg:w-[500px] md:pl-5">
           <img src={rectangle9} alt="img" className="object-contain" />
         </div>
