@@ -24,7 +24,7 @@ const LpSection10 = () => {
           text={"How to Turn Your Instagram Followers to Customers"}
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-[80px] mb:mt-[120px]">
         <button className="bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[199px] mt-10 mb-[80px]">
           Visit Our Blog
         </button>
