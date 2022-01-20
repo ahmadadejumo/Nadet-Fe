@@ -9,6 +9,7 @@ import visalogo from "../assets/images/VisaLogo.svg";
 import paypal from "../assets/images/PayPal.svg";
 import AmericanExpress from "../assets/images/AmericanExpress.svg";
 import mclogo from "../assets/images/mclogo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -55,7 +56,7 @@ const Footer = () => {
         <div className="mt-[60px] md:mt-[35px] flex justify-between lg:space-x-16">
           <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px] md:hidden lg:flex">
             <h1 className="font-Lato text-lg font-bold">Company</h1>
-            <a href="#">About Us</a>
+            <Link to={"/about"}>About Us</Link>
             <a href="#">Company Values</a>
             <a href="#">Careers</a>
             <a href="#">Pricing</a>
