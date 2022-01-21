@@ -4,12 +4,12 @@ import rectangle7 from "../../assets/images/rectangle7.png";
 import rectangle8 from "../../assets/images/rectangle8.png";
 import rectangle9 from "../../assets/images/rectangle9.png";
 import Card from "./Card";
-import InstantpayoutsIcon from "../../assets/images/InstantpayoutsIcon.svg";
 import vector8 from "../../assets/images/vector8.svg";
 import vector7 from "../../assets/images/vector7.svg";
 import vector6 from "../../assets/images/vector6.svg";
 import vector16 from "../../assets/images/vector16.svg";
 import vector17 from "../../assets/images/vector17.svg";
+import rectangle10 from "../../assets/images/rectangle10.png";
 import FastProcessIcon from "../../assets/images/FastProcessIcon.svg";
 
 const AboutUs = () => {
@@ -83,7 +83,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="mx-5 lg:mx-36  md:flex md:flex-row-reverse lg:justify-between">
+      <div className="mx-5 lg:mx-20  md:flex md:flex-row-reverse lg:justify-center">
         <div className="flex justify-center md:w-[1000px] lg:w-[500px] md:pl-5">
           <img src={rectangle9} alt="img" className="object-contain" />
         </div>
@@ -114,6 +114,24 @@ const AboutUs = () => {
         <button className="font-Lato text-base font-semibold rounded-lg bg-bcolor h-[50px] w-[216px]">
           Start Selling With Us
         </button>
+      </div>
+      <div className="bg-[#FEF8E7] w-full md:flex lg:justify-center lg:space-x-28">
+        <div className="flex justify-between pt-[50px] md:pt-3 lg:py-[56px] mx-5 lg:w-[407px]">
+          <img src={rectangle10} alt="img" className="object-contain" />
+        </div>
+        <div className="font-Lato mx-5 pt-[60px] lg:w-[510px] lg:pt-[100px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+            We market and drive traffic to your products for high reach
+          </h1>
+          <p className="font-normal text-base text-tcolor pt-5">
+            We don't just provide you with a fast, easy and safe place to sell,
+            we also market your products so it can be seen by a worldwide paying
+            audience.
+          </p>
+          <button className="bg-bcolor font-semibold text-base h-[50px] w-[199px] rounded-lg mt-5 mb-[50px]">
+            Get Started Today!
+          </button>
+        </div>
       </div>
     </div>
   );
