@@ -11,6 +11,9 @@ import vector16 from "../../assets/images/vector16.svg";
 import vector17 from "../../assets/images/vector17.svg";
 import rectangle10 from "../../assets/images/rectangle10.png";
 import FastProcessIcon from "../../assets/images/FastProcessIcon.svg";
+import rectangle11 from "../../assets/images/rectangle11.png";
+import rectangle12 from "../../assets/images/rectangle12.png";
+import YelloCard from "../../components/YellowCard";
 
 const AboutUs = () => {
   return (
@@ -132,6 +135,55 @@ const AboutUs = () => {
             Get Started Today!
           </button>
         </div>
+      </div>
+      <div className="mx-5 md:flex justify-center mt-[80px] md:mt-10 md:flex-row-reverse lg:mx-[140px]">
+        <div className="md:pl-10 md:pt-48 ">
+          <img src={rectangle11} alt="img" className="object-contain" />
+        </div>
+        <div className="font-Lato pt-[60px] md:w-[1600px] lg:w-[1700px] lg:pt-[160px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+            Created for content creators and their audience
+          </h1>
+          <p className=" font-normal text-tcolor text-base pt-5">
+            We are simplifying the way content creators sell video courses,
+            ebooks and create live streams to online classes. We pride ourselves
+            in the simplicity that we bring to our customers. Helping them
+            perform highly advanced technological actions without any stress. We
+            have a strong background in keeping things simple. Our product
+            features are exceptional, we take extra step in ensuring that our
+            products are simple to use, user friendly and straight forward.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center pt-[40px]">
+        <button className="font-semibold text-base bg-bcolor rounded-lg h-[50px] w-[194px] ">
+          Become A Creator
+        </button>
+      </div>
+      <div className="mx-5 md:flex justify-center mt-[80px] md:mt-[40px] lg:mx-[140px]">
+        <div className="md:pt-32 md:pr-10">
+          <img src={rectangle12} alt="img" className="object-contain" />
+        </div>
+        <div className="font-Lato pt-[60px] lg:pt-[110px] md:w-[970px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+            We have team of experts that are making dreams come through.
+          </h1>
+          <p className=" font-normal text-tcolor text-base pt-5">
+            We are creative dreamers and innovators. Not distracted by anything
+            but focused on our mission of building a simplified marketplace for
+            content creators to sell video courses, ebooks and create live
+            streams. Our teams are always up-to-date with the new technology
+            ensuring that our system works fast and is relatively stress-free.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center pt-[40px] pb-[120px]">
+        <button className="font-semibold text-base bg-bcolor rounded-lg h-[50px] w-[194px] ">
+          Get Started Now
+        </button>
+      </div>
+      <div className="mb-[80px] lg:mb-[120px]">
+        <YelloCard />
       </div>
     </div>
   );
