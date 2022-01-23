@@ -51,7 +51,7 @@ const Footer = () => {
           <a href="#">Event Tickets </a>
           <a href="#">Subscriptions & Services</a>
           <a href="#">Affiliate Program</a>
-          <a href="#">Refer a friend</a>
+          <Link to={"/refer"}>Refer a friend</Link>
         </div>
         <div className="mt-[60px] md:mt-[35px] flex justify-between lg:space-x-16">
           <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px] md:hidden lg:flex">

@@ -8,6 +8,7 @@ import Faqs from "./pages/FAQs/Faqs";
 import Pricing from "./pages/Pricing/Pricing";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="products" element={<Products />} />
         <Route path="faqs" element={<Faqs />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="refer" element={<ReferAFriend />} />
       </Routes>
       <Footer />
     </BrowserRouter>
