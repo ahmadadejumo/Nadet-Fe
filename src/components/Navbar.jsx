@@ -16,7 +16,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Nadet Logo"
-          className="pr-36 md:pr-64 lg:pr-0 object-contain w-full"
+          className="pr-36 md:pr-64 lg:pr-0 object-contain w-[280px] md:w-full"
         />
       </div>
       {/* tablet and desktop menu */}
