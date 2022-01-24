@@ -40,7 +40,7 @@ const Navbar = () => {
       <Outlet />
       <div className="lg:flex flex-row space-x-5 cursor-pointer items-center hidden md:contents">
         <p>Log In</p>
-        <button className="box-border h-9 w-32 rounded-md bg-bcolor hover:bg-yellow-500 transition duration-300">
+        <button className="h-[44px] w-[142px] rounded-lg font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
           Get Started
         </button>
       </div>

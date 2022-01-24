@@ -5,10 +5,11 @@ import Card from "./Card";
 import Reusable from "./Reusable";
 import rectangle15 from "../../assets/images/rectangle15.png";
 import rectangle16 from "../../assets/images/rectangle16.png";
+import YellowCard from "../../components/YellowCard";
 
 const ReferAFriend = () => {
   return (
-    <div>
+    <div className="pb-[80px] lg:pb-[120px]">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-[20px] md:px-16 lg:px-60">
@@ -50,7 +51,7 @@ const ReferAFriend = () => {
           </div>
         </div>
         <div className="flex justify-center pt-10 md:pt-[50px] pb-[80px] md:pb-[120px]">
-          <button className="rounded-lg bg-bcolor h-[50px] w-[221px] font-Lato">
+          <button className="rounded-lg bg-bcolor h-[50px] w-[221px] font-Lato font-semibold text-base">
             Refer A Friend Today!
           </button>
         </div>
@@ -79,7 +80,7 @@ const ReferAFriend = () => {
         <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-[50px]">
           What you stand to benefit
         </h1>
-        <div className="md:mx-28">
+        <div className="md:mx-28 lg:flex lg:space-x-8 lg:mx-[140px]">
           <Card
             image={rectangle15}
             text="You get free access to marketing course which covers Whatsapp marketing,
@@ -90,7 +91,23 @@ const ReferAFriend = () => {
             text="You get access to all the packages available to all our basic plan subscribers"
           />
         </div>
+        <div className="flex justify-center pt[70px]">
+          <button className="font-Lato bg-[#FBF3DE] rounded-lg text-xl font-bold h-[70px] w-[240px]">
+            Disclaimer
+          </button>
+        </div>
+        <p className="pt-[30px] font-Lato text-base text-tcolor text-center px-[35px] md:px-[80px] lg:px-[151px] pb-[90px]">
+          As with any business your results may vary and will be based on your
+          individual capacity, business experience, expertise, and level of
+          desire. There are no guarantees concerning the level of success you
+          may experience. There is no guarantee that you will make any income at
+          all and you accept the risk that the earnings and income statements
+          differ by individual. Each individual’s success depends on their
+          background, dedication, desire, and motivation.
+        </p>
       </div>
+      <div></div>
+      <YellowCard />
     </div>
   );
 };
