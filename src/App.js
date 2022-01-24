@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing/Pricing";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
+import Events from "./pages/Events/Events";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="faqs" element={<Faqs />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="refer" element={<ReferAFriend />} />
+        <Route path="events" element={<Events />} />
       </Routes>
       <Footer />
     </BrowserRouter>

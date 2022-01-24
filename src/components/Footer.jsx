@@ -61,7 +61,7 @@ const Footer = () => {
             <a href="#">Careers</a>
             <a href="#">Pricing</a>
             <a href="#">FAQs</a>
-            <a href="#">Events</a>
+            <Link to={"/events"}>Events</Link>
           </div>
 
           <div className="lg:flex lg:flex-col">
