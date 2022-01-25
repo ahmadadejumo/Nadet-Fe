@@ -1,6 +1,7 @@
 import React from "react";
 import rectangle22 from "../../assets/images/rectangle22.png";
 import rectangle23 from "../../assets/images/rectangle23.png";
+import rectangle24 from "../../assets/images/rectangle24.png";
 
 const Affiliates = () => {
   return (
@@ -48,7 +49,9 @@ const Affiliates = () => {
             <img src={rectangle23} alt="img" className="object-contain" />
           </div>
           <div>
-            <h1 className="font-bold text-2xl pt-[60px]">Payout on request</h1>
+            <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">
+              Payout on request
+            </h1>
             <p className="font-normal text-tcolor text-base pt-5">
               Once you have started making money, you can request a payout and
               your money will be automatically sent directly to your Bank
@@ -57,6 +60,34 @@ const Affiliates = () => {
             <button className="font-semibold bg-bcolor rounded-lg h-[50px] w-[142px] mt-5 mb-[50px]">
               Get Started
             </button>
+          </div>
+        </div>
+        <div className="px-5">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-center md:px-16 lg:px-[200px]">
+            How it works it’s pretty simple and can be set up in less than 1
+            minute. Generate a custom link to your share with your audience.
+          </h1>
+          <div className="md:flex md:px-5 lg:px-[140px] lg:pt-[60px]">
+            <div className="flex justify-center pt-[50px] md:pr-10 md:pt-2 lg:pr-28">
+              <img src={rectangle24} alt="img" className="object-contain" />
+            </div>
+            <div className="md:w-[1000px]">
+              <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">
+                How the program works
+              </h1>
+              <p className="pt-5 text-tcolor text-base font-normal">
+                When you become an affiliate, we'll provide you with a special
+                affiliate link. You can put the affiliate link on your website,
+                social networks, email etc. and refer customers in need of
+                ebooks, video courses etc. When a new user visits, and purchase
+                a product at Nadet via your affiliate link, our system
+                identifies that they have come from you. When a purchase is made
+                by your referral, you will automatically receive a commission.
+              </p>
+              <button className="font-semibold bg-bcolor rounded-lg h-[50px] w-[142px] mt-5 mb-[50px]">
+                Get Started
+              </button>
+            </div>
           </div>
         </div>
       </div>
