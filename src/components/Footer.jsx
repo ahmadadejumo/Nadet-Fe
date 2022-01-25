@@ -50,7 +50,7 @@ const Footer = () => {
           <a href="#">LIVE Sessions</a>
           <a href="#">Event Tickets </a>
           <a href="#">Subscriptions & Services</a>
-          <a href="#">Affiliate Program</a>
+          <Link to={"/affiliates"}>Affiliate Program</Link>
           <Link to={"/refer"}>Refer a friend</Link>
         </div>
         <div className="mt-[60px] md:mt-[35px] flex justify-between lg:space-x-16">
@@ -69,7 +69,7 @@ const Footer = () => {
               <h1 className="font-Lato text-lg font-bold">Legal</h1>
               <a href="#">Terms of Services</a>
               <a href="#">Privacy Policy</a>
-              <a href="#">Affiliate Agreement</a>
+              <Link to={""}>Affiliate Agreement</Link>
             </div>
             <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[30px] ">
               <h1 className="font-Lato text-lg font-bold">Learn</h1>

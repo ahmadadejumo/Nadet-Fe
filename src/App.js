@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
 import Events from "./pages/Events/Events";
+import Affiliates from "./pages/Affiliates/Affiliates";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="refer" element={<ReferAFriend />} />
         <Route path="events" element={<Events />} />
+        <Route path="affiliates" element={<Affiliates />} />
       </Routes>
       <Footer />
     </BrowserRouter>
