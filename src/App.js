@@ -12,6 +12,7 @@ import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
 import Events from "./pages/Events/Events";
 import Affiliates from "./pages/Affiliates/Affiliates";
 import TermsOfService from "./pages/TermsOfService/TermsOfService";
+import CompanyValues from "./pages/CompanyValues/CompanyValues";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="events" element={<Events />} />
         <Route path="affiliates" element={<Affiliates />} />
         <Route path="terms-&-condition" element={<TermsOfService />} />
+        <Route path="company-values" element={<CompanyValues />} />
       </Routes>
       <Footer />
     </BrowserRouter>

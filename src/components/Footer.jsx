@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px] md:hidden lg:flex">
             <h1 className="font-Lato text-lg font-bold">Company</h1>
             <Link to={"/about"}>About Us</Link>
-            <a href="#">Company Values</a>
+            <Link to={"/company-values"}>Company Values</Link>
             <a href="#">Careers</a>
             <a href="#">Pricing</a>
             <a href="#">FAQs</a>
