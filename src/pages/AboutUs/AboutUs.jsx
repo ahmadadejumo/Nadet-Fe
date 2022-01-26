@@ -86,7 +86,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="mx-5 lg:mx-20  md:flex md:flex-row-reverse lg:justify-center">
+      <div className="mx-5 lg:mx-20  md:flex md:items-center md:flex-row-reverse lg:justify-center">
         <div className="flex justify-center md:w-[1000px] lg:w-[500px] md:pl-5">
           <img src={rectangle9} alt="img" className="object-contain" />
         </div>
@@ -136,7 +136,7 @@ const AboutUs = () => {
           </button>
         </div>
       </div>
-      <div className="mx-5 md:flex justify-center mt-[80px] md:mt-10 md:flex-row-reverse lg:mx-[140px]">
+      <div className="mx-5 md:flex md:items-center justify-center mt-[80px] md:mt-10 md:flex-row-reverse lg:mx-[140px]">
         <div className="md:pl-10 md:pt-48 ">
           <img src={rectangle11} alt="img" className="object-contain" />
         </div>
@@ -160,7 +160,7 @@ const AboutUs = () => {
           Become A Creator
         </button>
       </div>
-      <div className="mx-5 md:flex justify-center mt-[80px] md:mt-[40px] lg:mx-[140px]">
+      <div className="mx-5 md:flex md:items-center justify-center mt-[80px] md:mt-[40px] lg:mx-[140px]">
         <div className="md:pt-32 md:pr-10">
           <img src={rectangle12} alt="img" className="object-contain" />
         </div>

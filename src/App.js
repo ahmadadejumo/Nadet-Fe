@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
 import Events from "./pages/Events/Events";
 import Affiliates from "./pages/Affiliates/Affiliates";
+import TermsOfService from "./pages/TermsOfService/TermsOfService";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="refer" element={<ReferAFriend />} />
         <Route path="events" element={<Events />} />
         <Route path="affiliates" element={<Affiliates />} />
+        <Route path="terms-&-condition" element={<TermsOfService />} />
       </Routes>
       <Footer />
     </BrowserRouter>

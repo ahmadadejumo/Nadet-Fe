@@ -31,7 +31,7 @@ const ReferAFriend = () => {
           On our Network affiliate, you earn a bonus each time you refer someone
           to the network, see how it works
         </h1>
-        <div className="md:flex md:flex-row-reverse md:justify-center md:mx-10 lg:mx-[140px] lg:space-x-5">
+        <div className="md:flex md:items-center md:flex-row-reverse md:justify-center md:mx-10 lg:mx-[140px] lg:space-x-5">
           <div className="px-5 pt-[50px] md:w-[800px] lg:w-[660px]">
             <img src={rectangle13} alt="img" className="object-contain" />
           </div>
@@ -80,7 +80,7 @@ const ReferAFriend = () => {
         <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-[50px]">
           What you stand to benefit
         </h1>
-        <div className="md:mx-28 lg:flex lg:space-x-8 lg:mx-[140px]">
+        <div className="md:mx-28 mx-5 lg:flex lg:space-x-8 lg:mx-[140px]">
           <Card
             image={rectangle15}
             text="You get free access to marketing course which covers Whatsapp marketing,

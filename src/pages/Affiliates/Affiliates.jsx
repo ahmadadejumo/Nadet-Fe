@@ -2,8 +2,44 @@ import React from "react";
 import rectangle22 from "../../assets/images/rectangle22.png";
 import rectangle23 from "../../assets/images/rectangle23.png";
 import rectangle24 from "../../assets/images/rectangle24.png";
+import rectangle25 from "../../assets/images/rectangle25.png";
+import FaqQuestionCard from "../FAQs/FaqsQuestionCard";
+import YellowCard from "../../components/YellowCard";
 
 const Affiliates = () => {
+  const QuestionAndAwnser = [
+    {
+      id: 1,
+      question: "How do I pay affiliates of my store ?",
+      awnser:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    },
+    {
+      id: 2,
+      question: "How do I receive payments in other currencies like USD?",
+      awnser:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    },
+    {
+      id: 3,
+      question: "What payment options can my customers pay with ?",
+      awnser:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    },
+    {
+      id: 4,
+      question: "How long will it take to receive my payout?",
+      awnser:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    },
+    {
+      id: 5,
+      question: "What payment methods are supported for receiving payouts?",
+      awnser:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    },
+  ];
+
   return (
     <div className="font-Lato">
       {/* Header section */}
@@ -89,6 +125,50 @@ const Affiliates = () => {
               </button>
             </div>
           </div>
+        </div>
+        <div className="bg-[#FFF8E8] md:flex md:justify-around items-center md:mx-10 lg:mx-[140px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-center pt-[16px]">
+            It’s Pretty Easy
+          </h1>
+          <div className="flex justify-center pt-[14px]">
+            <button className="font-semibold bg-bcolor rounded-lg h-[50px] w-[206px] mt-5 mb-[31px]">
+              Become An Affiliate
+            </button>
+          </div>
+        </div>
+        <div className="pt-[80px] px-5 md:flex md:flex-row-reverse md:justify-center md:px-8 lg:px-[140px]">
+          <div className="flex justify-center md:pl-8 lg:pl-36 md:pt-10">
+            <img src={rectangle25} alt="img" className="object-contain" />
+          </div>
+          <div>
+            <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">
+              One dedicated affiliate dashboard makes the flow easy and
+              straightforward
+            </h1>
+            <p className="pt-5 font-normal text-tcolor">
+              When you log on to the dashboard, navigate to the affiliate
+              dashboard from the menu lists, there you can monitor your referral
+              signups, purchases and the subsequent payments to you.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h1 className="font-bold text-center text-2xl md:text-3xl lg:text-4xl pt-[80px]">
+            Frequently Asked Questions
+          </h1>
+          <div className="pt-10 lg:pt-[60px] space-y-5 lg:px-[180px]">
+            {QuestionAndAwnser.map(({ id, question, awnser }) => (
+              <FaqQuestionCard id={id} question={question} awnser={awnser} />
+            ))}
+          </div>
+          <div className="flex justify-center pt-[86px] pb-[124px] lg:pb-[150px]">
+            <button className="font-semibold bg-bcolor rounded-lg h-[50px] w-[173px] mt-5 mb-[31px]">
+              See More FAQs
+            </button>
+          </div>
+        </div>
+        <div className="pb-[80px] lg:pb-[120px]">
+          <YellowCard />
         </div>
       </div>
     </div>
