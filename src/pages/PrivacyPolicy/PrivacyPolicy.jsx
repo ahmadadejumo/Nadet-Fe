@@ -1,11 +1,12 @@
 import React from "react";
+import YelloCard from "../../components/YellowCard";
 
 const PrivacyPolicy = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
-        <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-5">
+        <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-5 md:px-36 lg:px-80">
           Data Privacy, Protection & Cookie Policy
         </h1>
         <p className="font-normal text-xl text-center text-tcolor pt-5 px-5 pb-[38px]">
@@ -13,7 +14,7 @@ const PrivacyPolicy = () => {
         </p>
       </div>
       {/* Body section */}
-      <div className="pt-[80px] px-5">
+      <div className="pt-[80px] px-5 md:px-10 lg:px-[140px]">
         <h1 className="font-bold text-2xl md:text-3xl">Overview :</h1>
         <p className="pt-2 text-base text-tcolor font-normal">
           This data privacy, protection and cookie policy describes your privacy
@@ -275,6 +276,217 @@ const PrivacyPolicy = () => {
           We may disclose your Personal Information in compliance with
           applicable law or a legal obligation to which we are bound.
         </p>
+        <h1 className="font-bold text-2xl md:text-3xl pt-5">
+          Transfer of Personal Information :
+        </h1>
+        <div className="px-5">
+          <ul className="list-disc">
+            <li className="font-bold text-xl text-tcolor pt-5">
+              Third Party Processor within Nigeria
+            </li>
+            <p className="pt-5 text-base text-tcolor font-normal">
+              Nadet may engage the services of third parties in order to process
+              the Personal Information of Data Subjects collected by the Nadet.
+              The processing by such third parties shall be governed by a
+              written contract with Nadet to ensure adequate protection and
+              security measures are put in place by the third party for the
+              protection of Personal Information in accordance with the terms of
+              this Privacy Policy.
+            </p>
+            <li className="font-bold text-xl text-tcolor pt-5">
+              Transfer of Personal Information to Foreign Country
+            </li>
+            <p className="pt-5 text-base text-tcolor font-normal">
+              Where Personal Information is to be transferred to a country
+              outside Nigeria, Nadet shall put adequate measures in place to
+              ensure the security of such Personal Information. In particular,
+              Nadet shall, among other things, confirm whether the country is on
+              the National Information Technology Development Agency (“NITDA”)
+              White List of Countries with adequate data protection laws.
+              <br />
+              <br />
+              Transfer of Personal Information out of Nigeria would be in
+              accordance with the provisions of the Nigeria Data Protection
+              Regulation. Nadet will therefore only transfer Personal
+              Information out of Nigeria on one of the following conditions:
+            </p>
+            <ul className="list-inside list-decimal pt-5">
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The consent of the Data Subject has been obtained.
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The transfer is necessary for the performance of a contract
+                between Nadet and the Data Subject or implementation of
+                pre-contractual measures taken at the Data Subject’s request.
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The transfer is necessary to conclude a contract between Nadet
+                and a third party in the interest of the Data Subject.
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The consent of the Data Subject has been obtained;
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The transfer is necessary for reason of public interest.
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The transfer is for the establishment, exercise or defense of
+                legal claims.
+              </li>
+              <li className="pt-2 text-base text-tcolor font-normal">
+                The transfer is necessary in order to protect the vital
+                interests of the Data Subjects or other persons, where the Data
+                Subject is physically or legally incapable of giving consent.
+              </li>
+              <p className="pt-5 text-base text-tcolor font-normal">
+                Nadet will take all necessary steps to ensure that Personal
+                Information is transmitted in a safe and secure manner. Details
+                of the protection given when your Personal Information is
+                transferred outside Nigeria shall be provided to you upon
+                request.
+              </p>
+            </ul>
+          </ul>
+        </div>
+        <h1 className="font-bold text-2xl md:text-3xl pt-5">
+          Grounds for Processing of Personal Information :
+        </h1>
+        <p className="pt-5 text-base text-tcolor font-normal">
+          Processing of Personal Information by Nadet.co shall be lawful if at
+          least one of the following applies:
+        </p>
+        <ul className="list-inside pt-5 list-decimal">
+          <li className="pt-2 text-base text-tcolor font-normal">
+            The Data Subject has given consent to the processing of his/her
+            Personal Information for one or more specific purposes.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            The processing is necessary for the performance of a contract to
+            which the Data Subject is party or in order to take steps at the
+            request of the Data Subject prior to entering into a contract.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Processing is necessary for compliance with a legal obligation to
+            which Nadet is subject.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Processing is necessary in order to protect the vital interests of
+            the Data Subject or of another natural person.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Processing is necessary for the performance of a task carried out in
+            the public interest or in exercise of official public mandate vested
+            in Nadet.
+          </li>
+          <p className="pt-5 text-base text-tcolor font-normal">
+            For the purpose of this Privacy Policy, consent means any freely
+            given, specific, informed and unambiguous indication of the Data
+            Subject's wishes by which they, through a statement or a clear
+            affirmative action, signify their agreement to the processing of
+            Personal Information relating to them.
+          </p>
+        </ul>
+        <h1 className="font-bold text-2xl md:text-3xl pt-5">
+          Choices and Rights:
+        </h1>
+        <p className="pt-5 text-base text-tcolor font-normal">
+          Individuals who have Personal Information held by Nadet are entitled
+          to reach out to Nadet to exercise the following rights:
+        </p>
+        <ul className="list-inside list-decimal">
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to request for and access their Personal Information collected
+            and stored. Where data is held electronically in a structured form,
+            such as in a Database, the Data Subject has a right to receive that
+            data in a common electronic format.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to information on their personal information collected and
+            stored.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to objection or request for restriction.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to object to automated decision making.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to request rectification and modification of Personal
+            Information which Nadet keeps.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to request for deletion of their data.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to request the movement of data from Nadet to a third party;
+            this is the right to the portability of data.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Right to object to, and to request that Nadet restricts the
+            processing of their information.
+          </li>
+          <p className="pt-5 text-base text-tcolor font-normal">
+            Your request will be reviewed by Nadet ’s Data Protection Officer
+            and carried out except as restricted by law or Nadet ’s statutory
+            obligations. You may decline to provide your personal Information
+            when it is requested by Nadet, however, certain services or all the
+            services may be unavailable to you. You may review your account
+            settings and update your Personal Information directly or by
+            contacting us.
+          </p>
+        </ul>
+        <h1 className="font-bold text-2xl md:text-3xl pt-5">
+          The Data that We Retain :
+        </h1>
+        <p className="pt-5 text-base text-tcolor font-normal">
+          We will retain your information for as long as your account is active
+          or as needed to provide our services to you comply with our legal and
+          statutory obligations or verify your information with a financial
+          institution. Nadet is statutorily obligated to retain the data you
+          provide us with in order to process transactions, ensure settlements,
+          make refunds, identify fraud and in compliance with laws and
+          regulatory guidelines applicable to us, our banking providers and card
+          processors.
+          <br />
+          <br />
+          Therefore, even after closing your Nadet account, we will retain
+          certain Personal Information and transaction data to comply with these
+          obligations. All Personal Information shall be destroyed by Nadet
+          where possible. For all Personal Data and records obtained, used and
+          stored by Nadet, we shall perform periodical reviews of the data
+          retained to confirm the accuracy, purpose, validity and requirement to
+          retain.
+          <br />
+          <br />
+          The length of storage of Personal Information shall, amongst other
+          things, be determined by:
+        </p>
+        <ul className="list-inside list-decimal">
+          <li className="pt-2 text-base text-tcolor font-normal">
+            The contract terms agreed between Nadet and the Data Subject or as
+            long as it is needed for the purpose for which it was obtained.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Whether the transaction or relationship has statutory implication or
+            a required retention period.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Whether there is an express request for deletion of Personal Data by
+            the Data Subject, provided that such request will only be treated
+            where the Data Subject is not under any investigation which may
+            require Nadet to retain such Personal Data or there is no subsisting
+            contractual arrangement with the Data Subject that would require the
+            processing of the Personal Data.
+          </li>
+          <li className="pt-2 text-base text-tcolor font-normal">
+            Whether Nadet has another lawful basis for retaining that
+            information beyond the period for which it is necessary to serve the
+            original purpose.
+          </li>
+        </ul>
+      </div>
+      <div className="py-[80px] lg:pb-[120px]">
+        <YelloCard />
       </div>
     </div>
   );
