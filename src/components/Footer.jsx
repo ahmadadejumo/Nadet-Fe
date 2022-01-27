@@ -68,7 +68,7 @@ const Footer = () => {
             <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[25px]">
               <h1 className="font-Lato text-lg font-bold">Legal</h1>
               <Link to={"/terms-&-condition"}>Terms of Services</Link>
-              <a href="#">Privacy Policy</a>
+              <Link to={"/privacy-policy"}>Privacy Policy</Link>
               <Link to={""}>Affiliate Agreement</Link>
             </div>
             <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[30px] ">

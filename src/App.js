@@ -13,6 +13,7 @@ import Events from "./pages/Events/Events";
 import Affiliates from "./pages/Affiliates/Affiliates";
 import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import CompanyValues from "./pages/CompanyValues/CompanyValues";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="affiliates" element={<Affiliates />} />
         <Route path="terms-&-condition" element={<TermsOfService />} />
         <Route path="company-values" element={<CompanyValues />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </BrowserRouter>
