@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/images/Logo.svg";
 import { MenuIcon } from "@heroicons/react/solid";
 import { XIcon } from "@heroicons/react/solid";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +11,16 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex px-5 md:px-3 pt-8 justify-between lg:justify-center items-center bg-[#FFF8E8]">
-      <div className="">
+    <div className="flex pt-[40px] px-5 md:px-[30px] justify-between items-center bg-[#FFF8E8]">
+      <div className="md:pr-[250px] lg:pr-px">
         <img
           src={logo}
           alt="Nadet Logo"
-          className="pr-36 md:pr-64 lg:pr-0 object-contain w-[280px] md:w-full"
+          className="object-contain w-[102px] h-[38px] md:w-[178px] md:h-[66px]"
         />
       </div>
       {/* tablet and desktop menu */}
-      <div className="lg:flex space-x-10 px-28 cursor-pointer hidden">
+      <div className="lg:flex space-x-[30px] font-Lato text-base font-semibold cursor-pointer hidden">
         <Link to="/HowItWorks" className="hover:text-bcolor">
           How it works
         </Link>
@@ -37,15 +37,14 @@ const Navbar = () => {
           Pricing
         </Link>
       </div>
-      <Outlet />
       <div className="lg:flex flex-row space-x-5 cursor-pointer items-center hidden md:contents">
-        <p>Log In</p>
+        <p className="font-Lato text-base font-semibold">Log In</p>
         <button className="h-[44px] w-[142px] rounded-lg font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
           Get Started
         </button>
       </div>
       {/* Mobile Menu */}
-      <div className="pl-0 md:pl-5">
+      <div className="">
         {!isOpen ? (
           <MenuIcon className="h-8 w-8 lg:hidden" onClick={handleClick} />
         ) : (
@@ -71,7 +70,6 @@ const Navbar = () => {
                 <p className="">Pricing</p>
               </Link>
             </div>
-            <Outlet />
           </div>
         )}
       </div>
