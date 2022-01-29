@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useLayoutEffect } from "react";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import HowItWorks from "./pages/HowItWorks/HowItWorks";
@@ -15,25 +16,35 @@ import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import CompanyValues from "./pages/CompanyValues/CompanyValues";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
+const Wrapper = ({ children }) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+  return children;
+};
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="HowItWorks" element={<HowItWorks />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="products" element={<Products />} />
-        <Route path="faqs" element={<Faqs />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="refer" element={<ReferAFriend />} />
-        <Route path="events" element={<Events />} />
-        <Route path="affiliates" element={<Affiliates />} />
-        <Route path="terms-&-condition" element={<TermsOfService />} />
-        <Route path="company-values" element={<CompanyValues />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
-      </Routes>
-      <Footer />
+      <Wrapper>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="HowItWorks" element={<HowItWorks />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="products" element={<Products />} />
+          <Route path="faqs" element={<Faqs />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="refer" element={<ReferAFriend />} />
+          <Route path="events" element={<Events />} />
+          <Route path="affiliates" element={<Affiliates />} />
+          <Route path="terms-&-condition" element={<TermsOfService />} />
+          <Route path="company-values" element={<CompanyValues />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+        <Footer />
+      </Wrapper>
     </BrowserRouter>
   );
 }
