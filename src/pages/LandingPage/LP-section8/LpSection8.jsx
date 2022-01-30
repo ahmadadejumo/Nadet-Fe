@@ -28,7 +28,8 @@ const LpSection8 = () => {
           itemsToShow={1}
           breakPoints={breakPoints}
           enableAutoPlay
-          autoPlaySpeed={1000}
+          autoPlaySpeed={5000}
+          showArrows={false}
         >
           <LpSection8Card
             title={"“Truly Nadet Rocks”"}
