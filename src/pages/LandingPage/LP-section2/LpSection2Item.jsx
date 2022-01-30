@@ -2,7 +2,7 @@ import React from "react";
 
 const LpSection2Item = ({ image, color, text, heading, padding }) => {
   return (
-    <div className="w-full rounded-lg border border-[#EEEEF4] mt-5">
+    <div className="rounded-lg border w-[323px] h-[297px] border-[#EEEEF4]">
       <div className="flex justify-center">
         <div
           className={`rounded-t-full rounded-b-full ${color} h-16 w-16 mt-9 flex justify-center`}
