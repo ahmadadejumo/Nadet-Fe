@@ -11,8 +11,8 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="flex pt-[40px] px-5 md:px-[30px] justify-between items-center bg-[#FFF8E8]">
-      <div className="md:pr-[250px] lg:pr-px">
+    <div className="bg-[#FFF8E8] flex items-center justify-between lg:justify-center px-5 md:px-[30px] lg:px-[80px] lg:space-x-[100px] pt-[30px]">
+      <div className="">
         <img
           src={logo}
           alt="Nadet Logo"
@@ -20,7 +20,7 @@ const Navbar = () => {
         />
       </div>
       {/* tablet and desktop menu */}
-      <div className="lg:flex space-x-[30px] font-Lato text-base font-semibold cursor-pointer hidden">
+      <div className="font-Lato space-x-[30px] text-base font-semibold cursor-pointer hidden lg:inline-block">
         <Link to="/HowItWorks" className="hover:text-bcolor">
           How it works
         </Link>
@@ -37,41 +37,43 @@ const Navbar = () => {
           Pricing
         </Link>
       </div>
-      <div className="lg:flex flex-row space-x-5 cursor-pointer items-center hidden md:contents">
-        <p className="font-Lato text-base font-semibold">Log In</p>
-        <button className="h-[44px] w-[142px] rounded-lg font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
+      <div className="cursor-pointer md:flex items-center md:space-x-5">
+        <p className="font-Lato text-base font-semibold hidden md:inline-block">
+          Log In
+        </p>
+        <button className="h-[44px] w-[142px] rounded-lg hidden md:inline-block font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
           Get Started
         </button>
-      </div>
-      {/* Mobile Menu */}
-      <div className="">
-        {!isOpen ? (
-          <MenuIcon className="h-8 w-8 lg:hidden" onClick={handleClick} />
-        ) : (
-          <div className="bg-white h-full w-full z-[1] fixed top-0 left-0 overflow-x-hidden">
-            <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
-            <div
-              className="w-full text-center my-[250px] text-lg font-bold"
-              onClick={handleClick}
-            >
-              <Link to="/HowItWorks">
-                <p className="">How it works</p>
-              </Link>
-              <Link to="/products">
-                <p className="">Products</p>
-              </Link>
-              <Link to="/marketplace">
-                <p className="">Marketplace</p>
-              </Link>
-              <Link to="/faqs">
-                <p className="">FAQs</p>
-              </Link>
-              <Link to="/pricing">
-                <p className="">Pricing</p>
-              </Link>
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          {!isOpen ? (
+            <MenuIcon className="h-8 w-8" onClick={handleClick} />
+          ) : (
+            <div className="bg-white h-full w-full z-[1] fixed top-0 left-0 overflow-x-hidden">
+              <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
+              <div
+                className="w-full text-center my-[250px] text-lg font-bold"
+                onClick={handleClick}
+              >
+                <Link to="/HowItWorks">
+                  <p className="">How it works</p>
+                </Link>
+                <Link to="/products">
+                  <p className="">Products</p>
+                </Link>
+                <Link to="/marketplace">
+                  <p className="">Marketplace</p>
+                </Link>
+                <Link to="/faqs">
+                  <p className="">FAQs</p>
+                </Link>
+                <Link to="/pricing">
+                  <p className="">Pricing</p>
+                </Link>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
