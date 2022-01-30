@@ -9,9 +9,9 @@ import image4 from "../../../assets/images/image4.svg";
 
 const LpSection1Item = () => {
   return (
-    <div className="pt-24 md:pt-20 pb-14 mx-[30px]">
-      <div className="md:flex md:items-center md:justify-between">
-        <div className="">
+    <div className="pt-24 md:pt-20 pb-14 px-5 md:px-[30px] lg:px-[80px]">
+      <div className="md:flex md:items-center lg:space-x-14">
+        <div className="lg:w-[442px]">
           <h6 className="font-Lato md:text-[26px] text-[28px] lg:text-[36px] font-extrabold md:leading-loose">
             A Simple, Powerful Solution To Sell Your Digital Products Quickly &
             Efficiently.
@@ -25,7 +25,7 @@ const LpSection1Item = () => {
             <img src={arrow} alt="arrow" className="w-4 h-3 " />
           </button>
         </div>
-        <div className="mt-10 flex space-x-5 lg:space-x-10 lg:pl-32">
+        <div className="mt-10 flex space-x-5 lg:space-x-10">
           <div className="bg-scolor rounded-b-full rounded-tl-half rounded-tr-bleft overflow-hidden w-[159px] h-[199px] md:w-[188px] md:h-[236px] lg:h-[366px] lg:w-[293px]">
             <img
               src={man}
@@ -42,33 +42,39 @@ const LpSection1Item = () => {
           </div>
         </div>
       </div>
-      <div className="mt-16 lg:flex lg:justify-between lg:space-x-10">
-        <div className="">
-          <p className="font-Lato text-base font-semibold tracking-wide md:text-2xl">
-            Trusted by companies of all sizes
-          </p>
-        </div>
-        <div className="flex justify-between mt-3 md:mt-5 lg:space-x-5">
-          <img
-            src={image1}
-            alt="logo"
-            className="h-[23px] w-[84px] md:h-10 md:w-[143px] lg:w-[143px]"
-          />
-          <img
-            src={image2}
-            alt="logo"
-            className="h-[23px] w-[70px] md:h-10 md:w-[118px] lg:w-[118px]"
-          />
-          <img
-            src={image3}
-            alt="logo"
-            className="h-[23px] w-[71px] md:h-10 md:w-[122px] lg:w-[122px]"
-          />
-          <img
-            src={image4}
-            alt="logo"
-            className="h-[23px] w-[71px] md:h-10 md:w-[122px] lg:w-[122px]"
-          />
+      <div className="mt-16 lg:flex lg:space-x-20 lg:items-center">
+        <p className="font-Lato text-base font-semibold md:text-2xl md:w-[298px]">
+          Trusted by companies of all sizes
+        </p>
+        <div className="flex space-x-3 md:space-x-[65px] pt-[15px] md:pt-5 lg:space-x-[70px]">
+          <div>
+            <img
+              src={image1}
+              alt="logo"
+              className="h-[23px] w-[84px] md:h-[41px] md:w-[143px] object-contain"
+            />
+          </div>
+          <div>
+            <img
+              src={image2}
+              alt="logo"
+              className="h-[23px] w-[70px] md:h-10 md:w-[118px] object-contain"
+            />
+          </div>
+          <div>
+            <img
+              src={image3}
+              alt="logo"
+              className="h-[23px] w-[71px] md:h-[41px] md:w-[122px] object-contain"
+            />
+          </div>
+          <div>
+            <img
+              src={image4}
+              alt="logo"
+              className="h-[23px] w-[71px] md:h-[41px] md:w-[122px] object-contain"
+            />
+          </div>
         </div>
       </div>
     </div>

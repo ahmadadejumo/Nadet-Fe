@@ -11,7 +11,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="bg-[#FFF8E8] flex items-center justify-between lg:justify-center px-5 md:px-[30px] lg:px-[80px] lg:space-x-[100px] pt-[30px]">
+    <div className="bg-[#FFF8E8] flex items-center justify-between px-5 md:px-[30px] lg:px-[80px] lg:space-x-[100px] pt-[30px]">
       <div className="">
         <img
           src={logo}
