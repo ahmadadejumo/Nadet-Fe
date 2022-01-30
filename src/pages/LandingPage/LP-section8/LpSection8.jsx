@@ -1,30 +1,20 @@
 import React from "react";
 import LpSection8Card from "./LpSection8Card";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-elastic-carousel";
 import profile3 from "../../../assets/images/profile3.svg";
 import profile4 from "../../../assets/images/profile4.svg";
 import profile5 from "../../../assets/images/profile5.svg";
 
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-};
-
 const LpSection8 = () => {
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+    { width: 850, itemsToShow: 3 },
+    { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+    { width: 1450, itemsToShow: 5 },
+    { width: 1750, itemsToShow: 6 },
+  ];
+
   return (
     <div>
       <div className="mx-5 md:mx-36 lg:mx-60">
@@ -35,19 +25,10 @@ const LpSection8 = () => {
       </div>
       <div className="mx-5 lg:mx-24 mt-[40px] pb-10">
         <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          renderDotsOutside={false}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-100-px"
+          itemsToShow={1}
+          breakPoints={breakPoints}
+          enableAutoPlay
+          autoPlaySpeed={1000}
         >
           <LpSection8Card
             title={"“Truly Nadet Rocks”"}
