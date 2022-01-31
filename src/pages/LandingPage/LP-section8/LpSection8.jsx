@@ -4,7 +4,6 @@ import Carousel from "react-elastic-carousel";
 import profile3 from "../../../assets/images/profile3.svg";
 import profile4 from "../../../assets/images/profile4.svg";
 import profile5 from "../../../assets/images/profile5.svg";
-import Circle from "./CirclePagination";
 
 const LpSection8 = () => {
   const breakPoints = [
@@ -31,22 +30,6 @@ const LpSection8 = () => {
           enableAutoPlay
           autoPlaySpeed={5000}
           showArrows={false}
-          renderPagination={({ pages, activePage, onClick }) => {
-            return (
-              <div className="flex space-x-2 pt-5">
-                {pages.map((page) => {
-                  const isActivePage = activePage === page;
-                  return (
-                    <Circle
-                      key={page}
-                      onClick={() => onClick(page)}
-                      active={isActivePage}
-                    />
-                  );
-                })}
-              </div>
-            );
-          }}
         >
           <LpSection8Card
             title={"“Truly Nadet Rocks”"}
