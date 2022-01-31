@@ -2,12 +2,16 @@ import React from "react";
 
 const LpSection6Item = ({ image, header, text }) => {
   return (
-    <div className="container rounded-lg w-full border border-[#EEEEF4] mb-5">
-      <div className="flex justify-center space-x-6 mx-3 my-[34px] md:my-4">
-        <div className="mt-[20px]">
-          <div className="rounded-t-full rounded-b-full bg-[rgb(254,238,197)] h-[60px] w-[60px]">
-            <div className="flex justify-center pt-4">
-              <img src={image} alt="icon" />
+    <div className="container rounded-lg border h-[150px] w-[335px] md:w-[223px] lg:w-[367px] border-[#EEEEF4]">
+      <div className="flex justify-center space-x-[15px] md:space-x-[10px] mx-3 md:mx-[10px] lg:mx-[16px] mt-[34px] md:mt-[17px] lg:mt-[34px] mb-[33px] md:my-4">
+        <div className="mt-[15px]">
+          <div className="rounded-t-full flex justify-center rounded-b-full bg-[rgb(254,238,197)] h-[60px] w-[60px] md:h-[46px] md:w-[46px] lg:h-[60px] lg:w-[60px]">
+            <div className="flex justify-center pt-4 md:pt-[13px] lg:pt-[16px]">
+              <img
+                src={image}
+                alt="icon"
+                className="object-contain w-[31px] h-[28px] md:w-[23px] md:h-[21px] lg:h-[28px] lg:w-[31px]"
+              />
             </div>
           </div>
         </div>

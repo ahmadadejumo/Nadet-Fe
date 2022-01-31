@@ -17,7 +17,7 @@ const LpSection6 = () => {
           us forever.
         </p>
       </div>
-      <div className="mt-[40px] mx-5 md:grid md:grid-cols-3 md:gap-x-6 md:m-10 lg:mx-24">
+      <div className="mt-[40px] mx-5 grid md:grid-cols-3 gap-y-5 md:gap-x-[20px] md:mx-10 lg:mx-[70px]">
         <LpSection6Item
           image={vector9}
           header={"Setup an Account"}
@@ -34,8 +34,8 @@ const LpSection6 = () => {
           text={"Share product link to people and start earning massively."}
         />
       </div>
-      <div className="flex justify-center mt-[20px]">
-        <button className="bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[199px] mt-5 mb-[54px]">
+      <div className="flex justify-center mt-[20px] lg:mt-[50px]">
+        <button className="bg-bcolor font-Lato font-semibold rounded-lg h-[50px] w-[199px] mb-[54px]">
           Get Started Today!
         </button>
       </div>
