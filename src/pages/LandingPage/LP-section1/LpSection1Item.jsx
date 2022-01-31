@@ -26,18 +26,18 @@ const LpSection1Item = () => {
           </button>
         </div>
         <div className="mt-10 flex space-x-5 lg:space-x-10">
-          <div className="bg-scolor rounded-b-full rounded-tl-half rounded-tr-bleft overflow-hidden w-[159px] h-[199px] md:w-[188px] md:h-[236px] lg:h-[366px] lg:w-[293px]">
+          <div className="bg-scolor flex justify-center rounded-b-full rounded-tl-half rounded-tr-bleft overflow-hidden w-[159px] h-[199px] md:w-[188px] md:h-[236px] lg:h-[366px] lg:w-[293px]">
             <img
               src={man}
               alt="man"
-              className="object-contain w-[135px] h-[192px] mt-[8px] ml-[10px] md:w-[161px] md:h-[228px] lg:h-[354px] lg:w-[250px] lg:mt-3 lg:ml-5"
+              className="object-contain w-[135px] h-[192px] mt-[12px] ml-[10px] md:w-[161px] md:h-[228px] lg:h-[354px] lg:w-[250px] lg:mt-3 lg:ml-5"
             />
           </div>
-          <div className="bg-bcolor rounded-t-full rounded-br-half rounded-bl-bleft overflow-hidden w-[159px] h-[199px] md:w-[188px] md:h-[236px] lg:h-[366px] lg:w-[293px]">
+          <div className="bg-bcolor flex justify-center rounded-t-full rounded-br-half rounded-bl-bleft overflow-hidden w-[159px] h-[199px] md:w-[188px] md:h-[236px] lg:h-[366px] lg:w-[293px]">
             <img
               src={woman}
               alt="woman"
-              className="object-contain w-[141px] h-[214px] md:w-[168px] md:h-[254px] lg:h-[395px] lg:w-[260px]"
+              className="object-contain mt-[5px] w-[141px] h-[214px] md:w-[168px] md:h-[254px] lg:h-[395px] lg:w-[260px]"
             />
           </div>
         </div>
