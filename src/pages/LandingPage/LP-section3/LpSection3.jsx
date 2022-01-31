@@ -4,14 +4,14 @@ import macbook from "../../../assets/images/macbook.png";
 const LpSection3 = () => {
   return (
     <div className="md:flex md:flex-row-reverse md:justify-center md:items-center lg:px-[140px] bg-hcolor">
-      <div className="flex justify-center pt-[60px] md:pt-14 px-5 lg:pt-[26px] lg:pb-[28px] md:pb-10">
+      <div className="flex justify-center pt-[60px] md:pt-14 px-5 lg:pb-10">
         <img
           src={macbook}
           alt="macbook"
-          className="object-contain h-[273px] w-[326px] md:w-[360px] md:h-[300px] lg:h-[545px] lg:w-[652px]"
+          className="object-contain h-[273px] w-[326px] md:w-[360px] md:h-[300px] lg:h-[400px] lg:w-[652px]"
         />
       </div>
-      <div className="mx-5 md:pt-[91px] pt-[61px] md:w-[283px] lg:w-[450px]">
+      <div className="mx-5 pt-[61px] md:w-[283px] lg:w-[500px]">
         <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl leading-normal">
           Get more discovered, and sell worldwide
         </h1>
