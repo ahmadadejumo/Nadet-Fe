@@ -35,7 +35,7 @@ const LpSection7 = () => {
       </div>
       {/* second card */}
       <div className="rounded-lg bg-[#FDFAF2] mt-5 md:mt-[40px] lg:mt-[60px] lg:mx-[70px]">
-        <div className="md:flex items-center mx-5 md:mx-[30px] lg:px-[10px] md:space-x-[25px] lg:space-x-[64px]">
+        <div className="flex flex-col-reverse md:flex-row items-center mx-5 md:mx-[30px] lg:px-[10px] md:space-x-[25px] lg:space-x-[64px]">
           <div className="pb-[51px] md:pb-px">
             <img
               src={image6}
