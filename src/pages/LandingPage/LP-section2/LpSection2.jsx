@@ -14,7 +14,7 @@ const LpSection2 = () => {
         Sell any kind of product, starting from digital courses down to ebooks
         etc.
       </h1>
-      <div className="flex justify-center lg:items-center lg:space-x-16 md:mt-[50px] mt-10">
+      <div className="flex justify-center lg:items-center lg:space-x-16 md:mt-[50px] mt-10 mx-5">
         <div className="hidden lg:inline-block">
           <img
             src={rectangle}
