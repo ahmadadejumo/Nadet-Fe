@@ -102,7 +102,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <div className="pt-[50px] md:grid md:grid-cols-2 lg:grid-cols-4 md:mx-10">
+      <div className="pt-[50px] grid md:grid-cols-2 gap-y-5 md:gap-x-[29px] lg:grid-cols-4 md:mx-10 lg:mx-[80px]">
         <PriceCard
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"

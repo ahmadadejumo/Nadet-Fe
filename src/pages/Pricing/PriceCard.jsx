@@ -19,7 +19,7 @@ const PriceCard = ({
   };
 
   return (
-    <div className="mx-5 mb-5">
+    <div className="">
       <div className=" bg-[#FDD773] px-[25px] rounded-t-lg">
         <div className="flex items-center justify-between">
           <h1 className="font-Lato font-bold text-base pt-[35px]">{header}</h1>
@@ -34,7 +34,7 @@ const PriceCard = ({
           {text}
         </p>
       </div>
-      <div className="px-5 pt-[15px] border lg:h-[1300px] border-[#FDD773] rounded-b-lg pb-5">
+      <div className="px-5 pt-[15px] border h-[1300px] border-[#FDD773] rounded-b-lg pb-5">
         <h1 className="font-Lato font-bold text-lg">{subHeading}</h1>
         <div className="flex justify-between pt-[25px]">
           <button className="bg-bcolor h-[44px] w-[142px] rounded-lg">
