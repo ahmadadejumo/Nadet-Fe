@@ -84,7 +84,7 @@ const Footer = () => {
         <p className="font-Lato font-normal text-base text-center pt-[20px] pb-[30px] md:pt-[25px]">
           © 2021 Nadet. All Rights Reserved.
         </p>
-        <div className="flex justify-center space-x-3 md:space-x-5 pb-[35px] md:pt-[25px]">
+        <div className="flex justify-center items-center space-x-3 md:space-x-5 pb-[35px] md:pt-[25px]">
           <img src={visalogo} alt="logo" />
           <img src={paypal} alt="logo" />
           <img src={AmericanExpress} alt="logo" />

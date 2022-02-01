@@ -10,7 +10,7 @@ const LpSection9 = () => {
             Nadet is everything you need, to start selling and increase your
             income massively
           </h1>
-          <p className="font-Lato text-base font-normal text-center pt-[15px]">
+          <p className="font-Lato text-base font-normal text-center lg:px-[140px] pt-[15px]">
             Create a free account in less than 5 minutes to begin your journey
             to massive success!
           </p>
