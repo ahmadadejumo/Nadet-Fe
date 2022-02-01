@@ -10,7 +10,7 @@ const LpSection10 = () => {
       <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl text-center pt-20 px-20 md:px-24 lg:px-60">
         Reads our latest news & details needed to help you scale
       </h1>
-      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 lg:gap-4 mx-5 md:mx-[30px] lg:mx-[140px] gap-5">
+      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 mx-5 md:mx-[30px] lg:mx-[70px] gap-5">
         <LpSection10Card
           image={image9}
           text={"How to Sell Ebooks Online Using Nadet.co"}

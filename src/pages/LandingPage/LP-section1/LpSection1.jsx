@@ -3,7 +3,7 @@ import HeaderItem from "./LpSection1Item";
 
 const LpSection1 = () => {
   return (
-    <div className="bg-hcolor flex justify-center">
+    <div className="bg-hcolor lg:flex lg:justify-center">
       <HeaderItem />
     </div>
   );
