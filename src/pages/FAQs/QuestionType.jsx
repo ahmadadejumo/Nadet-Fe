@@ -18,7 +18,7 @@ const QuestionType = ({ text }) => {
         className="flex mx-10 items-center space-x-4 pb-5 lg:pl-14"
       >
         {!isUp ? <img src={shape2} alt="img" /> : <img src={shape} alt="img" />}
-        <p className="font-Lato text-xl font-bold">{text}</p>
+        <p className="font-Lato text-xl font-bold cursor-pointer">{text}</p>
         <div className="md:hidden">
           {!isUp ? (
             <img src={dropdown} alt="img" />
