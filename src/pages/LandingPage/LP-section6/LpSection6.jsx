@@ -17,7 +17,7 @@ const LpSection6 = () => {
           us forever.
         </p>
       </div>
-      <div className="mt-[40px] mx-5 grid md:grid-cols-3 gap-y-5 md:gap-x-[20px] md:mx-10 lg:mx-[70px]">
+      <div className="mt-[40px] mx-5 lg:flex lg:justify-center grid md:grid-cols-3 gap-y-5 md:gap-x-[20px] md:mx-10 lg:mx-[70px]">
         <LpSection6Item
           image={vector9}
           header={"Setup an Account"}
