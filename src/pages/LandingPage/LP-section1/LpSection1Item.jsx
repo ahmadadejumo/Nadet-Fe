@@ -9,7 +9,7 @@ import image4 from "../../../assets/images/image4.svg";
 
 const LpSection1Item = () => {
   return (
-    <div className="pt-24 md:pt-20 pb-14 px-5 md:px-[30px] lg:px-[80px]">
+    <div className="pt-24 md:pt-20 pb-14 px-5 md:px-[30px]">
       <div className="md:flex md:items-center lg:space-x-14">
         <div className="lg:w-[442px]">
           <h6 className="font-Lato md:text-[26px] text-[28px] lg:text-[36px] font-extrabold md:leading-loose">

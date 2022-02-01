@@ -57,7 +57,7 @@ const HowItWorks = () => {
         <h1 className="font-Lato pt-[80px] font-bold text-2xl text-center md:text-3xl lg:text-4xl px-10 lg:px-[290px]">
           You can sell any kind of digital product with Nadet.
         </h1>
-        <div className="grid gap-y-5 md:grid-cols-2 md:gap-x-5 lg:flex mx-[53px] md:mx-10 pt-10 lg:pt-[30px] lg:mx-[70px]">
+        <div className="grid gap-y-5 md:grid-cols-2 md:gap-x-5 lg:flex lg:justify-center mx-[53px] md:mx-10 pt-10 lg:pt-[30px] lg:mx-[70px]">
           <Container
             image={vector1}
             text="We makes it easy for you to host unlimited videos and files of your courses and membership programs along with the right marketing plan for success."
