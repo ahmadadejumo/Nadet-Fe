@@ -9,10 +9,16 @@ import image4 from "../../../assets/images/image4.svg";
 import { motion } from "framer-motion";
 
 const LpSection1Item = () => {
-  const variants = {
+  const imageVariants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   };
+  const fadeVariant = {
+    initial: { y: 500, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    transition: { duration: 1, delay: 2, ease: "easeInOut" },
+  };
+
   return (
     <div className="pt-24 md:pt-20 pb-14 px-5 md:px-[30px]">
       <div className="md:flex md:items-center lg:space-x-14">
@@ -37,7 +43,7 @@ const LpSection1Item = () => {
         </motion.div>
         <div className="mt-10 flex space-x-5 lg:space-x-10">
           <motion.div
-            variants={variants}
+            variants={imageVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1, delay: 1.5 }}
@@ -50,7 +56,7 @@ const LpSection1Item = () => {
             />
           </motion.div>
           <motion.div
-            variants={variants}
+            variants={imageVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 2, delay: 2 }}
@@ -64,10 +70,15 @@ const LpSection1Item = () => {
           </motion.div>
         </div>
       </div>
-      <div className="mt-16 lg:flex lg:space-x-20 lg:items-center">
-        <p className="font-Lato text-base font-semibold md:text-2xl md:w-[298px]">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="mt-16 lg:flex lg:space-x-20 lg:items-center"
+      >
+        <motion.p className="font-Lato text-base font-semibold md:text-2xl md:w-[298px]">
           Trusted by companies of all sizes
-        </p>
+        </motion.p>
         <div className="flex space-x-3 md:space-x-[65px] pt-[15px] md:pt-5 lg:space-x-[70px]">
           <div>
             <img
@@ -98,7 +109,7 @@ const LpSection1Item = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
