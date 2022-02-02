@@ -9,7 +9,7 @@ const LpSection7 = () => {
         We give you the right tools to make more sales with ease
       </h1>
       {/* First card */}
-      <div className="rounded-lg bg-[#F5F4FD] mt-[40px] lg:mx-[70px]">
+      <div className="flex justify-center rounded-lg bg-[#F5F4FD] mt-[40px] lg:mx-[70px]">
         <div className="md:flex mx-5 md:mx-[30px] lg:px-[10px] items-center md:space-x-[37px] lg:space-x-[83px]">
           <div className="md:w-[296px] lg:w-[536px] mt-[50px] md:mt-[23px] lg:mt-[31px]">
             <h1 className="font-Lato font-bold text-2xl md:text-[26px] lg:text-4xl text-[#9B8EEB] leading-relaxed">
@@ -34,7 +34,7 @@ const LpSection7 = () => {
         </div>
       </div>
       {/* second card */}
-      <div className="rounded-lg bg-[#FDFAF2] mt-5 md:mt-[40px] lg:mt-[60px] lg:mx-[70px]">
+      <div className="flex justify-center rounded-lg bg-[#FDFAF2] mt-5 md:mt-[40px] lg:mt-[60px] lg:mx-[70px]">
         <div className="flex flex-col-reverse md:flex-row items-center mx-5 md:mx-[30px] lg:px-[10px] md:space-x-[25px] lg:space-x-[64px]">
           <div className="pb-[51px] md:pb-px">
             <img

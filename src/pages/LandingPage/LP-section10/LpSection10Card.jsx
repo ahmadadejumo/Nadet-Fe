@@ -5,12 +5,8 @@ import arrow from "../../../assets/images/arrow.svg";
 
 const LpSection10Card = ({ image, text }) => {
   return (
-    <div className="container rounded-lg bg-[#F5F4FD] lg:w-[367px] w-full lg:h-[420px]">
-      <img
-        src={image}
-        alt=""
-        className="object-contain md:w-[344px] lg:w-[367px"
-      />
+    <div className="container rounded-lg bg-[#F5F4FD] lg:w-[367px] w-full">
+      <img src={image} alt="" className="object-contain w-full" />
       <p className="font-Lato font-semibold text-[22px] md:text-2xl pt-[33px] px-[17px]">
         {text}
       </p>
