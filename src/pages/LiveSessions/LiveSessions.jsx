@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import rectangle29 from "../../assets/images/rectangle29.png";
+import rectangle30 from "../../assets/images/rectangle30.png";
 
 const LiveSessions = () => {
   return (
@@ -28,7 +29,7 @@ const LiveSessions = () => {
         </p>
       </div>
       {/* Body section 1 */}
-      <div className="md:flex md:justify-center md:items-center pt-[80px] md:pt-5 lg:space-x-28 lg:px-[80px]">
+      <div className="md:flex md:justify-center md:items-center pt-[80px] md:pt-5 lg:space-x-28 lg:px-[70px]">
         <div className="flex justify-center px-5">
           <img
             src={rectangle29}
@@ -37,7 +38,7 @@ const LiveSessions = () => {
           />
         </div>
         <div className="pt-[60px] px-5 md:w-[1000px] lg:w-[505px]">
-          <h1 className="font-bold text-2xl">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
             The easiest way to to create live classes
           </h1>
           <p className="pt-5 font-normal text-base text-tcolor pb-[80px]">
@@ -46,6 +47,25 @@ const LiveSessions = () => {
             one-on-one interaction with your stidemrs, share your screen, record
             your lessons and much more. You can also stream directly to YouTube.
           </p>
+        </div>
+      </div>
+      {/* Body section 2 */}
+      <div className="bg-[#FEF8E7] px-5 flex flex-col-reverse md:flex-row md:justify-center md:items-center md:pb-10 md:px-10 md:space-x-5 lg:space-x-28">
+        <div className="pt-[60px] md:pt-[90px] pb-[56px] lg:w-[467px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+            Recurring income
+          </h1>
+          <p className="pt-5 text-base text-tcolor">
+            When someone purchase your live classes, you will earn up to 80% of
+            both the initial sale and the recurring payments.
+          </p>
+        </div>
+        <div className="flex justify-center pt-[50px]">
+          <img
+            src={rectangle30}
+            alt="img"
+            className="object-contain md:w-[1000px] lg:w-[464px] lg:h-[250px]"
+          />
         </div>
       </div>
     </div>
