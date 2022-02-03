@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import rectangle29 from "../../assets/images/rectangle29.png";
 import rectangle30 from "../../assets/images/rectangle30.png";
+import rectangle31 from "../../assets/images/rectangle31.png";
 
 const LiveSessions = () => {
   return (
@@ -66,6 +67,27 @@ const LiveSessions = () => {
             alt="img"
             className="object-contain md:w-[1000px] lg:w-[464px] lg:h-[250px]"
           />
+        </div>
+      </div>
+      {/* Body section 3 */}
+      <div className="pt-[80px] md:pt-[30px] lg:py-[120px] px-5 md:px-10 md:space-x- lg:space-x-32 md:justify-center md:items-center md:flex">
+        <div className="flex justify-center">
+          <img
+            src={rectangle31}
+            alt="img"
+            className="object-contain lg:w-[518px] lg:h-[306px]"
+          />
+        </div>
+        <div className="pt-[60px] md:w-[1400px] lg:w-[467px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-3xl">
+            Content creator dashboard
+          </h1>
+          <p className="font-normal text-base text-tcolor pt-5 pb-[80px]">
+            We will provide you with a special content creator dashboard where
+            you can monitor your uploaded products, earnings and your total
+            sales. You'll also receive special marketing materials that you can
+            use to successfully promote and sell your products.
+          </p>
         </div>
       </div>
     </div>
