@@ -9,10 +9,11 @@ import LpSection7 from "./LP-section7/LpSection7";
 import LpSection8 from "./LP-section8/LpSection8";
 import YellowCard from "../../components/YellowCard";
 import LpSection10 from "./LP-section10/LpSection10";
+import { motion } from "framer-motion";
 
 const LandingPage = () => {
   return (
-    <div>
+    <motion.div>
       <LpSection1 />
       <LpSection2 />
       <LpSection3 />
@@ -23,7 +24,7 @@ const LandingPage = () => {
       <LpSection8 />
       <YellowCard />
       <LpSection10 />
-    </div>
+    </motion.div>
   );
 };
 

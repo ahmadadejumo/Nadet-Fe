@@ -45,11 +45,11 @@ const Footer = () => {
         </div>
         <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[60px]">
           <h1 className="font-Lato text-lg font-bold">Sell with Nadet </h1>
-          <a href="#">Courses & Memberships</a>
-          <a href="#">Ebooks & Programs</a>
-          <a href="#">LIVE Sessions</a>
-          <a href="#">Event Tickets </a>
-          <a href="#">Subscriptions & Services</a>
+          <Link to={"/"}>Courses & Memberships</Link>
+          <Link to={"/"}>Ebooks & Programs</Link>
+          <Link to={"/live-sessions"}>LIVE Sessions</Link>
+          <Link to={"/"}>Event Tickets </Link>
+          <Link to={"/"}>Subscriptions & Services</Link>
           <Link to={"/affiliates"}>Affiliate Program</Link>
           <Link to={"/refer"}>Refer a friend</Link>
         </div>
@@ -58,9 +58,9 @@ const Footer = () => {
             <h1 className="font-Lato text-lg font-bold">Company</h1>
             <Link to={"/about"}>About Us</Link>
             <Link to={"/company-values"}>Company Values</Link>
-            <a href="#">Careers</a>
-            <a href="#">Pricing</a>
-            <a href="#">FAQs</a>
+            <Link to={"/"}>Careers</Link>
+            <Link to={"/pricing"}>Pricing</Link>
+            <Link to={"/faqs"}>FAQs</Link>
             <Link to={"/events"}>Events</Link>
           </div>
 
