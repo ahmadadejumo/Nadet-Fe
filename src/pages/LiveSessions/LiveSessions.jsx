@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import rectangle29 from "../../assets/images/rectangle29.png";
 
 const LiveSessions = () => {
   return (
@@ -25,6 +26,27 @@ const LiveSessions = () => {
             Log in to your dashboard
           </Link>
         </p>
+      </div>
+      {/* Body section 1 */}
+      <div className="md:flex md:justify-center md:items-center pt-[80px] md:pt-5 lg:space-x-28 lg:px-[80px]">
+        <div className="flex justify-center px-5">
+          <img
+            src={rectangle29}
+            alt="img"
+            className="object-contain lg:w-[407px] lg:h-[508px]"
+          />
+        </div>
+        <div className="pt-[60px] px-5 md:w-[1000px] lg:w-[505px]">
+          <h1 className="font-bold text-2xl">
+            The easiest way to to create live classes
+          </h1>
+          <p className="pt-5 font-normal text-base text-tcolor pb-[80px]">
+            Nadet provides you with a live streaming feature to create
+            professional amazing live classes directly in your browser. Have a
+            one-on-one interaction with your stidemrs, share your screen, record
+            your lessons and much more. You can also stream directly to YouTube.
+          </p>
+        </div>
       </div>
     </div>
   );
