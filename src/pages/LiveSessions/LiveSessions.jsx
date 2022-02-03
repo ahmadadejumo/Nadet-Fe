@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import rectangle29 from "../../assets/images/rectangle29.png";
 import rectangle30 from "../../assets/images/rectangle30.png";
 import rectangle31 from "../../assets/images/rectangle31.png";
+import arrow from "../../assets/images/arrow.svg";
 
 const LiveSessions = () => {
   return (
@@ -70,7 +71,7 @@ const LiveSessions = () => {
         </div>
       </div>
       {/* Body section 3 */}
-      <div className="pt-[80px] md:pt-[30px] lg:py-[120px] px-5 md:px-10 md:space-x- lg:space-x-32 md:justify-center md:items-center md:flex">
+      <div className="pt-[80px] md:pt-[30px] lg:py-[120px] px-5 md:px-10 md:space-x-5 lg:space-x-32 md:justify-center md:items-center md:flex">
         <div className="flex justify-center">
           <img
             src={rectangle31}
@@ -88,6 +89,29 @@ const LiveSessions = () => {
             sales. You'll also receive special marketing materials that you can
             use to successfully promote and sell your products.
           </p>
+        </div>
+      </div>
+      {/* Body section 4 */}
+      <div className="flex justify-center">
+        <div className="rounded-lg bg-bcolor px-[22px] mx-5 md:mx-10 lg:mx-[140px] mb-[80px]">
+          <h1 className="font-bold text-2xl text-center md:text-3xl lg:text-4xl pt-[43px]">
+            Instant Payouts
+          </h1>
+          <p className="text-base font-normal text-center pt-[15px] md:px-20 lg:px-60">
+            You'll get your commission instantly once a someone enrols in your
+            class we will send you your money instantly directly to your Bank
+            account or PayPal account
+          </p>
+          <div className="flex justify-center pt-[15px] pb-[43px]">
+            <button className="font-semibold flex justify-around px-6 bg-white items-center h-[52px] w-[178px] text-base rounded-lg">
+              Get Started
+              <img
+                src={arrow}
+                alt="img"
+                className="object-contain w-[14px] h-[12px]"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>
