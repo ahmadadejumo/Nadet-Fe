@@ -16,6 +16,7 @@ import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import CompanyValues from "./pages/CompanyValues/CompanyValues";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import LiveSessions from "./pages/LiveSessions/LiveSessions";
+import AffiliateAgreement from "./pages/AffiliateAgreement/AffiliateAgreement";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -44,6 +45,7 @@ function App() {
           <Route path="company-values" element={<CompanyValues />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="live-sessions" element={<LiveSessions />} />
+          <Route path="affiliate-agreement" element={<AffiliateAgreement />} />
         </Routes>
         <Footer />
       </Wrapper>

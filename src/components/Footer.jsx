@@ -45,11 +45,11 @@ const Footer = () => {
         </div>
         <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[60px]">
           <h1 className="font-Lato text-lg font-bold">Sell with Nadet </h1>
-          <Link to={"/"}>Courses & Memberships</Link>
-          <Link to={"/"}>Ebooks & Programs</Link>
+          <Link to={"/products"}>Courses & Memberships</Link>
+          <Link to={"/products"}>Ebooks & Programs</Link>
           <Link to={"/live-sessions"}>LIVE Sessions</Link>
-          <Link to={"/"}>Event Tickets </Link>
-          <Link to={"/"}>Subscriptions & Services</Link>
+          <Link to={"/products"}>Event Tickets </Link>
+          <Link to={"/products"}>Subscriptions & Services</Link>
           <Link to={"/affiliates"}>Affiliate Program</Link>
           <Link to={"/refer"}>Refer a friend</Link>
         </div>
@@ -69,12 +69,12 @@ const Footer = () => {
               <h1 className="font-Lato text-lg font-bold">Legal</h1>
               <Link to={"/terms-&-condition"}>Terms of Services</Link>
               <Link to={"/privacy-policy"}>Privacy Policy</Link>
-              <Link to={""}>Affiliate Agreement</Link>
+              <Link to={"/affiliate-agreement"}>Affiliate Agreement</Link>
             </div>
             <div className="flex flex-col font-Lato text-base font-normal space-y-3 mt-[30px] ">
               <h1 className="font-Lato text-lg font-bold">Learn</h1>
-              <a href="#">Blog</a>
-              <a href="#">Guides</a>
+              <Link to={"/"}>Blog</Link>
+              <Link to={"/"}>Guides</Link>
             </div>
           </div>
         </div>
