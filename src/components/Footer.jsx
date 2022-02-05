@@ -79,8 +79,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="bg-bcolor border-[1px] mt-[70px] mx-5 md:mx-[30px] lg:mx-[140px]" />
-      <div className="md:flex md:justify-between md:mx-[30px] lg:mx-[140px]">
+      <div className="lg:flex lg:justify-center">
+        <hr className="bg-bcolor border-[1px] lg:w-[1000px] mt-[70px] mx-5 md:mx-[30px]" />
+      </div>
+      <div className="md:flex md:justify-between lg:justify-center lg:space-x-[400px] md:mx-[30px]">
         <p className="font-Lato font-normal text-base text-center pt-[20px] pb-[30px] md:pt-[25px]">
           © 2021 Nadet. All Rights Reserved.
         </p>
