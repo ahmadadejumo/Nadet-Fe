@@ -1,11 +1,8 @@
 import React from "react";
+import Navbar from "../../components/Navbar";
 
 const SignIn = () => {
-  return (
-    <div>
-      <h1>Hey</h1>
-    </div>
-  );
+  return <div className=""></div>;
 };
 
 export default SignIn;
