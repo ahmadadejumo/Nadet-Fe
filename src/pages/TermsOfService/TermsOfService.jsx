@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import YellowCard from "../../components/YellowCard";
 
 const TermsOfService = () => {
@@ -7,6 +9,7 @@ const TermsOfService = () => {
     <div className="font-Lato">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-extrabold text-2xl md:text-3xl lg:text-4xl text-center px-5 pt-[129px] pb-[50px]">
           Terms & Conditions
         </h1>
@@ -312,6 +315,7 @@ const TermsOfService = () => {
       <div className="py-[80px] lg:pb-[120px]">
         <YellowCard />
       </div>
+      <Footer />
     </div>
   );
 };

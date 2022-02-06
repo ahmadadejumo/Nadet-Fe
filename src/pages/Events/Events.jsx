@@ -4,11 +4,14 @@ import rectangle18 from "../../assets/images/rectangle18.png";
 import rectangle19 from "../../assets/images/rectangle19.png";
 import rectangle20 from "../../assets/images/rectangle20.png";
 import rectangle21 from "../../assets/images/rectangle21.png";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 const Events = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
+      <Navbar />
       <div className="bg-[#FFF8E8]">
         <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-5 md:px-28 lg:px-56">
           Find conferences, workshop and summits that is useful for your
@@ -88,6 +91,7 @@ const Events = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

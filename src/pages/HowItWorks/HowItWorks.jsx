@@ -12,15 +12,20 @@ import mclogo from "../../assets/images/mclogo.svg";
 import rectangle1 from "../../assets/images/rectangle1.png";
 import YelloCard from "../../components/YellowCard";
 import Container from "./Container";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const HowItWorks = () => {
   return (
     <div>
       <div className="bg-[#FFF8E8]">
+        {/* Header section */}
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] pt-[197px] md:pt-[168px] pb-[70px] md:pb-[133px] text-center">
           How It Works
         </h1>
       </div>
+      {/* Body section */}
       <h1 className="font-Lato font-bold text-2xl pt-[80px] text-center px-5 md:text-3xl lg:text-4xl lg:mx-44">
         It takes less than 5 minutes in 3 steps to get started in selling your
         digital products and services for free.
@@ -154,6 +159,7 @@ const HowItWorks = () => {
       <div className="mt-[136px] md:mt-[120px] mb-[80px] md:mb-[120px]">
         <YelloCard />
       </div>
+      <Footer />
     </div>
   );
 };

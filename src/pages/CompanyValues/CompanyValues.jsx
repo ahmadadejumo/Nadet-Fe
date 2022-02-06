@@ -2,12 +2,15 @@ import React from "react";
 import rectangle26 from "../../assets/images/rectangle26.png";
 import rectangle27 from "../../assets/images/rectangle27.png";
 import rectangle28 from "../../assets/images/rectangle28.png";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import YellowCard from "../../components/YellowCard";
 
 const CompanyValues = () => {
   return (
     <div className="font-Lato">
       {/* Header Section */}
+      <Navbar />
       <div className="bg-[#FFF8E8]">
         <h1 className="pt-[129px] font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center">
           Our Values
@@ -220,11 +223,11 @@ const CompanyValues = () => {
             the problem, you can’t be part of the solution.
           </p>
         </div>
-
-        <div className="py-[80px] lg:pb-[120px]">
-          <YellowCard />
-        </div>
       </div>
+      <div className="py-[80px] lg:pb-[120px]">
+        <YellowCard />
+      </div>
+      <Footer />
     </div>
   );
 };

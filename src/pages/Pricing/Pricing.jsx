@@ -12,6 +12,8 @@ import {
 import FaqsQusetionCard from "../FAQs/FaqsQuestionCard";
 import YellowCard from "../../components/YellowCard";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Pricing = () => {
   const includedInAllPlans = [
@@ -69,7 +71,9 @@ const Pricing = () => {
   const navigate = useNavigate();
   return (
     <div className="mb-[80px] lg:mb-[120px]">
+      {/* Header section */}
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[197px] mx-2">
           Our pricing is simple and fair
         </h1>
@@ -78,6 +82,7 @@ const Pricing = () => {
           <p className="text-bcolor">Save 10% with annual billing</p>
         </p>
       </div>
+      {/* Body section */}
       <div className="md:flex md:justify-center md:items-center">
         <div className="flex justify-center mt-[50px]">
           <div className="container border border-bcolor w-[150px] h-[50px] flex justify-evenly rounded-lg items-center">
@@ -227,6 +232,7 @@ const Pricing = () => {
       <div className="mt-[80px] lg:mt-[120px]">
         <YellowCard />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -4,6 +4,8 @@ import QuestionType from "./QuestionType";
 import FaqsQuestionCard from "./FaqsQuestionCard";
 import vector13 from "../../assets/images/vector13.svg";
 import vector14 from "../../assets/images/vector14.svg";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Faqs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +16,8 @@ const Faqs = () => {
   return (
     <div>
       <div className="bg-[#FFF8E8]">
+        {/* Header section */}
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl text-center pt-[197px] px-10">
           Common Asked Questions
         </h1>
@@ -21,6 +25,7 @@ const Faqs = () => {
           You need help? Get quick answers to all your questions about Nadet
         </p>
       </div>
+      {/* Body section */}
       <div className="mx-5 mt-[50px] md:flex md:justify-center md:mx-32 lg:mx-72">
         <div className="flex justify-between items-center rounded-lg border-[1px] h-[60px] w-full border-[#FFF8E8] shadow-lg box-border px-5">
           <input
@@ -91,6 +96,7 @@ const Faqs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

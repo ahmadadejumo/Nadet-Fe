@@ -5,11 +5,15 @@ import rectangle3 from "../../assets/images/rectangle3.png";
 import rectangle4 from "../../assets/images/rectangle4.png";
 import rectangle5 from "../../assets/images/rectangle5.png";
 import YellowCard from "../../components/YellowCard";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Products = () => {
   return (
     <div>
+      {/* Header section */}
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl text-center pt-[197px]">
           Products
         </h1>
@@ -100,6 +104,7 @@ const Products = () => {
       <div className="mt-[80px] md:mt-[120px] mb-[80px] md:mb-[120px]">
         <YellowCard />
       </div>
+      <Footer />
     </div>
   );
 };

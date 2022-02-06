@@ -1,10 +1,13 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import YellowCard from "../../components/YellowCard";
 
 const AffiliateAgreement = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
+      <Navbar />
       <div className="bg-[#FFF8E8] px-5 md:px-36 lg:px-80 pt-[129px] pb-[33px]">
         <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center">
           Nadet Academy Affiliate Program Terms of Service
@@ -302,6 +305,7 @@ const AffiliateAgreement = () => {
       <div className="my-[80px] lg:mb-[120px]">
         <YellowCard />
       </div>
+      <Footer />
     </div>
   );
 };

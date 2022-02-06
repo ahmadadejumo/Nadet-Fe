@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import YelloCard from "../../components/YellowCard";
 
 const PrivacyPolicy = () => {
@@ -6,6 +8,7 @@ const PrivacyPolicy = () => {
     <div className="font-Lato">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-5 md:px-36 lg:px-80">
           Data Privacy, Protection & Cookie Policy
         </h1>
@@ -488,6 +491,7 @@ const PrivacyPolicy = () => {
       <div className="py-[80px] lg:pb-[120px]">
         <YelloCard />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -4,11 +4,14 @@ import rectangle29 from "../../assets/images/rectangle29.png";
 import rectangle30 from "../../assets/images/rectangle30.png";
 import rectangle31 from "../../assets/images/rectangle31.png";
 import arrow from "../../assets/images/arrow.svg";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const LiveSessions = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
+      <Navbar />
       <div className="bg-[#FFF8E8]">
         <h1 className="text-center text-[28px] md:text-3xl lg:text-4xl font-extrabold pt-[129px] px-[40px]">
           Connect more with your audience
@@ -114,6 +117,7 @@ const LiveSessions = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

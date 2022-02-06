@@ -5,6 +5,7 @@ import rectangle24 from "../../assets/images/rectangle24.png";
 import rectangle25 from "../../assets/images/rectangle25.png";
 import FaqQuestionCard from "../FAQs/FaqsQuestionCard";
 import YellowCard from "../../components/YellowCard";
+import Footer from "../../components/Footer";
 
 const Affiliates = () => {
   const QuestionAndAwnser = [
@@ -167,10 +168,11 @@ const Affiliates = () => {
             </button>
           </div>
         </div>
-        <div className="pb-[80px] lg:pb-[120px]">
-          <YellowCard />
-        </div>
       </div>
+      <div className="pb-[80px] lg:pb-[120px]">
+        <YellowCard />
+      </div>
+      <Footer />
     </div>
   );
 };

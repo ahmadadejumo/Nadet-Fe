@@ -17,6 +17,10 @@ import CompanyValues from "./pages/CompanyValues/CompanyValues";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import LiveSessions from "./pages/LiveSessions/LiveSessions";
 import AffiliateAgreement from "./pages/AffiliateAgreement/AffiliateAgreement";
+import SignIn from "./pages/Auth/SignIn";
+import SignUp from "./pages/Auth/SignUp";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
+import ChangePassword from "./pages/Auth/ChangePassword";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -30,7 +34,6 @@ function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="HowItWorks" element={<HowItWorks />} />
@@ -46,8 +49,11 @@ function App() {
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="live-sessions" element={<LiveSessions />} />
           <Route path="affiliate-agreement" element={<AffiliateAgreement />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="change-password" element={<ChangePassword />} />
         </Routes>
-        <Footer />
       </Wrapper>
     </BrowserRouter>
   );

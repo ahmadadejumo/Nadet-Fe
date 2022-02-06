@@ -14,11 +14,14 @@ import FastProcessIcon from "../../assets/images/FastProcessIcon.svg";
 import rectangle11 from "../../assets/images/rectangle11.png";
 import rectangle12 from "../../assets/images/rectangle12.png";
 import YelloCard from "../../components/YellowCard";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const AboutUs = () => {
   return (
     <div>
       {/* Header section */}
+      <Navbar />
       <div className="bg-[#FFF8E8]">
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] md:pt-[168px]">
           Get To Know Us
@@ -185,6 +188,7 @@ const AboutUs = () => {
       <div className="mb-[80px] lg:mb-[120px]">
         <YelloCard />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -6,12 +6,15 @@ import Reusable from "./Reusable";
 import rectangle15 from "../../assets/images/rectangle15.png";
 import rectangle16 from "../../assets/images/rectangle16.png";
 import YellowCard from "../../components/YellowCard";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const ReferAFriend = () => {
   return (
     <div className="pb-[80px] lg:pb-[120px]">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-[20px] md:px-16 lg:px-60">
           Join a Network affiliate on Nadet and earn 3000 for every friend you
           invite
@@ -106,8 +109,10 @@ const ReferAFriend = () => {
           background, dedication, desire, and motivation.
         </p>
       </div>
-      <div></div>
-      <YellowCard />
+      <div className="py-[80px] lg:pb-[120px]">
+        <YellowCard />
+      </div>
+      <Footer />
     </div>
   );
 };
