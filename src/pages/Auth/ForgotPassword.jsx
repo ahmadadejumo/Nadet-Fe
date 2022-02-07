@@ -8,7 +8,7 @@ const ForgotPassword = () => {
       <Navbar />
       <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
         <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
-          <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px]">
+          <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px] md:pt-[130px] lg:pt-[40px]">
             Forgot your password?
           </h1>
           <p className="font-normal md:w-[393px] text-base text-tcolor pt-[15px] text-center md:text-left">
