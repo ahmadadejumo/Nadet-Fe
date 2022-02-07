@@ -15,9 +15,7 @@ const SignIn = () => {
   };
   return (
     <div className="font-Lato bg-[#F5F4FD]">
-      <div className="bg-white md:bg-[rgba(255,255,255,0.6)]">
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
         <div className="px-5 md:px-10 md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
           <h1 className="text-center text-[25px] font-bold pt-[100px]">
