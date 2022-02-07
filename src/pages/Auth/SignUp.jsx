@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { EyeOffIcon } from "@heroicons/react/outline";
 import { EyeIcon } from "@heroicons/react/outline";
+import google from "../../assets/images/google.png";
+import facebook from "../../assets/images/facebook.png";
+import twitter from "../../assets/images/twitter.png";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -105,6 +108,23 @@ const SignUp = () => {
             <hr className="border-black w-[75px]" />
             <p className="text-sm font-normal">or continue with</p>
             <hr className="border-black w-[75px]" />
+          </div>
+          <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px]">
+            <img
+              src={google}
+              alt="logo"
+              className="h-[24px] w-[24px] object-contain"
+            />
+            <img
+              src={facebook}
+              alt="logo"
+              className="h-[24px] w-[24px] object-contain"
+            />
+            <img
+              src={twitter}
+              alt="logo"
+              className="h-[24px] w-[24px] object-contain"
+            />
           </div>
         </form>
       </div>
