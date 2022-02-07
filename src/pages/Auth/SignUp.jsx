@@ -108,12 +108,12 @@ const SignUp = () => {
                 Create Account
               </button>
             </div>
-            <div className="flex items-center justify-center space-x-[15px]">
-              <hr className="border-black w-[75px] lg:w-[150px]" />
+            <div className="flex items-center pt-5 justify-center space-x-[15px]">
+              <hr className="border-tcolor w-[75px] md:w-[200px] lg:w-[150px]" />
               <p className="text-sm font-normal lg:text-base">
                 or continue with
               </p>
-              <hr className="border-black w-[75px] lg:w-[150px]" />
+              <hr className="border-tcolor w-[75px] md:w-[200px] lg:w-[150px]" />
             </div>
             <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px]">
               <img
