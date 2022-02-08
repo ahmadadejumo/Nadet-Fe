@@ -7,8 +7,6 @@ import HowItWorks from "./pages/HowItWorks/HowItWorks";
 import Products from "./pages/Products/Products";
 import Faqs from "./pages/FAQs/Faqs";
 import Pricing from "./pages/Pricing/Pricing";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import ReferAFriend from "./pages/ReferAFriend/ReferAFriend";
 import Events from "./pages/Events/Events";
 import Affiliates from "./pages/Affiliates/Affiliates";

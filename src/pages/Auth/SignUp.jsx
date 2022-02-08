@@ -49,7 +49,7 @@ const SignUp = () => {
   const [fullNameFocus, setFullNameFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+  // const [success, setSuccess] = useState(false);
 
   const userRef = useRef();
   const emailRef = useRef();
