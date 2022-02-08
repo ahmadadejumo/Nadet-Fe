@@ -16,6 +16,17 @@ const FULL_REGEX = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [agree, setAgree] = useState(false);
+
+  const checkboxHandler = () => {
+    // if agree === true, it will be set to false
+    if (agree === true) {
+      return setAgree(agree);
+    } else {
+      setAgree(!agree);
+    }
+    // if agree === false, it will be set to true
+  };
 
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
@@ -31,7 +42,7 @@ const SignUp = () => {
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
-  const [EmailFocus, setEmailFocus] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
 
   const [fullName, setFullName] = useState("");
   const [validFullName, setValidFullName] = useState(false);
@@ -120,26 +131,83 @@ const SignUp = () => {
                 onBlur={() => setUserFocus(false)}
                 className="h-[50px] w-full rounded-lg outline-none border-[1px] px-5 text-lg"
               />
+              <div
+                className={`${
+                  userFocus && user && !validName ? "block" : "hidden"
+                } rounded-lg mt-2 bg-hcolor`}
+              >
+                <p className=" px-3 py-3 text-tcolor font-normal text-sm">
+                  4 to 24 characters.
+                  <br />
+                  Must begin with a letter.
+                  <br />
+                  Letters, numbers, underscores, hyphens allowed.
+                </p>
+              </div>
             </div>
             <div className="flex flex-col">
               <label htmlFor="email" className="text-lg font-normal">
                 Email Address
               </label>
               <input
+                id="email"
+                ref={emailRef}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                aria-invalid={validEmail ? "false" : "true"}
+                aria-describedby="uidnote"
+                onFocus={() => setEmailFocus(true)}
+                onBlur={() => setEmailFocus(false)}
                 type="email"
                 required
                 className="h-[50px] w-full rounded-lg outline-none border-[1px] px-5 text-lg"
               />
+              <div
+                className={`${
+                  emailFocus && email && !validEmail ? "block" : "hidden"
+                } rounded-lg mt-2 bg-hcolor`}
+              >
+                <p className=" px-3 py-3 text-tcolor font-normal text-sm">
+                  4 to 24 characters.
+                  <br />
+                  Must begin with a letter.
+                  <br />
+                  Letters, numbers, underscores, hyphens allowed.
+                </p>
+              </div>
             </div>
             <div className="flex flex-col">
-              <label htmlFor="text" className="text-lg font-normal">
+              <label htmlFor="full name" className="text-lg font-normal">
                 Full name
               </label>
               <input
                 type="text"
+                id="full name"
+                ref={fullNameRef}
+                onChange={(e) => setFullName(e.target.value)}
+                value={fullName}
                 required
+                aria-invalid={validFullName ? "false" : "true"}
+                aria-describedby="uidnote"
+                onFocus={() => setFullNameFocus(true)}
+                onBlur={() => setFullNameFocus(false)}
                 className="h-[50px] w-full rounded-lg outline-none border-[1px] px-5 text-lg"
               />
+              <div
+                className={`${
+                  fullNameFocus && fullName && !validFullName
+                    ? "block"
+                    : "hidden"
+                } rounded-lg mt-2 bg-hcolor`}
+              >
+                <p className=" px-3 py-3 text-tcolor font-normal text-sm">
+                  4 to 24 characters.
+                  <br />
+                  Must begin with a letter.
+                  <br />
+                  Letters, numbers, underscores, hyphens allowed.
+                </p>
+              </div>
             </div>
             <div className="flex flex-col">
               <label htmlFor="password" className="text-lg font-normal">
@@ -147,6 +215,13 @@ const SignUp = () => {
               </label>
               <div className="flex items-center relative">
                 <input
+                  id="password"
+                  onChange={(e) => setPwd(e.target.value)}
+                  value={pwd}
+                  aria-invalid={validPwd ? "false" : "true"}
+                  aria-describedby="pwdnote"
+                  onFocus={() => setPwdFocus(true)}
+                  onBlur={() => setPwdFocus(false)}
                   type={showPassword ? "text" : "password"}
                   required
                   className="outline-none h-[50px] w-full px-5 rounded-lg border-[1px] text-lg "
@@ -167,6 +242,25 @@ const SignUp = () => {
                   </div>
                 )}
               </div>
+              <div
+                className={`${
+                  pwdFocus && !validPwd ? "block" : "hidden"
+                } rounded-lg mt-2 bg-hcolor`}
+              >
+                <p className=" px-3 py-3 text-tcolor font-normal text-sm">
+                  8 to 24 characters.
+                  <br />
+                  Must include uppercase and lowercase letters, a number and a
+                  special character.
+                  <br />
+                  Allowed special characters:{" "}
+                  <span aria-label="exclamation mark">!</span>{" "}
+                  <span aria-label="at symbol">@</span>{" "}
+                  <span aria-label="hashtag">#</span>{" "}
+                  <span aria-label="dollar sign">$</span>{" "}
+                  <span aria-label="percent">%</span>
+                </p>
+              </div>
             </div>
             <div className="flex flex-col">
               <label htmlFor="password" className="text-lg font-normal">
@@ -174,12 +268,32 @@ const SignUp = () => {
               </label>
               <input
                 type="password"
+                id="confirm_pwd"
+                onChange={(e) => setMatchPwd(e.target.value)}
+                value={matchPwd}
                 required
+                aria-invalid={validMatch ? "false" : "true"}
+                aria-describedby="confirmnote"
+                onFocus={() => setMatchFocus(true)}
+                onBlur={() => setMatchFocus(false)}
                 className="h-[50px] w-full rounded-lg outline-none border-[1px] px-5 text-lg"
               />
+              <div
+                className={`${
+                  matchFocus && !validMatch ? "block" : "hidden"
+                } rounded-lg mt-2 bg-hcolor`}
+              >
+                <p className=" px-3 py-3 text-tcolor font-normal text-sm">
+                  Must match the first password input field.
+                </p>
+              </div>
             </div>
             <div className="flex items-center space-x-[15px]">
-              <input type="checkbox" className="h-[24px] w-[24px] " />
+              <input
+                type="checkbox"
+                onChange={checkboxHandler}
+                className="h-[24px] w-[24px] "
+              />
               <label for="checkbox" className="font-normal text-base">
                 I Accept{" "}
                 <Link
@@ -191,7 +305,19 @@ const SignUp = () => {
               </label>
             </div>
             <div className="flex justify-center md:pt-[11px]">
-              <button className="bg-bcolor h-[50px] w-[335px] md:w-full rounded-lg text-base font-bold">
+              <button
+                disabled={
+                  !validName ||
+                  !validEmail ||
+                  !validFullName ||
+                  !validPwd ||
+                  !validMatch ||
+                  !agree
+                    ? true
+                    : false
+                }
+                className="bg-bcolor h-[50px] w-[335px] md:w-full rounded-lg text-base font-bold"
+              >
                 Create Account
               </button>
             </div>
