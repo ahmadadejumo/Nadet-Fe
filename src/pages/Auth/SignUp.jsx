@@ -7,12 +7,14 @@ import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
 import rectangle32 from "../../assets/images/rectangle32.png";
 import { Link } from "react-router-dom";
+import axios from "../../Api/axios";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const FULL_REGEX = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
+const FULL_REGEX = /^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$/;
+const REGISTER_URL = "/auth/registration/";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -104,7 +106,41 @@ const SignUp = () => {
       setErrMsg("Invalid Entry");
       return;
     }
-    setSuccess(true);
+    try {
+      const response = await axios.post(
+        REGISTER_URL,
+        JSON.stringify({
+          username: user,
+          email,
+          password1: pwd,
+          password2: matchPwd,
+          full_name: fullName,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+        }
+      );
+      console.log(response.data);
+      console.log(response.accessToken);
+      console.log(JSON.stringify(response));
+      setSuccess(true);
+      // Clear input strings
+      setUser("");
+      setEmail("");
+      setFullName("");
+      setPwd("");
+      setMatchPwd("");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMsg("Username or Email Taken");
+      } else {
+        setErrMsg("Username or Email Taken");
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
@@ -121,13 +157,6 @@ const SignUp = () => {
           <Navbar />
           <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-14">
             <div className="px-5 md:px-10 md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
-              <p
-                ref={errRef}
-                className={errMsg ? "errmsg" : "offscreen"}
-                aria-live="assertive"
-              >
-                {errMsg}
-              </p>
               <h1 className="text-center text-[25px] font-bold pt-[100px]">
                 Create Your Free Account
               </h1>
@@ -137,6 +166,15 @@ const SignUp = () => {
                   Login.
                 </Link>
               </p>
+              <div
+                className={`${
+                  errMsg ? "block" : "hidden"
+                } rounded-xl border border-red-600 bg-red-200 mt-3`}
+                ref={errRef}
+                aria-live="assertive"
+              >
+                <p className="text-center py-5">{errMsg}</p>
+              </div>
               <form onSubmit={handleSubmit} className="pt-10 space-y-5">
                 <div className="flex flex-col">
                   <label htmlFor="username" className="text-lg font-normal">
@@ -192,11 +230,7 @@ const SignUp = () => {
                     } rounded-lg mt-2 bg-hcolor`}
                   >
                     <p className=" px-3 py-3 text-tcolor font-normal text-sm">
-                      4 to 24 characters.
-                      <br />
-                      Must begin with a letter.
-                      <br />
-                      Letters, numbers, underscores, hyphens allowed.
+                      It should be a valid email address!
                     </p>
                   </div>
                 </div>
@@ -225,11 +259,8 @@ const SignUp = () => {
                     } rounded-lg mt-2 bg-hcolor`}
                   >
                     <p className=" px-3 py-3 text-tcolor font-normal text-sm">
-                      4 to 24 characters.
-                      <br />
-                      Must begin with a letter.
-                      <br />
-                      Letters, numbers, underscores, hyphens allowed.
+                      It should contain two names with each having their first
+                      letter as uppercases (First and Last Name)
                     </p>
                   </div>
                 </div>
