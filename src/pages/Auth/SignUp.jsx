@@ -8,6 +8,7 @@ import twitter from "../../assets/images/twitter.png";
 import rectangle32 from "../../assets/images/rectangle32.png";
 import { Link } from "react-router-dom";
 import axios from "../../Api/axios";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -121,9 +122,6 @@ const SignUp = () => {
           withCredentials: false,
         }
       );
-      console.log(response.data);
-      console.log(response.accessToken);
-      console.log(JSON.stringify(response));
       setSuccess(true);
       // Clear input strings
       setUser("");
@@ -169,10 +167,11 @@ const SignUp = () => {
               <div
                 className={`${
                   errMsg ? "block" : "hidden"
-                } rounded-xl border border-red-600 bg-red-200 mt-3`}
+                } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
                 ref={errRef}
                 aria-live="assertive"
               >
+                <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
                 <p className="text-center py-5">{errMsg}</p>
               </div>
               <form onSubmit={handleSubmit} className="pt-10 space-y-5">

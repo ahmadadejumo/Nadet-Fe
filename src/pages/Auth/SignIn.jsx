@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import AuthContext from "../../Context/AuthProvider";
 import Navbar from "../../components/Navbar";
 import { EyeOffIcon } from "@heroicons/react/outline";
 import { EyeIcon } from "@heroicons/react/outline";
@@ -7,13 +8,15 @@ import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
 import rectangle33 from "../../assets/images/rectangle33.png";
 import { Link } from "react-router-dom";
-import axios from "./api/axios";
+import axios from "../../Api/axios";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const LOGIN_URL = "/auth/login/";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -36,10 +39,33 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Clear the input fields
-    setPwd("");
-    setUser("");
-    setSuccess(true);
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ email: user, password: pwd }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+        }
+      );
+      const accessToken = response?.data?.accessToken;
+      setAuth({ user, pwd, accessToken });
+      // Clear the input fields
+      setPwd("");
+      setUser("");
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
@@ -62,14 +88,15 @@ const SignIn = () => {
                   Create one for free.
                 </Link>
               </p>
-              <div>
-                <p
-                  ref={errRef}
-                  className={errMsg ? "errmsg" : "offscreen"}
-                  aria-live="assertive"
-                >
-                  {errMsg}
-                </p>
+              <div
+                className={`${
+                  errMsg ? "block" : "hidden"
+                } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+                ref={errRef}
+                aria-live="assertive"
+              >
+                <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
+                <p className="text-center py-5">{errMsg}</p>
               </div>
               <form onSubmit={handleSubmit} className="pt-10 space-y-5">
                 <div className="flex flex-col">
