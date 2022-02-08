@@ -87,7 +87,7 @@ const SignIn = () => {
               </p>
               <hr className="border-tcolor w-[75px] md:w-[200px] lg:w-[150px]" />
             </div>
-            <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px]">
+            <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px] lg:pb-[65px]">
               <img
                 src={google}
                 alt="logo"
