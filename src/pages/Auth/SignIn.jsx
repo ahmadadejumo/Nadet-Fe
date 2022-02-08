@@ -6,6 +6,7 @@ import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
 import rectangle33 from "../../assets/images/rectangle33.png";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +24,9 @@ const SignIn = () => {
           </h1>
           <p className="font-normal text-base text-tcolor pt-[15px] text-center">
             Dont have an account?{" "}
-            <span className="text-bcolor">Create one for free.</span>
+            <Link to={"/signup"} className="text-bcolor">
+              Create one for free.
+            </Link>
           </p>
           <form action="" className="pt-10 space-y-5">
             <div className="flex flex-col">
@@ -63,8 +66,13 @@ const SignIn = () => {
                 )}
               </div>
             </div>
-            <p className="text-bcolor underline font-bold text-base">
-              Forgot password?
+            <p>
+              <Link
+                to={"/forgot-password"}
+                className="text-bcolor underline font-bold text-base"
+              >
+                Forgot password?
+              </Link>
             </p>
 
             <div className="flex justify-center md:pt-[11px]">

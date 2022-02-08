@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import rectangle34 from "../../assets/images/rectangle34.png";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -33,7 +34,9 @@ const ForgotPassword = () => {
             </div>
             <p className="font-normal text-tcolor text-base text-center pt-[10px] pb-48 md:pb-80 lg:pb-64">
               Remember your password?{" "}
-              <span className="text-bcolor font-bold">Sign in</span>
+              <Link to={"/signin"} className="text-bcolor font-bold">
+                Sign in
+              </Link>
             </p>
           </form>
         </div>

@@ -6,6 +6,7 @@ import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
 import twitter from "../../assets/images/twitter.png";
 import rectangle32 from "../../assets/images/rectangle32.png";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +23,10 @@ const SignUp = () => {
             Create Your Free Account
           </h1>
           <p className="font-normal text-base text-tcolor pt-[15px] text-center">
-            Already have an account? <span className="text-bcolor">Login.</span>
+            Already have an account?{" "}
+            <Link to={"/signin"} className="text-bcolor">
+              Login.
+            </Link>
           </p>
           <form action="" className="pt-10 space-y-5">
             <div className="flex flex-col">
@@ -96,9 +100,12 @@ const SignUp = () => {
               <input type="checkbox" className="h-[24px] w-[24px] " />
               <label for="checkbox" className="font-normal text-base">
                 I Accept{" "}
-                <span className="text-bcolor underline">
+                <Link
+                  to={"/terms-&-condition"}
+                  className="text-bcolor underline"
+                >
                   Terms And Condition
-                </span>
+                </Link>
               </label>
             </div>
             <div className="flex justify-center md:pt-[11px]">

@@ -44,9 +44,12 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="cursor-pointer md:flex items-center md:space-x-5">
-        <p className="font-Lato text-base font-semibold hidden md:inline-block">
+        <Link
+          to={"/signin"}
+          className="font-Lato text-base font-semibold hidden md:inline-block"
+        >
           Log In
-        </p>
+        </Link>
         <button className="h-[44px] w-[142px] rounded-lg hidden md:inline-block font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
           Get Started
         </button>
