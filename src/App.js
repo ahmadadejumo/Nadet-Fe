@@ -21,6 +21,7 @@ import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ChangePassword from "./pages/Auth/ChangePassword";
 import { AuthProvider } from "./Context/AuthProvider";
 import Dashboard from "./Dashboard/Dashboard";
+import RequireAuth from "./components/RequireAuth";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -57,7 +58,9 @@ function App() {
             <Route path="signup" element={<SignUp />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="change-password" element={<ChangePassword />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route element={<RequireAuth />}>
+              <Route path="dashboard" element={<Dashboard />} />
+            </Route>
           </Routes>
         </Wrapper>
       </AuthProvider>
