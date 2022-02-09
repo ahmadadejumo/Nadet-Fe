@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-import AuthContext from "../../Context/AuthProvider";
+import React, { useState, useRef, useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
 import Navbar from "../../components/Navbar";
 import { EyeOffIcon } from "@heroicons/react/outline";
 import { EyeIcon } from "@heroicons/react/outline";
@@ -16,7 +16,7 @@ const LOGIN_URL = "/auth/login/";
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
   const userRef = useRef();
   const errRef = useRef();
 
