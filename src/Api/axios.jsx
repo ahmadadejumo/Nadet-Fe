@@ -1,5 +1,10 @@
 import axios from "axios";
+const BASE_URL = "https://nadetapi.herokuapp.com";
 
 export default axios.create({
-  baseURL: "https://nadetapi.herokuapp.com",
+  baseURL: BASE_URL,
+});
+
+export const axiosPrivate = axios.create({
+  baseURL: BASE_URL,
 });
