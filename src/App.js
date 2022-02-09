@@ -19,6 +19,8 @@ import SignIn from "./pages/Auth/SignIn";
 import SignUp from "./pages/Auth/SignUp";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ChangePassword from "./pages/Auth/ChangePassword";
+import { AuthProvider } from "./Context/AuthProvider";
+import Dashboard from "./Dashboard/Dashboard";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -31,28 +33,34 @@ const Wrapper = ({ children }) => {
 function App() {
   return (
     <BrowserRouter>
-      <Wrapper>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="HowItWorks" element={<HowItWorks />} />
-          <Route path="about" element={<AboutUs />} />
-          <Route path="products" element={<Products />} />
-          <Route path="faqs" element={<Faqs />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="refer" element={<ReferAFriend />} />
-          <Route path="events" element={<Events />} />
-          <Route path="affiliates" element={<Affiliates />} />
-          <Route path="terms-&-condition" element={<TermsOfService />} />
-          <Route path="company-values" element={<CompanyValues />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="live-sessions" element={<LiveSessions />} />
-          <Route path="affiliate-agreement" element={<AffiliateAgreement />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-          <Route path="change-password" element={<ChangePassword />} />
-        </Routes>
-      </Wrapper>
+      <AuthProvider>
+        <Wrapper>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="HowItWorks" element={<HowItWorks />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="products" element={<Products />} />
+            <Route path="faqs" element={<Faqs />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="refer" element={<ReferAFriend />} />
+            <Route path="events" element={<Events />} />
+            <Route path="affiliates" element={<Affiliates />} />
+            <Route path="terms-&-condition" element={<TermsOfService />} />
+            <Route path="company-values" element={<CompanyValues />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="live-sessions" element={<LiveSessions />} />
+            <Route
+              path="affiliate-agreement"
+              element={<AffiliateAgreement />}
+            />
+            <Route path="signin" element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="change-password" element={<ChangePassword />} />
+            <Route path="dashboard" element={<Dashboard />} />
+          </Routes>
+        </Wrapper>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
