@@ -17,7 +17,7 @@ const Users = () => {
         const response = await axiosPrivate.get("/auth/user/", {
           signal: controller.signal,
         });
-        // console.log(response.data);
+        // console.log(response.data.username);
         isMounted && setUsers(response.data);
       } catch (err) {
         console.error(err);
@@ -38,8 +38,8 @@ const Users = () => {
       <h2>Users List</h2>
       {users?.length ? (
         <ul>
-          {users.map((user, id) => (
-            <li key={id}>{user?.username}</li>
+          {users.map((user, pk) => (
+            <li key={pk}>{user?.username}</li>
           ))}
         </ul>
       ) : (

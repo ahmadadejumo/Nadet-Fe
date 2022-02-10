@@ -70,7 +70,7 @@ const Pricing = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="mb-[80px] lg:mb-[120px]">
+    <div>
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
         <Navbar />
@@ -229,7 +229,7 @@ const Pricing = () => {
           </button>
         </div>
       </div>
-      <div className="mt-[80px] lg:mt-[120px]">
+      <div className="mt-[80px] lg:mb-[120px]">
         <YellowCard />
       </div>
       <Footer />
