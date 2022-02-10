@@ -52,8 +52,8 @@ const SignIn = () => {
           withCredentials: false,
         }
       );
-      const accessToken = response?.data?.accessToken;
-      setAuth({ user, pwd, accessToken });
+      const access_token = response?.data?.access_token;
+      setAuth({ user, pwd, access_token });
       // Clear the input fields
       setPwd("");
       setUser("");
