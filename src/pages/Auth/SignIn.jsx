@@ -53,7 +53,10 @@ const SignIn = () => {
         }
       );
       const access_token = response?.data?.access_token;
-      setAuth({ user, pwd, access_token });
+      const refresh_token = response?.data?.refresh_token;
+      // console.log(access_token);
+      // console.log(refresh_token);
+      setAuth({ user, pwd, access_token, refresh_token });
       // Clear the input fields
       setPwd("");
       setUser("");
