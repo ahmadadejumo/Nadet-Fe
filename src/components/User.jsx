@@ -42,7 +42,6 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Users List</h2>
       {users?.length ? (
         <ul>
           {users.map((user, pk) => (
@@ -52,7 +51,7 @@ const Users = () => {
       ) : (
         <p>No users to display</p>
       )}
-      <button onClick={signout}>LogOut</button>
+      {/* <button onClick={signout}>LogOut</button> */}
     </div>
   );
 };

@@ -119,7 +119,7 @@ const SignUp = () => {
         }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: false,
+          withCredentials: true,
         }
       );
       setSuccess(true);

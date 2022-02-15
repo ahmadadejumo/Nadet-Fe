@@ -4,7 +4,7 @@ import User from "../components/User";
 const Dashboard = () => {
   return (
     <div>
-      <div>This is the dashboard user</div>
+      <div>This is the dashboard</div>
       <User />
     </div>
   );
