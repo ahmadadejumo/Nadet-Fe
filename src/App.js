@@ -22,7 +22,6 @@ import ChangePassword from "./pages/Auth/ChangePassword";
 import { AuthProvider } from "./Context/AuthProvider";
 import Dashboard from "./Dashboard/Dashboard";
 import RequireAuth from "./components/RequireAuth";
-import PersistLogin from "./components/PersistLogin";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -59,10 +58,8 @@ function App() {
             <Route path="signup" element={<SignUp />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="change-password" element={<ChangePassword />} />
-            <Route element={<PersistLogin />}>
-              <Route element={<RequireAuth />}>
-                <Route path="dashboard" element={<Dashboard />} />
-              </Route>
+            <Route element={<RequireAuth />}>
+              <Route path="dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
         </Wrapper>

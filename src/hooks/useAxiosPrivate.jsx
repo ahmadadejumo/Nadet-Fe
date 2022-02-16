@@ -1,42 +1,151 @@
-import { axiosPrivate } from "../Api/axios";
-import { useEffect } from "react";
-import useRefreshToken from "./useRefreshToken";
-import useAuth from "./useAuth";
+import { axiosInstance } from "../Api/axios";
+import useAuth from "../hooks/useAuth";
+import axios from "../Api/axios";
 
 const useAxiosPrivate = () => {
-  const refresh = useRefreshToken();
-  const { auth } = useAuth();
+  const { auth, setAuth } = useAuth();
 
-  useEffect(() => {
-    const requestIntercept = axiosPrivate.interceptors.request.use(
-      (config) => {
-        if (!config.headers["Authorization"]) {
-          config.headers["Authorization"] = `Bearer ${auth?.access_token}`;
+  // axios.interceptors.request.use(
+  //   (config) => {
+  //     const authToken = localStorage.getItem("authToken");
+  //     if (authToken !== undefined) {
+  //       config.headers.Authorization = `Bearer ${authToken}`;
+  //       config.timeout = 800000;
+  //     }
+  //     return config;
+  //   },
+  //   (err) => {
+  //     return Promise.reject(err);
+  //   }
+  // );
+
+  // // response interceptors =================================================
+  // let isRefreshing = false;
+  // let refreshSubscribers = [];
+
+  // axios.interceptors.response.use(
+  //   (response) => {
+  //     return response;
+  //   },
+  //   (error) => {
+  //     const {
+  //       config,
+  //       response: { status },
+  //     } = error;
+  //     const originalRequest = config;
+
+  //     if (status === 401) {
+  //       if (!isRefreshing) {
+  //         isRefreshing = true;
+  //         axios
+  //           .post("/auth/token/refresh", {
+  //             refresh: localStorage.getItem("refresh_token"),
+  //           })
+  //           .then(({ data }) => {
+  //             isRefreshing = false;
+  //             const { access } = data;
+  //             localStorage.setItem("authToken", access);
+  //             onRrefreshed(data.access);
+  //           })
+  //           .catch((e) => {
+  //             window.location = "/signin";
+  //           });
+  //       }
+
+  //       const retryOrigReq = new Promise((resolve, reject) => {
+  //         subscribeTokenRefresh((access_token) => {
+  //           // replace the expired accessToken and retry
+  //           originalRequest.headers["Authorization"] = "Bearer " + access_token;
+  //           resolve(axios(originalRequest));
+  //         });
+  //       });
+  //       return retryOrigReq;
+  //     } else {
+  //       return Promise.reject(error);
+  //     }
+  //   }
+  // );
+
+  // function subscribeTokenRefresh(cb) {
+  //   refreshSubscribers.push(cb);
+  // }
+
+  // function onRrefreshed(access_token) {
+  //   refreshSubscribers.map((cb) => cb(access_token));
+  // }
+  // response interceptors =================================================
+
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      const access_token = localStorage.getItem("authTokens");
+      if (access_token !== undefined) {
+        config.headers.Authorization = `Bearer ${access_token}`;
+        config.timeout = 800000;
+      }
+      return config;
+    },
+    (err) => {
+      return Promise.reject(err);
+    }
+  );
+
+  // response interceptors =================================================
+  let isRefreshing = false;
+  let refreshSubscribers = [];
+
+  axiosInstance.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      const {
+        config,
+        response: { status },
+      } = error;
+      const originalRequest = config;
+
+      if (status === 401) {
+        if (!isRefreshing) {
+          isRefreshing = true;
+          axios
+            .post("/auth/token/refresh", {
+              refresh: auth?.refresh_token,
+            })
+            .then(({ data }) => {
+              isRefreshing = false;
+              const { access } = data;
+              setAuth({ access_token: access });
+              localStorage.setItem("authToken", access);
+              onRrefreshed(data.access);
+            })
+            .catch((e) => {
+              window.location = "/signin";
+            });
         }
-        return config;
-      },
-      (error) => Promise.reject(error)
-    );
-    const responseIntercept = axiosPrivate.interceptors.response.use(
-      (response) => response,
-      async (error) => {
-        const prevRequest = error?.config;
-        if (error?.response?.status === 403 && !prevRequest?.sent) {
-          prevRequest.sent = true;
-          const newAccessToken = await refresh();
-          prevRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
-          return axiosPrivate(prevRequest);
-        }
+
+        const retryOrigReq = new Promise((resolve) => {
+          subscribeTokenRefresh((access_token) => {
+            // replace the expired accessToken and retry
+            originalRequest.headers["Authorization"] = "Bearer " + access_token;
+            resolve(axios(originalRequest));
+          });
+        });
+        return retryOrigReq;
+      } else {
         return Promise.reject(error);
       }
-    );
-    return () => {
-      axiosPrivate.interceptors.request.eject(requestIntercept);
-      axiosPrivate.interceptors.response.eject(responseIntercept);
-    };
-  }, [auth, refresh]);
+    }
+  );
 
-  return axiosPrivate;
+  function subscribeTokenRefresh(cb) {
+    refreshSubscribers.push(cb);
+  }
+
+  function onRrefreshed(access_token) {
+    refreshSubscribers.map((cb) => cb(access_token));
+  }
+
+  return axiosInstance;
 };
 
 export default useAxiosPrivate;
