@@ -25,8 +25,8 @@ const SignIn = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [user, setUser] = useState("adejumoahmad@gmail.com");
+  const [pwd, setPwd] = useState("12345Abcde@");
   const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {

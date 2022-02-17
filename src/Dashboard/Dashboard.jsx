@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import useAxios from "../hooks/useAxios";
 import { useNavigate, useLocation } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
-import useRefreshToken from "../hooks/useRefreshToken";
 
 const Dashboard = () => {
   const [user, setUser] = useState();
@@ -10,10 +9,9 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const logout = useLogout();
-  const refresh = useRefreshToken();
 
-  const signout = async () => {
-    await logout();
+  const signout = () => {
+    logout();
     navigate("/signin");
   };
 
@@ -49,8 +47,6 @@ const Dashboard = () => {
         <li key={user?.pk}>{user?.username}</li>
       </ul>
       <button onClick={signout}>LogOut</button>
-      <br />
-      <button onClick={refresh}>Refresh</button>
     </div>
   );
 };
