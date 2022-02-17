@@ -1,8 +1,9 @@
 import axios from "../Api/axios";
 import useAuth from "./useAuth";
 
-const useLogOut = () => {
+const useLogout = () => {
   const { setAuth } = useAuth();
+
   const logout = async () => {
     setAuth({});
     try {
@@ -13,7 +14,8 @@ const useLogOut = () => {
       console.error(err);
     }
   };
+
   return logout;
 };
 
-export default useLogOut;
+export default useLogout;

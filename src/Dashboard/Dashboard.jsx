@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import useAxios from "../hooks/useAxios";
 import { useNavigate, useLocation } from "react-router-dom";
-import useLogOut from "../hooks/useLogOut";
+import useLogout from "../hooks/useLogout";
+import useRefreshToken from "../hooks/useRefreshToken";
 
 const Dashboard = () => {
   const [user, setUser] = useState();
-  const axiosPrivate = useAxiosPrivate();
+  const useAxiosPrivate = useAxios();
   const navigate = useNavigate();
   const location = useLocation();
-  const logout = useLogOut();
+  const logout = useLogout();
+  const refresh = useRefreshToken();
 
   const signout = async () => {
     await logout();
-    navigate("/");
+    navigate("/signin");
   };
 
   useEffect(() => {
@@ -21,7 +23,7 @@ const Dashboard = () => {
 
     const getUser = async () => {
       try {
-        const response = await axiosPrivate.get("/auth/user/", {
+        const response = await useAxiosPrivate.get("/auth/user/", {
           signal: controller.signal,
         });
         // console.log(response.data.username);
@@ -47,6 +49,8 @@ const Dashboard = () => {
         <li key={user?.pk}>{user?.username}</li>
       </ul>
       <button onClick={signout}>LogOut</button>
+      <br />
+      <button onClick={refresh}>Refresh</button>
     </div>
   );
 };

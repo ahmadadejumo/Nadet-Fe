@@ -55,7 +55,7 @@ const SignIn = () => {
       const access_token = response?.data?.access_token;
       const refresh_token = response?.data?.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
-      localStorage.setItem("authTokens", access_token);
+      localStorage.setItem("access_token", access_token);
       localStorage.setItem("refresh_token", refresh_token);
       // Clear the input fields
       setPwd("");

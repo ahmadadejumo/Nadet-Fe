@@ -317,12 +317,15 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="password" className="text-lg font-normal">
+                  <label
+                    htmlFor="confirm password"
+                    className="text-lg font-normal"
+                  >
                     Confirm password
                   </label>
                   <input
                     type="password"
-                    id="confirm_pwd"
+                    id="confirm password"
                     onChange={(e) => setMatchPwd(e.target.value)}
                     value={matchPwd}
                     required
@@ -348,7 +351,7 @@ const SignUp = () => {
                     onChange={checkboxHandler}
                     className="h-[24px] w-[24px] "
                   />
-                  <label for="checkbox" className="font-normal text-base">
+                  <label htmlFor="checkbox" className="font-normal text-base">
                     I Accept{" "}
                     <Link
                       to={"/terms-&-condition"}
