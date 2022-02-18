@@ -26,6 +26,7 @@ const SignIn = () => {
   const errRef = useRef();
 
   const [user, setUser] = useState("adejumoahmad@gmail.com");
+  const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("12345Abcde@");
   const [errMsg, setErrMsg] = useState("");
 
@@ -46,7 +47,7 @@ const SignIn = () => {
     try {
       const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify({ email: user, password: pwd }),
+        JSON.stringify({ email: email, username: user, password: pwd }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -55,11 +56,12 @@ const SignIn = () => {
       const access_token = response?.data?.access_token;
       const refresh_token = response?.data?.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
-      localStorage.setItem("access_token", access_token);
-      localStorage.setItem("refresh_token", refresh_token);
+      localStorage.setItem("access_token", response?.data?.access_token);
+      localStorage.setItem("refresh_token", response?.data?.refresh_token);
       // Clear the input fields
       setPwd("");
       setUser("");
+      setEmail("");
       navigate(from, { replace: true });
     } catch (err) {
       if (!err?.response) {
@@ -108,7 +110,7 @@ const SignIn = () => {
                 type="text"
                 id="username"
                 ref={userRef}
-                value={user}
+                value={user || email}
                 autoComplete="off"
                 onChange={(e) => setUser(e.target.value)}
                 required
