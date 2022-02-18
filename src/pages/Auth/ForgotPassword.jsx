@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar";
 import rectangle34 from "../../assets/images/rectangle34.png";
 import { Link } from "react-router-dom";
 
+const FP_URL = "/auth/password/reset/";
+
 const ForgotPassword = () => {
   return (
     <div className="font-Lato bg-[#F5F4FD]">
