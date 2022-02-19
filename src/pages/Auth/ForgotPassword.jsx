@@ -1,11 +1,51 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/Navbar";
 import rectangle34 from "../../assets/images/rectangle34.png";
 import { Link } from "react-router-dom";
+import axios from "../../Api/axios";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const FP_URL = "/auth/password/reset/";
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+
+  const emailRef = useRef();
+  const errRef = useRef();
+
+  const [errMsg, setErrMsg] = useState("");
+
+  useEffect(() => {
+    emailRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [email]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(FP_URL, JSON.stringify({ email: email }), {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      });
+      // Clear the input fields
+      setEmail("");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
+  };
+
   return (
     <div className="font-Lato bg-[#F5F4FD]">
       <Navbar />
@@ -14,11 +54,21 @@ const ForgotPassword = () => {
           <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px] md:pt-[130px] lg:pt-[40px]">
             Forgot your password?
           </h1>
+          <div
+            className={`${
+              errMsg ? "block" : "hidden"
+            } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+            ref={errRef}
+            aria-live="assertive"
+          >
+            <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
+            <p className="text-center py-5">{errMsg}</p>
+          </div>
           <p className="font-normal md:w-[393px] text-base text-tcolor pt-[15px] text-center md:text-left">
             Please enter your email address. You will receive a link to create a
             new password via email.
           </p>
-          <form action="" className="pt-10 space-y-5">
+          <form onClick={handleSubmit} className="pt-10 space-y-5">
             <div className="flex flex-col">
               <label htmlFor="email" className="text-lg font-normal">
                 Email Address
