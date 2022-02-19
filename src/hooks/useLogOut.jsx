@@ -1,21 +1,23 @@
-import axios from "../Api/axios";
 import useAuth from "./useAuth";
+import axios from "../Api/axios";
 
-const useLogout = () => {
+const useLogOut = () => {
   const { setAuth } = useAuth();
 
   const logout = async () => {
     setAuth({});
     try {
-      const response = await axios.post("/auth/logout/", {
+      await axios.post("/auth/logout/", {
         withCredentials: true,
       });
     } catch (err) {
       console.error(err);
     }
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
   };
 
   return logout;
 };
 
-export default useLogout;
+export default useLogOut;

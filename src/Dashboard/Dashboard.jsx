@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useAxios from "../hooks/useAxios";
 import { useNavigate, useLocation } from "react-router-dom";
-import useLogout from "../hooks/useLogout";
+import useLogOut from "../hooks/useLogOut";
 import useRefreshToken from "../hooks/useRefreshToken";
 
 const Dashboard = () => {
@@ -9,7 +9,7 @@ const Dashboard = () => {
   const useAxiosPrivate = useAxios();
   const navigate = useNavigate();
   const location = useLocation();
-  const logout = useLogout();
+  const logout = useLogOut();
   const refresh = useRefreshToken();
 
   const signOut = async () => {
