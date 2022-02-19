@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   const signOut = async () => {
     await logout();
-    navigate("/");
+    navigate("/signin");
   };
 
   useEffect(() => {
