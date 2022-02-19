@@ -6,9 +6,12 @@ import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const FP_URL = "/auth/password/reset/";
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
 
   const emailRef = useRef();
   const errRef = useRef();
@@ -23,24 +26,38 @@ const ForgotPassword = () => {
     setErrMsg("");
   }, [email]);
 
+  useEffect(() => {
+    setValidEmail(EMAIL_REGEX.test(email));
+  }, [email]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const v1 = EMAIL_REGEX.test(email);
+    if (!v1) {
+      setErrMsg("Invalid Email");
+      return;
+    }
     try {
-      await axios.post(FP_URL, JSON.stringify({ email: email }), {
-        headers: { "Content-Type": "application/json" },
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        FP_URL,
+        JSON.stringify({ email: email }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      if (response.data) {
+        setErrMsg(errMsg);
+      }
       // Clear the input fields
       setEmail("");
     } catch (err) {
       if (!err?.response) {
-        setErrMsg("No Server Response");
+        setErrMsg("No Connection");
       } else if (err.response?.status === 400) {
-        setErrMsg("Missing Username or Password");
-      } else if (err.response?.status === 401) {
-        setErrMsg("Unauthorized");
+        setErrMsg("This email does not exist");
       } else {
-        setErrMsg("Login Failed");
+        setErrMsg("Failed to send email");
       }
       errRef.current.focus();
     }
@@ -75,6 +92,12 @@ const ForgotPassword = () => {
               </label>
               <input
                 type="email"
+                id="email"
+                ref={emailRef}
+                autoComplete="off"
+                onChange={(e) => setEmail(e.target.value)}
+                aria-invalid={validEmail ? "false" : "true"}
+                aria-describedby="uidnote"
                 required
                 className="h-[50px] w-full rounded-lg outline-none border-[1px] px-5 text-lg"
               />
