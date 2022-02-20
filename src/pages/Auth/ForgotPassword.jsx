@@ -4,6 +4,7 @@ import rectangle34 from "../../assets/images/rectangle34.png";
 import { Link } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { XIcon } from "@heroicons/react/outline";
 
 const FP_URL = "/auth/password/reset/";
 const EMAIL_REGEX =
@@ -44,7 +45,7 @@ const ForgotPassword = () => {
         withCredentials: true,
       });
       setEmail("");
-      return setSuccessMsg("Successfull");
+      return setSuccessMsg(true);
       // Clear the input fields
     } catch (err) {
       if (!err?.response) {
@@ -63,6 +64,19 @@ const ForgotPassword = () => {
       <Navbar />
       <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
         <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
+          {successMsg && (
+            <div className="bg-[#42CF96] font-Lato text-white px-[16px] rounded-[16px] mt-10">
+              <div className="flex justify-between items-center">
+                <p className="font-bold text-[20px] pt-[19px]">Request Sent!</p>
+                <XIcon className="h-[20px] w-[20px] mt-3" />
+              </div>
+              <p className="pt-[12px] font-normal text-base pb-[20px]">
+                A mail has been sent to{" "}
+                <span className="font-bold">{email}</span> Click on the reset
+                password button to reset your password
+              </p>
+            </div>
+          )}
           <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px] md:pt-[130px] lg:pt-[40px]">
             Forgot your password?
           </h1>
@@ -75,16 +89,6 @@ const ForgotPassword = () => {
           >
             <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
             <p className="text-center py-5">{errMsg}</p>
-          </div>
-          <div
-            className={`${
-              successMsg ? "block" : "hidden"
-            } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
-            ref={errRef}
-            aria-live="assertive"
-          >
-            <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
-            <p className="text-center py-5">{successMsg}</p>
           </div>
           <p className="font-normal md:w-[393px] text-base text-tcolor pt-[15px] text-center md:text-left">
             Please enter your email address. You will receive a link to create a
