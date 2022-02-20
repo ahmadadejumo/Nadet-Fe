@@ -127,6 +127,7 @@ const SignUp = () => {
       setFullName("");
       setPwd("");
       setMatchPwd("");
+      setAgree(null);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");

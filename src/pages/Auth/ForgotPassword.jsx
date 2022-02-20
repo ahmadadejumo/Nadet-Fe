@@ -17,6 +17,7 @@ const ForgotPassword = () => {
   const errRef = useRef();
 
   const [errMsg, setErrMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     emailRef.current.focus();
@@ -38,19 +39,13 @@ const ForgotPassword = () => {
       return;
     }
     try {
-      const response = await axios.post(
-        FP_URL,
-        JSON.stringify({ email: email }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-      if (response.data) {
-        setErrMsg(errMsg);
-      }
-      // Clear the input fields
+      await axios.post(FP_URL, JSON.stringify({ email: email }), {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      });
       setEmail("");
+      return setSuccessMsg("Successfull");
+      // Clear the input fields
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Connection");
@@ -81,11 +76,21 @@ const ForgotPassword = () => {
             <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
             <p className="text-center py-5">{errMsg}</p>
           </div>
+          <div
+            className={`${
+              successMsg ? "block" : "hidden"
+            } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+            ref={errRef}
+            aria-live="assertive"
+          >
+            <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
+            <p className="text-center py-5">{successMsg}</p>
+          </div>
           <p className="font-normal md:w-[393px] text-base text-tcolor pt-[15px] text-center md:text-left">
             Please enter your email address. You will receive a link to create a
             new password via email.
           </p>
-          <form onClick={handleSubmit} className="pt-10 space-y-5">
+          <form onSubmit={handleSubmit} className="pt-10 space-y-5">
             <div className="flex flex-col">
               <label htmlFor="email" className="text-lg font-normal">
                 Email Address
@@ -103,7 +108,10 @@ const ForgotPassword = () => {
               />
             </div>
             <div className="flex justify-center md:pt-[11px]">
-              <button className="bg-bcolor h-[50px] w-[335px] md:w-full rounded-lg text-base font-bold">
+              <button
+                disabled={!validEmail ? true : false}
+                className="bg-bcolor h-[50px] w-[335px] md:w-full rounded-lg text-base font-bold"
+              >
                 Send Reset Link
               </button>
             </div>
