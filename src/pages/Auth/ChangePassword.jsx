@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { EyeOffIcon } from "@heroicons/react/outline";
 import { EyeIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import rectangle35 from "../../assets/images/rectangle35.png";
 
 const ChangePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { uid, token } = useParams();
 
   const handleClick = () => {
     return setShowPassword(showPassword ? false : true);
