@@ -19,6 +19,7 @@ const ForgotPassword = () => {
 
   const [errMsg, setErrMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [cancel, setCancel] = useState(false);
 
   useEffect(() => {
     emailRef.current.focus();
@@ -27,6 +28,10 @@ const ForgotPassword = () => {
   useEffect(() => {
     setErrMsg("");
   }, [email]);
+
+  const handleClick = () => {
+    setCancel(!cancel);
+  };
 
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(email));
@@ -44,9 +49,9 @@ const ForgotPassword = () => {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
-      setEmail("");
-      return setSuccessMsg(true);
       // Clear the input fields
+      setEmail("");
+      setSuccessMsg(true);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Connection");
@@ -64,19 +69,29 @@ const ForgotPassword = () => {
       <Navbar />
       <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
         <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
-          {successMsg && (
-            <div className="bg-[#42CF96] font-Lato text-white px-[16px] rounded-[16px] mt-10">
-              <div className="flex justify-between items-center">
-                <p className="font-bold text-[20px] pt-[19px]">Request Sent!</p>
-                <XIcon className="h-[20px] w-[20px] mt-3" />
-              </div>
-              <p className="pt-[12px] font-normal text-base pb-[20px]">
-                A mail has been sent to{" "}
-                <span className="font-bold">{email}</span> Click on the reset
-                password button to reset your password
-              </p>
+          {!cancel && (
+            <div>
+              {successMsg && (
+                <div className="bg-[#42CF96] font-Lato text-white px-[16px] rounded-[16px] mt-10">
+                  <div className="flex justify-between items-center">
+                    <p className="font-bold text-[20px] pt-[19px]">
+                      Request Sent!
+                    </p>
+                    <XIcon
+                      onClick={handleClick}
+                      className="h-[20px] w-[20px] mt-3"
+                    />
+                  </div>
+                  <p className="pt-[12px] font-normal text-base pb-[20px]">
+                    A mail has been sent to{" "}
+                    <span className="font-bold">{}</span> Click on the reset
+                    password button to reset your password
+                  </p>
+                </div>
+              )}
             </div>
           )}
+
           <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px] md:pt-[130px] lg:pt-[40px]">
             Forgot your password?
           </h1>
