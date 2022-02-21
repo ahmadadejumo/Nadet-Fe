@@ -58,7 +58,10 @@ function App() {
             <Route path="signin" element={<SignIn />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
-            <Route path="change-password" element={<ChangePassword />} />
+            <Route
+              path="change-password/:uid/:token"
+              element={<ChangePassword />}
+            />
             <Route element={<PersistLogin />}>
               <Route element={<RequireAuth />}>
                 <Route path="dashboard" element={<Dashboard />} />
