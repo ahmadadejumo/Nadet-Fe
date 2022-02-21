@@ -67,8 +67,8 @@ const ForgotPassword = () => {
   return (
     <div className="font-Lato bg-[#F5F4FD]">
       <Navbar />
-      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
-        <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
+      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-20 md:pb-48">
+        <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:pt-[50px] lg:pt-0 md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
           {!cancel && (
             <div>
               {successMsg && (
@@ -92,7 +92,7 @@ const ForgotPassword = () => {
             </div>
           )}
 
-          <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px] md:pt-[130px] lg:pt-[40px]">
+          <h1 className="text-center md:text-left text-[25px] font-bold pt-[40px]">
             Forgot your password?
           </h1>
           <div
@@ -134,7 +134,7 @@ const ForgotPassword = () => {
                 Send Reset Link
               </button>
             </div>
-            <p className="font-normal text-tcolor text-base text-center pt-[10px] pb-48 md:pb-80 lg:pb-64">
+            <p className="font-normal text-tcolor text-base text-center pt-[10px] pb-48 md:pb-[150px] lg:pb-64">
               Remember your password?{" "}
               <Link to={"/signin"} className="text-bcolor font-bold">
                 Sign in
