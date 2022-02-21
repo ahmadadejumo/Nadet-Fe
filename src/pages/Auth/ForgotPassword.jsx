@@ -83,9 +83,9 @@ const ForgotPassword = () => {
                     />
                   </div>
                   <p className="pt-[12px] font-normal text-base pb-[20px]">
-                    A mail has been sent to{" "}
-                    <span className="font-bold">{}</span> Click on the reset
-                    password button to reset your password
+                    A mail has been sent to you, Click on the{" "}
+                    <span className="font-bold">reset password</span> button to
+                    reset your password
                   </p>
                 </div>
               )}
