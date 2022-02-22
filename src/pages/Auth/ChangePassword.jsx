@@ -5,6 +5,7 @@ import { EyeIcon } from "@heroicons/react/outline";
 import { Link, useParams } from "react-router-dom";
 import rectangle35 from "../../assets/images/rectangle35.png";
 import axios from "../../Api/axios";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
@@ -74,6 +75,16 @@ const ChangePassword = () => {
           <h1 className="text-center text-[25px] font-bold pt-[40px]">
             Create new password
           </h1>
+          <div
+            className={`${
+              errMsg ? "block" : "hidden"
+            } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+            ref={errRef}
+            aria-live="assertive"
+          >
+            <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
+            <p className="text-center py-5">{errMsg}</p>
+          </div>
           <p className="font-normal text-base text-tcolor pt-[15px] text-center">
             Reset your password with the new one of your choice below.
           </p>
