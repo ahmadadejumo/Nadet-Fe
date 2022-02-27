@@ -47,14 +47,17 @@ const ChangePassword = () => {
       return;
     }
     try {
-      await axios.post(
+      await axios.patch(
         "/auth/password-reset/change/",
         JSON.stringify({
-          new_password1: pwd,
-          new_password2: matchPwd,
-          uid: uid,
+          password: pwd,
           token: token,
-        })
+          uidb64: uid,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
       );
       // Clear input strings
       setPwd("");
