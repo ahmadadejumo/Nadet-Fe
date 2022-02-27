@@ -48,7 +48,7 @@ const ChangePassword = () => {
     }
     try {
       await axios.post(
-        "/auth/password/reset/confirm/",
+        "/auth/password-reset/change/",
         JSON.stringify({
           new_password1: pwd,
           new_password2: matchPwd,
