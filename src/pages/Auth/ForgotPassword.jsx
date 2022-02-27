@@ -6,7 +6,7 @@ import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { XIcon } from "@heroicons/react/outline";
 
-const FP_URL = "/auth/password/reset/";
+const FP_URL = "/auth/password-reset/";
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
