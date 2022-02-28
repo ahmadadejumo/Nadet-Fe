@@ -10,6 +10,7 @@ import rectangle33 from "../../assets/images/rectangle33.png";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { GoogleLogin } from "react-google-login";
 
 const LOGIN_URL = "/auth/login/";
 
@@ -25,9 +26,9 @@ const SignIn = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("adejumoahmad@gmail.com");
+  const [user, setUser] = useState("adejumoahmad4life@gmail.com");
   const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("12345Abcde@");
+  const [pwd, setPwd] = useState("123456Abcde@");
   const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {
@@ -41,7 +42,18 @@ const SignIn = () => {
   const handleClick = () => {
     return setShowPassword(showPassword ? false : true);
   };
+  // Google Login
+  const responseGoogle = async (response) => {
+    console.log(response);
+    try {
+      const res = await axios.post("/auth/google/", {
+        access_token: response.accessToken,
+        id_token: response.tokenId,
+      });
+    } catch (err) {}
+  };
 
+  // Login without social account
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -169,10 +181,23 @@ const SignIn = () => {
               <hr className="border-tcolor w-[75px] md:w-[200px] lg:w-[150px]" />
             </div>
             <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px] lg:pb-[65px]">
-              <img
-                src={google}
-                alt="logo"
-                className="h-[24px] w-[24px] object-contain cursor-pointer"
+              <GoogleLogin
+                clientId="1047637905977-81uc5mhboghuiioe8rm5h1bto3hln503.apps.googleusercontent.com"
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    <img
+                      src={google}
+                      alt="logo"
+                      className="h-[24px] w-[24px] object-contain cursor-pointer"
+                    />
+                  </button>
+                )}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
               />
               <img
                 src={facebook}
