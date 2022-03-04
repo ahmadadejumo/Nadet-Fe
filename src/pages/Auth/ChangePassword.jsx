@@ -56,7 +56,7 @@ const ChangePassword = () => {
         }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          withCredentials: false,
         }
       );
       // Clear input strings

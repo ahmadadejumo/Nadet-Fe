@@ -7,7 +7,7 @@ const useRefreshToken = () => {
   const refresh = async () => {
     const response = await axios.post("/auth/token/refresh/", {
       refresh: localStorage.getItem("refresh_token"),
-      withCredentials: true,
+      withCredentials: false,
     });
     setAuth((prev) => {
       return {

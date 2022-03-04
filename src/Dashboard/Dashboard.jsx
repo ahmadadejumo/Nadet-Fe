@@ -26,6 +26,7 @@ const Dashboard = () => {
       try {
         const response = await useAxiosPrivate.get("/auth/user/", {
           signal: controller.signal,
+          withCredentials: false,
         });
         // console.log(response.data.username);
         isMounted && setUser(response.data);

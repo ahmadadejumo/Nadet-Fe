@@ -9,7 +9,11 @@ import rectangle32 from "../../assets/images/rectangle32.png";
 import { Link } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import { GoogleLogin } from "react-google-login";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate, useLocation } from "react-router-dom";
 
+const LOGIN_URL = "/auth/login/";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX =
@@ -57,6 +61,10 @@ const SignUp = () => {
   const emailRef = useRef();
   const fullNameRef = useRef();
   const errRef = useRef();
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/dashboard";
 
   useEffect(() => {
     userRef.current.focus();
@@ -95,6 +103,43 @@ const SignUp = () => {
     return setShowPassword(showPassword ? false : true);
   };
 
+  // Google Login
+  const responseGoogle = async (response) => {
+    // console.log(response);
+    try {
+      const res = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({
+          access_token: response.accessToken,
+          id_token: response.tokenId,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          mode: "cors",
+          withCredentials: false,
+        }
+      );
+      // console.log(res);
+      const access_token = res?.data.access_token;
+      const refresh_token = res?.data.refresh_token;
+      setAuth({ user, pwd, access_token, refresh_token });
+      localStorage.setItem("access_token", res?.data.access_token);
+      localStorage.setItem("refresh_token", res?.data.refresh_token);
+      navigate(from, { replace: true });
+    } catch (err) {
+      // if (!err?.res) {
+      //   setErrMsg("No Server Response");
+      // } else if (err.res?.status === 400) {
+      //   setErrMsg("Missing Username or Password");
+      // } else if (err.res?.status === 401) {
+      //   setErrMsg("Unauthorized");
+      // } else {
+      //   setErrMsg("Login Failed");
+      // }
+      // errRef.current.focus();
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
@@ -118,7 +163,7 @@ const SignUp = () => {
         }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          withCredentials: false,
         }
       );
       // Clear input strings
@@ -377,10 +422,24 @@ const SignUp = () => {
                 <hr className="border-tcolor w-[75px] md:w-[200px] lg:w-[150px]" />
               </div>
               <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px]">
-                <img
-                  src={google}
-                  alt="logo"
-                  className="h-[24px] w-[24px] object-contain cursor-pointer"
+                <GoogleLogin
+                  clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                    >
+                      <img
+                        src={google}
+                        alt="logo"
+                        className="h-[24px] w-[24px] object-contain cursor-pointer"
+                      />
+                    </button>
+                  )}
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                  isSignedIn={true}
                 />
                 <img
                   src={facebook}

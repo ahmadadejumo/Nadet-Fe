@@ -44,7 +44,7 @@ const SignIn = () => {
   };
   // Google Login
   const responseGoogle = async (response) => {
-    console.log(response);
+    // console.log(response);
     try {
       const res = await axios.post(
         "/auth/google/",
@@ -54,10 +54,9 @@ const SignIn = () => {
         }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          withCredentials: false,
         }
       );
-      console.log(res);
       const access_token = res?.data.access_token;
       const refresh_token = res?.data.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
@@ -87,7 +86,7 @@ const SignIn = () => {
         JSON.stringify({ email: email, username: user, password: pwd }),
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          withCredentials: false,
         }
       );
       const access_token = response?.data?.access_token;

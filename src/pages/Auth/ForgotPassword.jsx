@@ -47,7 +47,7 @@ const ForgotPassword = () => {
     try {
       await axios.post(FP_URL, JSON.stringify({ email: email }), {
         headers: { "Content-Type": "application/json" },
-        withCredentials: true,
+        withCredentials: false,
       });
       // Clear the input fields
       setEmail("");
