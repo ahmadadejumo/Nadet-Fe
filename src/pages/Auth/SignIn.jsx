@@ -11,13 +11,15 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
+import useRefreshToken from "../../hooks/useRefreshToken";
 
 const LOGIN_URL = "/auth/login/";
 
 const SignIn = () => {
+  const refresh = useRefreshToken;
   const [showPassword, setShowPassword] = useState(false);
 
-  const { setAuth } = useAuth();
+  const { setAuth, auth } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -50,6 +52,12 @@ const SignIn = () => {
         access_token: response.accessToken,
         id_token: response.tokenId,
       });
+      const access_token = response.accessToken;
+      const refresh_token = response.refreshToken;
+      setAuth({ user, pwd, access_token, refresh_token });
+      localStorage.setItem("access_token", response.accessToken);
+      localStorage.setItem("refresh_token", response.refreshToken);
+      navigate(from, { replace: true });
     } catch (err) {}
   };
 
