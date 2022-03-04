@@ -11,15 +11,13 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
-import useRefreshToken from "../../hooks/useRefreshToken";
 
 const LOGIN_URL = "/auth/login/";
 
 const SignIn = () => {
-  const refresh = useRefreshToken;
   const [showPassword, setShowPassword] = useState(false);
 
-  const { setAuth, auth } = useAuth();
+  const { setAuth } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,15 +46,22 @@ const SignIn = () => {
   const responseGoogle = async (response) => {
     console.log(response);
     try {
-      const res = await axios.post("/auth/google/", {
-        access_token: response.accessToken,
-        id_token: response.tokenId,
-      });
-      const access_token = response.accessToken;
-      const refresh_token = response.refreshToken;
+      const res = await axios.post(
+        "/auth/google/",
+        JSON.stringify({
+          access_token: response.accessToken,
+          id_token: response.tokenId,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      const access_token = res.access_token;
+      const refresh_token = res.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
-      localStorage.setItem("access_token", response.accessToken);
-      localStorage.setItem("refresh_token", response.refreshToken);
+      localStorage.setItem("access_token", res.accessToken);
+      localStorage.setItem("refresh_token", res.refreshToken);
       navigate(from, { replace: true });
     } catch (err) {}
   };
