@@ -57,11 +57,12 @@ const SignIn = () => {
           withCredentials: true,
         }
       );
-      const access_token = res.access_token;
-      const refresh_token = res.refresh_token;
+      console.log(res);
+      const access_token = res?.data.access_token;
+      const refresh_token = res?.data.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
-      localStorage.setItem("access_token", res.accessToken);
-      localStorage.setItem("refresh_token", res.refreshToken);
+      localStorage.setItem("access_token", res?.data.access_token);
+      localStorage.setItem("refresh_token", res?.data.refresh_token);
       navigate(from, { replace: true });
     } catch (err) {}
   };
