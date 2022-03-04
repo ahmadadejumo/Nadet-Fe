@@ -3,6 +3,7 @@ import useAxios from "../hooks/useAxios";
 import { useNavigate, useLocation } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import useRefreshToken from "../hooks/useRefreshToken";
+import { GoogleLogout } from "react-google-login";
 
 const Dashboard = () => {
   const [user, setUser] = useState();
@@ -48,9 +49,19 @@ const Dashboard = () => {
       <ul>
         <li key={user?.pk}>{user?.username}</li>
       </ul>
-      <button onClick={signOut}>LogOut</button>
+      <button onClick={signOut}>
+        <GoogleLogout
+          clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+          render={(renderProps) => (
+            <p onClick={renderProps.onClick} disabled={renderProps.disabled}>
+              LogOut
+            </p>
+          )}
+          onLogoutSuccess={logout}
+        />
+      </button>
       <br />
-      <button onClick={refresh}>LogOut</button>
+      <button onClick={refresh}>Refresh</button>
     </div>
   );
 };

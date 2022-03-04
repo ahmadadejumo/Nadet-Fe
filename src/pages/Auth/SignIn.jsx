@@ -64,7 +64,18 @@ const SignIn = () => {
       localStorage.setItem("access_token", res?.data.access_token);
       localStorage.setItem("refresh_token", res?.data.refresh_token);
       navigate(from, { replace: true });
-    } catch (err) {}
+    } catch (err) {
+      if (!err?.res) {
+        setErrMsg("No Server Response");
+      } else if (err.res?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.res?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
 
   // Login without social account
@@ -212,6 +223,7 @@ const SignIn = () => {
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={"single_host_origin"}
+                isSignedIn={true}
               />
               <img
                 src={facebook}
