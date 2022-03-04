@@ -190,7 +190,7 @@ const SignIn = () => {
             </div>
             <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px] lg:pb-[65px]">
               <GoogleLogin
-                clientId="1047637905977-81uc5mhboghuiioe8rm5h1bto3hln503.apps.googleusercontent.com"
+                clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
