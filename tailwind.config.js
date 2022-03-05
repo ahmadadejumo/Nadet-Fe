@@ -9,7 +9,7 @@ module.exports = {
         scolor: "#EFD07C",
       },
       fontFamily: {
-        Lato: ["'Lato', sans-serif"],
+        Lato: ["Lato, sans-serif"],
       },
       borderRadius: {
         half: "10000px",

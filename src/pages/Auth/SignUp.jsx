@@ -103,43 +103,6 @@ const SignUp = () => {
     return setShowPassword(showPassword ? false : true);
   };
 
-  // Google Login
-  const responseGoogle = async (response) => {
-    // console.log(response);
-    try {
-      const res = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({
-          access_token: response.accessToken,
-          id_token: response.tokenId,
-        }),
-        {
-          headers: { "Content-Type": "application/json" },
-          mode: "cors",
-          withCredentials: false,
-        }
-      );
-      // console.log(res);
-      const access_token = res?.data.access_token;
-      const refresh_token = res?.data.refresh_token;
-      setAuth({ user, pwd, access_token, refresh_token });
-      localStorage.setItem("access_token", res?.data.access_token);
-      localStorage.setItem("refresh_token", res?.data.refresh_token);
-      navigate(from, { replace: true });
-    } catch (err) {
-      // if (!err?.res) {
-      //   setErrMsg("No Server Response");
-      // } else if (err.res?.status === 400) {
-      //   setErrMsg("Missing Username or Password");
-      // } else if (err.res?.status === 401) {
-      //   setErrMsg("Unauthorized");
-      // } else {
-      //   setErrMsg("Login Failed");
-      // }
-      // errRef.current.focus();
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
@@ -180,6 +143,43 @@ const SignUp = () => {
         setErrMsg("Username or Email Taken");
       } else {
         setErrMsg("Username or Email Taken");
+      }
+      errRef.current.focus();
+    }
+  };
+
+  // Google Login
+  const responseGoogle = async (response) => {
+    // console.log(response);
+    try {
+      const res = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({
+          access_token: response.accessToken,
+          id_token: response.tokenId,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          mode: "cors",
+          withCredentials: false,
+        }
+      );
+      // console.log(res);
+      const access_token = res?.data.access_token;
+      const refresh_token = res?.data.refresh_token;
+      setAuth({ user, pwd, access_token, refresh_token });
+      localStorage.setItem("access_token", res?.data.access_token);
+      localStorage.setItem("refresh_token", res?.data.refresh_token);
+      navigate(from, { replace: true });
+    } catch (err) {
+      if (!err?.res) {
+        setErrMsg("No Server Response");
+      } else if (err.res?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.res?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
       }
       errRef.current.focus();
     }
@@ -440,6 +440,7 @@ const SignUp = () => {
                   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
                   isSignedIn={true}
+                  redirectUri={"/dashboard"}
                 />
                 <img
                   src={facebook}
