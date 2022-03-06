@@ -13,7 +13,7 @@ import { GoogleLogin } from "react-google-login";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const LOGIN_URL = "/auth/login/";
+const GOOGLE_URL = "/auth/google/";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX =
@@ -153,14 +153,13 @@ const SignUp = () => {
     // console.log(response);
     try {
       const res = await axios.post(
-        LOGIN_URL,
+        GOOGLE_URL,
         JSON.stringify({
           access_token: response.accessToken,
           id_token: response.tokenId,
         }),
         {
           headers: { "Content-Type": "application/json" },
-          mode: "cors",
           withCredentials: false,
         }
       );
@@ -173,13 +172,7 @@ const SignUp = () => {
       navigate(from, { replace: true });
     } catch (err) {
       if (!err?.res) {
-        setErrMsg("No Server Response");
-      } else if (err.res?.status === 400) {
-        setErrMsg("Missing Username or Password");
-      } else if (err.res?.status === 401) {
-        setErrMsg("Unauthorized");
-      } else {
-        setErrMsg("Login Failed");
+        setErrMsg("Email verification failed");
       }
       errRef.current.focus();
     }
@@ -385,7 +378,7 @@ const SignUp = () => {
                 <input
                   type="checkbox"
                   onChange={checkboxHandler}
-                  className="h-[24px] w-[24px] "
+                  className="h-[24px] form-checkbox text-bcolor w-[24px] "
                 />
                 <label htmlFor="checkbox" className="font-normal text-base">
                   I Accept{" "}
@@ -440,7 +433,6 @@ const SignUp = () => {
                   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
                   isSignedIn={true}
-                  redirectUri={"/dashboard"}
                 />
                 <img
                   src={facebook}

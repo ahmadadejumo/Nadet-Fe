@@ -13,7 +13,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
 
 const LOGIN_URL = "/auth/login/";
-
+const GOOGLE_URL = "/auth/google/";
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -47,7 +47,7 @@ const SignIn = () => {
     // console.log(response);
     try {
       const res = await axios.post(
-        "/auth/google/",
+        GOOGLE_URL,
         JSON.stringify({
           access_token: response.accessToken,
           id_token: response.tokenId,
@@ -65,13 +65,7 @@ const SignIn = () => {
       navigate(from, { replace: true });
     } catch (err) {
       if (!err?.res) {
-        setErrMsg("No Server Response");
-      } else if (err.res?.status === 400) {
-        setErrMsg("Missing Username or Password");
-      } else if (err.res?.status === 401) {
-        setErrMsg("Unauthorized");
-      } else {
-        setErrMsg("Login Failed");
+        setErrMsg("Email verification failed");
       }
       errRef.current.focus();
     }
