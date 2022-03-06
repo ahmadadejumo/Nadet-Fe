@@ -11,9 +11,12 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 
 const LOGIN_URL = "/auth/login/";
 const GOOGLE_URL = "/auth/google/";
+const FACEBOOK_URL = "/auth/facebook/";
+
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -57,9 +60,32 @@ const SignIn = () => {
           withCredentials: false,
         }
       );
-      const access_token = res?.data.access_token;
-      const refresh_token = res?.data.refresh_token;
-      setAuth({ user, pwd, access_token, refresh_token });
+      localStorage.setItem("access_token", res?.data.access_token);
+      localStorage.setItem("refresh_token", res?.data.refresh_token);
+      navigate(from, { replace: true });
+    } catch (err) {
+      if (!err?.res) {
+        setErrMsg("Email verification failed");
+      }
+      errRef.current.focus();
+    }
+  };
+
+  // Facebook Login
+  const responseFacebook = async (response) => {
+    console.log(response);
+    try {
+      const res = await axios.post(
+        FACEBOOK_URL,
+        JSON.stringify({
+          access_token: response.accessToken,
+          id_token: response.userId,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+        }
+      );
       localStorage.setItem("access_token", res?.data.access_token);
       localStorage.setItem("refresh_token", res?.data.refresh_token);
       navigate(from, { replace: true });
@@ -218,10 +244,20 @@ const SignIn = () => {
                 cookiePolicy={"single_host_origin"}
                 isSignedIn={true}
               />
-              <img
-                src={facebook}
-                alt="logo"
-                className="h-[24px] w-[24px] object-contain cursor-pointer"
+              <FacebookLogin
+                appId="315739237098755"
+                autoLoad={false}
+                textButton=""
+                fields="name,email,picture"
+                callback={responseFacebook}
+                cssClass="my-facebook-button-class"
+                icon={
+                  <img
+                    src={facebook}
+                    alt="logo"
+                    className="h-[24px] w-[24px] object-contain cursor-pointer"
+                  />
+                }
               />
               <img
                 src={twitter}
