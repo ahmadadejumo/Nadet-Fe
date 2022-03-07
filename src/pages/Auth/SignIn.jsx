@@ -17,8 +17,8 @@ import TwitterLogin from "react-twitter-login";
 const LOGIN_URL = "/auth/login/";
 const GOOGLE_URL = "/auth/google/";
 const FACEBOOK_URL = "/auth/facebook/";
-const CONSUMER_KEY = "XzBLZ3V2WW9TczFzb1R1bHdKTVI6MTpjaQ";
-const CONSUMER_SECRET = "XzBLZ3V2WW9TczFzb1R1bHdKTVI6MTpjaQ";
+const CONSUMER_KEY = "WE5OLXlnZ2FxTk9HYVF4djQ5MFU6MTpjaQ";
+const CONSUMER_SECRET = "qTl5QAlr_mDAGWW3OOaV4QDQF4KmB46xHXMNXbqmBgQaT0FjRR";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
