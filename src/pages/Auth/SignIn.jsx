@@ -12,10 +12,13 @@ import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import TwitterLogin from "react-twitter-login";
 
 const LOGIN_URL = "/auth/login/";
 const GOOGLE_URL = "/auth/google/";
 const FACEBOOK_URL = "/auth/facebook/";
+const CONSUMER_KEY = "XzBLZ3V2WW9TczFzb1R1bHdKTVI6MTpjaQ";
+const CONSUMER_SECRET = "XzBLZ3V2WW9TczFzb1R1bHdKTVI6MTpjaQ";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -79,7 +82,7 @@ const SignIn = () => {
         FACEBOOK_URL,
         JSON.stringify({
           access_token: response.accessToken,
-          id_token: response.userId,
+          id_token: response.userID,
         }),
         {
           headers: { "Content-Type": "application/json" },
@@ -95,6 +98,11 @@ const SignIn = () => {
       }
       errRef.current.focus();
     }
+  };
+
+  // Twitter Login
+  const authHandler = (err, data) => {
+    console.log(err, data);
   };
 
   // Login without social account
@@ -245,7 +253,7 @@ const SignIn = () => {
                 isSignedIn={true}
               />
               <FacebookLogin
-                appId="315739237098755"
+                appId="3102206953389763"
                 autoLoad={false}
                 textButton=""
                 fields="name,email,picture"
@@ -259,10 +267,17 @@ const SignIn = () => {
                   />
                 }
               />
-              <img
-                src={twitter}
-                alt="logo"
-                className="h-[24px] w-[24px] object-contain cursor-pointer"
+              <TwitterLogin
+                authCallback={authHandler}
+                consumerKey={CONSUMER_KEY}
+                consumerSecret={CONSUMER_SECRET}
+                children={
+                  <img
+                    src={twitter}
+                    alt="logo"
+                    className="h-[24px] w-[24px] object-contain cursor-pointer"
+                  />
+                }
               />
             </div>
           </form>
