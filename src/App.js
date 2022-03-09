@@ -23,6 +23,7 @@ import { AuthProvider } from "./Context/AuthProvider";
 import Dashboard from "./Dashboard/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import PersistLogin from "./components/PersistLogin";
+import { LinkedInCallback } from "react-linkedin-login-oauth2";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
       <AuthProvider>
         <Wrapper>
           <Routes>
+            <Route exact path="/linkedin" component={LinkedInCallback} />
             <Route path="/" element={<LandingPage />} />
             <Route path="HowItWorks" element={<HowItWorks />} />
             <Route path="about" element={<AboutUs />} />

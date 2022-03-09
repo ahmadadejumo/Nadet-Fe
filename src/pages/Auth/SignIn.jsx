@@ -5,20 +5,18 @@ import { EyeOffIcon } from "@heroicons/react/outline";
 import { EyeIcon } from "@heroicons/react/outline";
 import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
-import twitter from "../../assets/images/twitter.png";
+import linkedin from "../../assets/images/linkedin.png";
 import rectangle33 from "../../assets/images/rectangle33.png";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import TwitterLogin from "react-twitter-login";
+import { useLinkedIn } from "react-linkedin-login-oauth2";
 
 const LOGIN_URL = "/auth/login/";
 const GOOGLE_URL = "/auth/google/";
 const FACEBOOK_URL = "/auth/facebook/";
-const CONSUMER_KEY = "WE5OLXlnZ2FxTk9HYVF4djQ5MFU6MTpjaQ";
-const CONSUMER_SECRET = "qTl5QAlr_mDAGWW3OOaV4QDQF4KmB46xHXMNXbqmBgQaT0FjRR";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -100,10 +98,16 @@ const SignIn = () => {
     }
   };
 
-  // Twitter Login
-  const authHandler = (err, data) => {
-    console.log(err, data);
-  };
+  const { linkedInLogin } = useLinkedIn({
+    clientId: "86dmvxfmtwbn9o",
+    redirectUri: `${window.location.origin}/linkedin`,
+    onSuccess: (code) => {
+      console.log(code);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
 
   // Login without social account
   const handleSubmit = async (e) => {
@@ -267,17 +271,11 @@ const SignIn = () => {
                   />
                 }
               />
-              <TwitterLogin
-                authCallback={authHandler}
-                consumerKey={CONSUMER_KEY}
-                consumerSecret={CONSUMER_SECRET}
-                children={
-                  <img
-                    src={twitter}
-                    alt="logo"
-                    className="h-[24px] w-[24px] object-contain cursor-pointer"
-                  />
-                }
+              <img
+                onClick={linkedInLogin}
+                src={linkedin}
+                alt="Sign in with Linked In"
+                className="h-[24px] w-[24px] object-contain cursor-pointer"
               />
             </div>
           </form>
