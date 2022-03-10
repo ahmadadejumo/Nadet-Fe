@@ -39,7 +39,6 @@ function App() {
       <AuthProvider>
         <Wrapper>
           <Routes>
-            <Route exact path="/linkedin" component={LinkedInCallback} />
             <Route path="/" element={<LandingPage />} />
             <Route path="HowItWorks" element={<HowItWorks />} />
             <Route path="about" element={<AboutUs />} />
@@ -69,6 +68,7 @@ function App() {
                 <Route path="dashboard" element={<Dashboard />} />
               </Route>
             </Route>
+            <Route exact path="/linkedin" element={<LinkedInCallback />} />
           </Routes>
         </Wrapper>
       </AuthProvider>
