@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/Logo.svg";
-import { MenuIcon } from "@heroicons/react/solid";
-import { XIcon } from "@heroicons/react/solid";
+import { Spin as Hamburger } from "hamburger-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -25,7 +24,7 @@ const Navbar = () => {
           className="object-contain w-[102px] h-[38px] md:w-[178px] md:h-[66px]"
         />
       </div>
-      {/* tablet and desktop menu */}
+      {/* desktop menu */}
       <div className="font-Lato space-x-[30px] text-base font-semibold cursor-pointer hidden lg:inline-block">
         <Link to="/HowItWorks" className="hover:text-bcolor">
           How it works
@@ -51,35 +50,58 @@ const Navbar = () => {
           Log In
         </Link>
         <button className="h-[44px] w-[142px] rounded-lg hidden md:inline-block font-Lato font-semibold text-base bg-bcolor hover:bg-yellow-500 transition duration-300">
-          Get Started
+          <Link to={"/signup"}>Get Started</Link>
         </button>
         {/* Mobile Menu */}
-        <div className="lg:hidden">
-          {!isOpen ? (
-            <MenuIcon className="h-8 w-8" onClick={handleClick} />
-          ) : (
-            <div className="bg-white h-full w-full z-[1] fixed top-0 left-0 overflow-x-hidden">
-              <XIcon className="h-8 w-8 float-right " onClick={handleClick} />
-              <div
-                className="w-full text-center my-[250px] text-lg font-bold"
-                onClick={handleClick}
+        <div className="md:hidden">
+          <Hamburger
+            size={26}
+            rounded
+            color="#FBBC15"
+            duration={0.8}
+            toggled={isOpen}
+            toggle={setIsOpen}
+          />
+        </div>
+        <div className="hidden md:block lg:hidden">
+          <Hamburger
+            size={41}
+            rounded
+            color="#FBBC15"
+            duration={0.8}
+            toggled={isOpen}
+            toggle={setIsOpen}
+          />
+        </div>
+        <div className="absolute z-[1] top-20 md:top-28 left-0 md:-left-5 right-0">
+          {isOpen && (
+            <div
+              className="rounded-b-3xl text-xl md:text-2xl font-Lato font-bold bg-bcolor pt-10 md:pt-14"
+              onClick={handleClick}
+            >
+              <Link to="/HowItWorks">
+                <p className="flex justify-center">How it works</p>
+              </Link>
+              <Link to="/products">
+                <p className="flex justify-center pt-5 md:pt-7">Products</p>
+              </Link>
+              <Link to="/marketplace">
+                <p className="flex justify-center pt-5 md:pt-7">Marketplace</p>
+              </Link>
+              <Link to="/faqs">
+                <p className="flex justify-center pt-5 md:pt-7">FAQs</p>
+              </Link>
+              <Link to="/pricing">
+                <p className="flex justify-center pt-5 md:pt-7">Pricing</p>
+              </Link>
+              <Link
+                to={"/signin"}
+                className="flex justify-center pb-10 md:pb-16 pt-6 md:pt-8"
               >
-                <Link to="/HowItWorks">
-                  <p className="">How it works</p>
-                </Link>
-                <Link to="/products">
-                  <p className="">Products</p>
-                </Link>
-                <Link to="/marketplace">
-                  <p className="">Marketplace</p>
-                </Link>
-                <Link to="/faqs">
-                  <p className="">FAQs</p>
-                </Link>
-                <Link to="/pricing">
-                  <p className="">Pricing</p>
-                </Link>
-              </div>
+                <button className="bg-white text-bcolor h-[50px] md:h-[55px] w-[150px] md:w-[180px] rounded-lg">
+                  Log In
+                </button>
+              </Link>
             </div>
           )}
         </div>
