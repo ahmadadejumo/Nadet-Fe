@@ -103,27 +103,27 @@ const SignIn = () => {
     redirectUri: `${window.location.origin}/linkedin`,
     onSuccess: async (code) => {
       console.log(code);
-      axios
-        .post(
-          "https://www.linkedin.com/oauth/v2/accessToken",
-          {
-            grant_type: "authorization_code",
-            code: code,
-            redirect_uri: "http://localhost:3000/linkedin",
-            client_id: "86dmvxfmtwbn9o",
-            client_secret: "lj03uJaJnerJQsOp",
-          },
-          {
-            headers: { "Content-Type": "x-www-form-urlencoded" },
-            withCredentials: false,
-          }
-        )
-        .then(function (response) {
-          console.log(response.access_token);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      // axios
+      //   .post(
+      //     "https://www.linkedin.com/oauth/v2/accessToken",
+      //     {
+      //       grant_type: "authorization_code",
+      //       code: code,
+      //       redirect_uri: "http://localhost:3000/linkedin",
+      //       client_id: "86dmvxfmtwbn9o",
+      //       client_secret: "lj03uJaJnerJQsOp",
+      //     },
+      //     {
+      //       headers: { "Content-Type": "x-www-form-urlencoded" },
+      //       withCredentials: false,
+      //     }
+      //   )
+      //   .then(function (response) {
+      //     console.log(response.access_token);
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
     },
     onError: (error) => {
       console.log(error);
