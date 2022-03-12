@@ -77,7 +77,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="bg-white absolute h-full w-full z-[1] left-0 overflow-x-hidden">
           <div
-            className="px-3 text-xl md:text-2xl font-Lato font-bold bg-white pt-10 md:pt-14"
+            className="px-3 text-xl md:text-2xl font-Lato font-bold pt-10 md:pt-14"
             onClick={handleClick}
           >
             <Link to="/HowItWorks">
@@ -95,20 +95,14 @@ const Navbar = () => {
             <Link to="/pricing">
               <p className=" pt-5 md:pt-10 md:pb-16">Pricing</p>
             </Link>
-            <div className="flex justify-between">
-              <Link
-                to={"/signin"}
-                className="flex justify-center md:hidden pb-10 md:pb-16 pt-6 md:pt-10"
-              >
-                <button className="bg-bcolor h-[50px] md:h-[55px] w-[150px] md:w-[180px] rounded-lg">
+            <div className="flex justify-between pt-10">
+              <Link to={"/signin"} className="flex justify-center md:hidden">
+                <button className="bg-bcolor h-[50px] md:h-[55px] w-[130px] md:w-[180px] rounded-lg">
                   Log In
                 </button>
               </Link>
-              <Link
-                to={"/signin"}
-                className="flex justify-center md:hidden pb-10 md:pb-16 pt-6 md:pt-10"
-              >
-                <button className="bg-bcolor h-[50px] md:h-[55px] w-[150px] md:w-[180px] rounded-lg">
+              <Link to={"/signup"} className="flex justify-center md:hidden">
+                <button className="bg-bcolor h-[50px] md:h-[55px] w-[130px] md:w-[180px] rounded-lg">
                   Get Started
                 </button>
               </Link>
