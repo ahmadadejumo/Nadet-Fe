@@ -118,10 +118,6 @@ const Pricing = () => {
               </Tab>
             </TabList>
           </Tabs>
-          {/* <div className="border border-bcolor rounded-lg h-[50px] md:w-[360px] flex">
-            <button className={`h-[50px] w-full rounded-lg`}></button>
-            <button className={`h-[50px] w-full rounded-lg`}></button>
-          </div> */}
         </div>
       </div>
       <div className="pt-[50px] mx-5 grid md:grid-cols-2 gap-y-5 md:gap-x-[15px] lg:grid-cols-4 md:mx-10 lg:mx-[30px]">
