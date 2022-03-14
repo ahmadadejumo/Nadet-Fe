@@ -1,5 +1,6 @@
 import React from "react";
 import arrow from "../assets/images/arrow.svg";
+import { Link } from "react-router-dom";
 
 const LpSection9 = () => {
   return (
@@ -15,10 +16,12 @@ const LpSection9 = () => {
             to massive success!
           </p>
           <div className="flex justify-center mt-[15px]">
-            <button className=" bg-white pr-5 font-Lato tracking-wide font-semibold text-base flex items-center justify-around  rounded-md h-14 w-64 md:w-72 px-5">
-              Start Selling With Nadet
-              <img src={arrow} alt="arrow" className=" pl-2" />
-            </button>
+            <Link to={"/signup"}>
+              <button className=" bg-white pr-5 font-Lato tracking-wide font-semibold text-base flex items-center justify-around  rounded-md h-14 w-64 md:w-72 px-5">
+                Start Selling With Nadet
+                <img src={arrow} alt="arrow" className=" pl-2" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
