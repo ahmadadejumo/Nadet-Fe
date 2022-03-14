@@ -16,13 +16,14 @@ import rectangle12 from "../../assets/images/rectangle12.png";
 import YelloCard from "../../components/YellowCard";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
     <div>
       {/* Header section */}
-      <Navbar />
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] md:pt-[168px]">
           Get To Know Us
         </h1>
@@ -45,7 +46,10 @@ const AboutUs = () => {
       {/* Body Section */}
       <div className="mt-[80px] md:mt-[100px] lg:mt-[120px]">
         <div className="flex justify-center">
-          <button className="bg-[#FBF3DE] rounded-lg h-[70px] w-[240px] font-Lato font-bold text-xl">
+          <button
+            disabled
+            className="bg-[#FBF3DE] rounded-lg h-[70px] w-[240px] font-Lato font-bold text-xl"
+          >
             Who We Are
           </button>
         </div>
@@ -66,7 +70,10 @@ const AboutUs = () => {
         <div className="md:flex justify-center space-x-5 md:mx-10 pb-[80px] lg:pt-[50px] lg:pb-[140px] lg:px-[250px]">
           <div>
             <div className="flex justify-center pt-10">
-              <button className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl">
+              <button
+                disabled
+                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl"
+              >
                 Our Mision
               </button>
             </div>
@@ -78,7 +85,10 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="flex justify-center pt-[30px]">
-              <button className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl">
+              <button
+                disabled
+                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl"
+              >
                 Our Vision
               </button>
             </div>
@@ -116,11 +126,11 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center pt-10 pb-[80px]">
+      <Link to={"/signup"} className="flex justify-center pt-10 pb-[80px]">
         <button className="font-Lato text-base font-semibold rounded-lg bg-bcolor h-[50px] w-[216px]">
           Start Selling With Us
         </button>
-      </div>
+      </Link>
       <div className="bg-[#FEF8E7] w-full md:flex lg:justify-center lg:space-x-28">
         <div className="flex justify-between pt-[50px] md:pt-3 lg:py-[56px] mx-5 lg:w-[407px]">
           <img src={rectangle10} alt="img" className="object-contain" />
@@ -134,9 +144,11 @@ const AboutUs = () => {
             we also market your products so it can be seen by a worldwide paying
             audience.
           </p>
-          <button className="bg-bcolor font-semibold text-base h-[50px] w-[199px] rounded-lg mt-5 mb-[50px]">
-            Get Started Today!
-          </button>
+          <Link to={"/signup"}>
+            <button className="bg-bcolor font-semibold text-base h-[50px] w-[199px] rounded-lg mt-5 mb-[50px]">
+              Get Started Today!
+            </button>
+          </Link>
         </div>
       </div>
       <div className="mx-5 md:flex md:items-center justify-center mt-[80px] md:mt-10 md:flex-row-reverse lg:mx-[140px]">
@@ -158,11 +170,11 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center pt-[40px]">
+      <Link to={"/signup"} className="flex justify-center pt-[40px]">
         <button className="font-semibold text-base bg-bcolor rounded-lg h-[50px] w-[194px] ">
           Become A Creator
         </button>
-      </div>
+      </Link>
       <div className="mx-5 md:flex md:items-center justify-center mt-[80px] md:mt-[40px] lg:mx-[140px]">
         <div className="md:pt-32 md:pr-10">
           <img src={rectangle12} alt="img" className="object-contain" />
@@ -180,11 +192,11 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center pt-[40px] pb-[120px]">
+      <Link to={"/signup"} className="flex justify-center pt-[40px] pb-[120px]">
         <button className="font-semibold text-base bg-bcolor rounded-lg h-[50px] w-[194px] ">
           Get Started Now
         </button>
-      </div>
+      </Link>
       <div className="mb-[80px] lg:mb-[120px]">
         <YelloCard />
       </div>
