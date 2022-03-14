@@ -32,7 +32,7 @@ const SignIn = () => {
 
   const [user, setUser] = useState("adejumoahmad4life@gmail.com");
   const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("123456Abcde@");
+  const [pwd, setPwd] = useState("12345Abcde@");
   const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {

@@ -31,7 +31,7 @@ const Faqs = () => {
           <input
             type="text"
             placeholder="Search for anything"
-            className="border-none outline-none"
+            className="border-none outline-none w-[280px] md:w-[500px] lg:w-[1000px]"
           />
           <img src={vector12} alt="img" className="h-[22px] w-[22px]" />
         </div>

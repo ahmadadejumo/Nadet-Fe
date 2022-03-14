@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
 import PriceCard from "./PriceCard";
@@ -14,6 +14,7 @@ import YellowCard from "../../components/YellowCard";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
 const Pricing = () => {
   const includedInAllPlans = [
@@ -97,17 +98,33 @@ const Pricing = () => {
           </div>
         </div>
         <div className="mx-5 mt-5 md:mt-12">
-          <div className="border border-bcolor rounded-lg h-[50px] md:w-[360px] flex">
-            <button className="bg-bcolor h-[50px] w-full rounded-lg">
-              Pay monthly
-            </button>
-            <button className="h-[50px] w-full  rounded-lg">
-              Pay yearly (10% off)
-            </button>
-          </div>
+          <Tabs
+            colorScheme="yellow"
+            variant="unstyled"
+            className="border border-bcolor rounded-lg h-[50px] md:w-[360px]"
+          >
+            <TabList>
+              <Tab
+                _selected={{ color: "black", bg: "#FBBC15" }}
+                className="h-[50px] w-full rounded-lg"
+              >
+                Pay monthly
+              </Tab>
+              <Tab
+                _selected={{ color: "black", bg: "#FBBC15" }}
+                className="h-[50px] w-full rounded-lg"
+              >
+                Pay yearly (10% off)
+              </Tab>
+            </TabList>
+          </Tabs>
+          {/* <div className="border border-bcolor rounded-lg h-[50px] md:w-[360px] flex">
+            <button className={`h-[50px] w-full rounded-lg`}></button>
+            <button className={`h-[50px] w-full rounded-lg`}></button>
+          </div> */}
         </div>
       </div>
-      <div className="pt-[50px] grid md:grid-cols-2 gap-y-5 md:gap-x-[29px] lg:grid-cols-4 md:mx-10 lg:mx-[80px]">
+      <div className="pt-[50px] mx-5 grid md:grid-cols-2 gap-y-5 md:gap-x-[15px] lg:grid-cols-4 md:mx-10 lg:mx-[30px]">
         <PriceCard
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"
