@@ -19,23 +19,21 @@ const PriceCard = ({
   };
 
   return (
-    <div className="">
+    <div className="font-Lato">
       <div className=" bg-[#FDD773] px-[25px] rounded-t-lg">
         <div className="flex items-center justify-between">
-          <h1 className="font-Lato font-bold text-base pt-[35px]">{header}</h1>
+          <h1 className="font-bold text-base pt-[35px]">{header}</h1>
           <div
             className={`bg-white ${display} mt-5 h-[29px] w-[110px] rounded-tr-lg flex items-center justify-evenly`}
           >
             <img src={star} alt="img" />
-            <h1 className="font-Lato font-bold text-xs">Recommended</h1>
+            <h1 className="font-bold text-xs">Recommended</h1>
           </div>
         </div>
-        <p className="font-Lato text-sm font-medium pt-[15px] pb-[27px]">
-          {text}
-        </p>
+        <p className="text-sm font-medium pt-[15px] pb-[27px]">{text}</p>
       </div>
       <div className="px-5 pt-[15px] border md:h-[1200px] border-[#FDD773] rounded-b-lg pb-5">
-        <h1 className="font-Lato font-bold text-lg">{subHeading}</h1>
+        <h1 className="font-bold text-lg">{subHeading}</h1>
         <div className="flex justify-between pt-[25px]">
           <button className="bg-bcolor h-[44px] w-[142px] rounded-lg">
             Get Started

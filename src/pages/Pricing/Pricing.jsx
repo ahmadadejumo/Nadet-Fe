@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import image10 from "../../assets/images/image10.png";
 import dropdown from "../../assets/images/dropdown.svg";
 import PriceCard from "./PriceCard";
@@ -71,16 +71,17 @@ const Pricing = () => {
 
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="font-Lato">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
         <Navbar />
-        <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[197px] mx-2">
+        <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[197px] mx-2">
           Our pricing is simple and fair
         </h1>
-        <p className="font-Lato font-semibold text-lg text-center pt-5 mx-10 pb-[51px]">
-          It’s completely free to get started.{" "}
-          <p className="text-bcolor">Save 10% with annual billing</p>
+        <p className="font-semibold text-lg text-center pt-5 mx-10 pb-[51px]">
+          It’s completely free to get started.
+          <br />
+          <span className="text-bcolor">Save 10% with annual billing</span>
         </p>
       </div>
       {/* Body section */}
@@ -120,8 +121,9 @@ const Pricing = () => {
           </Tabs>
         </div>
       </div>
-      <div className="pt-[50px] mx-5 grid md:grid-cols-2 gap-y-5 md:gap-x-[15px] lg:grid-cols-4 md:mx-10 lg:mx-[30px]">
+      <div className="pt-[50px] mx-5 grid md:grid-cols-2 gap-y-5 md:gap-x-[15px] lg:grid-cols-4 md:mx-10 lg:mx-[15px]">
         <PriceCard
+          key={1}
           header="Starter plan"
           text="Share what you know. Get started on Nadet with our free set of features"
           display="hidden"
@@ -130,13 +132,14 @@ const Pricing = () => {
           listPlan={starterPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id} className="font-Lato text-sm font-normal">
+              <h1 key={id} className="text-sm font-normal">
                 {title}
               </h1>
             </div>
           ))}
         />
         <PriceCard
+          key={2}
           header="Basic Plan"
           text="Grow your business. Upgrade from the free plan with a more advanced feature. Includes everything in Starter Plan"
           subHeading="$29 {10% off for Annual}"
@@ -144,11 +147,14 @@ const Pricing = () => {
           listPlan={basicPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id}>{title}</h1>
+              <h1 key={id} className="font-normal text-sm">
+                {title}
+              </h1>
             </div>
           ))}
         />
         <PriceCard
+          key={3}
           header="Pro Plan"
           text="Build a profitable business with our best plan. Includes everything in Starter & Basic Plan"
           subHeading="$49 {10% off for Annual}"
@@ -157,11 +163,14 @@ const Pricing = () => {
           listPlan={proPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id}>{title}</h1>
+              <h1 key={id} className="font-normal text-sm">
+                {title}
+              </h1>
             </div>
           ))}
         />
         <PriceCard
+          key={4}
           header="Premium Plan"
           text="Scale your business with our most powerful set of features Includes everything in Starter, Basic & Pro Plan"
           subHeading="$99 {10% off for Annual}"
@@ -170,7 +179,7 @@ const Pricing = () => {
           listPlan={premiumPlanList.map(({ id, title }) => (
             <div className="flex pt-[25px] items-center space-x-3">
               <img src={vector15} alt="img" />
-              <h1 key={id} className="font-Lato font-normal text-sm">
+              <h1 key={id} className="font-normal text-sm">
                 {title}
               </h1>
             </div>
@@ -178,7 +187,7 @@ const Pricing = () => {
         />
       </div>
       <div className="mt-[80px]">
-        <h1 className="font-Lato text-center text-2xl md:text-3xl lg:text-4xl font-semibold">
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-semibold">
           Included in all plans
         </h1>
         <div className="mx-5 md:mx-16 lg:mx-[239px] mt-[40px] md:flex justify-between">
@@ -186,7 +195,7 @@ const Pricing = () => {
             {includedInAllPlans.slice(0, 3).map(({ id, title }) => (
               <div className="flex pt-5 items-center space-x-3">
                 <img src={vector15} alt="img" />
-                <h1 key={id} className="font-Lato text-base font-normal">
+                <h1 key={id} className="text-base font-normal">
                   {title}
                 </h1>
               </div>
@@ -196,7 +205,7 @@ const Pricing = () => {
             {includedInAllPlans.slice(3, 6).map(({ id, title }) => (
               <div className="flex pt-5 items-center space-x-3">
                 <img src={vector15} alt="img" />
-                <h1 key={id} className="font-Lato text-base font-normal">
+                <h1 key={id} className="text-base font-normal">
                   {title}
                 </h1>
               </div>
@@ -206,14 +215,14 @@ const Pricing = () => {
             {includedInAllPlans.slice(6, 9).map(({ id, title }) => (
               <div className="flex pt-5 items-center space-x-3">
                 <img src={vector15} alt="img" />
-                <h1 key={id} className="font-Lato text-base font-normal">
+                <h1 key={id} className="text-base font-normal">
                   {title}
                 </h1>
               </div>
             ))}
           </div>
         </div>
-        <h1 className="font-Lato font-normal text-center text-base pt-10 mx-5 md:mx-24 lg:mx-[326px]">
+        <h1 className="font-normal text-center text-base pt-10 mx-5 md:mx-24 lg:mx-[326px]">
           Nadet plans will automatically renew until canceled. Recurring charges
           may be subject to changes. Plans can be canceled at anytime. Have any
           questions? Contact{" "}
@@ -223,7 +232,7 @@ const Pricing = () => {
         </h1>
       </div>
       <div className="mt-[80px] lg:mt-[100px]">
-        <h1 className="font-Lato font-semibold text-2xl md:text-3xl lg:text-4xl text-center">
+        <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl text-center">
           Frequently Asked Questions
         </h1>
         <div className="mt-[40px] lg:mt-[60px] space-y-5 lg:mx-[150px]">
@@ -236,7 +245,7 @@ const Pricing = () => {
             onClick={() => {
               navigate("/faqs");
             }}
-            className="bg-bcolor w-[173px] h-[50px] font-Lato font-semibold text-base rounded-lg"
+            className="bg-bcolor w-[173px] h-[50px] font-semibold text-base rounded-lg"
           >
             See More FAQs
           </button>
