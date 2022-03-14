@@ -11,8 +11,8 @@ const LiveSessions = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
-      <Navbar />
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="text-center text-[28px] md:text-3xl lg:text-4xl font-extrabold pt-[129px] px-[40px]">
           Connect more with your audience
         </h1>
@@ -21,14 +21,14 @@ const LiveSessions = () => {
           for creating live classes. You can have more than 50 people in your
           class all at once.
         </p>
-        <div className="flex justify-center pt-5 px-5">
+        <Link to={"/signup"} className="flex justify-center pt-5 px-5">
           <button className="font-semibold text-base rounded-lg bg-bcolor h-[50px] w-[321px]">
             Connect With Your Audience Now
           </button>
-        </div>
+        </Link>
         <p className="pt-5 font-normal text-xl text-center px-10 pb-[53px]">
           Already have an account?{" "}
-          <Link to={"/"} className="text-bcolor">
+          <Link to={"/signin"} className="text-bcolor">
             Log in to your dashboard
           </Link>
         </p>
@@ -105,7 +105,10 @@ const LiveSessions = () => {
             class we will send you your money instantly directly to your Bank
             account or PayPal account
           </p>
-          <div className="flex justify-center pt-[15px] pb-[43px]">
+          <Link
+            to={"/signup"}
+            className="flex justify-center pt-[15px] pb-[43px]"
+          >
             <button className="font-semibold flex justify-around px-6 bg-white items-center h-[52px] w-[178px] text-base rounded-lg">
               Get Started
               <img
@@ -114,7 +117,7 @@ const LiveSessions = () => {
                 className="object-contain w-[14px] h-[12px]"
               />
             </button>
-          </div>
+          </Link>
         </div>
       </div>
       <Footer />

@@ -20,14 +20,14 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="font-Lato">
       {/* Header section */}
       <div className="bg-[#FFF8E8]">
         <Navbar />
-        <h1 className="font-Lato font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] md:pt-[168px]">
+        <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] md:pt-[168px]">
           Get To Know Us
         </h1>
-        <p className="font-Lato font-normal text-lg md:text-xl text-center pt-5 px-5 md:px-36 lg:px-[395px]">
+        <p className="font-normal text-lg md:text-xl text-center pt-5 px-5 md:px-36 lg:px-[395px]">
           We offer you the flexibility to monetize any of your digital
           product/content(s) for maximum success.
         </p>
@@ -48,12 +48,12 @@ const AboutUs = () => {
         <div className="flex justify-center">
           <button
             disabled
-            className="bg-[#FBF3DE] rounded-lg h-[70px] w-[240px] font-Lato font-bold text-xl"
+            className="bg-[#FBF3DE] rounded-lg h-[70px] w-[240px] font-bold text-xl"
           >
             Who We Are
           </button>
         </div>
-        <p className="font-Lato text-base font-normal text-tcolor text-center pt-5 px-[25px] md:px-28 lg:px-[219px]">
+        <p className="text-base font-normal text-tcolor text-center pt-5 px-[25px] md:px-28 lg:px-[219px]">
           Being a creator is fun, but not without its hurdles. The lack of a
           suitable outlet to express creativity and complexities and costs of
           building a website, accepting payments from customers worldwide are
@@ -72,12 +72,12 @@ const AboutUs = () => {
             <div className="flex justify-center pt-10">
               <button
                 disabled
-                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl"
+                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-bold text-xl"
               >
                 Our Mision
               </button>
             </div>
-            <p className="font-Lato text-base font-normal text-tcolor text-center pt-5 px-[24px]">
+            <p className="text-base font-normal text-tcolor text-center pt-5 px-[24px]">
               Our mission is to be a one-stop platform for digital creators and
               creatives to build immersive connections with fans and followers
               and monetize them.
@@ -87,12 +87,12 @@ const AboutUs = () => {
             <div className="flex justify-center pt-[30px]">
               <button
                 disabled
-                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-Lato font-bold text-xl"
+                className="bg-[#FBF3DE] rounded-lg h-[60px] w-[170px] font-bold text-xl"
               >
                 Our Vision
               </button>
             </div>
-            <p className="font-Lato text-base font-normal text-tcolor text-center pt-5 px-[25px]">
+            <p className="text-base font-normal text-tcolor text-center pt-5 px-[25px]">
               Our Vision is to power-up creators of any category and democratize
               more opportunities for creators to earn endless income.
             </p>
@@ -104,10 +104,10 @@ const AboutUs = () => {
           <img src={rectangle9} alt="img" className="object-contain" />
         </div>
         <div className="lg:w-[600px]">
-          <h1 className="font-Lato font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl pt-[60px]">
             Why we are different from other marketplace?
           </h1>
-          <p className="font-Lato font-normal text-base pt-5 text-tcolor">
+          <p className="font-normal text-base pt-5 text-tcolor">
             Your video courses, ebooks and live webinars will be seen by a
             worldwide audience that are ready to buy your products. We offer
             you:
@@ -127,7 +127,7 @@ const AboutUs = () => {
         </div>
       </div>
       <Link to={"/signup"} className="flex justify-center pt-10 pb-[80px]">
-        <button className="font-Lato text-base font-semibold rounded-lg bg-bcolor h-[50px] w-[216px]">
+        <button className="text-base font-semibold rounded-lg bg-bcolor h-[50px] w-[216px]">
           Start Selling With Us
         </button>
       </Link>
@@ -135,7 +135,7 @@ const AboutUs = () => {
         <div className="flex justify-between pt-[50px] md:pt-3 lg:py-[56px] mx-5 lg:w-[407px]">
           <img src={rectangle10} alt="img" className="object-contain" />
         </div>
-        <div className="font-Lato mx-5 pt-[60px] lg:w-[510px] lg:pt-[100px]">
+        <div className="mx-5 pt-[60px] lg:w-[510px] lg:pt-[100px]">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
             We market and drive traffic to your products for high reach
           </h1>
@@ -155,7 +155,7 @@ const AboutUs = () => {
         <div className="md:pl-10 md:pt-48 ">
           <img src={rectangle11} alt="img" className="object-contain" />
         </div>
-        <div className="font-Lato pt-[60px] md:w-[1600px] lg:w-[1700px] lg:pt-[160px]">
+        <div className="pt-[60px] md:w-[1600px] lg:w-[1700px] lg:pt-[160px]">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
             Created for content creators and their audience
           </h1>
@@ -179,7 +179,7 @@ const AboutUs = () => {
         <div className="md:pt-32 md:pr-10">
           <img src={rectangle12} alt="img" className="object-contain" />
         </div>
-        <div className="font-Lato pt-[60px] lg:pt-[110px] md:w-[970px]">
+        <div className="pt-[60px] lg:pt-[110px] md:w-[970px]">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl">
             We have team of experts that are making dreams come through.
           </h1>
