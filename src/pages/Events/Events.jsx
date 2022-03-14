@@ -6,22 +6,23 @@ import rectangle20 from "../../assets/images/rectangle20.png";
 import rectangle21 from "../../assets/images/rectangle21.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
     <div className="font-Lato">
       {/* Header section */}
-      <Navbar />
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center pt-[129px] px-5 md:px-28 lg:px-56">
           Find conferences, workshop and summits that is useful for your
           industry
         </h1>
-        <div className="flex justify-center pt-5 pb-[34px]">
+        <Link to={"/signup"} className="flex justify-center pt-5 pb-[34px]">
           <button className="h-[50px] w-[158px] bg-bcolor rounded-lg font-semibold text-base">
             Sign Up Now!
           </button>
-        </div>
+        </Link>
       </div>
       {/* Body Section */}
       <div className="pt-[80px]">

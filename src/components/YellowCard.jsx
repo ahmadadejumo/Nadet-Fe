@@ -15,14 +15,12 @@ const LpSection9 = () => {
             Create a free account in less than 5 minutes to begin your journey
             to massive success!
           </p>
-          <div className="flex justify-center mt-[15px]">
-            <Link to={"/signup"}>
-              <button className=" bg-white pr-5 font-Lato tracking-wide font-semibold text-base flex items-center justify-around  rounded-md h-14 w-64 md:w-72 px-5">
-                Start Selling With Nadet
-                <img src={arrow} alt="arrow" className=" pl-2" />
-              </button>
-            </Link>
-          </div>
+          <Link to={"/signup"} className="flex justify-center mt-[15px]">
+            <button className=" bg-white pr-5 font-Lato tracking-wide font-semibold text-base flex items-center justify-around  rounded-md h-14 w-64 md:w-72 px-5">
+              Start Selling With Nadet
+              <img src={arrow} alt="arrow" className=" pl-2" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>
