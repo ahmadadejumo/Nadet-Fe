@@ -10,8 +10,8 @@ const CompanyValues = () => {
   return (
     <div className="font-Lato">
       {/* Header Section */}
-      <Navbar />
       <div className="bg-[#FFF8E8]">
+        <Navbar />
         <h1 className="pt-[129px] font-extrabold text-[28px] md:text-3xl lg:text-4xl text-center">
           Our Values
         </h1>
