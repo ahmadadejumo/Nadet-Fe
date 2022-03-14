@@ -107,7 +107,7 @@ const Navbar = () => {
               <Link to="/pricing">
                 <p className=" pt-5 md:pt-10 md:pb-16">Pricing</p>
               </Link>
-              <div className="flex justify-between pt-10">
+              <div className="flex justify-between pt-16">
                 <Link to={"/signin"} className="flex justify-center md:hidden">
                   <button className="bg-bcolor h-[50px] md:h-[55px] w-[130px] md:w-[180px] rounded-lg">
                     Log In
