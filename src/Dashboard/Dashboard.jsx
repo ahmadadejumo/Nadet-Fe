@@ -1,53 +1,54 @@
-import { useState, useEffect } from "react";
-import useAxios from "../hooks/useAxios";
-import { useNavigate, useLocation } from "react-router-dom";
-import useLogOut from "../hooks/useLogOut";
-import useRefreshToken from "../hooks/useRefreshToken";
-import { GoogleLogout } from "react-google-login";
+// import { useState, useEffect } from "react";
+// import useAxios from "../hooks/useAxios";
+// import { useNavigate, useLocation } from "react-router-dom";
+// import useLogOut from "../hooks/useLogOut";
+// import useRefreshToken from "../hooks/useRefreshToken";
+// import { GoogleLogout } from "react-google-login";
+import Navbar from "./Navbar";
 
 const Dashboard = () => {
-  const [user, setUser] = useState();
-  const useAxiosPrivate = useAxios();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const logout = useLogOut();
-  const refresh = useRefreshToken();
+  // const [user, setUser] = useState();
+  // const useAxiosPrivate = useAxios();
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const logout = useLogOut();
+  // const refresh = useRefreshToken();
 
-  const signOut = async () => {
-    await logout();
-    navigate("/signin");
-  };
+  // const signOut = async () => {
+  //   await logout();
+  //   navigate("/signin");
+  // };
 
-  useEffect(() => {
-    let isMounted = true;
-    const controller = new AbortController();
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   const controller = new AbortController();
 
-    const getUser = async () => {
-      try {
-        const response = await useAxiosPrivate.get("/auth/user/", {
-          signal: controller.signal,
-          withCredentials: false,
-        });
-        // console.log(response.data.username);
-        isMounted && setUser(response.data);
-      } catch (err) {
-        console.error(err);
-        navigate("/signin", { state: { from: location }, replace: true });
-      }
-    };
+  //   const getUser = async () => {
+  //     try {
+  //       const response = await useAxiosPrivate.get("/auth/user/", {
+  //         signal: controller.signal,
+  //         withCredentials: false,
+  //       });
+  //       // console.log(response.data.username);
+  //       isMounted && setUser(response.data);
+  //     } catch (err) {
+  //       console.error(err);
+  //       navigate("/signin", { state: { from: location }, replace: true });
+  //     }
+  //   };
 
-    getUser();
+  //   getUser();
 
-    return () => {
-      isMounted = false;
-      controller.abort();
-    };
-  });
+  //   return () => {
+  //     isMounted = false;
+  //     controller.abort();
+  //   };
+  // });
 
   return (
-    <div>
-      <h2>User List</h2>
-      <ul>
+    <div className="bg-[#EEEEF4]">
+      <Navbar />
+      {/* <ul>
         <li key={user?.pk}>{user?.username}</li>
       </ul>
       <button onClick={signOut}>
@@ -62,7 +63,7 @@ const Dashboard = () => {
         />
       </button>
       <br />
-      <button onClick={refresh}>Refresh</button>
+      <button onClick={refresh}>Refresh</button> */}
     </div>
   );
 };

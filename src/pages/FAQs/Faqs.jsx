@@ -105,7 +105,7 @@ const Faqs = () => {
           <QuestionType text="Buying Questions" />
         </div>
         {buying && (
-          <div className="space-y-5 pb-5">
+          <div className="space-y-5">
             <h1 className="font-Lato font-bold text-xl pt-[20px] px-5 md:px-40 pb-5">
               Buying Frequently Asked Questions
             </h1>
