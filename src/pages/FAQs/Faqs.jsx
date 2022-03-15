@@ -6,12 +6,37 @@ import vector13 from "../../assets/images/vector13.svg";
 import vector14 from "../../assets/images/vector14.svg";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import {
+  generalQuestions,
+  paymentQuestions,
+  supportQuestions,
+  buyingQuestions,
+} from "../FAQs/FaqsData";
 
 const Faqs = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // The below states are used in handling the opening and closing of each question type
+  const [general, setGeneral] = useState(false);
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
+  const handleGeneral = () => {
+    setGeneral(!general);
+  };
+
+  const [payment, setPayment] = useState(false);
+
+  const handlePayment = () => {
+    setPayment(!payment);
+  };
+
+  const [support, setSupport] = useState(false);
+
+  const handleSupport = () => {
+    setSupport(!support);
+  };
+
+  const [buying, setBuying] = useState(false);
+
+  const handleBuying = () => {
+    setBuying(!buying);
   };
   return (
     <div>
@@ -37,39 +62,58 @@ const Faqs = () => {
         </div>
       </div>
       <div className="mt-[43px]">
-        <QuestionType text="General Questions" />
-        <div onClick={handleClick}>
-          <QuestionType text="Payment Questions" />
+        <div onClick={handleGeneral}>
+          <QuestionType text="General Questions" />
         </div>
-        {isOpen && (
-          <div className="space-y-5">
-            <h1 className="font-Lato font-bold text-xl pt-[30px] px-5 md:px-40 pb-5">
-              Payment Frequently Asked Questions
+        {general && (
+          <div className="space-y-5 pb-5">
+            <h1 className="font-Lato font-bold text-xl pt-[20px] px-5 md:px-40 pb-5">
+              General Frequently Asked Questions
             </h1>
-            <FaqsQuestionCard
-              question="How do I get paid as a content creator using Nadet to sell my product ?"
-              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-            />
-            <FaqsQuestionCard
-              question="What fees are included when receiving my payouts ?"
-              awnser="Detailed pricing and fees information can be viewed from our pricing page. Click here"
-            />
-            <FaqsQuestionCard
-              question="How do I know when any of my products is purchased ?"
-              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-            />
-            <FaqsQuestionCard
-              question="How long will it take to receive my payouts ?"
-              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-            />
-            <FaqsQuestionCard
-              question="Can customers buy my product anywhere in the world ?"
-              awnser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-            />
+            {generalQuestions.map(({ id, question, awnser }) => (
+              <FaqsQuestionCard key={id} question={question} awnser={awnser} />
+            ))}
           </div>
         )}
-        <QuestionType text="Support Questions" />
-        <QuestionType text="Buying Questions" />
+        <div onClick={handlePayment}>
+          <QuestionType text="Payment Questions" />
+        </div>
+        {payment && (
+          <div className="space-y-5 pb-5">
+            <h1 className="font-Lato font-bold text-xl pt-[20px] px-5 md:px-40 pb-5">
+              Payment Frequently Asked Questions
+            </h1>
+            {paymentQuestions.map(({ id, question, awnser }) => (
+              <FaqsQuestionCard key={id} question={question} awnser={awnser} />
+            ))}
+          </div>
+        )}
+        <div onClick={handleSupport}>
+          <QuestionType text="Support Questions" />
+        </div>
+        {support && (
+          <div className="space-y-5 pb-5">
+            <h1 className="font-Lato font-bold text-xl pt-[20px] px-5 md:px-40 pb-5">
+              Support Frequently Asked Questions
+            </h1>
+            {supportQuestions.map(({ id, question, awnser }) => (
+              <FaqsQuestionCard key={id} question={question} awnser={awnser} />
+            ))}
+          </div>
+        )}
+        <div onClick={handleBuying}>
+          <QuestionType text="Buying Questions" />
+        </div>
+        {buying && (
+          <div className="space-y-5 pb-5">
+            <h1 className="font-Lato font-bold text-xl pt-[20px] px-5 md:px-40 pb-5">
+              Buying Frequently Asked Questions
+            </h1>
+            {buyingQuestions.map(({ id, question, awnser }) => (
+              <FaqsQuestionCard key={id} question={question} awnser={awnser} />
+            ))}
+          </div>
+        )}
       </div>
       <div className="mx-5 md:mx-16 lg:mx-[140px] mb-[80px] lg:mb-[120px]">
         <div className="rounded-lg w-full bg-[#FFF8E8] mt-[80px]">

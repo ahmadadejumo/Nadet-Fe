@@ -24,7 +24,7 @@ const FaqsQuestionCard = ({ question, awnser }) => {
         )}
       </div>
       {isUp && (
-        <div className="container rounded-b-lg border border-bcolor w-full flex justify-center mb-5">
+        <div className="container rounded-b-lg border border-bcolor w-full flex justify-center">
           <h1 className="font-Lato font-normal text-base text-tcolor px-3 py-1">
             {awnser}
           </h1>

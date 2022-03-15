@@ -66,7 +66,7 @@ export const paymentQuestions = [
   },
 ];
 
-export const supportQuestion = [
+export const supportQuestions = [
   {
     id: 1,
     question: "How do i create a Nadet account ?",
