@@ -48,6 +48,12 @@ const Dashboard = () => {
   return (
     <div className="bg-[#EEEEF4]">
       <Navbar />
+      <h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam quis
+        iusto iure laboriosam eaque itaque in fuga! Dolore, exercitationem
+        labore, provident modi aspernatur est, nostrum quisquam officiis sunt
+        consequuntur libero?
+      </h1>
       {/* <ul>
         <li key={user?.pk}>{user?.username}</li>
       </ul>
