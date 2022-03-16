@@ -1,23 +1,11 @@
 // import { useState, useEffect } from "react";
 // import useAxios from "../hooks/useAxios";
-// import { useNavigate, useLocation } from "react-router-dom";
-// import useLogOut from "../hooks/useLogOut";
-// import useRefreshToken from "../hooks/useRefreshToken";
-// import { GoogleLogout } from "react-google-login";
 import Navbar from "../components/DashboardNavbar";
 
 const Home = () => {
   // const [user, setUser] = useState();
   // const useAxiosPrivate = useAxios();
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  // const logout = useLogOut();
   // const refresh = useRefreshToken();
-
-  // const signOut = async () => {
-  //   await logout();
-  //   navigate("/signin");
-  // };
 
   // useEffect(() => {
   //   let isMounted = true;

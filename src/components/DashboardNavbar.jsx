@@ -25,8 +25,20 @@ import billing from "../assets/images/billing.svg";
 import settings from "../assets/images/settings.svg";
 import upgrade from "../assets/images/upgrade.svg";
 import logoutArrow from "../assets/images/logoutArrow.svg";
+import { useNavigate, useLocation } from "react-router-dom";
+import useLogOut from "../hooks/useLogOut";
+import { GoogleLogout } from "react-google-login";
 
 const DashboardNavbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const logout = useLogOut();
+
+  const signOut = async () => {
+    await logout();
+    navigate("/signin");
+  };
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
@@ -57,7 +69,11 @@ const DashboardNavbar = () => {
         <div onClick={onOpen} ref={btnRef} className="md:hidden">
           <HamburgerIcon boxSize={7} />
         </div>
-        <div className="hidden md:block lg:hidden">
+        <div
+          onClick={onOpen}
+          ref={btnRef}
+          className="hidden md:block lg:hidden"
+        >
           <HamburgerIcon boxSize={10} />
         </div>
         <div className="hidden lg:block cursor-pointer">
@@ -163,11 +179,22 @@ const DashboardNavbar = () => {
                 />
                 <p>Upgrade Account</p>
               </div>
-              <div className="flex justify-center pb-10">
-                <div className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
+              <div className="flex justify-center pb-10" onClick={signOut}>
+                <button className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
                   <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
-                  <button>Log Out</button>
-                </div>
+                  <GoogleLogout
+                    clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+                    render={(renderProps) => (
+                      <p
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                      >
+                        Log Out
+                      </p>
+                    )}
+                    onLogoutSuccess={logout}
+                  />
+                </button>
               </div>
             </div>
           </DrawerBody>
