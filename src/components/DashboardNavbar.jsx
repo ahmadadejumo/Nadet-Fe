@@ -7,7 +7,6 @@ import bell from "../assets/images/bell.svg";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -15,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
-const Navbar = () => {
+const DashboardNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
@@ -60,24 +59,17 @@ const Navbar = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent bg="brand">
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader className="flex justify-center">
+            <img src={logo} alt="logo" className="object-contain w-36" />
+          </DrawerHeader>
 
-          <DrawerBody>
-            <input placeholder="Type here..." />
-          </DrawerBody>
-
-          <DrawerFooter>
-            <button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </button>
-            <button colorScheme="blue">Save</button>
-          </DrawerFooter>
+          <DrawerBody></DrawerBody>
         </DrawerContent>
       </Drawer>
     </div>
   );
 };
 
-export default Navbar;
+export default DashboardNavbar;

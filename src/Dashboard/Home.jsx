@@ -4,9 +4,9 @@
 // import useLogOut from "../hooks/useLogOut";
 // import useRefreshToken from "../hooks/useRefreshToken";
 // import { GoogleLogout } from "react-google-login";
-import Navbar from "./Navbar";
+import Navbar from "../components/DashboardNavbar";
 
-const Dashboard = () => {
+const Home = () => {
   // const [user, setUser] = useState();
   // const useAxiosPrivate = useAxios();
   // const navigate = useNavigate();
@@ -92,4 +92,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Home;
