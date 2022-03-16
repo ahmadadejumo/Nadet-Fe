@@ -13,6 +13,18 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
+import home from "../assets/images/home.svg";
+import marketplace from "../assets/images/marketplace.svg";
+import products from "../assets/images/products.svg";
+import marketing from "../assets/images/marketing.svg";
+import analytics from "../assets/images/analytics.svg";
+import wallet from "../assets/images/wallet.svg";
+import refer from "../assets/images/refer.svg";
+import integrations from "../assets/images/integrations.svg";
+import billing from "../assets/images/billing.svg";
+import settings from "../assets/images/settings.svg";
+import upgrade from "../assets/images/upgrade.svg";
+import logoutArrow from "../assets/images/logoutArrow.svg";
 
 const DashboardNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -64,8 +76,101 @@ const DashboardNavbar = () => {
           <DrawerHeader className="flex justify-center">
             <img src={logo} alt="logo" className="object-contain w-36" />
           </DrawerHeader>
-
-          <DrawerBody></DrawerBody>
+          <DrawerBody>
+            <div className="space-y-10">
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img src={home} alt="homeIcon" className="object-contain w-5" />
+                <p>Home</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={marketplace}
+                  alt="marketplaceIcon"
+                  className="object-contain w-5"
+                />
+                <p>Marketplace</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={products}
+                  alt="productIcon"
+                  className="object-contain w-5"
+                />
+                <p>Products</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={marketing}
+                  alt="marketingIcon"
+                  className="object-contain w-5"
+                />
+                <p>Marketing</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={analytics}
+                  alt="analyticsIcon"
+                  className="object-contain w-5"
+                />
+                <p>Analytics</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={wallet}
+                  alt="walletIcon"
+                  className="object-contain w-5"
+                />
+                <p>Wallets & Payouts</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={refer}
+                  alt="referIcon"
+                  className="object-contain w-5"
+                />
+                <p>Refer & Earn</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={integrations}
+                  alt="integrationsIcon"
+                  className="object-contain w-5"
+                />
+                <p>Integrations</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={billing}
+                  alt="billingIcon"
+                  className="object-contain w-5"
+                />
+                <p>Billing</p>
+              </div>
+              <hr className="px-10 bg-[#CFCFD5]" />
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={settings}
+                  alt="settingsIcon"
+                  className="object-contain w-5"
+                />
+                <p>Settings</p>
+              </div>
+              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+                <img
+                  src={upgrade}
+                  alt="upgradeIcon"
+                  className="object-contain w-5"
+                />
+                <p>Upgrade Account</p>
+              </div>
+              <div className="flex justify-center pb-10">
+                <div className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
+                  <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
+                  <button>Log Out</button>
+                </div>
+              </div>
+            </div>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </div>
