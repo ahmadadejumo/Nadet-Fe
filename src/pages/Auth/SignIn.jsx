@@ -14,9 +14,12 @@ import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 
-const LOGIN_URL = "/auth/login/";
-const GOOGLE_URL = "/auth/google/";
-const FACEBOOK_URL = "/auth/facebook/";
+const LOGIN_URL = process.env.REACT_APP_LOGIN_URL;
+const GOOGLE_URL = process.env.REACT_APP_GOOGLE_URL;
+const FACEBOOK_URL = process.env.REACT_APP_FACEBOOK_URL;
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const FACEBOOK_APP_ID = process.env.REACT_APP_FACEBOOK_APP_ID;
+const LINKEDIN_CLIENT_ID = process.env.REACT_APP_LINKEDIN_CLIENT_ID;
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -99,10 +102,10 @@ const SignIn = () => {
   };
 
   const { linkedInLogin } = useLinkedIn({
-    clientId: "86dmvxfmtwbn9o",
+    clientId: { LINKEDIN_CLIENT_ID },
     redirectUri: `${window.location.origin}/linkedin`,
     onSuccess: async (code) => {
-      console.log(code);
+      // console.log(code);
       // axios
       //   .post(
       //     "https://www.linkedin.com/oauth/v2/accessToken",
@@ -259,7 +262,7 @@ const SignIn = () => {
             </div>
             <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px] lg:pb-[65px]">
               <GoogleLogin
-                clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+                clientId={GOOGLE_CLIENT_ID}
                 render={(renderProps) => (
                   <button
                     onClick={renderProps.onClick}
@@ -278,7 +281,7 @@ const SignIn = () => {
                 isSignedIn={true}
               />
               <FacebookLogin
-                appId="3102206953389763"
+                appId={FACEBOOK_APP_ID}
                 autoLoad={false}
                 textButton=""
                 fields="name,email,picture"

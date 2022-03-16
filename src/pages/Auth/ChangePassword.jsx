@@ -48,7 +48,7 @@ const ChangePassword = () => {
     }
     try {
       await axios.patch(
-        "/auth/password-reset/change/",
+        process.env.REACT_APP_CHANGE_PASSWORD_URL,
         JSON.stringify({
           password: pwd,
           token: token,

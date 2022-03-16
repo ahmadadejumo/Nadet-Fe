@@ -14,14 +14,16 @@ import useAuth from "../../hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import FacebookLogin from "react-facebook-login";
 
-const GOOGLE_URL = "/auth/google/";
+const GOOGLE_URL = process.env.REACT_APP_GOOGLE_URL;
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const FULL_REGEX = /^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$/;
-const REGISTER_URL = "/auth/registration/";
-const FACEBOOK_URL = "/auth/facebook/";
+const REGISTER_URL = process.env.REACT_APP_REGISTER_URL;
+const FACEBOOK_URL = process.env.REACT_APP_FACEBOOK_URL;
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const FACEBOOK_APP_ID = process.env.REACT_APP_FACEBOOK_APP_ID;
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -444,7 +446,7 @@ const SignUp = () => {
               </div>
               <div className="flex justify-center items-center space-x-[45px] pt-5 pb-[79px]">
                 <GoogleLogin
-                  clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+                  clientId={GOOGLE_CLIENT_ID}
                   render={(renderProps) => (
                     <button
                       onClick={renderProps.onClick}
@@ -463,7 +465,7 @@ const SignUp = () => {
                   isSignedIn={true}
                 />
                 <FacebookLogin
-                  appId="3102206953389763"
+                  appId={FACEBOOK_APP_ID}
                   autoLoad={false}
                   textButton=""
                   fields="name,email,picture"

@@ -25,13 +25,12 @@ import billing from "../assets/images/billing.svg";
 import settings from "../assets/images/settings.svg";
 import upgrade from "../assets/images/upgrade.svg";
 import logoutArrow from "../assets/images/logoutArrow.svg";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
 
 const DashboardNavbar = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const logout = useLogOut();
 
   const signOut = async () => {
