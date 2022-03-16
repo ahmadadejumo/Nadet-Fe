@@ -4,17 +4,20 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import profile from "../assets/images/profile.svg";
 import search from "../assets/images/search.svg";
 import bell from "../assets/images/bell.svg";
-// import {
-//   Drawer,
-//   DrawerBody,
-//   DrawerFooter,
-//   DrawerHeader,
-//   DrawerOverlay,
-//   DrawerContent,
-//   DrawerCloseButton,
-// } from "@chakra-ui/react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   return (
     <div className="flex font-Lato lg:border lg:drop-shadow-md lg:shadow-[#EEEEF4] items-center justify-between px-4 md:px-10 lg:px-[125px] py-[15px] md:py-5 lg:py-[15px] bg-[#FFFFFF] lg:bg-[#EEEEF4]">
       <div className="">
@@ -40,7 +43,7 @@ const Navbar = () => {
         <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
           <img src={profile} alt="profile icon" className="md:w-7 lg:w-5" />
         </div>
-        <div className="md:hidden">
+        <div onClick={onOpen} ref={btnRef} className="md:hidden">
           <HamburgerIcon boxSize={7} />
         </div>
         <div className="hidden md:block lg:hidden">
@@ -50,6 +53,29 @@ const Navbar = () => {
           <HamburgerIcon boxSize={8} />
         </div>
       </div>
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Create your account</DrawerHeader>
+
+          <DrawerBody>
+            <input placeholder="Type here..." />
+          </DrawerBody>
+
+          <DrawerFooter>
+            <button variant="outline" mr={3} onClick={onClose}>
+              Cancel
+            </button>
+            <button colorScheme="blue">Save</button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 };
