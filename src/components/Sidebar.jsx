@@ -35,7 +35,7 @@ const Sidebar = () => {
         />
       </div>
       <div className="space-y-[35px] pt-10">
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div className="flex bg-white py-[15px] items-center text-base font-semibold space-x-2 pl-[35px]">
           <img src={home} alt="homeIcon" className="object-contain w-[16px]" />
           <p>Home</p>
         </div>
@@ -121,7 +121,7 @@ const Sidebar = () => {
           <p>Upgrade Account</p>
         </div>
         <div className="flex justify-center pb-[25px]">
-          <button className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
+          <button className="w-[218px] text-base font-semibold h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
             <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
             <GoogleLogout
               onClick={signOut}

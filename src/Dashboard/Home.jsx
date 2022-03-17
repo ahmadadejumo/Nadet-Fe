@@ -47,30 +47,6 @@ const Home = () => {
 
         <div className="flex-[6]">
           <Navbar click={handleClick} />
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            quis iusto iure laboriosam eaque itaque in fuga! Dolore,
-            exercitationem labore, provident modi aspernatur est, nostrum
-            quisquam officiis sunt consequuntur libero?
-          </h1>
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            quis iusto iure laboriosam eaque itaque in fuga! Dolore,
-            exercitationem labore, provident modi aspernatur est, nostrum
-            quisquam officiis sunt consequuntur libero?
-          </h1>
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            quis iusto iure laboriosam eaque itaque in fuga! Dolore,
-            exercitationem labore, provident modi aspernatur est, nostrum
-            quisquam officiis sunt consequuntur libero?
-          </h1>
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            quis iusto iure laboriosam eaque itaque in fuga! Dolore,
-            exercitationem labore, provident modi aspernatur est, nostrum
-            quisquam officiis sunt consequuntur libero?
-          </h1>
         </div>
       </div>
       {/* <ul>

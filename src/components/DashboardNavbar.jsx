@@ -179,7 +179,7 @@ const DashboardNavbar = ({ click }) => {
                 <p>Upgrade Account</p>
               </div>
               <div className="flex justify-center pb-10">
-                <button className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
+                <button className="w-[218px] h-[48px] text-xl font-semibold rounded-lg flex justify-center space-x-[10px] items-center border-black border">
                   <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
                   <GoogleLogout
                     onClick={signOut}
