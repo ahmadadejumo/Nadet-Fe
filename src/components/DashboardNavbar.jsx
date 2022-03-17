@@ -182,7 +182,7 @@ const DashboardNavbar = () => {
                 <button className="w-[218px] h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
                   <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
                   <GoogleLogout
-                    clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                     render={(renderProps) => (
                       <p
                         onClick={renderProps.onClick}
