@@ -29,7 +29,7 @@ import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
 
-const DashboardNavbar = () => {
+const DashboardNavbar = ({ click }) => {
   const navigate = useNavigate();
   const logout = useLogOut();
 
@@ -75,7 +75,7 @@ const DashboardNavbar = () => {
         >
           <HamburgerIcon boxSize={10} />
         </div>
-        <div className="hidden lg:block cursor-pointer">
+        <div onClick={click} className="hidden lg:block cursor-pointer">
           <HamburgerIcon boxSize={8} />
         </div>
       </div>

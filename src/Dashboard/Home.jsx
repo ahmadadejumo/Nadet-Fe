@@ -1,9 +1,15 @@
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 // import useAxios from "../hooks/useAxios";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => {
+  const [open, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!open);
+  };
+
   // const [user, setUser] = useState();
   // const useAxiosPrivate = useAxios();
   // const refresh = useRefreshToken();
@@ -37,9 +43,10 @@ const Home = () => {
   return (
     <div className="bg-[#EEEEF4]">
       <div className="flex">
-        <Sidebar />
+        {!open && <Sidebar />}
+
         <div className="flex-[6]">
-          <Navbar />
+          <Navbar click={handleClick} />
           <h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
             quis iusto iure laboriosam eaque itaque in fuga! Dolore,
