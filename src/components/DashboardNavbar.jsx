@@ -41,7 +41,7 @@ const DashboardNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
-    <div className="flex font-Lato lg:border lg:border-t-0 lg:border-l-0 lg:border-r-0 lg:drop-shadow-md lg:shadow-[#EEEEF4] items-center justify-between px-4 md:px-10 lg:px-[125px] py-[15px] md:py-5 lg:py-[15px] bg-[#FFFFFF] lg:bg-[#EEEEF4]">
+    <div className="flex font-Lato lg:border lg:border-x-0 lg:shadow-[0_2px_13px_rgba(0,0,0,0.06)] items-center justify-between px-4 md:px-10 lg:px-[125px] py-[15px] md:py-5 lg:py-[15px] bg-[#FFFFFF] lg:bg-[#EEEEF4]">
       <div className="">
         <div className="object-contain lg:hidden w-[100px] h-[38px] md:w-[150px] md:h-[50px]">
           <img src={logo} alt="logo" />
