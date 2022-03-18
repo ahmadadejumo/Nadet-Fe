@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../src/assets/images/Logo.svg";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import profile from "../assets/images/profile.svg";
@@ -33,14 +33,17 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
   MenuGroup,
-  MenuOptionGroup,
   MenuDivider,
 } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import SearchPage from "./SearchPage";
 
 const DashboardNavbar = ({ click }) => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   const navigate = useNavigate();
   const logout = useLogOut();
 
@@ -68,7 +71,17 @@ const DashboardNavbar = ({ click }) => {
       </div>
       <div className="flex space-x-5 md:space-x-10 lg:space-x-5 items-center">
         <div className="lg:hidden">
-          <img src={search} alt="search icon" className="w-5 md:w-8" />
+          <img
+            onClick={handleClick}
+            src={search}
+            alt="search icon"
+            className="w-5 md:w-8"
+          />
+          {open && (
+            <div className="bg-[#EEEEF4] absolute h-full w-full z-[1] left-0 top-[69px] md:top-[93px] overflow-x-hidden">
+              <SearchPage />
+            </div>
+          )}
         </div>
         <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
           <img src={bell} alt="bell icon" className="md:w-7 lg:w-5" />

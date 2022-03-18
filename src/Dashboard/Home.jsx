@@ -49,6 +49,42 @@ const Home = () => {
           <Navbar click={handleClick} />
         </div>
       </div>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
+      <h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam ut
+        beatae distinctio similique tenetur fugiat maiores eligendi! Qui
+        reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
+        adipisci, molestias sapiente.
+      </h1>
       {/* <ul>
         <li key={user?.pk}>{user?.username}</li>
       </ul>
