@@ -1,10 +1,16 @@
 import React from "react";
 import X from "../assets/images/X.svg";
 import search from "../assets/images/search.svg";
+import { motion } from "framer-motion";
 
 const SearchPage = ({ close }) => {
   return (
-    <div className="px-5 font-Lato">
+    <motion.div
+      initial={{ y: -300, opacity: 0 }}
+      animate={{ y: 0, opacity: 2 }}
+      transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+      className="px-5 font-Lato"
+    >
       <div onClick={close} className="flex justify-end pr-[6px] pt-[32px]">
         <img src={X} alt="XIcon" className="object-contain w-[24px]" />
       </div>
@@ -25,7 +31,7 @@ const SearchPage = ({ close }) => {
         </div>
         <h1 className="text-lg font-bold pt-[60px]">Top Searches</h1>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
