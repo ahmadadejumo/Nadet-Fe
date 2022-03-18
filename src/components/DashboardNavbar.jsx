@@ -37,6 +37,7 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import SearchPage from "./SearchPage";
+import { motion } from "framer-motion";
 
 const DashboardNavbar = ({ click }) => {
   const [open, setOpen] = useState(false);
@@ -78,9 +79,14 @@ const DashboardNavbar = ({ click }) => {
             className="w-5 md:w-8"
           />
           {open && (
-            <div className="bg-[#EEEEF4] absolute h-full w-full z-[1] left-0 top-[69px] md:top-[93px] overflow-x-hidden">
+            <motion.div
+              initial={{ y: -300, opacity: 0 }}
+              animate={{ y: 0, opacity: 2 }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+              className="bg-[#EEEEF4] absolute h-full w-full z-[1] left-0 top-[69px] md:top-[93px] overflow-x-hidden"
+            >
               <SearchPage close={handleClick} />
-            </div>
+            </motion.div>
           )}
         </div>
         <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
