@@ -79,7 +79,7 @@ const DashboardNavbar = ({ click }) => {
           />
           {open && (
             <div className="bg-[#EEEEF4] absolute h-full w-full z-[1] left-0 top-[69px] md:top-[93px] overflow-x-hidden">
-              <SearchPage />
+              <SearchPage close={handleClick} />
             </div>
           )}
         </div>

@@ -2,10 +2,10 @@ import React from "react";
 import X from "../assets/images/X.svg";
 import search from "../assets/images/search.svg";
 
-const SearchPage = () => {
+const SearchPage = ({ close }) => {
   return (
     <div className="px-5 font-Lato">
-      <div className="flex justify-end pr-[6px] pt-[32px]">
+      <div onClick={close} className="flex justify-end pr-[6px] pt-[32px]">
         <img src={X} alt="XIcon" className="object-contain w-[24px]" />
       </div>
       <div>
