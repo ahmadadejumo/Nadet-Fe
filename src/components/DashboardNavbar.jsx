@@ -28,6 +28,17 @@ import logoutArrow from "../assets/images/logoutArrow.svg";
 import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 const DashboardNavbar = ({ click }) => {
   const navigate = useNavigate();
@@ -62,9 +73,22 @@ const DashboardNavbar = ({ click }) => {
         <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
           <img src={bell} alt="bell icon" className="md:w-7 lg:w-5" />
         </div>
-        <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
-          <img src={profile} alt="profile icon" className="md:w-7 lg:w-5" />
-        </div>
+        <Menu>
+          <MenuButton>
+            <div className="lg:bg-white cursor-pointer lg:rounded-lg lg:w-10 lg:h-10 lg:flex lg:justify-center">
+              <img src={profile} alt="profile icon" className="md:w-7 lg:w-5" />
+            </div>
+          </MenuButton>
+          <MenuList bg="profile">
+            <MenuGroup title="Account">
+              <MenuDivider />
+              <MenuItem _focus={{ boxShadow: "outline" }}>My Profile</MenuItem>
+              <MenuItem>Edit Profile</MenuItem>
+              <MenuItem>Payment Settings</MenuItem>
+              <MenuItem>Log Out</MenuItem>
+            </MenuGroup>
+          </MenuList>
+        </Menu>
         <div onClick={onOpen} ref={btnRef} className="md:hidden">
           <HamburgerIcon boxSize={7} />
         </div>

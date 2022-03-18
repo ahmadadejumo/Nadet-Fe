@@ -15,9 +15,6 @@ module.exports = {
         half: "10000px",
         bleft: "4000px",
       },
-      variants: {
-        backgroundColor: ["focus"],
-      },
     },
   },
   plugins: [require("@tailwindcss/custom-forms")],
