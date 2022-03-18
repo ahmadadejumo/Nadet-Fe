@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/Logo.svg";
 import home from "../assets/images/home.svg";
 import marketplace from "../assets/images/marketplace.svg";
@@ -15,8 +15,44 @@ import logoutArrow from "../assets/images/logoutArrow.svg";
 import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
+import { motion } from "framer-motion";
 
 const Sidebar = () => {
+  const [color, setColor] = useState(1);
+  const handleChange1 = () => {
+    setColor(1);
+  };
+  const handleChange2 = () => {
+    setColor(2);
+  };
+  const handleChange3 = () => {
+    setColor(3);
+  };
+  const handleChange4 = () => {
+    setColor(4);
+  };
+  const handleChange5 = () => {
+    setColor(5);
+  };
+  const handleChange6 = () => {
+    setColor(6);
+  };
+  const handleChange7 = () => {
+    setColor(7);
+  };
+  const handleChange8 = () => {
+    setColor(8);
+  };
+  const handleChange9 = () => {
+    setColor(9);
+  };
+  const handleChange10 = () => {
+    setColor(10);
+  };
+  const handleChange11 = () => {
+    setColor(11);
+  };
+
   const navigate = useNavigate();
   const logout = useLogOut();
 
@@ -26,7 +62,12 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="border hidden lg:block shadow-[0_6px_13px_rgba(19,19,19,0.08)] w-[250px]">
+    <motion.div
+      initial={{ x: -300 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5, delay: 0, ease: "easeInOut" }}
+      className="border hidden lg:block shadow-[0_6px_13px_rgba(19,19,19,0.08)] w-[250px]"
+    >
       <div className="flex justify-center pt-[24px]">
         <img
           src={logo}
@@ -35,11 +76,21 @@ const Sidebar = () => {
         />
       </div>
       <div className="space-y-[35px] pt-10">
-        <div className="flex bg-white py-[15px] items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange1}
+          className={`flex ${
+            color === 1 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img src={home} alt="homeIcon" className="object-contain w-[16px]" />
           <p>Home</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange2}
+          className={`flex ${
+            color === 2 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={marketplace}
             alt="marketplaceIcon"
@@ -47,7 +98,12 @@ const Sidebar = () => {
           />
           <p>Marketplace</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange3}
+          className={`flex ${
+            color === 3 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={products}
             alt="productIcon"
@@ -55,7 +111,12 @@ const Sidebar = () => {
           />
           <p>Products</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange4}
+          className={`flex ${
+            color === 4 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={marketing}
             alt="marketingIcon"
@@ -63,7 +124,12 @@ const Sidebar = () => {
           />
           <p>Marketing</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange5}
+          className={`flex ${
+            color === 5 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={analytics}
             alt="analyticsIcon"
@@ -71,7 +137,12 @@ const Sidebar = () => {
           />
           <p>Analytics</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange6}
+          className={`flex ${
+            color === 6 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={wallet}
             alt="walletIcon"
@@ -79,7 +150,12 @@ const Sidebar = () => {
           />
           <p>Wallets & Payouts</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange7}
+          className={`flex ${
+            color === 7 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={refer}
             alt="referIcon"
@@ -87,7 +163,12 @@ const Sidebar = () => {
           />
           <p>Refer & Earn</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange8}
+          className={`flex ${
+            color === 8 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={integrations}
             alt="integrationsIcon"
@@ -95,7 +176,12 @@ const Sidebar = () => {
           />
           <p>Integrations</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange9}
+          className={`flex ${
+            color === 9 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={billing}
             alt="billingIcon"
@@ -104,7 +190,12 @@ const Sidebar = () => {
           <p>Billing</p>
         </div>
         <hr className="bg-[#CFCFD5] mx-[15px]" />
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange10}
+          className={`flex ${
+            color === 10 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={settings}
             alt="settingsIcon"
@@ -112,7 +203,12 @@ const Sidebar = () => {
           />
           <p>Settings</p>
         </div>
-        <div className="flex items-center text-base font-semibold space-x-2 pl-[35px]">
+        <div
+          onClick={handleChange11}
+          className={`flex ${
+            color === 11 ? "bg-white py-[15px]" : null
+          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
+        >
           <img
             src={upgrade}
             alt="upgradeIcon"
@@ -139,7 +235,7 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
