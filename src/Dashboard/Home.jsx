@@ -1,8 +1,9 @@
-import { useState } from "react";
-// import useAxios from "../hooks/useAxios";
+import { useState, useEffect } from "react";
+import useAxios from "../hooks/useAxios";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
-
+import Add from "../assets/images/Add.svg";
+import StatBox from "../components/StatBox";
 const Home = () => {
   const [open, setIsOpen] = useState(false);
 
@@ -10,35 +11,33 @@ const Home = () => {
     setIsOpen(!open);
   };
 
-  // const [user, setUser] = useState();
-  // const useAxiosPrivate = useAxios();
-  // const refresh = useRefreshToken();
+  const [user, setUser] = useState();
+  const useAxiosPrivate = useAxios();
 
-  // useEffect(() => {
-  //   let isMounted = true;
-  //   const controller = new AbortController();
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
 
-  //   const getUser = async () => {
-  //     try {
-  //       const response = await useAxiosPrivate.get("/auth/user/", {
-  //         signal: controller.signal,
-  //         withCredentials: false,
-  //       });
-  //       // console.log(response.data.username);
-  //       isMounted && setUser(response.data);
-  //     } catch (err) {
-  //       console.error(err);
-  //       navigate("/signin", { state: { from: location }, replace: true });
-  //     }
-  //   };
+    const getUser = async () => {
+      try {
+        const response = await useAxiosPrivate.get("/auth/user/", {
+          signal: controller.signal,
+          withCredentials: false,
+        });
+        isMounted && setUser(response.data);
+      } catch (err) {
+        // console.error(err);
+        // navigate("/signin", { state: { from: location }, replace: true });
+      }
+    };
 
-  //   getUser();
+    getUser();
 
-  //   return () => {
-  //     isMounted = false;
-  //     controller.abort();
-  //   };
-  // });
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  });
 
   return (
     <div className="bg-[#EEEEF4]">
@@ -47,60 +46,29 @@ const Home = () => {
 
         <div className="flex-[6]">
           <Navbar click={handleClick} />
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
-          <h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem totam
-            ut beatae distinctio similique tenetur fugiat maiores eligendi! Qui
-            reiciendis enim aliquid? Pariatur eaque eligendi asperiores iure
-            adipisci, molestias sapiente.
-          </h1>
+          <div className="font-Lato px-5">
+            <h1
+              key={user?.pk}
+              className="text-center text-[25px] font-bold pt-[44px]"
+            >
+              Welcome back, {user?.username}!
+            </h1>
+            <p className="font-normal text-center text-base">
+              What would you like to do today again?
+            </p>
+            <div className="flex justify-center pt-[24px]">
+              <button className="flex justify-between text-base font-semibold items-center bg-bcolor w-[205px] h-[50px] rounded-lg px-7">
+                <img src={Add} alt="addIcon" />
+                ADD PRODUCTS
+              </button>
+            </div>
+            <p className="text-lg font-bold pt-[44px]">Statistics</p>
+            <div>
+              <StatBox />
+            </div>
+          </div>
         </div>
       </div>
-      {/* <ul>
-        <li key={user?.pk}>{user?.username}</li>
-      </ul>
-      <button onClick={signOut}>
-        <GoogleLogout
-          clientId="1047637905977-gpe6krq8c6uhu4f8mt3ijh4ndhfubr0t.apps.googleusercontent.com"
-          render={(renderProps) => (
-            <p onClick={renderProps.onClick} disabled={renderProps.disabled}>
-              LogOut
-            </p>
-          )}
-          onLogoutSuccess={logout}
-        />
-      </button>
-      <br />
-      <button onClick={refresh}>Refresh</button> */}
     </div>
   );
 };
