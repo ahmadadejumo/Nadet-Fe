@@ -81,7 +81,7 @@ const DashboardNavbar = ({ click }) => {
       </div>
       <Drawer
         isOpen={isOpen}
-        placement="right"
+        placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
       >

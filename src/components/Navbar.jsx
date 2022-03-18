@@ -109,9 +109,7 @@ const Navbar = () => {
               </Link>
               <div className="flex justify-between pt-16">
                 <Link to={"/signin"} className="flex justify-center md:hidden">
-                  <button className="bg-bcolor h-[50px] md:h-[55px] w-[130px] md:w-[180px] rounded-lg">
-                    Log In
-                  </button>
+                  <button className="">Log In</button>
                 </Link>
                 <Link to={"/signup"} className="flex justify-center md:hidden">
                   <button className="bg-bcolor h-[50px] md:h-[55px] w-[130px] md:w-[180px] rounded-lg">
