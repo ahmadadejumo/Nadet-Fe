@@ -1,6 +1,7 @@
 import React from "react";
 import X from "../assets/images/X.svg";
 import search from "../assets/images/search.svg";
+import SearchBox from "./SearchBox";
 
 const SearchPage = ({ close }) => {
   return (
@@ -24,6 +25,12 @@ const SearchPage = ({ close }) => {
           </div>
         </div>
         <h1 className="text-lg font-bold pt-[60px]">Top Searches</h1>
+        <div className="grid grid-cols-2 gap-x-5 gap-y-[16px] pt-[24px]">
+          <SearchBox text="Graphic" />
+          <SearchBox text="Hacking" />
+          <SearchBox text="Growth" />
+          <SearchBox text="Passive Income" />
+        </div>
       </div>
     </div>
   );
