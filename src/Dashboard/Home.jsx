@@ -50,14 +50,14 @@ const Home = () => {
 
         <div className="flex-[6]">
           <Navbar click={handleClick} />
-          <div className="font-Lato px-5">
+          <div className="font-Lato px-5 md:px-10">
             <h1
               key={user?.pk}
-              className="text-center text-[25px] font-bold pt-[44px]"
+              className="text-center text-[25px] md:text-3xl font-bold pt-[44px]"
             >
               Welcome back, {user?.username}!
             </h1>
-            <p className="font-normal text-center text-base">
+            <p className="font-normal text-center text-base md:text-lg md:pt-3">
               What would you like to do today again?
             </p>
             <div className="flex justify-center pt-[24px]">
@@ -66,8 +66,8 @@ const Home = () => {
                 ADD PRODUCTS
               </button>
             </div>
-            <p className="text-lg font-bold pt-[44px]">Statistics</p>
-            <div className="pt-[24px] grid gap-y-[16px]">
+            <p className="text-lg md:text-xl font-bold pt-[44px]">Statistics</p>
+            <div className="pt-[24px] grid gap-y-[16px] md:grid-cols-3 md:gap-x-5">
               <StatCard
                 image={analysis}
                 number="#2,670"
@@ -93,7 +93,7 @@ const Home = () => {
                 height={"30px"}
               />
             </div>
-            <p className="text-lg font-bold pt-[44px]">Earnings</p>
+            <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p>
           </div>
         </div>
       </div>
