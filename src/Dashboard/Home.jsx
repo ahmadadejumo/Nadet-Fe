@@ -3,7 +3,11 @@ import useAxios from "../hooks/useAxios";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 import Add from "../assets/images/Add.svg";
-import StatBox from "../components/StatBox";
+import StatCard from "../components/StatCard";
+import analysis from "../assets/images/analysis.svg";
+import Receipt from "../assets/images/Receipt.svg";
+import Users from "../assets/images/Users.svg";
+
 const Home = () => {
   const [open, setIsOpen] = useState(false);
 
@@ -63,9 +67,33 @@ const Home = () => {
               </button>
             </div>
             <p className="text-lg font-bold pt-[44px]">Statistics</p>
-            <div>
-              <StatBox />
+            <div className="pt-[24px] grid gap-y-[16px]">
+              <StatCard
+                image={analysis}
+                number="#2,670"
+                textB="Earnings"
+                text="this month"
+                width={"32px"}
+                height={"31px"}
+              />
+              <StatCard
+                image={Receipt}
+                number="20"
+                textB="Sales"
+                text="in total"
+                width={"27px"}
+                height={"36px"}
+              />
+              <StatCard
+                image={Users}
+                number="0"
+                textB="Customers"
+                text="in total"
+                width={"44px"}
+                height={"30px"}
+              />
             </div>
+            <p className="text-lg font-bold pt-[44px]">Earnings</p>
           </div>
         </div>
       </div>
