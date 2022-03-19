@@ -7,7 +7,7 @@ import StatCard from "../components/StatCard";
 import analysis from "../assets/images/analysis.svg";
 import Receipt from "../assets/images/Receipt.svg";
 import Users from "../assets/images/Users.svg";
-// import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
@@ -18,8 +18,8 @@ const Home = () => {
 
   const [user, setUser] = useState();
   const useAxiosPrivate = useAxios();
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     let isMounted = true;
@@ -34,7 +34,7 @@ const Home = () => {
         isMounted && setUser(response.data);
       } catch (err) {
         // console.error(err);
-        // navigate("/signin", { state: { from: location }, replace: true });
+        navigate("/signin", { state: { from: location }, replace: true });
       }
     };
 
