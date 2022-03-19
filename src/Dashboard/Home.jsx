@@ -7,6 +7,7 @@ import StatCard from "../components/StatCard";
 import analysis from "../assets/images/analysis.svg";
 import Receipt from "../assets/images/Receipt.svg";
 import Users from "../assets/images/Users.svg";
+// import { useNavigate, useLocation } from "react-router-dom";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
@@ -17,6 +18,8 @@ const Home = () => {
 
   const [user, setUser] = useState();
   const useAxiosPrivate = useAxios();
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
   useEffect(() => {
     let isMounted = true;
@@ -50,23 +53,29 @@ const Home = () => {
 
         <div className="flex-[6]">
           <Navbar click={handleClick} />
-          <div className="font-Lato px-5 md:px-10">
-            <h1
-              key={user?.pk}
-              className="text-center text-[25px] md:text-3xl font-bold pt-[44px]"
-            >
-              Welcome back, {user?.username}!
-            </h1>
-            <p className="font-normal text-center text-base md:text-lg md:pt-3">
-              What would you like to do today again?
-            </p>
-            <div className="flex justify-center pt-[24px]">
-              <button className="flex justify-between text-base font-semibold items-center bg-bcolor w-[205px] h-[50px] rounded-lg px-7">
-                <img src={Add} alt="addIcon" />
-                ADD PRODUCTS
-              </button>
+          <div className="font-Lato px-5 md:px-10 lg:px-[100px]">
+            <div className="lg:flex lg:justify-between lg:items-center">
+              <div>
+                <h1
+                  key={user?.pk}
+                  className="text-center text-[25px] md:text-3xl lg:text-[28px] font-bold pt-[44px]"
+                >
+                  Welcome back, {user?.username}!
+                </h1>
+                <p className="font-normal text-center text-base md:text-lg lg:text-base md:pt-3 lg:pt-0">
+                  What would you like to do today again?
+                </p>
+              </div>
+              <div className="flex justify-center pt-[24px]">
+                <button className="flex justify-between text-base font-semibold items-center bg-bcolor w-[205px] h-[50px] rounded-lg px-7">
+                  <img src={Add} alt="addIcon" />
+                  ADD PRODUCTS
+                </button>
+              </div>
             </div>
-            <p className="text-lg md:text-xl font-bold pt-[44px]">Statistics</p>
+            <p className="text-lg md:text-xl lg:text-lg font-bold pt-[44px]">
+              Statistics
+            </p>
             <div className="pt-[24px] grid gap-y-[16px] md:grid-cols-3 md:gap-x-5">
               <StatCard
                 image={analysis}

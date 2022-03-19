@@ -2,7 +2,7 @@ import React from "react";
 
 const StatCard = ({ image, number, textB, text, width, height }) => {
   return (
-    <div className="bg-white w-full flex pl-10 items-center space-x-[25px] h-[140px] rounded shadow-[0_2px_15px_rgba(34,34,34,0.08)]">
+    <div className="bg-white w-full flex pl-10 md:px-5 items-center space-x-[25px] h-[140px] rounded shadow-[0_2px_15px_rgba(34,34,34,0.08)]">
       <img src={image} alt="icon" className={`w-[${width}] h-[${height}]`} />
       <div>
         <p className="text-[28px] font-bold">{number}</p>

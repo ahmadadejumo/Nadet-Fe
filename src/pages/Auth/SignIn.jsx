@@ -51,7 +51,7 @@ const SignIn = () => {
   };
   // Google Login
   const responseGoogle = async (response) => {
-    // console.log(response);
+    console.log(response);
     try {
       const res = await axios.post(
         GOOGLE_URL,
@@ -145,6 +145,7 @@ const SignIn = () => {
           withCredentials: false,
         }
       );
+      console.log(response.data);
       const access_token = response?.data?.access_token;
       const refresh_token = response?.data?.refresh_token;
       setAuth({ user, pwd, access_token, refresh_token });
