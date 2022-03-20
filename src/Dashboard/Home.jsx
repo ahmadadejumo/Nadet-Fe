@@ -90,16 +90,16 @@ const Home = () => {
                 number="20"
                 textB="Sales"
                 text="in total"
-                width={"27px"}
-                height={"36px"}
+                w={"27px"}
+                h={"36px"}
               />
               <StatCard
                 image={Users}
                 number="0"
                 textB="Customers"
                 text="in total"
-                width={"44px"}
-                height={"30px"}
+                w={"44px"}
+                h={"30px"}
               />
             </div>
             <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p>
