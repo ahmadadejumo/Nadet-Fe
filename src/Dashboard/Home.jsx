@@ -63,9 +63,9 @@ const Home = () => {
               </button>
             </div>
             <p className="text-lg font-bold pt-[44px]">Statistics</p>
-            <div>
+            {/* <div>
               <StatBox />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
