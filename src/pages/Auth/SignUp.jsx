@@ -408,7 +408,7 @@ const SignUp = () => {
                 <input
                   type="checkbox"
                   onChange={checkboxHandler}
-                  className="h-[24px] form-checkbox text-bcolor w-[24px] "
+                  className="h-[24px] form-checkbox text-bcolor w-[24px] border border-gray-300"
                 />
                 <label htmlFor="checkbox" className="font-normal text-base">
                   I Accept{" "}

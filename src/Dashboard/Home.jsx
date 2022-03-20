@@ -3,10 +3,10 @@ import useAxios from "../hooks/useAxios";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 import Add from "../assets/images/Add.svg";
-// import StatCard from "../components/StatCard";
-// import analysis from "../assets/images/analysis.svg";
-// import Receipt from "../assets/images/Receipt.svg";
-// import Users from "../assets/images/Users.svg";
+import StatCard from "../components/StatCard";
+import analysis from "../assets/images/analysis.svg";
+import Receipt from "../assets/images/Receipt.svg";
+import Users from "../assets/images/Users.svg";
 // import { useNavigate, useLocation } from "react-router-dom";
 
 const Home = () => {
@@ -76,7 +76,7 @@ const Home = () => {
             <p className="text-lg md:text-xl lg:text-lg font-bold pt-[44px]">
               Statistics
             </p>
-            {/* <div className="pt-[24px] grid gap-y-[16px] md:grid-cols-3 md:gap-x-5">
+            <div className="pt-[24px] grid gap-y-[16px] md:grid-cols-3 md:gap-x-5">
               <StatCard
                 image={analysis}
                 number="#2,670"
@@ -101,7 +101,7 @@ const Home = () => {
                 width={"44px"}
                 height={"30px"}
               />
-            </div> */}
+            </div>
             <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p>
           </div>
         </div>
