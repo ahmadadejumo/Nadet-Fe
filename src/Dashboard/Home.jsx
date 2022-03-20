@@ -102,7 +102,7 @@ const Home = () => {
                 h={"30px"}
               />
             </div>
-            <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p>
+            {/* <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p> */}
           </div>
         </div>
       </div>
