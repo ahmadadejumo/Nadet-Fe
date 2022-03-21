@@ -3,7 +3,7 @@ import useAxios from "../hooks/useAxios";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 import Add from "../assets/images/Add.svg";
-import StatCard from "../components/StatBox";
+import StatCard from "../components/StatCard";
 import analysis from "../assets/images/analysis.svg";
 import receipt from "../assets/images/receipt.svg";
 import users from "../assets/images/users.svg";
