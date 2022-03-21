@@ -101,7 +101,7 @@ const DashboardNavbar = ({ click }) => {
           <MenuList bg="profile">
             <MenuGroup title="Account">
               <MenuDivider />
-              <MenuItem _focus={{ boxShadow: "outline" }}>My Profile</MenuItem>
+              <MenuItem>My Profile</MenuItem>
               <MenuItem>Edit Profile</MenuItem>
               <MenuItem>Payment Settings</MenuItem>
               <MenuItem>Log Out</MenuItem>
