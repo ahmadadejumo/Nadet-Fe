@@ -20,7 +20,7 @@ import SignUp from "./pages/Auth/SignUp";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ChangePassword from "./pages/Auth/ChangePassword";
 import { AuthProvider } from "./Context/AuthProvider";
-import Home from "./Dashboard/Home";
+import Dashboard from "./Dashboard/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import PersistLogin from "./components/PersistLogin";
 import { LinkedInCallback } from "react-linkedin-login-oauth2";
@@ -65,7 +65,7 @@ function App() {
             />
             <Route element={<PersistLogin />}>
               <Route element={<RequireAuth />}>
-                <Route path="dashboard" element={<Home />} />
+                <Route path="dashboard" element={<Dashboard />} />
               </Route>
             </Route>
             <Route exact path="/linkedin" element={<LinkedInCallback />} />
