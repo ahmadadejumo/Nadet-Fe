@@ -33,7 +33,7 @@ const Home = () => {
         });
         isMounted && setUser(response.data);
       } catch (err) {
-        // console.error(err);
+        console.error(err);
         // navigate("/signin", { state: { from: location }, replace: true });
       }
     };
@@ -82,24 +82,18 @@ const Home = () => {
                 number="#2,670"
                 textB="Earnings"
                 text="this month"
-                w={"32px"}
-                h={"31px"}
               />
               <StatCard
                 image={Receipt}
                 number="20"
                 textB="Sales"
                 text="in total"
-                w={"27px"}
-                h={"36px"}
               />
               <StatCard
                 image={Users}
                 number="0"
                 textB="Customers"
                 text="in total"
-                w={"44px"}
-                h={"30px"}
               />
             </div>
             <p className="text-lg md:text-xl font-bold pt-[44px]">Earnings</p>
