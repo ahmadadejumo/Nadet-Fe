@@ -33,7 +33,7 @@ const Home = () => {
         });
         isMounted && setUser(response.data);
       } catch (err) {
-        console.error(err);
+        // console.error(err);
         // navigate("/signin", { state: { from: location }, replace: true });
       }
     };
@@ -96,12 +96,12 @@ const Home = () => {
                 text="in total"
               />
             </div>
-            <div className="md:flex md:space-x-10 md:pt-16 md:pb-56">
+            <div className="md:flex md:space-x-10 lg:space-x-[30px] md:pt-16 lg:pt-[51px] md:pb-96 lg:pb-[100px]">
               <div className="md:flex-[2]">
                 <p className="text-lg md:text-xl font-bold pt-[44px]">
                   Earnings
                 </p>
-                <div className="bg-white rounded-[4px] w-full h-[115px] md:h-[130px] mt-[24px] flex justify-center items-center font-bold text-xl">
+                <div className="bg-white rounded-[4px] w-full h-[115px] md:h-[130px] lg:h-[225px] mt-[24px] flex justify-center items-center font-bold text-xl">
                   Chart will be out soon!!!
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Home = () => {
                 <p className="text-lg md:text-xl font-bold pt-[44px]">
                   Transactions
                 </p>
-                <div className="bg-white rounded-[4px] w-full h-[119px] md:h-[130px] mt-[24px] flex justify-center items-center font-normal text-base mb-[33px] shadow-[0_2px_15px_rgba(34,34,34,0.08)]">
+                <div className="bg-white rounded-[4px] w-full h-[119px] md:h-[130px] lg:h-[225px] mt-[24px] flex justify-center items-center font-normal text-base mb-[33px] shadow-[0_2px_15px_rgba(34,34,34,0.08)]">
                   No transaction found
                 </div>
               </div>
