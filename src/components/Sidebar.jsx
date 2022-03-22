@@ -87,19 +87,6 @@ const Sidebar = () => {
           <img src={home} alt="homeIcon" className="object-contain w-[16px]" />
           <p>Home</p>
         </Link>
-        <div
-          onClick={handleChange2}
-          className={`flex ${
-            color === 2 ? "bg-white py-[15px]" : null
-          } items-center text-base font-semibold space-x-2 pl-[35px] cursor-pointer`}
-        >
-          <img
-            src={marketplace}
-            alt="marketplaceIcon"
-            className="object-contain w-[16px]"
-          />
-          <p>Marketplace</p>
-        </div>
         <Link
           to={"/dashboard/my-products"}
           onClick={handleChange3}
