@@ -61,7 +61,7 @@ function App() {
           />
           <Route element={<PersistLogin />}>
             <Route element={<RequireAuth />}>
-              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="dashboard/*" element={<Dashboard />} />
             </Route>
           </Route>
           <Route exact path="/linkedin" element={<LinkedInCallback />} />

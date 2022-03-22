@@ -78,7 +78,7 @@ const Sidebar = () => {
       </div>
       <div className="space-y-[35px] pt-10">
         <Link
-          to={"/home"}
+          to={"/dashboard/dashboard-home"}
           onClick={handleChange1}
           className={`flex ${
             color === 1 ? "bg-white py-[15px]" : null
