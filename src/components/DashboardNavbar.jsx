@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import home from "../assets/images/home.svg";
-import marketplace from "../assets/images/marketplace.svg";
 import products from "../assets/images/products.svg";
 import marketing from "../assets/images/marketing.svg";
 import analytics from "../assets/images/analytics.svg";
@@ -43,6 +42,11 @@ const DashboardNavbar = ({ click }) => {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
+  };
+
+  const [openProduct, setOpenProduct] = useState(false);
+  const handleProduct = () => {
+    setOpenProduct(!openProduct);
   };
 
   const navigate = useNavigate();
@@ -140,21 +144,24 @@ const DashboardNavbar = ({ click }) => {
                 <img src={home} alt="homeIcon" className="object-contain w-5" />
                 <p>Home</p>
               </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={marketplace}
-                  alt="marketplaceIcon"
-                  className="object-contain w-5"
-                />
-                <p>Marketplace</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={products}
-                  alt="productIcon"
-                  className="object-contain w-5"
-                />
-                <p>Products</p>
+              <div>
+                <div
+                  onClick={handleProduct}
+                  className="flex items-center text-xl font-semibold space-x-3 pl-5"
+                >
+                  <img
+                    src={products}
+                    alt="productIcon"
+                    className="object-contain w-5"
+                  />
+                  <p>Products</p>
+                </div>
+                {openProduct && (
+                  <div className="text-xl font-semibold pl-12 pt-5 space-y-3">
+                    <p>My Products</p>
+                    <p>Add Product</p>
+                  </div>
+                )}
               </div>
               <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
                 <img

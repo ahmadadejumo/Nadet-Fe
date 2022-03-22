@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/Logo.svg";
 import home from "../assets/images/home.svg";
-import marketplace from "../assets/images/marketplace.svg";
 import products from "../assets/images/products.svg";
 import marketing from "../assets/images/marketing.svg";
 import analytics from "../assets/images/analytics.svg";
@@ -22,9 +21,6 @@ const Sidebar = () => {
   const [color, setColor] = useState(1);
   const handleChange1 = () => {
     setColor(1);
-  };
-  const handleChange2 = () => {
-    setColor(2);
   };
   const handleChange3 = () => {
     setColor(3);
