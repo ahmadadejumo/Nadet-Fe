@@ -5,6 +5,7 @@ import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import "focus-visible/dist/focus-visible";
 import { extendTheme } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
 
 const theme = extendTheme({
   colors: {
@@ -14,10 +15,12 @@ const theme = extendTheme({
 });
 
 ReactDOM.render(
-  <ChakraProvider theme={theme}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ChakraProvider>,
+  <BrowserRouter>
+    <ChakraProvider theme={theme}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ChakraProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [color, setColor] = useState(1);
@@ -76,7 +77,8 @@ const Sidebar = () => {
         />
       </div>
       <div className="space-y-[35px] pt-10">
-        <div
+        <Link
+          to={"/home"}
           onClick={handleChange1}
           className={`flex ${
             color === 1 ? "bg-white py-[15px]" : null
@@ -84,7 +86,7 @@ const Sidebar = () => {
         >
           <img src={home} alt="homeIcon" className="object-contain w-[16px]" />
           <p>Home</p>
-        </div>
+        </Link>
         <div
           onClick={handleChange2}
           className={`flex ${
@@ -98,7 +100,8 @@ const Sidebar = () => {
           />
           <p>Marketplace</p>
         </div>
-        <div
+        <Link
+          to={"/dashboard/my-products"}
           onClick={handleChange3}
           className={`flex ${
             color === 3 ? "bg-white py-[15px]" : null
@@ -110,7 +113,7 @@ const Sidebar = () => {
             className="object-contain w-[16px]"
           />
           <p>Products</p>
-        </div>
+        </Link>
         <div
           onClick={handleChange4}
           className={`flex ${
