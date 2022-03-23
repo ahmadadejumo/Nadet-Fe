@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import logo from "../assets/images/Logo.svg";
 import logoutArrow from "../assets/images/logoutArrow.svg";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
 import { GoogleLogout } from "react-google-login";
 import { motion } from "framer-motion";
 import { SidebarData } from "./SidebarData";
 
 const Sidebar = () => {
-  const [color, setColor] = useState(1);
   const [openProducts, setOpenProducts] = useState(false);
 
-  const handleChange3 = () => {
-    setColor(3);
+  const handleChange = () => {
     setOpenProducts(!openProducts);
   };
 
-  const location = useLocation();
   const navigate = useNavigate();
   const logout = useLogOut();
 
