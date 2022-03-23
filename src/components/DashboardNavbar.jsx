@@ -37,6 +37,7 @@ import {
 } from "@chakra-ui/react";
 import SearchPage from "./SearchPage";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const DashboardNavbar = ({ click }) => {
   const [open, setOpen] = useState(false);
@@ -140,10 +141,13 @@ const DashboardNavbar = ({ click }) => {
           </DrawerHeader>
           <DrawerBody>
             <div className="space-y-10">
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
+              <Link
+                to={"/dashboard/dashboard-home"}
+                className="flex items-center text-xl font-semibold space-x-3 pl-5"
+              >
                 <img src={home} alt="homeIcon" className="object-contain w-5" />
                 <p>Home</p>
-              </div>
+              </Link>
               <div>
                 <div
                   onClick={handleProduct}
