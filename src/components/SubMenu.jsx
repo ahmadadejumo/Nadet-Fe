@@ -10,7 +10,6 @@ const SubMenu = ({ item }) => {
     <>
       <Link
         to={item.link}
-        key={item.id}
         onClick={item.subNav && showSubnav}
         className={`${
           window.location.pathname === item.link ? "bg-white" : ""
@@ -28,7 +27,6 @@ const SubMenu = ({ item }) => {
           return (
             <Link
               to={item.link}
-              key={item.key}
               className={`${
                 window.location.pathname === item.link ? "bg-white" : ""
               } flex items-center text-base  h-14 font-semibold pl-[60px]`}

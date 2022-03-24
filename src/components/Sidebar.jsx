@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/images/Logo.svg";
 import logoutArrow from "../assets/images/logoutArrow.svg";
 import { useNavigate, Link } from "react-router-dom";
@@ -9,12 +9,6 @@ import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 
 const Sidebar = () => {
-  const [subnav, setSubnav] = useState(false);
-
-  const openNav = () => {
-    setSubnav(!subnav);
-  };
-
   const navigate = useNavigate();
   const logout = useLogOut();
 
@@ -41,29 +35,10 @@ const Sidebar = () => {
         />
       </Link>
       <div className="space-y-[10px] pt-10">
-        {SidebarData.map((item) => (
-          <SubMenu item={item} />
+        {SidebarData.map((item, index) => (
+          <SubMenu item={item} key={index} />
         ))}
-        {/* {SidebarData.map(({ id, image, alt, text, link, subNav }) => (
-          <Link
-            onClick={subNav && openNav}
-            to={link}
-            key={id}
-            className={`${
-              window.location.pathname === link ? "bg-white" : ""
-            } flex items-center text-base  h-14 font-semibold space-x-2 pl-[35px]`}
-          >
-            <img src={image} alt={alt} className="object-contain w-[16px]" />
-            <p>{text}</p>
-          </Link>
-        ))} */}
       </div>
-      {/* {subnav &&
-        SidebarData.subNav.map(({ id, text, link }) => (
-          <Link key={id} to={link}>
-            {text}
-          </Link>
-        ))} */}
       <div className="flex justify-center pb-[25px] pt-10">
         <button className="w-[218px] text-base font-semibold h-[48px] rounded-lg flex justify-center space-x-[10px] items-center border-black border">
           <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
