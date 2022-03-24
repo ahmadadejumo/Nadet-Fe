@@ -13,16 +13,6 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import home from "../assets/images/home.svg";
-import products from "../assets/images/products.svg";
-import marketing from "../assets/images/marketing.svg";
-import analytics from "../assets/images/analytics.svg";
-import wallet from "../assets/images/wallet.svg";
-import refer from "../assets/images/refer.svg";
-import integrations from "../assets/images/integrations.svg";
-import billing from "../assets/images/billing.svg";
-import settings from "../assets/images/settings.svg";
-import upgrade from "../assets/images/upgrade.svg";
 import logoutArrow from "../assets/images/logoutArrow.svg";
 import { useNavigate } from "react-router-dom";
 import useLogOut from "../hooks/useLogOut";
@@ -38,16 +28,13 @@ import {
 import SearchPage from "./SearchPage";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { SidebarData } from "./SidebarData";
+import SubMenu from "./SubMenu";
 
 const DashboardNavbar = ({ click }) => {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
-  };
-
-  const [openProduct, setOpenProduct] = useState(false);
-  const handleProduct = () => {
-    setOpenProduct(!openProduct);
   };
 
   const navigate = useNavigate();
@@ -137,101 +124,15 @@ const DashboardNavbar = ({ click }) => {
         <DrawerContent bg="brand">
           <DrawerCloseButton />
           <DrawerHeader className="flex justify-center">
-            <img src={logo} alt="logo" className="object-contain w-36" />
+            <Link to={"/dashboard/dashboard-home"}>
+              <img src={logo} alt="logo" className="object-contain w-36" />
+            </Link>
           </DrawerHeader>
           <DrawerBody>
             <div className="space-y-10">
-              <Link
-                to={"/dashboard/dashboard-home"}
-                className="flex items-center text-xl font-semibold space-x-3 pl-5"
-              >
-                <img src={home} alt="homeIcon" className="object-contain w-5" />
-                <p>Home</p>
-              </Link>
-              <div>
-                <div
-                  onClick={handleProduct}
-                  className="flex items-center text-xl font-semibold space-x-3 pl-5"
-                >
-                  <img
-                    src={products}
-                    alt="productIcon"
-                    className="object-contain w-5"
-                  />
-                  <p>Products</p>
-                </div>
-                {openProduct && (
-                  <div className="text-xl font-semibold pl-12 pt-5 space-y-3">
-                    <p>My Products</p>
-                    <p>Add Product</p>
-                  </div>
-                )}
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={marketing}
-                  alt="marketingIcon"
-                  className="object-contain w-5"
-                />
-                <p>Marketing</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={analytics}
-                  alt="analyticsIcon"
-                  className="object-contain w-5"
-                />
-                <p>Analytics</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={wallet}
-                  alt="walletIcon"
-                  className="object-contain w-5"
-                />
-                <p>Wallets & Payouts</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={refer}
-                  alt="referIcon"
-                  className="object-contain w-5"
-                />
-                <p>Refer & Earn</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={integrations}
-                  alt="integrationsIcon"
-                  className="object-contain w-5"
-                />
-                <p>Integrations</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={billing}
-                  alt="billingIcon"
-                  className="object-contain w-5"
-                />
-                <p>Billing</p>
-              </div>
-              <hr className="px-10 bg-[#CFCFD5]" />
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={settings}
-                  alt="settingsIcon"
-                  className="object-contain w-5"
-                />
-                <p>Settings</p>
-              </div>
-              <div className="flex items-center text-xl font-semibold space-x-3 pl-5">
-                <img
-                  src={upgrade}
-                  alt="upgradeIcon"
-                  className="object-contain w-5"
-                />
-                <p>Upgrade Account</p>
-              </div>
+              {SidebarData.map((item, index) => (
+                <SubMenu item={item} key={index} />
+              ))}
               <div className="flex justify-center pb-10">
                 <button className="w-[218px] h-[48px] text-xl font-semibold rounded-lg flex justify-center space-x-[10px] items-center border-black border">
                   <img src={logoutArrow} alt="arrow" className="w-3 h-3" />
