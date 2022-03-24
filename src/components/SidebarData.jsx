@@ -22,7 +22,11 @@ export const SidebarData = [
     image: products,
     alt: "products",
     text: "Products",
-    link: "/dashboard/my-products",
+    link: "#",
+    subNav: [
+      { id: 2.1, text: "My Products", link: "/dashboard/my-products" },
+      { id: 2.1, text: "Add Product", link: "/dashboard/add-products" },
+    ],
   },
   {
     id: 3,
