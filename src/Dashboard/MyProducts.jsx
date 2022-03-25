@@ -12,7 +12,8 @@ const MyProducts = () => {
           ADD PRODUCTS
         </button>
       </div>
-      <DropdownSelect />
+      <DropdownSelect name="All Type" width={"w-[94px]"} />
+      <DropdownSelect name="All Category" width={"w-[130px]"} />
     </div>
   );
 };
