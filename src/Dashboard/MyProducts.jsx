@@ -1,5 +1,6 @@
 import React from "react";
 import Add from "../assets/images/Add.svg";
+import filter from "../assets/images/filter.svg";
 import DropdownSelect from "../components/DropdownSelect";
 
 const MyProducts = () => {
@@ -12,8 +13,13 @@ const MyProducts = () => {
           ADD PRODUCTS
         </button>
       </div>
-      <DropdownSelect name="All Type" width={"w-[94px]"} />
-      <DropdownSelect name="All Category" width={"w-[130px]"} />
+      <div>
+        <DropdownSelect name="All Type" width={"w-[94px]"} />
+        <DropdownSelect name="All Category" width={"w-[130px]"} />
+        <div className="bg-white rounded-md w-[35px] h-[30px] flex justify-center items-center">
+          <img src={filter} alt="filetrIcon" className="w-[12px] h-[14.65px]" />
+        </div>
+      </div>
     </div>
   );
 };
