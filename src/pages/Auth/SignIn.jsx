@@ -68,8 +68,14 @@ const SignIn = () => {
       localStorage.setItem("refresh_token", res?.data.refresh_token);
       navigate(from, { replace: true });
     } catch (err) {
-      if (!err?.res) {
-        setErrMsg("Email verification failed");
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("User already exist!");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
       }
       errRef.current.focus();
     }
@@ -94,8 +100,14 @@ const SignIn = () => {
       localStorage.setItem("refresh_token", res?.data.refresh_token);
       navigate(from, { replace: true });
     } catch (err) {
-      if (!err?.res) {
-        setErrMsg("Email verification failed");
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("User already exist!");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
       }
       errRef.current.focus();
     }
@@ -159,7 +171,7 @@ const SignIn = () => {
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
-        setErrMsg("Missing Username or Password");
+        setErrMsg("Incorrect Username or Password");
       } else if (err.response?.status === 401) {
         setErrMsg("Unauthorized");
       } else {
