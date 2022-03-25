@@ -32,7 +32,9 @@ const MyProducts = () => {
           className="w-[14.17px] h-[16.67px]"
         />
       </div>
-      <ProductTable />
+      <div className="flex justify-center">
+        <ProductTable />
+      </div>
     </div>
   );
 };
