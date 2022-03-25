@@ -1,5 +1,6 @@
 import React from "react";
 import Add from "../assets/images/Add.svg";
+import DropdownSelect from "../components/DropdownSelect";
 
 const MyProducts = () => {
   return (
@@ -11,6 +12,7 @@ const MyProducts = () => {
           ADD PRODUCTS
         </button>
       </div>
+      <DropdownSelect />
     </div>
   );
 };
