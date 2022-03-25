@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 import DashboardHome from "./Home";
-import DashboardProucts from "./Products";
+import DashboardProucts from "./MyProducts";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
