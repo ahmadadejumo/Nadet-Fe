@@ -3,6 +3,7 @@ import Add from "../assets/images/Add.svg";
 import filter from "../assets/images/filter.svg";
 import exportIcon from "../assets/images/export.svg";
 import DropdownSelect from "../components/DropdownSelect";
+import ProductTable from "../components/ProductTable";
 
 const MyProducts = () => {
   return (
@@ -31,6 +32,7 @@ const MyProducts = () => {
           className="w-[14.17px] h-[16.67px]"
         />
       </div>
+      <ProductTable />
     </div>
   );
 };
