@@ -3,7 +3,6 @@ import LpSection8Card from "./LpSection8Card";
 import Carousel from "react-elastic-carousel";
 import profile3 from "../../../assets/images/profile3.svg";
 import profile4 from "../../../assets/images/profile4.svg";
-import profile5 from "../../../assets/images/profile5.svg";
 
 const LpSection8 = () => {
   const breakPoints = [
@@ -63,7 +62,7 @@ const LpSection8 = () => {
             text={
               "Nadet is a dream come through platform for my business and goals! They’re truly interested in your growth and are constantly listening to the customers and giving support."
             }
-            image={profile5}
+            image={profile4}
             name={"Precious Icardi"}
             profession={"Content Creator"}
           />
@@ -99,7 +98,7 @@ const LpSection8 = () => {
             text={
               "Nadet is a dream come through platform for my business and goals! They’re truly interested in your growth and are constantly listening to the customers and giving support."
             }
-            image={profile5}
+            image={profile4}
             name={"Precious Icardi"}
             profession={"Content Creator"}
           />
