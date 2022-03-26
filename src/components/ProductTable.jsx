@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Pagination from "./Pagination";
+import dots from "../assets/images/dots.svg";
 
 let PageSize = 5;
 
@@ -129,17 +130,20 @@ const ProductTable = () => {
         </thead>
         <tbody className="text-sm md:text-lg lg:text-base font-medium text-left">
           {currentTableData.map((item, index) => (
-            <tr className="" key={index}>
+            <tr key={index}>
               <td className="pt-[17px] pr-3">{item.name}</td>
               <td className="pt-[17px]">{item.type}</td>
               <td className="pt-[17px] pl-3">{item.sales}</td>
               <td className="pt-[17px]">{item.price}</td>
+              <td className="pt-[17px] pl-3">
+                <img src={dots} alt="dots" />
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
       <Pagination
-        className="pagination-bar"
+        className="flex justify-center pt-5 md:pt-10 bg-[#EEEEF4] pb-10"
         currentPage={currentPage}
         totalCount={productdata.length}
         pageSize={PageSize}
