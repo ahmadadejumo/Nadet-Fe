@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Pagination from "./Pagination";
 import dots from "../assets/images/dots.svg";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 let PageSize = 5;
 
@@ -135,9 +136,23 @@ const ProductTable = () => {
               <td className="pt-[17px]">{item.type}</td>
               <td className="pt-[17px] pl-3">{item.sales}</td>
               <td className="pt-[17px]">{item.price}</td>
-              <td className="pt-[17px] pl-3">
-                <img src={dots} alt="dots" />
-              </td>
+              <Menu>
+                <MenuButton>
+                  <td className="pt-[17px] pl-3">
+                    <img src={dots} alt="dots" />
+                  </td>
+                </MenuButton>
+                <MenuList>
+                  <MenuItem>Edit</MenuItem>
+                  <MenuItem>View Public LInk</MenuItem>
+                  <MenuItem>View Sales</MenuItem>
+                  <MenuItem>View Abandoned Transactions</MenuItem>
+                  <MenuItem>Product Reviews</MenuItem>
+                  <MenuItem>Deactivate product</MenuItem>
+                  <MenuItem>Delete product</MenuItem>
+                  <MenuItem>Duplicate product</MenuItem>
+                </MenuList>
+              </Menu>
             </tr>
           ))}
         </tbody>
