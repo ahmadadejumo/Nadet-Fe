@@ -4,6 +4,14 @@ import filter from "../assets/images/filter.svg";
 import exportIcon from "../assets/images/export.svg";
 import DropdownSelect from "../components/DropdownSelect";
 import ProductTable from "../components/ProductTable";
+import { productdata, productHeaders } from "../components/ProductData";
+import { CSVLink } from "react-csv";
+
+const csvReport = {
+  data: productdata,
+  headers: productHeaders,
+  filename: "My-Products.csv",
+};
 
 const MyProducts = () => {
   return (
@@ -35,7 +43,7 @@ const MyProducts = () => {
           </div>
           <div className="bg-white rounded-lg w-[213px] h-[32px] flex justify-between px-5 items-center mt-[26.48px] md:mt-0 mx-3 lg:mx-0">
             <h1 className="font-bold text-base text-[#35363AB2]">
-              Export Data in CSV
+              <CSVLink {...csvReport}>Export Data in CSV</CSVLink>
             </h1>
             <img
               src={exportIcon}

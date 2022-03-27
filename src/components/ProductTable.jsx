@@ -2,113 +2,9 @@ import React, { useState, useMemo } from "react";
 import Pagination from "./Pagination";
 import dots from "../assets/images/dots.svg";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { productdata } from "./ProductData";
 
 let PageSize = 5;
-
-export const productdata = [
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-  {
-    name: "High Performance Formula",
-    type: "Ebook",
-    sales: 3,
-    price: "NGN 44",
-  },
-];
 
 const ProductTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -136,23 +32,23 @@ const ProductTable = () => {
               <td className="pt-[17px]">{item.type}</td>
               <td className="pt-[17px] pl-3">{item.sales}</td>
               <td className="pt-[17px]">{item.price}</td>
-              <Menu>
-                <MenuButton>
-                  <td className="pt-[17px] pl-3">
+              <td className="pt-[17px] pl-3">
+                <Menu>
+                  <MenuButton>
                     <img src={dots} alt="dots" />
-                  </td>
-                </MenuButton>
-                <MenuList>
-                  <MenuItem>Edit</MenuItem>
-                  <MenuItem>View Public LInk</MenuItem>
-                  <MenuItem>View Sales</MenuItem>
-                  <MenuItem>View Abandoned Transactions</MenuItem>
-                  <MenuItem>Product Reviews</MenuItem>
-                  <MenuItem>Deactivate product</MenuItem>
-                  <MenuItem>Delete product</MenuItem>
-                  <MenuItem>Duplicate product</MenuItem>
-                </MenuList>
-              </Menu>
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>Edit</MenuItem>
+                    <MenuItem>View Public LInk</MenuItem>
+                    <MenuItem>View Sales</MenuItem>
+                    <MenuItem>View Abandoned Transactions</MenuItem>
+                    <MenuItem>Product Reviews</MenuItem>
+                    <MenuItem>Deactivate product</MenuItem>
+                    <MenuItem>Delete product</MenuItem>
+                    <MenuItem>Duplicate product</MenuItem>
+                  </MenuList>
+                </Menu>
+              </td>
             </tr>
           ))}
         </tbody>
