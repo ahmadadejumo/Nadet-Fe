@@ -13,6 +13,18 @@ const csvReport = {
   filename: "My-Products.csv",
 };
 
+const options = [
+  "All types",
+  "Digital product",
+  "Ticket",
+  "Subscription",
+  "Service",
+  "Course",
+  "Stream online",
+  "Membership course",
+  "Flexible subscription",
+];
+
 const MyProducts = () => {
   return (
     <div className="flex justify-center">
@@ -31,8 +43,16 @@ const MyProducts = () => {
 
         <div className="md:flex md:justify-between md:px-10 lg:px-0 md:items-center md:pt-12 lg:pt-[30px]">
           <div className="flex justify-around md:justify-center md:items-center md:space-x-5 pt-10 md:pt-0">
-            <DropdownSelect name="All Type" width={"w-[94px]"} />
-            <DropdownSelect name="All Category" width={"w-[130px]"} />
+            <DropdownSelect
+              name="All Type"
+              width={"w-[94px]"}
+              options={options}
+            />
+            <DropdownSelect
+              name="All Category"
+              width={"w-[130px]"}
+              options={options}
+            />
             <div className="bg-white rounded-md w-[35px] h-[30px] flex justify-center items-center">
               <img
                 src={filter}
