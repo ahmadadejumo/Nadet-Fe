@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
+import AddProducts from "./AddProducts";
 import DashboardHome from "./Home";
 import DashboardProucts from "./MyProducts";
 
@@ -21,6 +22,7 @@ const Home = () => {
           <Routes>
             <Route path="dashboard-home" element={<DashboardHome />} />
             <Route path="my-products" element={<DashboardProucts />} />
+            <Route path="add-products" element={<AddProducts />} />
           </Routes>
         </div>
       </div>

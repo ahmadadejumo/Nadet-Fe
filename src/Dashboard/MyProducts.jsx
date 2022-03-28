@@ -13,7 +13,7 @@ const csvReport = {
   filename: "My-Products.csv",
 };
 
-const options = [
+const typesOption = [
   "All types",
   "Digital product",
   "Ticket",
@@ -23,6 +23,15 @@ const options = [
   "Stream online",
   "Membership course",
   "Flexible subscription",
+];
+
+const categoriesOption = [
+  "Event tickets",
+  "Magazines",
+  "Arts",
+  "Digital printables",
+  "Caoching",
+  "Training",
 ];
 
 const MyProducts = () => {
@@ -46,12 +55,12 @@ const MyProducts = () => {
             <DropdownSelect
               name="All Type"
               width={"w-[94px]"}
-              options={options}
+              options={typesOption}
             />
             <DropdownSelect
               name="All Category"
               width={"w-[130px]"}
-              options={options}
+              options={categoriesOption}
             />
             <div className="bg-white rounded-md w-[35px] h-[30px] flex justify-center items-center">
               <img
