@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductContainer = ({ icon, name, desc }) => {
   return (
-    <div className="bg-white rounded-[30px] px-[11px] lg:px-[25px] shadow-[0_8px_16px_rgba(0,0,0,0.1)]">
+    <div className="bg-white rounded-[30px] cursor-pointer px-[11px] lg:px-[25px] shadow-[0_8px_16px_rgba(0,0,0,0.1)]">
       <div className="flex justify-center pt-5">
         <img
           src={icon}

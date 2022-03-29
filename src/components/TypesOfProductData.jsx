@@ -10,30 +10,36 @@ export const typesOfProductData = [
     name: "Digital product",
     desc: "Sell any kind of physical product, from clothing to",
     icon: book,
+    path: "/dashboard/digital-products",
   },
   {
     name: "Subscription",
     desc: "Sell any kind of physical product, from clothing to",
     icon: rss,
+    path: "/dashboard/digital-products",
   },
   {
     name: "Membership Courses",
     desc: "Sell any kind of physical product, from clothing to",
     icon: film,
+    path: "/dashboard/digital-products",
   },
   {
     name: "Event Tickets",
     desc: "Sell any kind of physical product, from clothing to",
     icon: award,
+    path: "/dashboard/digital-products",
   },
   {
     name: "Online Course",
     desc: "Sell any kind of physical product, from clothing to",
     icon: youtube,
+    path: "/dashboard/digital-products",
   },
   {
     name: "Service",
     desc: "Sell any kind of physical product, from clothing to",
     icon: service,
+    path: "/dashboard/digital-products",
   },
 ];
