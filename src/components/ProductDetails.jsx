@@ -5,7 +5,10 @@ import X from "../assets/images/X.svg";
 
 const ProductDetails = () => {
   const [images, setImages] = useState([]);
-  const maxNumber = 69;
+  const maxNumber = 5;
+  const maxFileSize = 5000000;
+  const acceptType = ["jpg", "png"];
+  const resolutionType = "absolute" | "less" | "more" | "ratio";
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -28,15 +31,18 @@ const ProductDetails = () => {
         value={images}
         onChange={onChange}
         maxNumber={maxNumber}
+        acceptType={acceptType}
+        maxFileSize={maxFileSize}
+        resolutionType={resolutionType}
         dataURLKey="data_url"
       >
         {({
           imageList,
           onImageUpload,
-          onImageUpdate,
           onImageRemove,
           isDragging,
           dragProps,
+          errors,
         }) => (
           <div>
             <div
@@ -55,7 +61,7 @@ const ProductDetails = () => {
             {imageList.map((image, index) => (
               <div
                 key={index}
-                className="w-full bg-gray-300 flex justify-between"
+                className="w-full bg-gray-300 flex justify-between mb-1"
               >
                 <img src={image["data_url"]} alt="" width="75" />
                 <div>
@@ -68,6 +74,24 @@ const ProductDetails = () => {
                 </div>
               </div>
             ))}
+            {errors && (
+              <div className="text-red-600 font-medium text-sm pt-1">
+                {errors.maxNumber && (
+                  <span>Number of selected images exceed maxNumber</span>
+                )}
+                {errors.acceptType && (
+                  <span>Your selected file type is not allow</span>
+                )}
+                {errors.maxFileSize && (
+                  <span>Selected file size exceed maxFileSize</span>
+                )}
+                {errors.resolution && (
+                  <span>
+                    Selected file is not match your desired resolution
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         )}
       </ImageUploading>
