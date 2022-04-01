@@ -4,6 +4,12 @@ import ImageUploading from "react-images-uploading";
 import X from "../assets/images/X.svg";
 
 const ProductDetails = () => {
+  const [showOriginalPrice, setShowOriginalPrice] = useState(false);
+
+  const handleOriginalPrice = () => {
+    setShowOriginalPrice(!showOriginalPrice);
+  };
+
   const [images, setImages] = useState([]);
   const maxNumber = 5;
   const maxFileSize = 5000000;
@@ -17,7 +23,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-white font-Lato px-[24px] mt-[16px]">
+    <div className="bg-white font-Lato px-[24px] md:px-11 mt-[16px]">
       <h1 className="pt-[24px] font-bold text-[20px]">Product details</h1>
       <p className="text-sm">Basic product details</p>
       <h1 className="text-xl font-medium pt-[32px]">
@@ -122,22 +128,27 @@ const ProductDetails = () => {
       <div className="flex items-center pt-[32px] space-x-[12px]">
         <input
           type="checkbox"
+          defaultChecked={!showOriginalPrice}
+          onClick={handleOriginalPrice}
           className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
         />
         <p className="text-[15px] font-medium">
           Show striked out original price
         </p>
       </div>
-      <div>
-        <h1 className="text-xl font-medium pt-[18px]">
-          Original price (NGN)<span className="text-[#FBBC15]">*</span>
-        </h1>
-        <input
-          type="number"
-          placeholder="0"
-          className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
-        />
-      </div>
+      {!showOriginalPrice && (
+        <div>
+          <h1 className="text-xl font-medium pt-[18px]">
+            Original price (NGN)<span className="text-[#FBBC15]">*</span>
+          </h1>
+          <input
+            type="number"
+            placeholder="0"
+            className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+          />
+        </div>
+      )}
+
       <div>
         <textarea
           placeholder="Insert text here"
