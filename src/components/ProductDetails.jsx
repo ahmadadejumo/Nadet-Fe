@@ -138,6 +138,12 @@ const ProductDetails = () => {
           className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
         />
       </div>
+      <div>
+        <textarea
+          placeholder="Insert text here"
+          className="border h-[91px] w-full mt-[16px] mb-[34px] pl-[16px] pt-2 outline-none rounded"
+        />
+      </div>
     </div>
   );
 };
