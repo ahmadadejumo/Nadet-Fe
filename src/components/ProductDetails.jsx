@@ -17,7 +17,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-white font-Lato px-[24px]">
+    <div className="bg-white font-Lato px-[24px] mt-[16px]">
       <h1 className="pt-[24px] font-bold text-[20px]">Product details</h1>
       <p className="text-sm">Basic product details</p>
       <h1 className="text-xl font-medium pt-[32px]">
@@ -50,7 +50,7 @@ const ProductDetails = () => {
               {...dragProps}
               className={`${
                 isDragging ? "text-red-700" : null
-              }mt-1 shadow-inner drop-shadow shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
+              }mt-1 shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
             >
               <img src={download} alt="icon" />
               <p className="text-sm font-normal opacity-60">
@@ -95,6 +95,49 @@ const ProductDetails = () => {
           </div>
         )}
       </ImageUploading>
+      <div>
+        <h1 className="text-xl font-medium pt-[32px]">
+          Product Name<span className="text-[#FBBC15]">*</span>
+        </h1>
+        <input
+          type="text"
+          placeholder="Product name"
+          className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+        />
+      </div>
+      <div>
+        <h1 className="text-xl font-medium pt-[32px]">
+          Sale price (NGN)<span className="text-[#FBBC15]">*</span>
+        </h1>
+        <input
+          type="number"
+          placeholder="0"
+          className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+        />
+        <p className="text-sm pt-1">
+          Set price to <span className="text-[#FBBC15]">0</span> for a free
+          product
+        </p>
+      </div>
+      <div className="flex items-center pt-[32px] space-x-[12px]">
+        <input
+          type="checkbox"
+          className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
+        />
+        <p className="text-[15px] font-medium">
+          Show striked out original price
+        </p>
+      </div>
+      <div>
+        <h1 className="text-xl font-medium pt-[18px]">
+          Original price (NGN)<span className="text-[#FBBC15]">*</span>
+        </h1>
+        <input
+          type="number"
+          placeholder="0"
+          className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+        />
+      </div>
     </div>
   );
 };
