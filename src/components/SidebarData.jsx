@@ -45,8 +45,13 @@ export const SidebarData = [
     text: "Analytics",
     link: "/dashboard/",
   },
-  { image: wallet, alt: "wallet", text: "Wallet", link: "/dashboard/" },
-  { image: refer, alt: "refer", text: "Refer", link: "/dashboard/" },
+  {
+    image: wallet,
+    alt: "wallet",
+    text: "Wallets & Payouts",
+    link: "/dashboard/",
+  },
+  { image: refer, alt: "referIcon", text: "Refer & Earn", link: "/dashboard/" },
   {
     image: integrations,
     alt: "integrations",
