@@ -8,6 +8,7 @@ import integrations from "../assets/images/integrations.svg";
 import billing from "../assets/images/billing.svg";
 import settings from "../assets/images/settings.svg";
 import upgrade from "../assets/images/upgrade.svg";
+import purchases from "../assets/images/purchases.svg";
 
 export const SidebarData = [
   {
@@ -25,6 +26,12 @@ export const SidebarData = [
       { text: "My Products", link: "/dashboard/my-products" },
       { text: "Add Product", link: "/dashboard/add-products" },
     ],
+  },
+  {
+    image: purchases,
+    alt: "purchases",
+    text: "Purchases",
+    link: "/dashboard/",
   },
   {
     image: marketing,
