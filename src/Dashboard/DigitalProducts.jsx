@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import leftarrow from "../assets/images/leftarrow.svg";
 import ProductDetails from "../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const DigitalProducts = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
   const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
 
@@ -83,6 +87,28 @@ const DigitalProducts = () => {
           >
             Advanced <br /> Options
           </p>
+        </div>
+        <div className="px-[24px]">
+          <p className="font-medium text-base pt-[32px]">Product Type</p>
+          <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[12px] text-[#252525E3] mt-2">
+            <p>Digital Product</p>
+          </div>
+          <div className="flex items-center space-x-[12px] mt-[10px]">
+            <input
+              type="checkbox"
+              // defaultChecked={!showOriginalPrice}
+              // onClick={handleOriginalPrice}
+              className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
+            />
+            <p className="text-[15px] font-medium">
+              Show striked out original price
+            </p>
+          </div>
+          <p>Pre-order release date</p>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
         </div>
       </div>
     </div>
