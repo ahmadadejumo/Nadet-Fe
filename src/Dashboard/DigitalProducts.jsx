@@ -15,6 +15,12 @@ const DigitalProducts = () => {
     setToggleState(index);
   };
 
+  const [preOrderDate, setPreOrderDate] = useState(false);
+
+  const showPreOrderDate = () => {
+    setPreOrderDate(!preOrderDate);
+  };
+
   return (
     <div className="font-Lato lg:px-[150px]">
       <div
@@ -90,25 +96,34 @@ const DigitalProducts = () => {
         </div>
         <div className="px-[24px]">
           <p className="font-medium text-base pt-[32px]">Product Type</p>
-          <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[12px] text-[#252525E3] mt-2">
+          <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
             <p>Digital Product</p>
           </div>
           <div className="flex items-center space-x-[12px] mt-[10px]">
             <input
               type="checkbox"
-              // defaultChecked={!showOriginalPrice}
-              // onClick={handleOriginalPrice}
+              defaultChecked={!preOrderDate}
+              onClick={showPreOrderDate}
               className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
             />
             <p className="text-[15px] font-medium">
               Show striked out original price
             </p>
           </div>
-          <p>Pre-order release date</p>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-          />
+          {!preOrderDate && (
+            <>
+              <p className="text-base font-medium pt-4">
+                Pre-order release date
+              </p>
+              <DatePicker
+                className="border w-full text-base font-medium rounded py-[10px] pl-4 outline-none mt-1"
+                selected={startDate}
+                showTimeSelect
+                onChange={(date) => setStartDate(date)}
+                dateFormat="MMMM d, yyyy h:mm aa"
+              />
+            </>
+          )}
         </div>
       </div>
     </div>
