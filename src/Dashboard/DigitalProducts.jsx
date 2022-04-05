@@ -4,6 +4,7 @@ import ProductDetails from "../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Select } from "@chakra-ui/react";
 
 const DigitalProducts = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -124,6 +125,38 @@ const DigitalProducts = () => {
               />
             </>
           )}
+          <h1 className="text-[20px] font-medium pt-[33px]">Categories</h1>
+          <p className="text-[14px] font-normal pt-[12px]">
+            Setting a category is not required to create a product, but if you
+            want to segment your products on your store page by categories, you
+            can create the product categories and select them accordingly.
+          </p>
+          <div className="pt-[12px]">
+            <Select placeholder="Select category" size="lg">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Select>
+          </div>
+          <div className="flex items-center space-x-[12px] mt-[33px]">
+            <input
+              type="checkbox"
+              // defaultChecked={!preOrderDate}
+              // onClick={showPreOrderDate}
+              className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
+            />
+            <p className="text-[15px] font-medium">
+              Give buyer access to a file
+            </p>
+          </div>
+          <div className="pt-[33px] flex space-x-5">
+            <button className="h-[34px] w-full rounded-l bg-[#F2F2F2] border text-xs font-bold">
+              Downloadable file
+            </button>
+            <button className="h-[34px] w-full rounded-r bg-white border text-xs font-bold">
+              Read online only (PDF)
+            </button>
+          </div>
         </div>
       </div>
     </div>
