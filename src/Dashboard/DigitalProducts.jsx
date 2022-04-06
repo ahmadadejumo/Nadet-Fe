@@ -27,6 +27,12 @@ const DigitalProducts = () => {
     setPreOrderDate(!preOrderDate);
   };
 
+  const [accessFile, setAccessFile] = useState(false);
+
+  const showAccessFile = () => {
+    setAccessFile(!accessFile);
+  };
+
   return (
     <div className="font-Lato lg:px-[150px]">
       <div
@@ -146,47 +152,51 @@ const DigitalProducts = () => {
           <div className="flex items-center space-x-[12px] mt-[33px]">
             <input
               type="checkbox"
-              // defaultChecked={!preOrderDate}
-              // onClick={showPreOrderDate}
+              defaultChecked={!accessFile}
+              onClick={showAccessFile}
               className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
             />
             <p className="text-[15px] font-medium">
               Give buyer access to a file
             </p>
           </div>
-          <div className="pt-[33px] flex space-x-5">
-            <button
-              onClick={() => toggleButton(1)}
-              className={`${
-                toggleButtonState === 1 ? "bg-[#F2F2F2]" : "bg-white"
-              } h-[34px] w-full rounded-l border text-xs font-bold`}
-            >
-              Downloadable file
-            </button>
-            <button
-              onClick={() => toggleButton(2)}
-              className={`${
-                toggleButtonState === 2 ? "bg-[#F2F2F2]" : "bg-white"
-              } h-[34px] w-full rounded-r border text-xs font-bold`}
-            >
-              Read online only (PDF)
-            </button>
-          </div>
-          {toggleButtonState === 1 ? (
-            <FileUploader
-              accepts={["image/*", ".zip"]}
-              maxFileSize={786432000}
-              fileSize={"750MB"}
-              note={
-                "To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
-              }
-            />
-          ) : (
-            <FileUploader
-              accepts={[".pdf"]}
-              maxFileSize={10485760}
-              fileSize={"10MB"}
-            />
+          {!accessFile && (
+            <>
+              <div className="pt-[33px] flex space-x-5">
+                <button
+                  onClick={() => toggleButton(1)}
+                  className={`${
+                    toggleButtonState === 1 ? "bg-[#F2F2F2]" : "bg-white"
+                  } h-[34px] w-full rounded-l border text-xs font-bold`}
+                >
+                  Downloadable file
+                </button>
+                <button
+                  onClick={() => toggleButton(2)}
+                  className={`${
+                    toggleButtonState === 2 ? "bg-[#F2F2F2]" : "bg-white"
+                  } h-[34px] w-full rounded-r border text-xs font-bold`}
+                >
+                  Read online only (PDF)
+                </button>
+              </div>
+              {toggleButtonState === 1 ? (
+                <FileUploader
+                  accepts={["image/*", ".zip"]}
+                  maxFileSize={786432000}
+                  fileSize={"750MB"}
+                  note={
+                    "To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
+                  }
+                />
+              ) : (
+                <FileUploader
+                  accepts={[".pdf"]}
+                  maxFileSize={10485760}
+                  fileSize={"10MB"}
+                />
+              )}
+            </>
           )}
         </div>
       </div>
