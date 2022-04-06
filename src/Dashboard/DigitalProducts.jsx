@@ -167,12 +167,12 @@ const DigitalProducts = () => {
           </div>
           {!accessFile && (
             <>
-              <div className="pt-[33px] flex space-x-5">
+              <div className="pt-[33px] flex space-x-5 lg:space-x-0 lg:justify-start">
                 <button
                   onClick={() => toggleButton(1)}
                   className={`${
                     toggleButtonState === 1 ? "bg-[#F2F2F2]" : "bg-white"
-                  } h-[34px] w-full rounded-l border text-xs font-bold`}
+                  } h-[34px] w-full lg:w-[220px] lg:h-[44px] lg:text-[20px] rounded-l border text-xs font-bold`}
                 >
                   Downloadable file
                 </button>
@@ -180,7 +180,7 @@ const DigitalProducts = () => {
                   onClick={() => toggleButton(2)}
                   className={`${
                     toggleButtonState === 2 ? "bg-[#F2F2F2]" : "bg-white"
-                  } h-[34px] w-full rounded-r border text-xs font-bold`}
+                  } h-[34px] w-full lg:w-[220px] lg:h-[44px] lg:text-[20px] rounded-r border text-xs font-bold`}
                 >
                   Read online only (PDF)
                 </button>
