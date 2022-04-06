@@ -5,15 +5,20 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Select } from "@chakra-ui/react";
+import FileUploader from "../components/FileUploader";
 
 const DigitalProducts = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
+  const [toggleButtonState, setToggleButtonState] = useState(1);
 
   const toggleTab = (index) => {
     setToggleState(index);
+  };
+  const toggleButton = (index) => {
+    setToggleButtonState(index);
   };
 
   const [preOrderDate, setPreOrderDate] = useState(false);
@@ -150,13 +155,39 @@ const DigitalProducts = () => {
             </p>
           </div>
           <div className="pt-[33px] flex space-x-5">
-            <button className="h-[34px] w-full rounded-l bg-[#F2F2F2] border text-xs font-bold">
+            <button
+              onClick={() => toggleButton(1)}
+              className={`${
+                toggleButtonState === 1 ? "bg-[#F2F2F2]" : "bg-white"
+              } h-[34px] w-full rounded-l border text-xs font-bold`}
+            >
               Downloadable file
             </button>
-            <button className="h-[34px] w-full rounded-r bg-white border text-xs font-bold">
+            <button
+              onClick={() => toggleButton(2)}
+              className={`${
+                toggleButtonState === 2 ? "bg-[#F2F2F2]" : "bg-white"
+              } h-[34px] w-full rounded-r border text-xs font-bold`}
+            >
               Read online only (PDF)
             </button>
           </div>
+          {toggleButtonState === 1 ? (
+            <FileUploader
+              accepts={["image/*", ".zip"]}
+              maxFileSize={786432000}
+              fileSize={"750MB"}
+              note={
+                "To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
+              }
+            />
+          ) : (
+            <FileUploader
+              accepts={[".pdf"]}
+              maxFileSize={10485760}
+              fileSize={"10MB"}
+            />
+          )}
         </div>
       </div>
     </div>

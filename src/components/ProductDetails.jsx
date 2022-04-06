@@ -16,9 +16,8 @@ const ProductDetails = () => {
   const acceptType = ["jpg", "png"];
   const resolutionType = "absolute" | "less" | "more" | "ratio";
 
-  const onChange = (imageList, addUpdateIndex) => {
+  const onChange = (imageList) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
 
