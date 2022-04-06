@@ -32,6 +32,11 @@ const DigitalProducts = () => {
   const showAccessFile = () => {
     setAccessFile(!accessFile);
   };
+  const [redirectUrl, setRedirectUrl] = useState(false);
+
+  const showRedirectUrl = () => {
+    setRedirectUrl(!redirectUrl);
+  };
 
   return (
     <div className="font-Lato lg:px-[150px]">
@@ -48,35 +53,35 @@ const DigitalProducts = () => {
       </div>
       {/* Products information */}
       <div className="mt-[25px] bg-white">
-        <div className="flex justify-between pt-[25px] items-center px-[30px]">
+        <div className="flex justify-between pt-[25px] items-center px-[30px] md:px-10">
           <p
             onClick={() => toggleTab(1)}
             className={`${
               toggleState === 1 ? "bg-bcolor" : "bg-[#C4C4C4]"
-            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center`}
+            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center cursor-pointer`}
           >
             1
           </p>
-          <hr className="border-black border-dashed w-[36%]" />
+          <hr className="border-black border-dashed w-[36%] md:w-[45%]" />
           <p
             onClick={() => toggleTab(2)}
             className={`${
               toggleState === 2 ? "bg-bcolor" : "bg-[#C4C4C4]"
-            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center`}
+            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center cursor-pointer`}
           >
             2
           </p>
-          <hr className="border-black border-dashed w-[36%]" />
+          <hr className="border-black border-dashed w-[36%] md:w-[45%]" />
           <p
             onClick={() => toggleTab(3)}
             className={`${
               toggleState === 3 ? "bg-bcolor" : "bg-[#C4C4C4]"
-            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center`}
+            } rounded-full text-xs font-bold w-[28px] h-[28px] flex justify-center items-center cursor-pointer`}
           >
             3
           </p>
         </div>
-        <div className="flex justify-between text-xs font-bold items-center px-[24px] pt-[12px]">
+        <div className="flex justify-between text-xs font-bold items-center px-[24px] md:px-[35px] pt-[12px]">
           <p
             className={`${
               toggleState === 1 ? "text-black" : "text-[#575555]"
@@ -106,7 +111,7 @@ const DigitalProducts = () => {
             Advanced <br /> Options
           </p>
         </div>
-        <div className="px-[24px]">
+        <div className="px-[24px] md:px-[35px]">
           <p className="font-medium text-base pt-[32px]">Product Type</p>
           <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
             <p>Digital Product</p>
@@ -116,7 +121,7 @@ const DigitalProducts = () => {
               type="checkbox"
               defaultChecked={!preOrderDate}
               onClick={showPreOrderDate}
-              className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
+              className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded"
             />
             <p className="text-[15px] font-medium">
               Show striked out original price
@@ -128,7 +133,7 @@ const DigitalProducts = () => {
                 Pre-order release date
               </p>
               <DatePicker
-                className="border w-full text-base font-medium rounded py-[10px] pl-4 outline-none mt-1"
+                className="border cursor-pointer w-full text-base font-medium rounded py-[10px] pl-4 outline-none mt-1"
                 selected={startDate}
                 showTimeSelect
                 onChange={(date) => setStartDate(date)}
@@ -154,7 +159,7 @@ const DigitalProducts = () => {
               type="checkbox"
               defaultChecked={!accessFile}
               onClick={showAccessFile}
-              className="form-checkbox text-bcolor w-[17px] h-[17px] border rounded"
+              className="form-checkbox cursor-pointer text-bcolor w-[17px] h-[17px] border rounded"
             />
             <p className="text-[15px] font-medium">
               Give buyer access to a file
@@ -198,6 +203,25 @@ const DigitalProducts = () => {
               )}
             </>
           )}
+          <div className="flex items-center space-x-[12px] mt-[33px]">
+            <input
+              type="checkbox"
+              defaultChecked={!redirectUrl}
+              onClick={showRedirectUrl}
+              className="form-checkbox cursor-pointer text-bcolor w-[17px] h-[17px] border rounded"
+            />
+            <p className="text-[15px] font-medium">Redirect URL</p>
+          </div>
+          {!redirectUrl && (
+            <input
+              type="text"
+              placeholder="https://"
+              className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+            />
+          )}
+          <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
+            Create Product
+          </button>
         </div>
       </div>
     </div>

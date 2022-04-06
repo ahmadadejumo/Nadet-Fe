@@ -55,7 +55,7 @@ const ProductDetails = () => {
               {...dragProps}
               className={`${
                 isDragging ? "text-red-700" : null
-              }mt-1 shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
+              }mt-1 shadow-inner cursor-pointer shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
             >
               <img src={download} alt="icon" />
               <p className="text-sm font-normal opacity-60">
