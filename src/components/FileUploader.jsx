@@ -75,7 +75,7 @@ const FileUploader = ({ fileSize, note, maxFileSize, accepts }) => {
                     </div>
                   </div>
                 </li>
-                <div className="flex items-center pr-1">
+                <div className="flex items-center pr-1 cursor-pointer">
                   <img
                     src={X}
                     alt="icon"
