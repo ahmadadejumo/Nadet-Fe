@@ -2,9 +2,11 @@ import React from "react";
 
 const UpAndCrossSells = () => {
   return (
-    <div className="pt-[32px] px-[24px] md:px-[35px]">
-      <div>
-        <h1 className="text-[20px] font-medium">Upsell (Order bump)</h1>
+    <div className="px-[24px] md:px-[35px] lg:flex lg:justify-center lg:space-x-16">
+      <div className="w-[500px]">
+        <h1 className="text-[20px] font-medium pt-[32px]">
+          Upsell (Order bump)
+        </h1>
         <p className="text-sm font-normal pt-1">
           When a customer adds this product to cart, recommend up to 4 products
           instantly they can also add to their cart. This is great for
