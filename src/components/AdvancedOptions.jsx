@@ -20,12 +20,12 @@ const AdvancedOptions = () => {
       <p className="text-xs font-normal pt-1">
         Override the default label for the checkout button on the product page.
       </p>
-      <div className="flex items-center space-x-[12px] mt-[24px]">
+      <div className="flex space-x-[12px] mt-[24px]">
         <input
           type="checkbox"
           //   defaultChecked={!hideProduct}
           onClick={handleHideproduct}
-          className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded"
+          className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded mt-1"
         />
         <p className="text-[15px] font-medium">
           Hide this product from my store homepage (Only accessible via the
