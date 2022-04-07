@@ -8,6 +8,7 @@ import { Select } from "@chakra-ui/react";
 import FileUploader from "../components/FileUploader";
 import ProductTab from "../components/ProductTab";
 import UpAndCrossSells from "../components/UpAndCrossSells";
+import AdvancedOptions from "../components/AdvancedOptions";
 
 const DigitalProducts = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -169,6 +170,7 @@ const DigitalProducts = () => {
             </div>
           )}
           {toggleState === 2 && <UpAndCrossSells />}
+          {toggleState === 3 && <AdvancedOptions />}
           <div className="mx-[24px] md:mx-[35px]">
             <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
               Create Product
