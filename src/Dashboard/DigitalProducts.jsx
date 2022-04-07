@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Select } from "@chakra-ui/react";
 import FileUploader from "../components/FileUploader";
 import ProductTab from "../components/ProductTab";
+import UpAndCrossSells from "../components/UpAndCrossSells";
 
 const DigitalProducts = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -163,11 +164,14 @@ const DigitalProducts = () => {
                 className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
               />
             )}
-            <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
-              Create Product
-            </button>
           </div>
         )}
+        {toggleState === 2 && <UpAndCrossSells />}
+        <div className="mx-[24px] md:mx-[35px]">
+          <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
+            Create Product
+          </button>
+        </div>
       </div>
     </div>
   );
