@@ -6,6 +6,7 @@ import AddProducts from "./AddProducts";
 import DigitalProducts from "./DigitalProducts";
 import DashboardHome from "./Home";
 import DashboardProucts from "./MyProducts";
+import Tickets from "./Tickets";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ const Home = () => {
             <Route path="my-products" element={<DashboardProucts />} />
             <Route path="add-products" element={<AddProducts />} />
             <Route path="digital-products" element={<DigitalProducts />} />
+            <Route path="tickets" element={<Tickets />} />
           </Routes>
         </div>
       </div>
