@@ -59,7 +59,20 @@ const UpAndCrossSells = () => {
           </p>
         </div>
       )}
-      {manageCrosssells && <div>h1</div>}
+      {manageCrosssells && (
+        <div className="pt-10">
+          <h1 className="text-xl font-medium">Cross-sell Products</h1>
+          <p className="pt-[16px] text-xs font-normal">
+            Enter the name of the product you want to add to this product's
+            Cross-Sell section
+          </p>
+          <input
+            type="text"
+            placeholder="Search Product Name"
+            className="border cursor-pointer w-full text-base font-medium rounded py-[10px] pl-4 outline-none mt-2"
+          />
+        </div>
+      )}
     </div>
   );
 };
