@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const UpAndCrossSells = () => {
+  const [manageUpsells, setManageUpsells] = useState(false);
+  const [manageCrosssells, setManageCrosssells] = useState(false);
+
+  const handleUpSells = () => {
+    setManageUpsells(!manageUpsells);
+  };
+
+  const handleCrossSells = () => {
+    setManageCrosssells(!manageCrosssells);
+  };
+
   return (
     <div className="px-[24px] md:px-[35px] lg:flex lg:justify-center lg:space-x-16">
-      <div className="w-[500px]">
+      <div className="lg:w-[500px]">
         <h1 className="text-[20px] font-medium pt-[32px]">
           Upsell (Order bump)
         </h1>
@@ -12,7 +23,10 @@ const UpAndCrossSells = () => {
           instantly they can also add to their cart. This is great for
           increasing sales.
         </p>
-        <p className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer">
+        <p
+          onClick={handleUpSells}
+          className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
+        >
           Manage product upsells
         </p>
       </div>
@@ -24,10 +38,28 @@ const UpAndCrossSells = () => {
           On the product page, show up to 4 other products bought together with
           this product.
         </p>
-        <p className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer">
+        <p
+          onClick={handleCrossSells}
+          className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
+        >
           Manage product cross-sells
         </p>
       </div>
+      {manageUpsells && (
+        <div className="pt-10">
+          <p className="text-xl font-medium">Upsell Products</p>
+          <div className="flex justify-center items-center w-full rounded mt-[16px] h-[44px] border border-dashed border-[#DD2A2A]">
+            <p className="text-base font-normal text-[#575555e3]">
+              Requires a <span className="font-bold">pro</span> Plan
+            </p>
+          </div>
+          <p className="text-sm font-normal pt-[16px]">
+            Using upsell (order bump) requires a paid plan, click{" "}
+            <span className="text-[#1877F2]">here</span> to subscribe.
+          </p>
+        </div>
+      )}
+      {manageCrosssells && <div>h1</div>}
     </div>
   );
 };
