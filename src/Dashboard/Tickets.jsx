@@ -5,13 +5,19 @@ import { useNavigate } from "react-router-dom";
 import ProductTab from "../components/ProductTab";
 import UpAndCrossSells from "../components/UpAndCrossSells";
 import AdvancedOptions from "../components/AdvancedOptions";
+import { Select } from "@chakra-ui/react";
 
 const Tickets = () => {
   const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
+  const [redirectUrl, setRedirectUrl] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
+  };
+
+  const showRedirectUrl = () => {
+    setRedirectUrl(!redirectUrl);
   };
 
   return (
@@ -62,6 +68,36 @@ const Tickets = () => {
                 Set price to <span className="text-[#FBBC15]">0</span> for
                 unlimited
               </p>
+              <h1 className="text-[20px] font-medium pt-[32px]">Categories</h1>
+              <p className="text-[14px] font-normal pt-[12px]">
+                Setting a category is not required to create a product, but if
+                you want to segment your products on your store page by
+                categories, you can create the product categories and select
+                them accordingly.
+              </p>
+              <div className="pt-[12px]">
+                <Select placeholder="Select category" size="lg">
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </Select>
+              </div>
+              <div className="flex items-center space-x-[12px] mt-[33px]">
+                <input
+                  type="checkbox"
+                  defaultChecked={!redirectUrl}
+                  onClick={showRedirectUrl}
+                  className="form-checkbox cursor-pointer text-bcolor w-[17px] h-[17px] border rounded"
+                />
+                <p className="text-[15px] font-medium">Redirect URL</p>
+              </div>
+              {!redirectUrl && (
+                <input
+                  type="text"
+                  placeholder="https://"
+                  className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                />
+              )}
             </div>
           </div>
         )}
