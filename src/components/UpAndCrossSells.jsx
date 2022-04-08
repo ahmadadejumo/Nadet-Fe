@@ -13,37 +13,39 @@ const UpAndCrossSells = () => {
   };
 
   return (
-    <div className="px-[24px] md:px-[35px] lg:flex lg:justify-center lg:space-x-16">
-      <div className="lg:w-[500px]">
-        <h1 className="text-[20px] font-medium pt-[32px]">
-          Upsell (Order bump)
-        </h1>
-        <p className="text-sm font-normal pt-1">
-          When a customer adds this product to cart, recommend up to 4 products
-          instantly they can also add to their cart. This is great for
-          increasing sales.
-        </p>
-        <p
-          onClick={handleUpSells}
-          className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
-        >
-          Manage product upsells
-        </p>
-      </div>
-      <div>
-        <h1 className="text-[20px] font-medium pt-[32px]">
-          Cross-sells (bought together)
-        </h1>
-        <p className="text-sm font-normal pt-1">
-          On the product page, show up to 4 other products bought together with
-          this product.
-        </p>
-        <p
-          onClick={handleCrossSells}
-          className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
-        >
-          Manage product cross-sells
-        </p>
+    <div className="px-[24px] md:px-[35px]">
+      <div className="lg:flex lg:justify-center lg:space-x-16">
+        <div className="lg:w-[500px]">
+          <h1 className="text-[20px] font-medium pt-[32px]">
+            Upsell (Order bump)
+          </h1>
+          <p className="text-sm font-normal pt-1">
+            When a customer adds this product to cart, recommend up to 4
+            products instantly they can also add to their cart. This is great
+            for increasing sales.
+          </p>
+          <p
+            onClick={handleUpSells}
+            className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
+          >
+            Manage product upsells
+          </p>
+        </div>
+        <div>
+          <h1 className="text-[20px] font-medium pt-[32px]">
+            Cross-sells (bought together)
+          </h1>
+          <p className="text-sm font-normal pt-1">
+            On the product page, show up to 4 other products bought together
+            with this product.
+          </p>
+          <p
+            onClick={handleCrossSells}
+            className="text-sm font-normal pt-1 text-[#1877F2] cursor-pointer"
+          >
+            Manage product cross-sells
+          </p>
+        </div>
       </div>
       {manageUpsells && (
         <div className="pt-10">

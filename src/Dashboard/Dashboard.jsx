@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
 import AddProducts from "./AddProducts";
+import Course from "./Course";
 import DigitalProducts from "./DigitalProducts";
 import DashboardHome from "./Home";
 import DashboardProucts from "./MyProducts";
@@ -27,6 +28,7 @@ const Home = () => {
             <Route path="add-products" element={<AddProducts />} />
             <Route path="digital-products" element={<DigitalProducts />} />
             <Route path="tickets" element={<Tickets />} />
+            <Route path="course" element={<Course />} />
           </Routes>
         </div>
       </div>
