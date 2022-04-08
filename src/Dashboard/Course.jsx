@@ -6,11 +6,15 @@ import ProductTab from "../components/ProductTab";
 import UpAndCrossSells from "../components/UpAndCrossSells";
 import AdvancedOptions from "../components/AdvancedOptions";
 import { Select } from "@chakra-ui/react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Course = () => {
   const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
   const [redirectUrl, setRedirectUrl] = useState(false);
+  const [preOrderDate, setPreOrderDate] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -18,6 +22,10 @@ const Course = () => {
 
   const showRedirectUrl = () => {
     setRedirectUrl(!redirectUrl);
+  };
+
+  const showPreOrderDate = () => {
+    setPreOrderDate(!preOrderDate);
   };
 
   return (
@@ -43,11 +51,31 @@ const Course = () => {
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
               <p>Course</p>
             </div>
-            <div className="flex justify-center items-center w-full rounded mt-2 h-[44px] border border-dashed border-[#DD2A2A]">
-              <p className="text-base font-normal text-[#575555e3]">
-                Requires a <span className="font-bold">pro</span> Plan
+            <div className="flex items-center space-x-[12px] mt-[10px]">
+              <input
+                type="checkbox"
+                defaultChecked={!preOrderDate}
+                onClick={showPreOrderDate}
+                className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded"
+              />
+              <p className="text-[15px] font-medium">
+                Show striked out original price
               </p>
             </div>
+            {!preOrderDate && (
+              <>
+                <p className="text-base font-medium pt-4">
+                  Pre-order release date
+                </p>
+                <DatePicker
+                  className="border cursor-pointer w-full text-base font-medium rounded py-[10px] pl-4 outline-none mt-1"
+                  selected={startDate}
+                  showTimeSelect
+                  onChange={(date) => setStartDate(date)}
+                  dateFormat="MMMM d, yyyy h:mm aa"
+                />
+              </>
+            )}
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
