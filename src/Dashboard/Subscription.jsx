@@ -31,6 +31,24 @@ const Subscription = () => {
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
         {/* Product Detail Tab component */}
         <ProductTab toggleTab={toggleTab} toggleState={toggleState} />
+        {toggleState === 1 && (
+          <div className="px-[24px] md:px-[35px]">
+            <p className="font-medium text-base pt-[32px]">Product Type</p>
+            <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
+              <p>Subscription</p>
+            </div>
+            <hr className="bg-[#E8E8EB99] mt-[24px]" />
+            <div>
+              <h1 className="text-[20px] font-medium pt-[24px]">
+                Subscription Intervals (Tiers):
+              </h1>
+              <p className="pt-[16px] text-sm font-normal">
+                Create the subscription interval options your customer can
+                subscribe to
+              </p>
+            </div>
+          </div>
+        )}
         {toggleState === 2 && <UpAndCrossSells />}
         {toggleState === 3 && <AdvancedOptions />}
         <div className="mx-[24px] md:mx-[35px]">
