@@ -43,6 +43,11 @@ const Course = () => {
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
               <p>Course</p>
             </div>
+            <div className="flex justify-center items-center w-full rounded mt-2 h-[44px] border border-dashed border-[#DD2A2A]">
+              <p className="text-base font-normal text-[#575555e3]">
+                Requires a <span className="font-bold">pro</span> Plan
+              </p>
+            </div>
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
