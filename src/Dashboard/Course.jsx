@@ -90,6 +90,22 @@ const Course = () => {
                 <option value="option3">Option 3</option>
               </Select>
             </div>
+            <div className="flex items-center space-x-[12px] mt-[25px]">
+              <input
+                type="checkbox"
+                defaultChecked={!redirectUrl}
+                onClick={showRedirectUrl}
+                className="form-checkbox cursor-pointer text-bcolor w-[17px] h-[17px] border rounded"
+              />
+              <p className="text-[15px] font-medium">Redirect URL</p>
+            </div>
+            {!redirectUrl && (
+              <input
+                type="text"
+                placeholder="https://"
+                className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+              />
+            )}
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
