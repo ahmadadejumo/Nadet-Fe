@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ProductTab from "../components/ProductTab";
 import UpAndCrossSells from "../components/UpAndCrossSells";
 import AdvancedOptions from "../components/AdvancedOptions";
+import { Select } from "@chakra-ui/react";
 
 const Subscription = () => {
   const navigate = useNavigate();
@@ -46,6 +47,15 @@ const Subscription = () => {
                 Create the subscription interval options your customer can
                 subscribe to
               </p>
+              <div className="pt-[12px]">
+                <Select placeholder="Select Interval" size="lg">
+                  <option value="option3">Every week</option>
+                  <option value="option1">Every month</option>
+                  <option value="option2">Every quarter</option>
+                  <option value="option3">Bi-annually(6 months)</option>
+                  <option value="option3">Custom Interval</option>
+                </Select>
+              </div>
             </div>
           </div>
         )}
