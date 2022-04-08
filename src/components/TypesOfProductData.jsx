@@ -16,7 +16,7 @@ export const typesOfProductData = [
     name: "Subscription",
     desc: "Sell any kind of physical product, from clothing to",
     icon: rss,
-    path: "/dashboard/digital-products",
+    path: "/dashboard/subscription",
   },
   {
     name: "Membership Courses",
