@@ -7,6 +7,7 @@ import Course from "./Course";
 import DigitalProducts from "./DigitalProducts";
 import DashboardHome from "./Home";
 import DashboardProucts from "./MyProducts";
+import Service from "./Service";
 import Tickets from "./Tickets";
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
             <Route path="digital-products" element={<DigitalProducts />} />
             <Route path="tickets" element={<Tickets />} />
             <Route path="course" element={<Course />} />
+            <Route path="service" element={<Service />} />
           </Routes>
         </div>
       </div>
