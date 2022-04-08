@@ -56,6 +56,23 @@ const Subscription = () => {
                   <option value="option3">Custom Interval</option>
                 </Select>
               </div>
+              <h1 className="text-xl font-medium pt-[16px]">
+                Amount (NGN)<span className="text-[#FBBC15]">*</span>
+              </h1>
+              <input
+                type="number"
+                placeholder="0"
+                className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+              />
+              <h1 className="text-sm font-medium pt-[16px]">
+                No of times the customer will be charged after their first
+                payment
+              </h1>
+              <input
+                type="number"
+                placeholder="0"
+                className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+              />
             </div>
           </div>
         )}
