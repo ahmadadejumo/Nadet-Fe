@@ -41,7 +41,7 @@ const Tickets = () => {
           <div className="px-[24px] md:px-[35px]">
             <p className="font-medium text-base pt-[32px]">Product Type</p>
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
-              <p>Ticket</p>
+              <p>Event Tickets</p>
             </div>
             <div className="flex space-x-[12px] mt-[10px]">
               <input

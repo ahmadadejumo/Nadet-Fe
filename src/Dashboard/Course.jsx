@@ -49,7 +49,7 @@ const Course = () => {
           <div className="px-[24px] md:px-[35px]">
             <p className="font-medium text-base pt-[32px]">Product Type</p>
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
-              <p>Course</p>
+              <p>Online Course</p>
             </div>
             <div className="flex items-center space-x-[12px] mt-[10px]">
               <input
