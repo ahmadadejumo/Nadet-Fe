@@ -117,7 +117,9 @@ const DigitalProducts = () => {
                   <button
                     onClick={() => toggleButton(1)}
                     className={`${
-                      toggleButtonState === 1 ? "bg-[#F2F2F2]" : "bg-white"
+                      toggleButtonState === 1
+                        ? "bg-[#F2F2F2]"
+                        : "bg-white hover:bg-[#F2F2F2]"
                     } h-[34px] w-full lg:w-[220px] lg:h-[44px] lg:text-[20px] rounded-l border text-xs font-bold`}
                   >
                     Downloadable file
@@ -125,7 +127,9 @@ const DigitalProducts = () => {
                   <button
                     onClick={() => toggleButton(2)}
                     className={`${
-                      toggleButtonState === 2 ? "bg-[#F2F2F2]" : "bg-white"
+                      toggleButtonState === 2
+                        ? "bg-[#F2F2F2]"
+                        : "bg-white hover:bg-[#F2F2F2]"
                     } h-[34px] w-full lg:w-[220px] lg:h-[44px] lg:text-[20px] rounded-r border text-xs font-bold`}
                   >
                     Read online only (PDF)
