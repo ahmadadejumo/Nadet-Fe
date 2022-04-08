@@ -40,6 +40,6 @@ export const typesOfProductData = [
     name: "Service",
     desc: "Sell any kind of physical product, from clothing to",
     icon: service,
-    path: "/dashboard/digital-products",
+    path: "/dashboard/service",
   },
 ];
