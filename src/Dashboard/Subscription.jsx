@@ -39,7 +39,7 @@ const Subscription = () => {
               <p>Subscription</p>
             </div>
             <hr className="bg-[#E8E8EB99] mt-[24px]" />
-            <div>
+            <div className="border px-5 rounded-lg mt-5">
               <h1 className="text-[20px] font-medium pt-[24px]">
                 Subscription Intervals (Tiers):
               </h1>
@@ -71,9 +71,19 @@ const Subscription = () => {
               <input
                 type="number"
                 placeholder="0"
-                className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
               />
+              <p className="text-xs">
+                Set <span className="text-bcolor">0</span> if you want the
+                customer to be charge continuously until they decide to cancel.
+              </p>
+              <button className="bg-[#DD2A2A] w-[117px] h-[42px] text-white rounded mt-[16px] mb-5 text-base font-bold">
+                Remove Tier
+              </button>
             </div>
+            <button className="bg-bcolor w-[200px] h-[42px] rounded mt-[16px] text-base font-bold">
+              Add subscription tier
+            </button>
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
