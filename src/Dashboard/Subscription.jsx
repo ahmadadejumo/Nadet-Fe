@@ -10,9 +10,25 @@ import { Select } from "@chakra-ui/react";
 const Subscription = () => {
   const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
+  const [intervals, setIntervals] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [timesCharged, setTimesCharged] = useState(0);
+  const [dropdown, setDropdown] = useState(false);
+  const [container, setContainer] = useState([]);
+  const [addValue, setAddValue] = useState(0);
 
   const toggleTab = (index) => {
     setToggleState(index);
+  };
+
+  const showDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  const handleSubscriptionTier = (e) => {
+    e.preventDefault();
+    setContainer(!container);
+    setAddValue(timesCharged + 1);
   };
 
   return (
@@ -48,12 +64,16 @@ const Subscription = () => {
                 subscribe to
               </p>
               <div className="pt-[12px]">
-                <Select placeholder="Select Interval" size="lg">
-                  <option value="option3">Every week</option>
-                  <option value="option1">Every month</option>
-                  <option value="option2">Every quarter</option>
-                  <option value="option3">Bi-annually(6 months)</option>
-                  <option value="option3">Custom Interval</option>
+                <Select
+                  onChange={(e) => setIntervals(e.target.value)}
+                  placeholder="Select Interval"
+                  size="lg"
+                >
+                  <option value="Weekly">Every week</option>
+                  <option value="Monthly">Every month</option>
+                  <option value="Quarterly">Every quarter</option>
+                  <option value="Bi-annual">Bi-annually(6 months)</option>
+                  <option value="Custom">Custom Interval</option>
                 </Select>
               </div>
               <h1 className="text-xl font-medium pt-[16px]">
@@ -61,7 +81,9 @@ const Subscription = () => {
               </h1>
               <input
                 type="number"
-                placeholder="0"
+                onChange={(e) => setAmount(e.target.value)}
+                value={amount}
+                placeholder="500"
                 className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
               />
               <h1 className="text-sm font-medium pt-[16px]">
@@ -70,19 +92,43 @@ const Subscription = () => {
               </h1>
               <input
                 type="number"
+                onChange={(e) => setTimesCharged(e.target.value)}
                 placeholder="0"
                 className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
               />
-              <p className="text-xs">
+              <p className="text-xs pb-5">
                 Set <span className="text-bcolor">0</span> if you want the
                 customer to be charge continuously until they decide to cancel.
               </p>
-              <button className="bg-[#DD2A2A] w-[117px] h-[42px] text-white rounded mt-[16px] mb-5 text-base font-bold">
-                Remove Tier
-              </button>
             </div>
-            <button className="bg-bcolor w-[200px] h-[42px] rounded mt-[16px] text-base font-bold">
-              Add subscription tier
+            {container && (
+              <div className="border rounded-lg mt-5">
+                <div className="flex justify-between items-center px-3">
+                  <h1
+                    onClick={showDropdown}
+                    className="py-3 text-base font-semibold cursor-pointer"
+                  >
+                    {intervals} Subscription
+                  </h1>
+                  <p className="text-xl font-bold text-red-500 cursor-pointer">
+                    X
+                  </p>
+                </div>
+                {dropdown && (
+                  <div className="border-t py-2 px-2 text-sm font-medium">
+                    This is a recurring payment subscription of {addValue}{" "}
+                    payments. After the first payment, the customer will be
+                    charged {timesCharged} more times (every {intervals}).
+                  </div>
+                )}
+              </div>
+            )}
+
+            <button
+              onClick={() => handleSubscriptionTier()}
+              className="bg-gray-500 w-[200px] h-[42px] text-white rounded mt-[16px] text-base font-bold"
+            >
+              Add Subscription Tier
             </button>
           </div>
         )}
