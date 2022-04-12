@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import leftarrow from "../assets/images/leftarrow.svg";
 import ProductDetails from "../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,6 @@ const Subscription = () => {
   const [intervals, setIntervals] = useState("");
   const [amount, setAmount] = useState(0);
   const [timesCharged, setTimesCharged] = useState(0);
-  const [sum] = useState(1);
   const [dropdown, setDropdown] = useState(false);
   const [containerData, setContainerData] = useState([]);
 
@@ -26,8 +25,6 @@ const Subscription = () => {
     setDropdown(!dropdown);
   };
 
-  const n = parseFloat(sum) + parseFloat(timesCharged);
-
   const handleSubscriptionTier = (e) => {
     e.preventDefault();
     setAmount("");
@@ -38,7 +35,6 @@ const Subscription = () => {
       { amount: amount, intervals: intervals, timesCharged: timesCharged },
     ]);
     console.log(containerData);
-    return;
   };
 
   const removeItem = (index) => {
@@ -98,6 +94,7 @@ const Subscription = () => {
                 <input
                   type="number"
                   onChange={(e) => setAmount(e.target.value)}
+                  value={amount}
                   placeholder="500"
                   className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
                 />
@@ -108,6 +105,7 @@ const Subscription = () => {
                 <input
                   type="number"
                   onChange={(e) => setTimesCharged(e.target.value)}
+                  value={timesCharged}
                   placeholder="0"
                   className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
                 />
@@ -123,7 +121,7 @@ const Subscription = () => {
                     key={index}
                     timesCharged={timesCharged}
                     intervals={intervals}
-                    n={n}
+                    n={parseFloat(1) + parseFloat(timesCharged)}
                     showDropdown={showDropdown}
                     dropdown={dropdown}
                     removeItem={removeItem}
