@@ -16,6 +16,7 @@ const MembershipCourse = () => {
   const [timesCharged, setTimesCharged] = useState(0);
   const [dropdown, setDropdown] = useState();
   const [containerData, setContainerData] = useState([]);
+  const [redirectUrl, setRedirectUrl] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -26,6 +27,10 @@ const MembershipCourse = () => {
       return setDropdown(null);
     }
     setDropdown(index);
+  };
+
+  const showRedirectUrl = () => {
+    setRedirectUrl(!redirectUrl);
   };
 
   const handleSubscriptionTier = (e) => {
@@ -155,6 +160,22 @@ const MembershipCourse = () => {
                 <option value="option3">Option 3</option>
               </Select>
             </div>
+            <div className="flex items-center space-x-[12px] mt-[33px]">
+              <input
+                type="checkbox"
+                defaultChecked={!redirectUrl}
+                onClick={showRedirectUrl}
+                className="form-checkbox cursor-pointer text-bcolor w-[17px] h-[17px] border rounded"
+              />
+              <p className="text-[15px] font-medium">Redirect URL</p>
+            </div>
+            {!redirectUrl && (
+              <input
+                type="text"
+                placeholder="https://"
+                className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+              />
+            )}
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
