@@ -142,6 +142,19 @@ const Subscription = () => {
                 Add Subscription Tier
               </button>
             </form>
+            <h1 className="text-[20px] font-medium pt-[24px]">Categories</h1>
+            <p className="text-[14px] font-normal pt-[12px]">
+              Setting a category is not required to create a product, but if you
+              want to segment your products on your store page by categories,
+              you can create the product categories and select them accordingly.
+            </p>
+            <div className="pt-[12px]">
+              <Select placeholder="Select category" size="lg">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </div>
           </div>
         )}
         {toggleState === 2 && <UpAndCrossSells />}
