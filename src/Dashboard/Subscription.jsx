@@ -50,7 +50,7 @@ const Subscription = () => {
     <div className="font-Lato lg:px-[150px]">
       <div
         onClick={() => navigate(-1)}
-        className="flex space-x-4 items-center pt-[24px] px-5 cursor-pointer"
+        className="flex space-x-4 items-center pt-[24px] px-5 lg:cursor-pointer"
       >
         <img src={leftarrow} alt="arrow" />
         <p className="text-lg font-normal">Back</p>
