@@ -65,9 +65,9 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="font-Lato bg-[#F5F4FD]">
+    <div className="font-Lato bg-[#F5F4FD] md:h-screen lg:h-full">
       <Navbar />
-      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-20 md:pb-48">
+      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-20 lg:pb-[20px]">
         <div className="px-5 md:px-[50px] md:bg-white md:w-[610px] md:pt-[50px] lg:pt-0 md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
           {!cancel && (
             <div>
