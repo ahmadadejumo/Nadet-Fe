@@ -6,6 +6,7 @@ import AddProducts from "./AddProducts";
 import Course from "./Course";
 import DigitalProducts from "./DigitalProducts";
 import DashboardHome from "./Home";
+import MembershipCourse from "./MembershipCourse";
 import DashboardProucts from "./MyProducts";
 import Service from "./Service";
 import Subscription from "./Subscription";
@@ -33,6 +34,7 @@ const Home = () => {
             <Route path="course" element={<Course />} />
             <Route path="service" element={<Service />} />
             <Route path="subscription" element={<Subscription />} />
+            <Route path="membership-course" element={<MembershipCourse />} />
           </Routes>
         </div>
       </div>
