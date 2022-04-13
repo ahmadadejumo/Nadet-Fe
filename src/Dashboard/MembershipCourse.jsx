@@ -74,6 +74,11 @@ const MembershipCourse = () => {
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
               <p>Membership course</p>
             </div>
+            <div className="border border-[#DD2A2A] text-[#252525E3] border-dashed py-[13px] text-base flex justify-center items-center rounded mt-1">
+              <p>
+                Requires a <span className="font-bold">pro</span> Plan
+              </p>
+            </div>
             <hr className="bg-[#E8E8EB99] mt-[24px]" />
             <form onSubmit={handleSubscriptionTier}>
               <div className="border px-5 rounded-lg mt-5">
