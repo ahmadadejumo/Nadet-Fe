@@ -182,9 +182,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className="font-Lato bg-[#F5F4FD]">
+    <div className="font-Lato bg-[#F5F4FD] md:h-screen lg:h-full">
       <Navbar />
-      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 md:pb-48">
+      <div className="md:flex md:justify-center lg:mx-[40px] lg:space-x-[30px] md:pt-10 lg:pb-[20px]">
         <div className="px-5 md:px-10 md:bg-white md:w-[610px] md:rounded-[40px] lg:rounded-tl-[40px] lg:rounded-bl-[40px] lg:rounded-tr-none lg:rounded-br-none">
           <h1 className="text-center text-[25px] font-bold pt-[40px]">
             Log in to Nadet
