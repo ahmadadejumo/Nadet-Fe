@@ -1,10 +1,10 @@
 import React from "react";
-import Add from "../assets/images/Add.svg";
-import filter from "../assets/images/filter.svg";
-import exportIcon from "../assets/images/export.svg";
-import DropdownSelect from "../components/DropdownSelect";
-import ProductTable from "../components/ProductTable";
-import { productdata, productHeaders } from "../components/ProductData";
+import Add from "../../assets/images/Add.svg";
+import filter from "../../assets/images/filter.svg";
+import exportIcon from "../../assets/images/export.svg";
+import DropdownSelect from "../../components/DropdownSelect";
+import ProductTable from "../../components/ProductTable";
+import { productdata, productHeaders } from "../../components/ProductData";
 import { CSVLink } from "react-csv";
 
 const csvReport = {

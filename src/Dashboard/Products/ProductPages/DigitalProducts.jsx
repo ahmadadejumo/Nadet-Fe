@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import leftarrow from "../assets/images/leftarrow.svg";
-import ProductDetails from "../components/ProductDetails";
+import leftarrow from "../../../assets/images/leftarrow.svg";
+import ProductDetails from "../../../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Select } from "@chakra-ui/react";
-import FileUploader from "../components/FileUploader";
-import ProductTab from "../components/ProductTab";
-import UpAndCrossSells from "../components/UpAndCrossSells";
-import AdvancedOptions from "../components/AdvancedOptions";
+import FileUploader from "../../../components/FileUploader";
+import ProductTab from "../../../components/ProductTab";
+import UpAndCrossSells from "../../../components/UpAndCrossSells";
+import AdvancedOptions from "../../../components/AdvancedOptions";
 
 const DigitalProducts = () => {
   const [startDate, setStartDate] = useState(new Date());

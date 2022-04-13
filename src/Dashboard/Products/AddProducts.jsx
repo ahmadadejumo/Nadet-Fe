@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductContainer from "../components/ProductContainer";
-import { typesOfProductData } from "../components/TypesOfProductData";
+import ProductContainer from "../../components/ProductContainer";
+import { typesOfProductData } from "../../components/TypesOfProductData";
 
 const AddProducts = () => {
   return (

@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/DashboardNavbar";
 import Sidebar from "../components/Sidebar";
-import AddProducts from "./AddProducts";
-import Course from "./Course";
-import DigitalProducts from "./DigitalProducts";
+import AddProducts from "./Products/AddProducts";
+import Course from "./Products/ProductPages/Course";
+import DigitalProducts from "./Products/ProductPages/DigitalProducts";
 import DashboardHome from "./Home";
-import MembershipCourse from "./MembershipCourse";
-import DashboardProucts from "./MyProducts";
-import Service from "./Service";
-import Subscription from "./Subscription";
-import Tickets from "./Tickets";
+import MembershipCourse from "./Products/ProductPages/MembershipCourse";
+import DashboardProucts from "./Products/MyProducts";
+import Service from "./Products/ProductPages/Service";
+import Subscription from "./Products/ProductPages/Subscription";
+import Tickets from "./Products/ProductPages/Tickets";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);

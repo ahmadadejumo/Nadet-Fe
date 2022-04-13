@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import leftarrow from "../assets/images/leftarrow.svg";
-import ProductDetails from "../components/ProductDetails";
+import leftarrow from "../../../assets/images/leftarrow.svg";
+import ProductDetails from "../../../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
-import ProductTab from "../components/ProductTab";
-import UpAndCrossSells from "../components/UpAndCrossSells";
-import AdvancedOptions from "../components/AdvancedOptions";
+import ProductTab from "../../../components/ProductTab";
+import UpAndCrossSells from "../../../components/UpAndCrossSells";
+import AdvancedOptions from "../../../components/AdvancedOptions";
 import { Select } from "@chakra-ui/react";
-import SubscriptionContainer from "../components/SubscriptionContainer";
+import SubscriptionContainer from "../../../components/SubscriptionContainer";
 
 const MembershipCourse = () => {
   const navigate = useNavigate();
