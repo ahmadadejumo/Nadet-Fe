@@ -3,10 +3,12 @@ import BackNavigation from "../../../../components/BackNavigation";
 import pen from "../../../../assets/images/pen.svg";
 import redX from "../../../../assets/images/redX.svg";
 import wastebin from "../../../../assets/images/wastebin.svg";
+import plus from "../../../../assets/images/plus.svg";
+import blackPlus from "../../../../assets/images/blackPlus.svg";
 
 const AddCourseContent = () => {
   return (
-    <div className="font-Lato">
+    <div className="font-Lato h-screen">
       <BackNavigation />
       <div className="pt-[32px] px-5">
         <h1 className="font-bold text-xl">Course content</h1>
@@ -30,17 +32,31 @@ const AddCourseContent = () => {
           <p className="text-xs font-bold text-[#ED0B4CE5]">Remove Section</p>
         </div>
       </div>
-      <div className="bg-white pt-[35px] px-[20px] flex items-center justify-between">
-        <div className="flex items-center space-x-[10px]">
-          <p className="text-base font-bold">Enter Lecture 1</p>
-          <img src={pen} alt="icon" className="w-[18px] h-[18px]" />
+      <div className="bg-white pt-[35px] px-[20px]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-[10px]">
+            <p className="text-base font-bold">Enter Lecture 1</p>
+            <img src={pen} alt="icon" className="w-[18px] h-[18px]" />
+          </div>
+          <div className="flex items-center space-x-[20px]">
+            <button className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold">
+              Edit
+            </button>
+            <img src={wastebin} alt="icon" className="h-[24px] w-[20px]" />
+          </div>
         </div>
-        <div className="flex items-center space-x-[20px]">
-          <button className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold">
-            Edit
-          </button>
-          <img src={wastebin} alt="icon" className="h-[24px] w-[20px]" />
+        <div className="flex items-center space-x-[16px] mt-[40px] pb-[20px]">
+          <img src={plus} alt="icon" className="h-[16px] w-[16px]" />
+          <p className="text-[#1877F2] text-base font-bold">Add new lecture</p>
         </div>
+      </div>
+      <div className="flex justify-center mt-[32px] mb-[37px]">
+        <button className=" h-[44px] w-[217px] bg-bcolor rounded">
+          <div className="flex justify-center items-center space-x-2">
+            <img src={blackPlus} alt="icon" className="w-[16px] h-[16px]" />
+            <p className="text-base font-bold">Add New Section</p>
+          </div>
+        </button>
       </div>
     </div>
   );
