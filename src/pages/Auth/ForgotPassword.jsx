@@ -120,6 +120,7 @@ const ForgotPassword = () => {
                 ref={emailRef}
                 autoComplete="off"
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 aria-invalid={validEmail ? "false" : "true"}
                 aria-describedby="uidnote"
                 required
