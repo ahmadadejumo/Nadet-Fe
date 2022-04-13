@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import leftarrow from "../assets/images/leftarrow.svg";
 import ProductDetails from "../components/ProductDetails";
 import { useNavigate } from "react-router-dom";
@@ -14,21 +14,24 @@ const Subscription = () => {
   const [intervals, setIntervals] = useState("");
   const [amount, setAmount] = useState(0);
   const [timesCharged, setTimesCharged] = useState(0);
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdown, setDropdown] = useState();
   const [containerData, setContainerData] = useState([]);
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
-  const showDropdown = () => {
-    setDropdown(!dropdown);
+  const showDropdown = (index) => {
+    if (dropdown === index) {
+      return setDropdown(null);
+    }
+    setDropdown(index);
   };
 
   const handleSubscriptionTier = (e) => {
     e.preventDefault();
     setAmount("");
-    setIntervals("");
+    setIntervals(null);
     setTimesCharged("");
     setContainerData([
       ...containerData,
@@ -122,8 +125,9 @@ const Subscription = () => {
                     timesCharged={timesCharged}
                     intervals={intervals}
                     n={parseFloat(1) + parseFloat(timesCharged)}
-                    showDropdown={showDropdown}
+                    showDropdown={() => showDropdown(index)}
                     dropdown={dropdown}
+                    index={index}
                     removeItem={removeItem}
                   />
                 );
