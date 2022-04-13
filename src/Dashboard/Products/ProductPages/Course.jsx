@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductDetails from "../../../components/ProductDetails";
+import { useNavigate } from "react-router-dom";
 import ProductTab from "../../../components/ProductTab";
 import UpAndCrossSells from "../../../components/UpAndCrossSells";
 import AdvancedOptions from "../../../components/AdvancedOptions";
@@ -9,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import BackNavigation from "../../../components/BackNavigation";
 
 const Course = () => {
+  const navigate = useNavigate();
   const [toggleState, setToggleState] = useState(1);
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [preOrderDate, setPreOrderDate] = useState(false);
@@ -103,7 +105,10 @@ const Course = () => {
         {toggleState === 2 && <UpAndCrossSells />}
         {toggleState === 3 && <AdvancedOptions />}
         <div className="mx-[24px] md:mx-[35px]">
-          <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
+          <button
+            onClick={navigate("/add-course-content")}
+            className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]"
+          >
             Create Product
           </button>
         </div>
