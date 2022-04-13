@@ -19,7 +19,7 @@ const SubscriptionContainer = ({
           {intervals} Subscription
         </h1>
         <p
-          onClick={() => removeItem}
+          onClick={removeItem}
           className="text-xl font-bold text-red-500 cursor-pointer"
         >
           X

@@ -41,8 +41,9 @@ const Subscription = () => {
   };
 
   const removeItem = (index) => {
-    containerData.splice(index, 1);
-    setContainerData(...containerData);
+    const newData = [...containerData];
+    newData.splice(index, 1);
+    setContainerData(newData);
   };
 
   return (
@@ -128,7 +129,7 @@ const Subscription = () => {
                     showDropdown={() => showDropdown(index)}
                     dropdown={dropdown}
                     index={index}
-                    removeItem={removeItem}
+                    removeItem={() => removeItem(index)}
                   />
                 );
               })}
