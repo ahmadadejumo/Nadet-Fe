@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 
 const EditCourseSection = () => {
+  const [toggleButtonState, setToggleButtonState] = useState(1);
+
+  const toggleButton = (index) => {
+    setToggleButtonState(index);
+  };
+
   return (
     <div className="font-Lato">
       <div className="px-5">
@@ -14,10 +20,20 @@ const EditCourseSection = () => {
       </div>
       <div className="mt-[32px] bg-white">
         <div className="flex justify-center px-7 pt-[24px]">
-          <button className="h-[50px] w-full border rounded-l text-[16px] font-bold bg-[#8492A685]">
+          <button
+            onClick={() => toggleButton(1)}
+            className={`${
+              toggleButtonState === 1 ? "bg-[#8492A685]" : "bg-[#E8E8EB75]"
+            } h-[50px] w-full border rounded-l text-[16px] font-bold`}
+          >
             Upload Files
           </button>
-          <button className="h-[50px] px-3 w-full border rounded-r text-[16px] font-bold bg-[#E8E8EB75]">
+          <button
+            onClick={() => toggleButton(2)}
+            className={`${
+              toggleButtonState === 2 ? "bg-[#8492A685]" : "bg-[#E8E8EB75]"
+            } h-[50px] px-3 w-full border rounded-r text-[16px] font-bold`}
+          >
             Import from External Link
           </button>
         </div>
