@@ -6,8 +6,10 @@ import wastebin from "../../../../assets/images/wastebin.svg";
 import plus from "../../../../assets/images/plus.svg";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
+import { useNavigate } from "react-router-dom";
 
 const AddCourseContent = () => {
+  const navigation = useNavigate();
   return (
     <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
       <BackNavigation />
@@ -45,7 +47,10 @@ const AddCourseContent = () => {
             <img src={pen} alt="icon" className="w-[18px] h-[18px]" />
           </div>
           <div className="flex items-center space-x-[20px]">
-            <button className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold">
+            <button
+              onClick={() => navigation("/dashboard/upload-course-lecture")}
+              className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold"
+            >
               Edit
             </button>
             <img

@@ -12,6 +12,7 @@ import Service from "./Products/ProductPages/Service";
 import Subscription from "./Products/ProductPages/Subscription";
 import Tickets from "./Products/ProductPages/Tickets";
 import AddCourseContent from "./Products/ProductPages/CourseContentPages/AddCourseContent";
+import EditCourseSection from "./Products/ProductPages/CourseContentPages/EditCourseSection";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
@@ -37,6 +38,10 @@ const Home = () => {
             <Route path="subscription" element={<Subscription />} />
             <Route path="membership-course" element={<MembershipCourse />} />
             <Route path="add-course-content" element={<AddCourseContent />} />
+            <Route
+              path="upload-course-lecture"
+              element={<EditCourseSection />}
+            />
           </Routes>
         </div>
       </div>
