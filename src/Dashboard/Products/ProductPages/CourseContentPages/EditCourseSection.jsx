@@ -12,6 +12,16 @@ const EditCourseSection = () => {
           Upload Course Resources
         </button>
       </div>
+      <div className="mt-[32px] bg-white">
+        <div className="flex justify-center px-7 pt-[24px]">
+          <button className="h-[50px] w-full border rounded-l text-[16px] font-bold bg-[#8492A685]">
+            Upload Files
+          </button>
+          <button className="h-[50px] px-3 w-full border rounded-r text-[16px] font-bold bg-[#E8E8EB75]">
+            Import from External Link
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
