@@ -12,7 +12,9 @@ const AddCourseContent = () => {
   const navigation = useNavigate();
   return (
     <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
-      <BackNavigation />
+      <div className="px-5">
+        <BackNavigation />
+      </div>
       <div className="pt-[32px] px-5 md:px-0">
         <h1 className="font-bold text-xl lg:text-[28px]">Course content</h1>
         <div className="lg:flex lg:justify-between lg:items-center lg:mt-[16px]">
