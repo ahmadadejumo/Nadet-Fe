@@ -13,7 +13,7 @@ const AddCourseContent = () => {
       <BackNavigation />
       <div className="pt-[32px] px-5 md:px-0">
         <h1 className="font-bold text-xl lg:text-[28px]">Course content</h1>
-        <div className="flex justify-between items-center mt-[16px]">
+        <div className="lg:flex lg:justify-between lg:items-center lg:mt-[16px]">
           <p className="text-[20px] font-medium pt-1 lg:pt-0">
             Manage course curriculum
           </p>
@@ -21,8 +21,8 @@ const AddCourseContent = () => {
             <button className="bg-bcolor h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base">
               Set Preview Video
             </button>
-            <button className="bg-bcolor flex justify-between px-6 items-center  h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base">
-              <img src={eye} alt="icon" className="" />
+            <button className="bg-bcolor lg:flex lg:justify-between lg:px-6 lg:items-center  h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base">
+              <img src={eye} alt="icon" className="hidden lg:block" />
               Preview Course
             </button>
           </div>
