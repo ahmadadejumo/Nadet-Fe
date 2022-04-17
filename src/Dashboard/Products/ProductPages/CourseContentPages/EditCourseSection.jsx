@@ -15,7 +15,7 @@ const EditCourseSection = () => {
   const [error, setError] = useState("");
 
   const onFilesChange = (files) => {
-    setFiles([files]);
+    setFiles(files);
     console.log(files);
   };
 
@@ -60,12 +60,12 @@ const EditCourseSection = () => {
         </div>
         <div className="px-5">
           <Files
-            className="files-dropzone-list"
+            className="files-dropzone"
             onChange={onFilesChange}
             onError={onFilesError}
             accepts={["image/*", ".pdf", "video/mp4"]}
             multiple
-            maxFileSize={100000000000}
+            maxFileSize={104857600}
             minFileSize={0}
             clickable
           >
