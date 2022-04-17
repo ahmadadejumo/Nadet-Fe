@@ -64,7 +64,6 @@ const EditCourseSection = () => {
             onChange={onFilesChange}
             onError={onFilesError}
             accepts={["image/*", ".pdf", "video/mp4"]}
-            multiple
             maxFileSize={104857600}
             minFileSize={0}
             clickable
@@ -80,7 +79,7 @@ const EditCourseSection = () => {
             </div>
           </Files>
           {files.length > 0 ? (
-            <div className="bg-gray-300 mb-10">
+            <div className="bg-gray-300 mb-10 rounded mt-2">
               <ul>
                 {files.map((file) => (
                   <div className="flex justify-between" key={file.id}>
