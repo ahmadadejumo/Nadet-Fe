@@ -29,15 +29,37 @@ const EditCourseSection = () => {
     setFiles(newFiles);
   };
 
+  //   const fileUpload = () => {
+  //     const formData = new FormData();
+  //     Object.keys(files).forEach((key) => {
+  //       const file = this.state.files[key];
+  //       formData.append(
+  //         key,
+  //         new Blob([file], { type: file.type }),
+  //         file.name || "file"
+  //       );
+  //     });
+  //   };
+
   return (
     <div className="font-Lato">
       <div className="px-5">
         <BackNavigation />
         <h1 className="pt-[32px] text-[24px] font-bold">Course content</h1>
         <p className="text-[20px] font-medium pt-1">Lecture 1</p>
-        <button className="w-[208px] h-[37px] text-xs font-bold rounded mt-[24px] bg-bcolor">
-          Upload Course Resources
-        </button>
+        <Files
+          className="files-dropzone"
+          onChange={onFilesChange}
+          onError={onFilesError}
+          accepts={["image/*", ".pdf", "video/mp4"]}
+          maxFileSize={104857600}
+          minFileSize={0}
+          clickable
+        >
+          <button className="w-[208px] h-[37px] text-xs font-bold rounded mt-[24px] bg-bcolor">
+            Upload Course Resource
+          </button>
+        </Files>
       </div>
       <div className="mt-[32px] bg-white">
         <div className="flex justify-center px-7 pt-[24px]">
@@ -47,7 +69,7 @@ const EditCourseSection = () => {
               toggleButtonState === 1 ? "bg-[#8492A685]" : "bg-[#E8E8EB75]"
             } h-[50px] w-full border rounded-l text-[16px] font-bold`}
           >
-            Upload Files
+            Upload File
           </button>
           <button
             onClick={() => toggleButton(2)}
@@ -73,8 +95,7 @@ const EditCourseSection = () => {
             >
               <img src={download} alt="icon" />
               <p className="text-sm font-normal opacity-60">
-                Drag or <span className="text-[#FBBC15]">upload</span> your
-                files
+                Drag or <span className="text-[#FBBC15]">upload</span> your file
               </p>
             </div>
           </Files>
