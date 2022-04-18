@@ -3,16 +3,19 @@ import BackNavigation from "../../../../components/BackNavigation";
 import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
 import X from "../../../../assets/images/X.svg";
+import validator from "validator";
+import { Oval } from "react-loader-spinner";
 
 const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
+  const [files, setFiles] = useState([]);
+  const [error, setError] = useState("");
+  const [url, setUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
   };
-
-  const [files, setFiles] = useState([]);
-  const [error, setError] = useState("");
 
   const onFilesChange = (files) => {
     setFiles(files);
@@ -27,6 +30,18 @@ const EditCourseSection = () => {
     const newFiles = [...files];
     newFiles.splice(file, 1);
     setFiles(newFiles);
+  };
+
+  const validate = (value) => {
+    setIsLoading(!isLoading);
+    setTimeout(() => {
+      setIsLoading(isLoading);
+      if (validator.isURL(value)) {
+        setError(null);
+      } else {
+        setError("URL is not valid");
+      }
+    }, 3000);
   };
 
   //   const fileUpload = () => {
@@ -151,8 +166,30 @@ const EditCourseSection = () => {
               <input
                 type="text"
                 placeholder="Insert link here..."
+                onChange={(e) => setUrl(e.target.value)}
                 className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
               />
+              <span className="text-red-500 text-sm">{error}</span>
+              <div className="flex justify-end">
+                <button
+                  onClick={() => validate(url)}
+                  disabled={isLoading}
+                  className="bg-bcolor flex justify-center items-center w-[72px] h-[30px] rounded mt-[20px] text-[12px] font-bold"
+                >
+                  {isLoading ? (
+                    <Oval
+                      ariaLabel="loading-indicator"
+                      height={23}
+                      width={23}
+                      strokeWidth={4}
+                      color="grey"
+                      secondaryColor="#FBBC15"
+                    />
+                  ) : (
+                    "Verify"
+                  )}
+                </button>
+              </div>
             </div>
           )}
         </div>
