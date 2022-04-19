@@ -12,6 +12,7 @@ const EditCourseSection = () => {
   const [error, setError] = useState("");
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isValid, setIsValid] = useState(false);
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
@@ -37,9 +38,11 @@ const EditCourseSection = () => {
     setTimeout(() => {
       setIsLoading(isLoading);
       if (validator.isURL(value)) {
-        setError(null);
+        setError("URL is valid");
+        setIsValid(!isValid);
       } else {
         setError("URL is not valid");
+        setIsValid(isValid);
       }
     }, 3000);
   };
@@ -169,7 +172,12 @@ const EditCourseSection = () => {
                 onChange={(e) => setUrl(e.target.value)}
                 className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
               />
-              <span className="text-red-500 text-sm">{error}</span>
+              {!isValid ? (
+                <span className="text-red-500 text-sm">{error}</span>
+              ) : (
+                <span className="text-green-500 text-sm">{error}</span>
+              )}
+
               <div className="flex justify-end">
                 <button
                   onClick={() => validate(url)}
@@ -192,6 +200,21 @@ const EditCourseSection = () => {
               </div>
             </div>
           )}
+        </div>
+        <div className="flex px-5 space-x-[12px] mt-[32px]">
+          <input
+            type="checkbox"
+            // defaultChecked={!showOriginalPrice}
+            // onClick={handleOriginalPrice}
+            className="form-checkbox text-bcolor w-[24px] h-[24px] border border-gray-500 rounded mt-[2px]"
+          />
+          <div>
+            <h1 className="font-bold text-base">Enable resources download</h1>
+            <p className="text-xs">
+              Checking this option will enable a download button for your
+              students
+            </p>
+          </div>
         </div>
       </div>
     </div>
