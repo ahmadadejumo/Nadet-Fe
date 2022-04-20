@@ -3,6 +3,7 @@ import BackNavigation from "../../../../components/BackNavigation";
 import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
 import X from "../../../../assets/images/X.svg";
+import redX from "../../../../assets/images/redX.svg";
 import validator from "validator";
 import { Oval } from "react-loader-spinner";
 
@@ -227,15 +228,18 @@ const EditCourseSection = () => {
             className="mt-[16px] w-full h-[79px] pl-[16px] pt-[16px] outline-none border rounded text-sm"
           />
         </div>
-        <div>
+        <div className="px-5 pt-[30px] flex justify-between items-center pb-[50px] mb-10">
           <div>
-            <button className="text-[#ED0B4CE5] font-bold text-xs">
-              X Cancel
+            <button className="text-[#ED0B4CE5] flex justify-between items-center font-bold text-xs w-[55px]">
+              <img src={redX} alt="icon" className="w-[7px] h-[7px]" />
+              Cancel
             </button>
           </div>
-          <div>
-            <button>Preview</button>
-            <button>Save</button>
+          <div className="space-x-[17px]">
+            <button className="font-bold text-sm">Preview</button>
+            <button className="w-[120px] h-[42px] bg-bcolor text-base font-bold rounded">
+              Save
+            </button>
           </div>
         </div>
       </div>
