@@ -62,32 +62,38 @@ const EditCourseSection = () => {
   //   };
 
   return (
-    <div className="font-Lato">
-      <div className="px-5">
+    <div className="font-Lato md:h-screen px-[140px]">
+      <div className="px-5 lg:px-0">
         <BackNavigation />
-        <h1 className="pt-[32px] text-[24px] font-bold">Course content</h1>
-        <p className="text-[20px] font-medium pt-1">Lecture 1</p>
-        <Files
-          className="files-dropzone"
-          onChange={onFilesChange}
-          onError={onFilesError}
-          accepts={["image/*", ".pdf", "video/mp4"]}
-          maxFileSize={104857600}
-          minFileSize={0}
-          clickable
-        >
-          <button className="w-[208px] h-[37px] text-xs font-bold rounded mt-[24px] bg-bcolor">
-            Upload Course Resource
-          </button>
-        </Files>
+        <h1 className="pt-[32px] text-[24px] lg:text-[28px] font-bold">
+          Course content
+        </h1>
+        <div className="flex justify-between items-center">
+          <p className="text-[20px] lg:text-[24px] font-medium pt-1">
+            Lecture 1
+          </p>
+          <Files
+            className="files-dropzone"
+            onChange={onFilesChange}
+            onError={onFilesError}
+            accepts={["image/*", ".pdf", "video/mp4"]}
+            maxFileSize={104857600}
+            minFileSize={0}
+            clickable
+          >
+            <button className="w-[208px] lg:w-[253px] h-[37px] lg:h-[42px] text-xs lg:text-[16px] font-bold rounded mt-[24px] bg-bcolor">
+              Upload Course Resource
+            </button>
+          </Files>
+        </div>
       </div>
       <div className="mt-[32px] bg-white">
-        <div className="flex justify-center px-7 pt-[24px]">
+        <div className="flex justify-center lg:justify-start px-7 pt-[24px]">
           <button
             onClick={() => toggleButton(1)}
             className={`${
               toggleButtonState === 1 ? "bg-[#8492A685]" : "bg-[#E8E8EB75]"
-            } h-[50px] w-full border rounded-l text-[16px] font-bold`}
+            } h-[50px] w-full lg:w-[191px] lg:h-[70px] border rounded-l text-[16px] font-bold`}
           >
             Upload File
           </button>
@@ -95,7 +101,7 @@ const EditCourseSection = () => {
             onClick={() => toggleButton(2)}
             className={`${
               toggleButtonState === 2 ? "bg-[#8492A685]" : "bg-[#E8E8EB75]"
-            } h-[50px] px-3 w-full border rounded-r text-[16px] font-bold`}
+            } h-[50px] px-3 lg:px-5 w-full border lg:w-[191px] lg:h-[70px] rounded-r text-[16px] font-bold`}
           >
             Import from External Link
           </button>
