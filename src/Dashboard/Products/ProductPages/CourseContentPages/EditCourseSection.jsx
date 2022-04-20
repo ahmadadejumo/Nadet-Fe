@@ -6,6 +6,7 @@ import X from "../../../../assets/images/X.svg";
 import redX from "../../../../assets/images/redX.svg";
 import validator from "validator";
 import { Oval } from "react-loader-spinner";
+import cloudUpload from "../../../../assets/images/cil_cloud-upload.svg";
 
 const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
@@ -118,11 +119,26 @@ const EditCourseSection = () => {
                 minFileSize={0}
                 clickable
               >
-                <div className="mt-[32px] cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3">
+                {/* Mobile and tablet */}
+                <div className="mt-[32px] lg:hidden cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3">
                   <img src={download} alt="icon" />
                   <p className="text-sm font-normal opacity-60">
                     Drag or <span className="text-[#FBBC15]">upload</span> your
                     file
+                  </p>
+                </div>
+
+                {/* Desktop responsiveness */}
+                <div className="mt-[37px] cursor-pointer border border-dashed rounded-[32px] border-[#555557]">
+                  <div className="flex justify-center pt-5">
+                    <img src={cloudUpload} alt="icon" />
+                  </div>
+                  <p className="text-xl font-bold text-center">
+                    Drag and drop or{" "}
+                    <span className="text-bcolor">Browse to choose a file</span>
+                  </p>
+                  <p className="text-xl text-gray-400 text-center pb-5">
+                    (Image, Video, PDF)
                   </p>
                 </div>
               </Files>
