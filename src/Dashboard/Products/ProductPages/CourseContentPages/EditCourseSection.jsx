@@ -10,6 +10,7 @@ const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
   const [files, setFiles] = useState([]);
   const [error, setError] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -38,10 +39,10 @@ const EditCourseSection = () => {
     setTimeout(() => {
       setIsLoading(isLoading);
       if (validator.isURL(value)) {
-        setError("URL is valid");
+        setErrorMsg("URL is valid");
         setIsValid(!isValid);
       } else {
-        setError("URL is not valid");
+        setErrorMsg("URL is not valid");
         setIsValid(isValid);
       }
     }, 3000);
@@ -173,9 +174,9 @@ const EditCourseSection = () => {
                 className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
               />
               {!isValid ? (
-                <span className="text-red-500 text-sm">{error}</span>
+                <span className="text-red-500 text-sm">{errorMsg}</span>
               ) : (
-                <span className="text-green-500 text-sm">{error}</span>
+                <span className="text-green-500 text-sm">{errorMsg}</span>
               )}
 
               <div className="flex justify-end">
@@ -214,6 +215,27 @@ const EditCourseSection = () => {
               Checking this option will enable a download button for your
               students
             </p>
+          </div>
+        </div>
+        <div className="mt-[32px] px-5">
+          <h1 className="font-bold text-base">Description</h1>
+          <textarea
+            name="description"
+            // cols="30"
+            // rows="10"
+            placeholder="Enter product description here..."
+            className="mt-[16px] w-full h-[79px] pl-[16px] pt-[16px] outline-none border rounded text-sm"
+          />
+        </div>
+        <div>
+          <div>
+            <button className="text-[#ED0B4CE5] font-bold text-xs">
+              X Cancel
+            </button>
+          </div>
+          <div>
+            <button>Preview</button>
+            <button>Save</button>
           </div>
         </div>
       </div>
