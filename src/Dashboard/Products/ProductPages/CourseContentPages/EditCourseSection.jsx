@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
@@ -7,6 +7,8 @@ import redX from "../../../../assets/images/redX.svg";
 import validator from "validator";
 import { Oval } from "react-loader-spinner";
 import cloudUpload from "../../../../assets/images/cil_cloud-upload.svg";
+import { Editor, EditorState, RichUtils } from "draft-js";
+import "draft-js/dist/Draft.css";
 
 const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
@@ -16,6 +18,11 @@ const EditCourseSection = () => {
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
+
+  const onChange = (editorState) => setEditorState({ editorState });
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
@@ -50,6 +57,26 @@ const EditCourseSection = () => {
     }, 3000);
   };
 
+  const editor = useRef(null);
+  function focusEditor() {
+    editor.current.focus();
+  }
+
+  const handleKeyCommand = (command, editorState) => {
+    const newState = RichUtils.handleKeyCommand(editorState, command);
+
+    if (newState) {
+      onChange(newState);
+      return "handled";
+    }
+
+    return "not-handled";
+  };
+
+  const _onBoldClick = () => {
+    onChange(RichUtils.toggleInlineStyle(editorState, "BOLD"));
+  };
+
   //   const fileUpload = () => {
   //     const formData = new FormData();
   //     Object.keys(files).forEach((key) => {
@@ -63,7 +90,7 @@ const EditCourseSection = () => {
   //   };
 
   return (
-    <div className="font-Lato md:h-screen px-[140px]">
+    <div className="font-Lato md:h-screen lg:px-[140px]">
       <div className="px-5 lg:px-0">
         <BackNavigation />
         <h1 className="pt-[32px] text-[24px] lg:text-[28px] font-bold">
@@ -88,7 +115,7 @@ const EditCourseSection = () => {
           </Files>
         </div>
       </div>
-      <div className="mt-[32px] bg-white">
+      <div className="mt-[32px] bg-white px-5">
         <div className="flex justify-center lg:justify-start px-7 pt-[24px]">
           <button
             onClick={() => toggleButton(1)}
@@ -129,7 +156,7 @@ const EditCourseSection = () => {
                 </div>
 
                 {/* Desktop responsiveness */}
-                <div className="mt-[37px] cursor-pointer border border-dashed rounded-[32px] border-[#555557]">
+                <div className="mt-[37px] hidden lg:block cursor-pointer border border-dashed rounded-[32px] border-[#555557]">
                   <div className="flex justify-center pt-5">
                     <img src={cloudUpload} alt="icon" />
                   </div>
@@ -143,7 +170,7 @@ const EditCourseSection = () => {
                 </div>
               </Files>
               {files.length > 0 ? (
-                <div className="bg-gray-300 mb-10 rounded mt-2">
+                <div className="bg-gray-300 mb-5 rounded mt-2 lg:mt-5">
                   <ul>
                     {files.map((file) => (
                       <div className="flex justify-between" key={file.id}>
@@ -241,14 +268,33 @@ const EditCourseSection = () => {
           </div>
         </div>
         <div className="mt-[32px] px-5">
-          <h1 className="font-bold text-base">Description</h1>
+          <h1 className="font-bold text-base lg:text-[24px]">Description</h1>
+          {/* mobile and tablet view */}
           <textarea
             name="description"
-            // cols="30"
-            // rows="10"
             placeholder="Enter product description here..."
-            className="mt-[16px] w-full h-[79px] pl-[16px] pt-[16px] outline-none border rounded text-sm"
+            className="mt-[16px] lg:hidden w-full h-[79px] pl-[16px] pt-[16px] outline-none border rounded text-sm"
           />
+
+          {/* Desktop view */}
+          <div
+            // style={{
+            //   border: "1px solid black",
+            //   minHeight: "6em",
+            //   cursor: "text",
+            // }}
+            className="border w-[650px] h-[100px]"
+            onClick={focusEditor}
+          >
+            <button onClick={_onBoldClick}>Bold</button>
+            <Editor
+              ref={editor}
+              editorState={editorState}
+              onChange={setEditorState}
+              handleKeyCommand={handleKeyCommand}
+              placeholder="Write something!"
+            />
+          </div>
         </div>
         <div className="px-5 pt-[30px] flex justify-between items-center pb-[50px] mb-10">
           <div>
