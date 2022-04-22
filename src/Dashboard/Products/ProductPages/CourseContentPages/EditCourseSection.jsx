@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
@@ -7,8 +7,7 @@ import redX from "../../../../assets/images/redX.svg";
 import validator from "validator";
 import { Oval } from "react-loader-spinner";
 import cloudUpload from "../../../../assets/images/cil_cloud-upload.svg";
-import { Editor, EditorState, RichUtils } from "draft-js";
-import "draft-js/dist/Draft.css";
+import TextEditor from "../../../../components/TextEditor";
 
 const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
@@ -18,11 +17,6 @@ const EditCourseSection = () => {
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
-
-  const onChange = (editorState) => setEditorState({ editorState });
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
@@ -55,26 +49,6 @@ const EditCourseSection = () => {
         setIsValid(isValid);
       }
     }, 3000);
-  };
-
-  const editor = useRef(null);
-  function focusEditor() {
-    editor.current.focus();
-  }
-
-  const handleKeyCommand = (command, editorState) => {
-    const newState = RichUtils.handleKeyCommand(editorState, command);
-
-    if (newState) {
-      onChange(newState);
-      return "handled";
-    }
-
-    return "not-handled";
-  };
-
-  const _onBoldClick = () => {
-    onChange(RichUtils.toggleInlineStyle(editorState, "BOLD"));
   };
 
   //   const fileUpload = () => {
@@ -277,23 +251,8 @@ const EditCourseSection = () => {
           />
 
           {/* Desktop view */}
-          <div
-            // style={{
-            //   border: "1px solid black",
-            //   minHeight: "6em",
-            //   cursor: "text",
-            // }}
-            className="border w-[650px] h-[100px]"
-            onClick={focusEditor}
-          >
-            <button onClick={_onBoldClick}>Bold</button>
-            <Editor
-              ref={editor}
-              editorState={editorState}
-              onChange={setEditorState}
-              handleKeyCommand={handleKeyCommand}
-              placeholder="Write something!"
-            />
+          <div className="hidden lg:block">
+            <TextEditor />
           </div>
         </div>
         <div className="px-5 pt-[30px] flex justify-between items-center pb-[50px] mb-10">
