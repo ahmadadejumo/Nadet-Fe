@@ -24,7 +24,7 @@ const TextEditor = () => {
   //     };
   //   };
   return (
-    <div className="border border-gray-400 px-3 py-3">
+    <div className="border border-gray-300 px-3 py-3">
       <Editor
         editorState={editorState}
         onEditorStateChange={handleEditorChange}

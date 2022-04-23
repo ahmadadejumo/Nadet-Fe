@@ -64,7 +64,7 @@ const EditCourseSection = () => {
   //   };
 
   return (
-    <div className="font-Lato md:h-screen lg:px-[140px]">
+    <div className="font-Lato md:h-screen lg:h-auto lg:px-[140px]">
       <div className="px-5 lg:px-0">
         <BackNavigation />
         <h1 className="pt-[32px] text-[24px] lg:text-[28px] font-bold">
@@ -190,20 +190,14 @@ const EditCourseSection = () => {
               )}
             </>
           ) : (
-            <div>
+            <div className="lg:flex lg:justify-end lg:items-center">
               <input
                 type="text"
                 placeholder="Insert link here..."
                 onChange={(e) => setUrl(e.target.value)}
                 className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
               />
-              {!isValid ? (
-                <span className="text-red-500 text-sm">{errorMsg}</span>
-              ) : (
-                <span className="text-green-500 text-sm">{errorMsg}</span>
-              )}
-
-              <div className="flex justify-end">
+              <div className="flex justify-end lg:absolute lg:top-[409px] lg:right-[200px]">
                 <button
                   onClick={() => validate(url)}
                   disabled={isLoading}
@@ -224,6 +218,11 @@ const EditCourseSection = () => {
                 </button>
               </div>
             </div>
+          )}
+          {!isValid ? (
+            <span className="text-red-500 text-sm">{errorMsg}</span>
+          ) : (
+            <span className="text-green-500 text-sm">{errorMsg}</span>
           )}
         </div>
         <div className="flex px-5 space-x-[12px] mt-[32px]">
@@ -255,15 +254,20 @@ const EditCourseSection = () => {
             <TextEditor />
           </div>
         </div>
-        <div className="px-5 pt-[30px] flex justify-between items-center pb-[50px] mb-10">
-          <div>
-            <button className="text-[#ED0B4CE5] flex justify-between items-center font-bold text-xs w-[55px]">
-              <img src={redX} alt="icon" className="w-[7px] h-[7px]" />
-              Cancel
-            </button>
+        <div className="px-5 pt-[30px] lg:pt-[42px] flex justify-between items-center pb-[50px] mb-10">
+          <div className="text-[#ED0B4CE5] lg:cursor-pointer flex justify-between lg:space-x-3 items-center font-bold text-xs lg:text-lg w-[55px]">
+            <img
+              src={redX}
+              alt="icon"
+              className="w-[7px] h-[7px] lg:h-[11px] lg:w-[11px]"
+            />
+            <p>Cancel</p>
           </div>
+
           <div className="space-x-[17px]">
-            <button className="font-bold text-sm">Preview</button>
+            <button className="font-bold text-sm lg:text-[15px] lg:border lg:w-[120px] lg:h-[42px] lg:rounded lg:text-bcolor lg:hover:bg-[#ffc72c] lg:hover:text-black lg:border-bcolor">
+              Preview
+            </button>
             <button className="w-[120px] h-[42px] bg-bcolor text-base font-bold rounded">
               Save
             </button>
