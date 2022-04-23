@@ -1,101 +1,43 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Editor, EditorState, RichUtils } from "draft-js";
-import "draft-js/dist/Draft.css";
+import React, { useState } from "react";
+import { EditorState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+// import { convertToHTML } from "draft-convert";
+// import DOMPurify from "dompurify";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const TextEditor = () => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
-  const editor = useRef(null);
-
-  function focusEditor() {
-    editor.current.focus();
-  }
-
-  useEffect(() => {
-    focusEditor();
-  }, []);
-
-  const StyleButton = ({ onToggle, style, label }) => {
-    let onClickButton = (e) => {
-      e.preventDefault();
-      onToggle(style);
-    };
-    return <button onMouseDown={onClickButton}>{label}</button>;
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
+  //   const [setConvertedContent] = useState(null);
+  const handleEditorChange = (state) => {
+    setEditorState(state);
+    // convertContentToHTML();
   };
-
-  const BLOCK_TYPES = [
-    { label: "H1", style: "header-one" },
-    { label: "H2", style: "header-two" },
-    { label: "H3", style: "header-three" },
-    { label: "H4", style: "header-four" },
-    { label: "H5", style: "header-five" },
-    { label: "H6", style: "header-six" },
-    { label: "Blockquote", style: "blockquote" },
-    { label: "UL", style: "unordered-list-item" },
-    { label: "OL", style: "ordered-list-item" },
-    { label: "Code Block", style: "code-block" },
-  ];
-
-  const BlockStyleControls = (props) => {
-    return (
-      <div>
-        {BLOCK_TYPES.map((type) => (
-          <StyleButton
-            key={type.label}
-            label={type.label}
-            onToggle={props.onToggle}
-            style={type.style}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const INLINE_STYLES = [
-    { label: "Bold", style: "BOLD" },
-    { label: "Italic", style: "ITALIC" },
-    { label: "Underline", style: "UNDERLINE" },
-    { label: "Monospace", style: "CODE" },
-  ];
-  const InlineStyleControls = (props) => {
-    return (
-      <div>
-        {INLINE_STYLES.map((type) => (
-          <StyleButton
-            key={type.label}
-            label={type.label}
-            onToggle={props.onToggle}
-            style={type.style}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const onInlineClick = (e) => {
-    let nextState = RichUtils.toggleInlineStyle(editorState, e);
-    setEditorState(nextState);
-  };
-
-  const onBlockClick = (e) => {
-    let nextState = RichUtils.toggleBlockType(editorState, e);
-    setEditorState(nextState);
-  };
+  //   const convertContentToHTML = () => {
+  //     let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+  //     setConvertedContent(currentContentAsHTML);
+  //   };
+  //   const createMarkup = (html) => {
+  //     return {
+  //       __html: DOMPurify.sanitize(html),
+  //     };
+  //   };
   return (
-    <div onClick={focusEditor}>
-      <div className="App">
-        <BlockStyleControls onToggle={onBlockClick} />
-        <InlineStyleControls onToggle={onInlineClick} />
-      </div>
-      <div className="App">
-        <Editor
-          ref={editor}
-          editorState={editorState}
-          onChange={(editorState) => setEditorState(editorState)}
-        />
-      </div>
+    <div className="border border-gray-400 px-3 py-3">
+      <Editor
+        editorState={editorState}
+        onEditorStateChange={handleEditorChange}
+        wrapperClassName=""
+        editorClassName="border px-3 w-[650px]"
+        toolbarClassName=""
+        placeholder="Enter product description here..."
+      />
+      {/* <div
+        className="preview"
+        dangerouslySetInnerHTML={createMarkup(convertedContent)}
+      ></div> */}
     </div>
   );
 };
-
 export default TextEditor;

@@ -70,7 +70,7 @@ const EditCourseSection = () => {
         <h1 className="pt-[32px] text-[24px] lg:text-[28px] font-bold">
           Course content
         </h1>
-        <div className="flex justify-between items-center">
+        <div className="lg:flex lg:justify-between lg:items-center">
           <p className="text-[20px] lg:text-[24px] font-medium pt-1">
             Lecture 1
           </p>
@@ -89,7 +89,7 @@ const EditCourseSection = () => {
           </Files>
         </div>
       </div>
-      <div className="mt-[32px] bg-white px-5">
+      <div className="mt-[32px] bg-white lg:px-5">
         <div className="flex justify-center lg:justify-start px-7 pt-[24px]">
           <button
             onClick={() => toggleButton(1)}
@@ -251,7 +251,7 @@ const EditCourseSection = () => {
           />
 
           {/* Desktop view */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mt-[25px]">
             <TextEditor />
           </div>
         </div>
