@@ -20,8 +20,10 @@ const Tickets = () => {
 
   return (
     <div className="font-Lato lg:px-[150px]">
-      <BackNavigation />
-      <h1 className="font-bold text-xl pt-[32px] px-5">Add Product</h1>
+      <div className="px-5 lg:px-0">
+        <BackNavigation />
+        <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
+      </div>
       <div>
         <ProductDetails />
       </div>

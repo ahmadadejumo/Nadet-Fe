@@ -38,11 +38,11 @@ const DigitalProducts = () => {
 
   return (
     <div className="font-Lato lg:px-[150px]">
-      <BackNavigation />
-      <h1 className="font-bold text-xl pt-[32px] px-5">Add Product</h1>
-      <div>
-        <ProductDetails />
+      <div className="px-5 lg:px-0">
+        <BackNavigation />
+        <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
       </div>
+      <ProductDetails />
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
         {/* Product Detail Tab component */}
