@@ -17,6 +17,7 @@ const EditCourseSection = () => {
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const [lecture, setLecture] = useState([]);
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
