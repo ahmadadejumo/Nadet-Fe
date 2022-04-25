@@ -1,43 +1,22 @@
-import React, { useState } from "react";
-import { EditorState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-// import { convertToHTML } from "draft-convert";
-// import DOMPurify from "dompurify";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import React from "react";
+import { useQuill } from "react-quilljs";
+import BlotFormatter from "quill-blot-formatter";
+import "quill/dist/quill.snow.css";
 
 const TextEditor = () => {
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
-  //   const [setConvertedContent] = useState(null);
-  const handleEditorChange = (state) => {
-    setEditorState(state);
-    // convertContentToHTML();
-  };
-  //   const convertContentToHTML = () => {
-  //     let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-  //     setConvertedContent(currentContentAsHTML);
-  //   };
-  //   const createMarkup = (html) => {
-  //     return {
-  //       __html: DOMPurify.sanitize(html),
-  //     };
-  //   };
+  const { quill, quillRef, Quill } = useQuill({
+    modules: { blotFormatter: {} },
+  });
+
+  if (Quill && !quill) {
+    Quill.register("modules/blotFormatter", BlotFormatter);
+  }
+
   return (
-    <div className="border border-gray-300 px-3 py-3">
-      <Editor
-        editorState={editorState}
-        onEditorStateChange={handleEditorChange}
-        wrapperClassName=""
-        editorClassName="border px-3 w-[650px]"
-        toolbarClassName=""
-        placeholder="Enter product description here..."
-      />
-      {/* <div
-        className="preview"
-        dangerouslySetInnerHTML={createMarkup(convertedContent)}
-      ></div> */}
+    <div style={{ width: 670 }}>
+      <div ref={quillRef} />
     </div>
   );
 };
+
 export default TextEditor;
