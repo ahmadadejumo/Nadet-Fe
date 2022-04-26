@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import pen from "../../../../assets/images/pen.svg";
 import redX from "../../../../assets/images/redX.svg";
@@ -7,10 +7,16 @@ import plus from "../../../../assets/images/plus.svg";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
 import { useNavigate } from "react-router-dom";
-import Modal from "../../../../components/modal";
+import Modal from "../../../../components/Modal";
 
 const AddCourseContent = () => {
   const navigation = useNavigate();
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
       <div className="px-5">
@@ -63,7 +69,10 @@ const AddCourseContent = () => {
             />
           </div>
         </div>
-        <div className="flex items-center space-x-[16px] mt-[40px] pb-[20px] lg:cursor-pointer">
+        <div
+          onClick={showModal}
+          className="flex items-center space-x-[16px] mt-[40px] pb-[20px] lg:cursor-pointer"
+        >
           <img src={plus} alt="icon" className="h-[16px] w-[16px]" />
           <p className="text-[#1877F2] text-base font-bold">Add new lecture</p>
         </div>
@@ -76,7 +85,7 @@ const AddCourseContent = () => {
           </div>
         </button>
       </div>
-      <Modal />
+      {show && <Modal showModal={showModal} />}
     </div>
   );
 };
