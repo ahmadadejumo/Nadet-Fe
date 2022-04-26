@@ -7,6 +7,7 @@ import plus from "../../../../assets/images/plus.svg";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
 import { useNavigate } from "react-router-dom";
+import Modal from "../../../../components/modal";
 
 const AddCourseContent = () => {
   const navigation = useNavigate();
@@ -75,6 +76,7 @@ const AddCourseContent = () => {
           </div>
         </button>
       </div>
+      <Modal />
     </div>
   );
 };
