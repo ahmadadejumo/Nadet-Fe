@@ -25,6 +25,7 @@ const Modal = ({ showModal, onClick }) => {
           type="text"
           value={lectureName}
           onChange={(e) => setLectureName(e.target.value)}
+          placeholder="Lecture 1"
           className="border pl-3 w-[250px] h-[40px] rounded outline-bcolor"
         />
         <div className="flex justify-between pt-3 pb-5">

@@ -12,7 +12,7 @@ import DataContext from "../../../../Context/DataContext";
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
   const [lecture, setLecture] = useState([]);
-  const { lectureName, setLectureName } = useContext(DataContext);
+  const { lectureName } = useContext(DataContext);
 
   const showModal = () => {
     setShow(!show);
