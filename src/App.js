@@ -24,6 +24,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import PersistLogin from "./components/PersistLogin";
 import { LinkedInCallback } from "react-linkedin-login-oauth2";
+import { DataProvider } from "./Context/DataContext";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -36,37 +37,42 @@ const Wrapper = ({ children }) => {
 function App() {
   return (
     <AuthProvider>
-      <Wrapper>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="HowItWorks" element={<HowItWorks />} />
-          <Route path="about" element={<AboutUs />} />
-          <Route path="products" element={<Products />} />
-          <Route path="faqs" element={<Faqs />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="refer" element={<ReferAFriend />} />
-          <Route path="events" element={<Events />} />
-          <Route path="affiliates" element={<Affiliates />} />
-          <Route path="terms-&-condition" element={<TermsOfService />} />
-          <Route path="company-values" element={<CompanyValues />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="live-sessions" element={<LiveSessions />} />
-          <Route path="affiliate-agreement" element={<AffiliateAgreement />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-          <Route
-            path="change-password/:uid/:token"
-            element={<ChangePassword />}
-          />
-          <Route element={<PersistLogin />}>
-            <Route element={<RequireAuth />}>
-              <Route path="dashboard/*" element={<Dashboard />} />
+      <DataProvider>
+        <Wrapper>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="HowItWorks" element={<HowItWorks />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="products" element={<Products />} />
+            <Route path="faqs" element={<Faqs />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="refer" element={<ReferAFriend />} />
+            <Route path="events" element={<Events />} />
+            <Route path="affiliates" element={<Affiliates />} />
+            <Route path="terms-&-condition" element={<TermsOfService />} />
+            <Route path="company-values" element={<CompanyValues />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="live-sessions" element={<LiveSessions />} />
+            <Route
+              path="affiliate-agreement"
+              element={<AffiliateAgreement />}
+            />
+            <Route path="signin" element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route
+              path="change-password/:uid/:token"
+              element={<ChangePassword />}
+            />
+            <Route element={<PersistLogin />}>
+              <Route element={<RequireAuth />}>
+                <Route path="dashboard/*" element={<Dashboard />} />
+              </Route>
             </Route>
-          </Route>
-          <Route exact path="/linkedin" element={<LinkedInCallback />} />
-        </Routes>
-      </Wrapper>
+            <Route exact path="/linkedin" element={<LinkedInCallback />} />
+          </Routes>
+        </Wrapper>
+      </DataProvider>
     </AuthProvider>
   );
 }

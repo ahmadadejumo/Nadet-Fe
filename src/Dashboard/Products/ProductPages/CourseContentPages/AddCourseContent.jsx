@@ -1,21 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import pen from "../../../../assets/images/pen.svg";
 import redX from "../../../../assets/images/redX.svg";
-import wastebin from "../../../../assets/images/wastebin.svg";
 import plus from "../../../../assets/images/plus.svg";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
-import { useNavigate } from "react-router-dom";
 import Modal from "../../../../components/Modal";
+import AddLecture from "./AddLecture";
+import DataContext from "../../../../Context/DataContext";
 
 const AddCourseContent = () => {
-  const navigation = useNavigate();
   const [show, setShow] = useState(false);
+  const [lecture, setLecture] = useState([]);
+  const { lectureName, setLectureName } = useContext(DataContext);
 
   const showModal = () => {
     setShow(!show);
   };
+
+  const handleLecture = () => {
+    setLecture([...lecture, { lectureName: lectureName }]);
+    localStorage.setItem(
+      "lecture",
+      JSON.stringify([...lecture, { lectureName: lectureName }])
+    );
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem("lecture");
+    if (data) {
+      setLecture(JSON.parse(data));
+    }
+  }, []);
 
   return (
     <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
@@ -50,24 +66,16 @@ const AddCourseContent = () => {
         </div>
       </div>
       <div className="bg-white pt-[35px] px-[20px]">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-[10px] lg:cursor-pointer">
-            <p className="text-base font-bold">Enter Lecture 1</p>
-            <img src={pen} alt="icon" className="w-[18px] h-[18px]" />
-          </div>
-          <div className="flex items-center space-x-[20px]">
-            <button
-              onClick={() => navigation("/dashboard/upload-course-lecture")}
-              className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold"
-            >
-              Edit
-            </button>
-            <img
-              src={wastebin}
-              alt="icon"
-              className="h-[24px] w-[20px] lg:cursor-pointer"
-            />
-          </div>
+        <div className="space-y-5">
+          {lecture.length !== 0 ? (
+            lecture.map(({ lectureName }, index) => (
+              <AddLecture key={index} lectureName={lectureName} />
+            ))
+          ) : (
+            <h1 className="text-center font-semibold text-lg text-gray-400">
+              No lecture available!!!
+            </h1>
+          )}
         </div>
         <div
           onClick={showModal}
@@ -85,7 +93,7 @@ const AddCourseContent = () => {
           </div>
         </button>
       </div>
-      {show && <Modal showModal={showModal} />}
+      {show && <Modal showModal={showModal} onClick={handleLecture} />}
     </div>
   );
 };

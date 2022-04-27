@@ -35,7 +35,7 @@ const Subscription = () => {
       ...containerData,
       { amount: amount, intervals: intervals, timesCharged: timesCharged },
     ]);
-    console.log(containerData);
+    // console.log(containerData);
   };
 
   const removeItem = (index) => {
