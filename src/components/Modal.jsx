@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "../Context/DataContext";
+import { motion } from "framer-motion";
 
 const Modal = ({ showModal, onClick }) => {
   const { lectureName, setLectureName } = useContext(DataContext);
@@ -11,12 +12,15 @@ const Modal = ({ showModal, onClick }) => {
     showModal();
   };
   return (
-    <form
+    <div
       onClick={showModal}
       onSubmit={handlSubmit}
       className="fixed left-0 top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center"
     >
-      <div
+      <motion.form
+        initial={{ y: -300, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0, ease: "easeInOut" }}
         onClick={(e) => e.stopPropagation()}
         className="bg-white font-Lato px-5"
       >
@@ -42,8 +46,8 @@ const Modal = ({ showModal, onClick }) => {
             Cancel
           </button>
         </div>
-      </div>
-    </form>
+      </motion.form>
+    </div>
   );
 };
 
