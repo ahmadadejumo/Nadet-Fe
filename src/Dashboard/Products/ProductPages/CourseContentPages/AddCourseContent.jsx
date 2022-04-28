@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useId } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import pen from "../../../../assets/images/pen.svg";
 import redX from "../../../../assets/images/redX.svg";
@@ -13,6 +13,7 @@ const AddCourseContent = () => {
   const [show, setShow] = useState(false);
   const [lecture, setLecture] = useState([]);
   const { lectureName } = useContext(DataContext);
+  const id = useId();
 
   const showModal = () => {
     setShow(!show);
@@ -69,7 +70,7 @@ const AddCourseContent = () => {
         <div className="space-y-5">
           {lecture.length !== 0 ? (
             lecture.map(({ lectureName }, index) => (
-              <AddLecture key={index} lectureName={lectureName} />
+              <AddLecture key={index} id={id} lectureName={lectureName} />
             ))
           ) : (
             <h1 className="text-center font-semibold text-lg text-gray-400">

@@ -8,6 +8,7 @@ import validator from "validator";
 import { Oval } from "react-loader-spinner";
 import cloudUpload from "../../../../assets/images/cil_cloud-upload.svg";
 import TextEditor from "../../../../components/TextEditor";
+import { useParams } from "react-router-dom";
 
 const EditCourseSection = () => {
   const [toggleButtonState, setToggleButtonState] = useState(1);
@@ -17,7 +18,7 @@ const EditCourseSection = () => {
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  // const [lecture, setLecture] = useState([]);
+  const { name } = useParams();
 
   const toggleButton = (index) => {
     setToggleButtonState(index);
@@ -72,9 +73,7 @@ const EditCourseSection = () => {
           Course content
         </h1>
         <div className="lg:flex lg:justify-between lg:items-center">
-          <p className="text-[20px] lg:text-[24px] font-medium pt-1">
-            Lecture 1
-          </p>
+          <p className="text-[20px] lg:text-[24px] font-medium pt-1">{name}</p>
           <Files
             className="files-dropzone"
             onChange={onFilesChange}

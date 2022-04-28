@@ -39,7 +39,7 @@ const Home = () => {
             <Route path="membership-course" element={<MembershipCourse />} />
             <Route path="add-course-content" element={<AddCourseContent />} />
             <Route
-              path="upload-course-lecture"
+              path="upload-course-lecture/:id/:name"
               element={<EditCourseSection />}
             />
           </Routes>

@@ -3,7 +3,7 @@ import wastebin from "../../../../assets/images/wastebin.svg";
 import { useNavigate } from "react-router-dom";
 import pen from "../../../../assets/images/pen.svg";
 
-const AddLecture = ({ lectureName }) => {
+const AddLecture = ({ lectureName, id }) => {
   const navigation = useNavigate();
   return (
     <div className="flex items-center justify-between">
@@ -13,7 +13,9 @@ const AddLecture = ({ lectureName }) => {
       </div>
       <div className="flex items-center space-x-[20px]">
         <button
-          onClick={() => navigation("/dashboard/upload-course-lecture")}
+          onClick={() =>
+            navigation(`/dashboard/upload-course-lecture/${id}/${lectureName}`)
+          }
           className="h-[35px] w-[64px] bg-bcolor rounded text-base font-bold"
         >
           Edit
