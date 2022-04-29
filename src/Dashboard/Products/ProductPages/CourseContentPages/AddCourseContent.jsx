@@ -12,7 +12,7 @@ import DataContext from "../../../../Context/DataContext";
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
   const [lecture, setLecture] = useState([]);
-  const { lectureName } = useContext(DataContext);
+  const { lectureName, setLectureName } = useContext(DataContext);
   const id = useId();
 
   const showModal = () => {
@@ -70,7 +70,12 @@ const AddCourseContent = () => {
         <div className="space-y-5">
           {lecture.length !== 0 ? (
             lecture.map(({ lectureName }, index) => (
-              <AddLecture key={index} id={id} lectureName={lectureName} />
+              <AddLecture
+                key={index}
+                id={id}
+                lectureName={lectureName}
+                setLectureName={setLectureName}
+              />
             ))
           ) : (
             <h1 className="text-center font-semibold text-lg text-gray-400">

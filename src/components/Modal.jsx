@@ -35,6 +35,7 @@ const Modal = ({ showModal, onClick }) => {
         <div className="flex justify-between pt-3 pb-5">
           <button
             type="submit"
+            disabled={!lectureName}
             className="bg-bcolor h-[40px] w-[100px] rounded font-semibold"
           >
             Add
