@@ -109,7 +109,7 @@ const EditCourseSection = () => {
           </button>
         </div>
         <div className="px-5">
-          {toggleButtonState === 1 ? (
+          {toggleButtonState === 1 && (
             <>
               <Files
                 className="files-dropzone"
@@ -189,40 +189,43 @@ const EditCourseSection = () => {
                 <p className="text-base font-medium text-red-500">{error}</p>
               )}
             </>
-          ) : (
-            <div className="lg:flex lg:justify-end lg:items-center">
-              <input
-                type="text"
-                placeholder="Insert link here..."
-                onChange={(e) => setUrl(e.target.value)}
-                className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
-              />
-              <div className="flex justify-end lg:absolute lg:top-[409px] lg:right-[200px]">
-                <button
-                  onClick={() => validate(url)}
-                  disabled={isLoading}
-                  className="bg-bcolor flex justify-center items-center w-[72px] h-[30px] rounded mt-[20px] text-[12px] font-bold"
-                >
-                  {isLoading ? (
-                    <Oval
-                      ariaLabel="loading-indicator"
-                      height={23}
-                      width={23}
-                      strokeWidth={4}
-                      color="grey"
-                      secondaryColor="#FBBC15"
-                    />
-                  ) : (
-                    "Verify"
-                  )}
-                </button>
-              </div>
-            </div>
           )}
-          {!isValid ? (
-            <span className="text-red-500 text-sm">{errorMsg}</span>
-          ) : (
-            <span className="text-green-500 text-sm">{errorMsg}</span>
+          {toggleButtonState === 2 && (
+            <div>
+              <div className="lg:flex lg:justify-end lg:items-center">
+                <input
+                  type="text"
+                  placeholder="Insert link here..."
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="mt-[32px] outline-bcolor shadow-inner shadow-[#E8E8EB] border h-[44px] border-dashed border-[#E8E8EB] w-full rounded pl-[18px]"
+                />
+                <div className="flex justify-end lg:absolute lg:top-[409px] lg:right-[200px]">
+                  <button
+                    onClick={() => validate(url)}
+                    disabled={isLoading}
+                    className="bg-bcolor flex justify-center items-center w-[72px] h-[30px] rounded mt-[20px] text-[12px] font-bold"
+                  >
+                    {isLoading ? (
+                      <Oval
+                        ariaLabel="loading-indicator"
+                        height={23}
+                        width={23}
+                        strokeWidth={4}
+                        color="grey"
+                        secondaryColor="#FBBC15"
+                      />
+                    ) : (
+                      "Verify"
+                    )}
+                  </button>
+                </div>
+              </div>
+              {!isValid ? (
+                <span className="text-red-500 text-sm">{errorMsg}</span>
+              ) : (
+                <span className="text-green-500 text-sm">{errorMsg}</span>
+              )}
+            </div>
           )}
         </div>
         <div className="flex px-5 space-x-[12px] mt-[32px]">

@@ -10,7 +10,6 @@ const AddLecture = ({ lectureName, id, setLectureName }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setEdit(false);
-    console.log(lectureName);
   };
 
   return (
@@ -30,7 +29,7 @@ const AddLecture = ({ lectureName, id, setLectureName }) => {
           <input
             type="text"
             className="border border-black outline-none border-t-0 border-x-0 text-base font-bold w-[90px]"
-            // value={lectureName}
+            defaultValue={lectureName}
             onChange={(e) => setLectureName(e.target.value)}
           />
         </form>
