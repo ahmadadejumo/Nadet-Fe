@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useId } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
-import Modal from "../../../../components/Modal";
+import AddLectureModal from "../../../../components/AddLectureModal";
 import DataContext from "../../../../Context/DataContext";
 import AddSection from "./AddSection";
 
@@ -77,7 +77,9 @@ const AddCourseContent = () => {
           </div>
         </button>
       </div>
-      {show && <Modal showModal={showModal} onClick={handleLecture} />}
+      {show && (
+        <AddLectureModal showModal={showModal} onClick={handleLecture} />
+      )}
     </div>
   );
 };
