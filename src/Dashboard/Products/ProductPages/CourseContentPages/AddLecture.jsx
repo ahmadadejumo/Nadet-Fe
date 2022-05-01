@@ -3,7 +3,7 @@ import wastebin from "../../../../assets/images/wastebin.svg";
 import { useNavigate } from "react-router-dom";
 import pen from "../../../../assets/images/pen.svg";
 
-const AddLecture = ({ lectureName, id, setLectureName }) => {
+const AddLecture = ({ lectureName, id, onChange }) => {
   const [edit, setEdit] = useState(false);
   const navigation = useNavigate();
 
@@ -30,7 +30,7 @@ const AddLecture = ({ lectureName, id, setLectureName }) => {
             type="text"
             className="border border-black outline-none border-t-0 border-x-0 text-base font-bold w-[90px]"
             defaultValue={lectureName}
-            onChange={(e) => setLectureName(e.target.value)}
+            onChange={onChange}
           />
         </form>
       )}

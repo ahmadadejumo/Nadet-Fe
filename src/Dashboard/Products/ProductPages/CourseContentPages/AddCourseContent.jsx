@@ -34,6 +34,13 @@ const AddCourseContent = () => {
     }
   }, []);
 
+  const updateLectureName = (index) => (e) => {
+    let newLecture = [...lecture];
+    newLecture[index].lectureName = e.target.value;
+    setLecture(newLecture);
+    localStorage.setItem("lecture", JSON.stringify(lecture));
+  };
+
   return (
     <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
       <div className="px-5">
@@ -75,6 +82,7 @@ const AddCourseContent = () => {
                 id={id}
                 lectureName={lectureName}
                 setLectureName={setLectureName}
+                onChange={updateLectureName(index)}
               />
             ))
           ) : (
