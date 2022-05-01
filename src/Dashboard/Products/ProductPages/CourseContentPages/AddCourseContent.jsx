@@ -9,7 +9,8 @@ import AddSectionModal from "../../../../components/AddSectionModal";
 
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
-  const [lecture, setLecture] = useState([]);
+  const [lectures, setLecture] = useState([]);
+  const [sections, setSetions] = useState([]);
   const { lectureName, setLectureName } = useContext(DataContext);
   const id = useId();
 
@@ -22,25 +23,25 @@ const AddCourseContent = () => {
   };
 
   const handleLecture = () => {
-    setLecture([...lecture, { lectureName: lectureName }]);
+    setLecture([...lectures, { lectureName: lectureName }]);
     localStorage.setItem(
       "lecture",
-      JSON.stringify([...lecture, { lectureName: lectureName }])
+      JSON.stringify([...lectures, { lectureName: lectureName }])
     );
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("lecture");
+    const data = localStorage.getItem("lectures");
     if (data) {
       setLecture(JSON.parse(data));
     }
   }, []);
 
   const updateLectureName = (index) => (e) => {
-    let newLecture = [...lecture];
-    newLecture[index].lectureName = e.target.value;
-    setLecture(newLecture);
-    localStorage.setItem("lecture", JSON.stringify(lecture));
+    let newLectures = [...lectures];
+    newLectures[index].lectureName = e.target.value;
+    setLecture(newLectures);
+    localStorage.setItem("lecture", JSON.stringify(lectures));
   };
 
   return (
@@ -67,7 +68,7 @@ const AddCourseContent = () => {
       </div>
       <div className="mt-[32px] space-y-5">
         <AddSection
-          lecture={lecture}
+          lecture={lectures}
           id={id}
           setLectureName={setLectureName}
           updateLectureName={updateLectureName}
