@@ -5,6 +5,7 @@ import eye from "../../../../assets/images/blackEye.svg";
 import AddLectureModal from "../../../../components/AddLectureModal";
 import DataContext from "../../../../Context/DataContext";
 import AddSection from "./AddSection";
+import AddSectionModal from "../../../../components/AddSectionModal";
 
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
@@ -13,6 +14,10 @@ const AddCourseContent = () => {
   const id = useId();
 
   const showModal = () => {
+    setShow(!show);
+  };
+
+  const showModalSection = () => {
     setShow(!show);
   };
 
@@ -66,11 +71,14 @@ const AddCourseContent = () => {
           id={id}
           setLectureName={setLectureName}
           updateLectureName={updateLectureName}
-          showModal={showModal}
+          showModal={showModalSection}
         />
       </div>
       <div className="flex justify-center md:justify-start mt-[32px] mb-[37px]">
-        <button className=" h-[44px] w-[217px] bg-bcolor rounded">
+        <button
+          onClick={showModalSection}
+          className=" h-[44px] w-[217px] bg-bcolor rounded"
+        >
           <div className="flex justify-center items-center space-x-2">
             <img src={blackPlus} alt="icon" className="w-[16px] h-[16px]" />
             <p className="text-base font-bold">Add New Section</p>
@@ -79,6 +87,9 @@ const AddCourseContent = () => {
       </div>
       {show && (
         <AddLectureModal showModal={showModal} onClick={handleLecture} />
+      )}
+      {show && (
+        <AddSectionModal showModal={showModalSection} onClick={handleLecture} />
       )}
     </div>
   );
