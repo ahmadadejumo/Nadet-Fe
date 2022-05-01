@@ -1,13 +1,10 @@
 import React, { useState, useContext, useEffect, useId } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
-import pen from "../../../../assets/images/pen.svg";
-import redX from "../../../../assets/images/redX.svg";
-import plus from "../../../../assets/images/plus.svg";
 import blackPlus from "../../../../assets/images/blackPlus.svg";
 import eye from "../../../../assets/images/blackEye.svg";
 import Modal from "../../../../components/Modal";
-import AddLecture from "./AddLecture";
 import DataContext from "../../../../Context/DataContext";
+import AddSection from "./AddSection";
 
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
@@ -42,7 +39,7 @@ const AddCourseContent = () => {
   };
 
   return (
-    <div className="font-Lato h-screen md:px-10 lg:px-[140px]">
+    <div className="font-Lato md:px-10 lg:px-[140px]">
       <div className="px-5">
         <BackNavigation />
       </div>
@@ -63,41 +60,14 @@ const AddCourseContent = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#8492A642] px-[20px] flex justify-between items-center pb-[16px] pt-[25px] mt-[32px]">
-        <div className="flex items-center space-x-[10px] lg:cursor-pointer">
-          <p className="text-base font-bold">First Section</p>
-          <img src={pen} alt="icon" className="w-[12px] h-[12px]" />
-        </div>
-        <div className="flex items-center space-x-[12px] lg:cursor-pointer">
-          <img src={redX} alt="icon" className="w-[10px] h-[10px]" />
-          <p className="text-xs font-bold text-[#ED0B4CE5]">Remove Section</p>
-        </div>
-      </div>
-      <div className="bg-white pt-[35px] px-[20px]">
-        <div className="space-y-5">
-          {lecture.length !== 0 ? (
-            lecture.map(({ lectureName }, index) => (
-              <AddLecture
-                key={index}
-                id={id}
-                lectureName={lectureName}
-                setLectureName={setLectureName}
-                onChange={updateLectureName(index)}
-              />
-            ))
-          ) : (
-            <h1 className="text-center font-semibold text-lg text-gray-400">
-              No lecture available!!!
-            </h1>
-          )}
-        </div>
-        <div
-          onClick={showModal}
-          className="flex items-center space-x-[16px] mt-[40px] pb-[20px] lg:cursor-pointer"
-        >
-          <img src={plus} alt="icon" className="h-[16px] w-[16px]" />
-          <p className="text-[#1877F2] text-base font-bold">Add new lecture</p>
-        </div>
+      <div className="mt-[32px] space-y-5">
+        <AddSection
+          lecture={lecture}
+          id={id}
+          setLectureName={setLectureName}
+          updateLectureName={updateLectureName}
+          showModal={showModal}
+        />
       </div>
       <div className="flex justify-center md:justify-start mt-[32px] mb-[37px]">
         <button className=" h-[44px] w-[217px] bg-bcolor rounded">
