@@ -9,8 +9,10 @@ import AddSectionModal from "../../../../components/AddSectionModal";
 
 const AddCourseContent = () => {
   const [show, setShow] = useState(false);
-  const [lectures, setLecture] = useState([]);
-  const [sections, setSetions] = useState([]);
+  const [showSection, setShowSection] = useState(false);
+  const [lectures, setLectures] = useState([]);
+  const [sections, setSections] = useState([]);
+  const [sectionName, setSectionName] = useState("");
   const { lectureName, setLectureName } = useContext(DataContext);
   const id = useId();
 
@@ -19,11 +21,11 @@ const AddCourseContent = () => {
   };
 
   const showModalSection = () => {
-    setShow(!show);
+    setShowSection(!showSection);
   };
 
   const handleLecture = () => {
-    setLecture([...lectures, { lectureName: lectureName }]);
+    setLectures([...lectures, { lectureName: lectureName }]);
     localStorage.setItem(
       "lecture",
       JSON.stringify([...lectures, { lectureName: lectureName }])
@@ -33,14 +35,35 @@ const AddCourseContent = () => {
   useEffect(() => {
     const data = localStorage.getItem("lectures");
     if (data) {
-      setLecture(JSON.parse(data));
+      setLectures(JSON.parse(data));
+    }
+  }, []);
+
+  const handleSection = () => {
+    setSections([
+      ...sections,
+      { sectionName: sectionName, lectures: lectures },
+    ]);
+    localStorage.setItem(
+      "sections",
+      JSON.stringify([
+        ...sections,
+        { sectionName: sectionName, lectures: lectures },
+      ])
+    );
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem("sections");
+    if (data) {
+      setSections(JSON.parse(data));
     }
   }, []);
 
   const updateLectureName = (index) => (e) => {
     let newLectures = [...lectures];
     newLectures[index].lectureName = e.target.value;
-    setLecture(newLectures);
+    setLectures(newLectures);
     localStorage.setItem("lecture", JSON.stringify(lectures));
   };
 
@@ -67,13 +90,18 @@ const AddCourseContent = () => {
         </div>
       </div>
       <div className="mt-[32px] space-y-5">
-        <AddSection
-          lecture={lectures}
-          id={id}
-          setLectureName={setLectureName}
-          updateLectureName={updateLectureName}
-          showModal={showModalSection}
-        />
+        {sections.map(({ sectionName }, index) => (
+          <AddSection
+            key={index}
+            lecture={lectures}
+            sectionName={sectionName}
+            setScectionName={setSectionName}
+            id={id}
+            setLectureName={setLectureName}
+            updateLectureName={updateLectureName}
+            showModal={showModal}
+          />
+        ))}
       </div>
       <div className="flex justify-center md:justify-start mt-[32px] mb-[37px]">
         <button
@@ -89,8 +117,8 @@ const AddCourseContent = () => {
       {show && (
         <AddLectureModal showModal={showModal} onClick={handleLecture} />
       )}
-      {show && (
-        <AddSectionModal showModal={showModalSection} onClick={handleLecture} />
+      {showSection && (
+        <AddSectionModal showModal={showModalSection} onClick={handleSection} />
       )}
     </div>
   );

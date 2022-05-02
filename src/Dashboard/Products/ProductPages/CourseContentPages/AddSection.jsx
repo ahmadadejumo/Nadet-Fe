@@ -10,12 +10,14 @@ const AddSection = ({
   setLectureName,
   updateLectureName,
   showModal,
+  sectionName,
+  setScectionName,
 }) => {
   return (
     <div>
       <div className="bg-[#8492A642] px-[20px] flex justify-between items-center pb-[16px] pt-[25px]">
         <div className="flex items-center space-x-[10px] lg:cursor-pointer">
-          <p className="text-base font-bold">First Section</p>
+          <p className="text-base font-bold">{sectionName}</p>
           <img src={pen} alt="icon" className="w-[12px] h-[12px]" />
         </div>
         <div className="flex items-center space-x-[12px] lg:cursor-pointer">
