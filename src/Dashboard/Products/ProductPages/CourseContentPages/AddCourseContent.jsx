@@ -12,7 +12,7 @@ const AddCourseContent = () => {
   const [showSection, setShowSection] = useState(false);
   const [lectures, setLectures] = useState([]);
   const [sections, setSections] = useState([]);
-  const [sectionName, setSectionName] = useState("");
+  const { sectionName, setSectionName } = useContext(DataContext);
   const { lectureName, setLectureName } = useContext(DataContext);
   const id = useId();
 
