@@ -3,11 +3,11 @@ import DataContext from "../Context/DataContext";
 import { motion } from "framer-motion";
 
 const AddSectionModal = ({ showModal, onClick }) => {
-  const { lectureName, setLectureName } = useContext(DataContext);
+  const { sectionName, setSectionName } = useContext(DataContext);
 
   const handlSubmit = (e) => {
     e.preventDefault();
-    setLectureName("");
+    setSectionName("");
     onClick();
     showModal();
   };
@@ -27,15 +27,15 @@ const AddSectionModal = ({ showModal, onClick }) => {
         <p className="text-lg font-semibold pt-7">Section name</p>
         <input
           type="text"
-          value={lectureName}
-          onChange={(e) => setLectureName(e.target.value)}
+          value={sectionName}
+          onChange={(e) => setSectionName(e.target.value)}
           placeholder="Section 1"
           className="border pl-3 w-[250px] h-[40px] rounded outline-bcolor"
         />
         <div className="flex justify-between pt-3 pb-5">
           <button
             type="submit"
-            disabled={!lectureName}
+            disabled={!sectionName}
             className="bg-bcolor h-[40px] w-[100px] rounded font-semibold"
           >
             Add
