@@ -11,7 +11,6 @@ const AddSection = ({
   updateLectureName,
   showModal,
   sectionName,
-  setScectionName,
 }) => {
   return (
     <div>
