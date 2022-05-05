@@ -32,12 +32,12 @@ const AddCourseContent = () => {
     );
   };
 
-  useEffect(() => {
-    const data = localStorage.getItem("lectures");
-    if (data) {
-      setLectures(JSON.parse(data));
-    }
-  }, []);
+  //   useEffect(() => {
+  //     const data = localStorage.getItem("lectures");
+  //     if (data) {
+  //       setLectures(JSON.parse(data));
+  //     }
+  //   }, []);
 
   const handleSection = () => {
     setSections([
