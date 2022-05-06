@@ -90,9 +90,9 @@ const AddCourseContent = () => {
         </div>
       </div>
       <div className="mt-[32px] space-y-5">
-        {sections.map(({ sectionName }, index) => (
+        {sections.map(({ sectionName }) => (
           <AddSection
-            key={index}
+            key={id}
             lecture={lectures}
             sectionName={sectionName}
             setScectionName={setSectionName}
