@@ -12,9 +12,9 @@ const AddCourseContent = () => {
   const [showSection, setShowSection] = useState(false);
   const [lectures, setLectures] = useState([]);
   const [sections, setSections] = useState([]);
-  const { sectionName, setSectionName } = useContext(DataContext);
+  const { sectionName } = useContext(DataContext);
   const { lectureName, setLectureName } = useContext(DataContext);
-  const id = useId();
+  const lectureId = useId();
 
   const showModal = () => {
     setShow(!show);
@@ -27,17 +27,17 @@ const AddCourseContent = () => {
   const handleLecture = () => {
     setLectures([...lectures, { lectureName: lectureName }]);
     localStorage.setItem(
-      "lecture",
+      "lectures",
       JSON.stringify([...lectures, { lectureName: lectureName }])
     );
   };
 
-  //   useEffect(() => {
-  //     const data = localStorage.getItem("lectures");
-  //     if (data) {
-  //       setLectures(JSON.parse(data));
-  //     }
-  //   }, []);
+  useEffect(() => {
+    const data = localStorage.getItem("lectures");
+    if (data) {
+      setLectures(JSON.parse(data));
+    }
+  }, []);
 
   const handleSection = () => {
     setSections([
@@ -90,13 +90,12 @@ const AddCourseContent = () => {
         </div>
       </div>
       <div className="mt-[32px] space-y-5">
-        {sections.map(({ sectionName }) => (
+        {sections.map(({ sectionName }, index) => (
           <AddSection
-            key={id}
-            lecture={lectures}
+            key={index}
+            lectures={lectures}
             sectionName={sectionName}
-            setScectionName={setSectionName}
-            id={id}
+            id={lectureId}
             setLectureName={setLectureName}
             updateLectureName={updateLectureName}
             showModal={showModal}

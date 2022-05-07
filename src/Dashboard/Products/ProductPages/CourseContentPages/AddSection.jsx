@@ -5,7 +5,7 @@ import plus from "../../../../assets/images/plus.svg";
 import AddLecture from "./AddLecture";
 
 const AddSection = ({
-  lecture,
+  lectures,
   id,
   setLectureName,
   updateLectureName,
@@ -26,8 +26,8 @@ const AddSection = ({
       </div>
       <div className="bg-white pt-[35px] px-[20px]">
         <div className="space-y-5">
-          {lecture.length !== 0 ? (
-            lecture.map(({ lectureName }, index) => (
+          {lectures.length !== 0 ? (
+            lectures.map(({ lectureName }, index) => (
               <AddLecture
                 key={index}
                 id={id}
