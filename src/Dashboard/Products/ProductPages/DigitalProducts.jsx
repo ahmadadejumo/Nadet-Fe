@@ -61,7 +61,7 @@ const DigitalProducts = () => {
                 className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded"
               />
               <p className="text-[15px] font-medium">
-                Show striked out original price
+                This is a pre-order product
               </p>
             </div>
             {!preOrderDate && (
