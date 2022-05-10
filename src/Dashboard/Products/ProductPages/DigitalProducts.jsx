@@ -15,6 +15,9 @@ const DigitalProducts = () => {
   const [productType, setProductType] = useState("");
   const [productCover, setProductCover] = useState("");
   const [productCategory, setProductCategory] = useState("");
+  const [productPrice, setProductPrice] = useState();
+  const [originalPrice, setOriginalPrice] = useState();
+  const [preOrderDateValue, setPreOrderDateValue] = useState();
   const [startDate, setStartDate] = useState(new Date());
   const [toggleState, setToggleState] = useState(1);
   const [toggleButtonState, setToggleButtonState] = useState(1);
