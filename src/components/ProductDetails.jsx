@@ -3,7 +3,18 @@ import download from "../assets/images/download.svg";
 import ImageUploading from "react-images-uploading";
 import X from "../assets/images/X.svg";
 
-const ProductDetails = ({ images, setImages }) => {
+const ProductDetails = ({
+  images,
+  setImages,
+  productName,
+  setProductName,
+  productPrice,
+  setProductPrice,
+  originalPrice,
+  setOriinalPrice,
+  productDesc,
+  setProductDesc,
+}) => {
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
 
   const handleOriginalPrice = () => {
@@ -107,6 +118,8 @@ const ProductDetails = ({ images, setImages }) => {
           type="text"
           placeholder="Product name"
           className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
         />
       </div>
       <div>
@@ -117,6 +130,8 @@ const ProductDetails = ({ images, setImages }) => {
           type="number"
           placeholder="0"
           className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+          value={productPrice}
+          onChange={(e) => setProductPrice(e.target.value)}
         />
         <p className="text-sm pt-1">
           Set price to <span className="text-[#FBBC15]">0</span> for a free
@@ -143,6 +158,8 @@ const ProductDetails = ({ images, setImages }) => {
             type="number"
             placeholder="0"
             className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+            value={originalPrice}
+            onChange={(e) => setOriinalPrice(e.target.value)}
           />
         </div>
       )}
@@ -151,6 +168,8 @@ const ProductDetails = ({ images, setImages }) => {
         <textarea
           placeholder="Insert text here"
           className="border h-[91px] w-full mt-[16px] mb-[34px] pl-[16px] pt-2 outline-none rounded"
+          value={productDesc}
+          onChange={(e) => setProductDesc(e.target.value)}
         />
       </div>
     </div>

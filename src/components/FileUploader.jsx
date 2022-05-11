@@ -3,8 +3,14 @@ import Files from "react-files";
 import download from "../assets/images/download.svg";
 import X from "../assets/images/X.svg";
 
-const FileUploader = ({ fileSize, note, maxFileSize, accepts }) => {
-  const [files, setFiles] = useState([]);
+const FileUploader = ({
+  fileSize,
+  note,
+  maxFileSize,
+  accepts,
+  files,
+  setFiles,
+}) => {
   const [error, setError] = useState("");
 
   const onFilesChange = (files) => {

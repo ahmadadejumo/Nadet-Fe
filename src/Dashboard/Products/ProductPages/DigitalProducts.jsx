@@ -12,13 +12,10 @@ import BackNavigation from "../../../components/BackNavigation";
 const DigitalProducts = () => {
   const [productName, setProductName] = useState("");
   const [productDesc, setProductDesc] = useState("");
-  const [productType, setProductType] = useState("");
-  const [productCover, setProductCover] = useState();
-  const [productCategory, setProductCategory] = useState("");
   const [productPrice, setProductPrice] = useState();
   const [originalPrice, setOriginalPrice] = useState();
-  const [preOrderDateValue, setPreOrderDateValue] = useState();
-  const [productContent, setProductContent] = useState();
+  const [productCategory, setProductCategory] = useState("");
+  const [files, setFiles] = useState([]);
   const [productUrl, setProductUrl] = useState("");
   const [images, setImages] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
@@ -53,7 +50,18 @@ const DigitalProducts = () => {
         <BackNavigation />
         <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
       </div>
-      <ProductDetails images={images} setImages={setImages} />
+      <ProductDetails
+        images={images}
+        setImages={setImages}
+        productName={productName}
+        setProductName={setProductName}
+        productPrice={productPrice}
+        setProductPrice={setProductPrice}
+        originalPrice={originalPrice}
+        setOriginalPrice={setOriginalPrice}
+        productDesc={productDesc}
+        setProductDesc={setProductDesc}
+      />
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
         {/* Product Detail Tab component */}
@@ -96,7 +104,12 @@ const DigitalProducts = () => {
               you can create the product categories and select them accordingly.
             </p>
             <div className="pt-[12px]">
-              <Select placeholder="Select category" size="lg">
+              <Select
+                placeholder="Select category"
+                size="lg"
+                value={productCategory}
+                onChange={(e) => setProductCategory(e.target.value)}
+              >
                 <option value="option1">Relationship</option>
                 <option value="option2">Science</option>
                 <option value="option3">Business & Finance</option>
@@ -149,15 +162,17 @@ const DigitalProducts = () => {
                     accepts={["image/*", ".zip"]}
                     maxFileSize={786432000}
                     fileSize={"750MB"}
-                    note={
-                      "To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
-                    }
+                    files={files}
+                    setFiles={setFiles}
+                    note="To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
                   />
                 ) : (
                   <FileUploader
                     accepts={[".pdf"]}
                     maxFileSize={10485760}
                     fileSize={"10MB"}
+                    files={files}
+                    setFiles={setFiles}
                   />
                 )}
               </>
