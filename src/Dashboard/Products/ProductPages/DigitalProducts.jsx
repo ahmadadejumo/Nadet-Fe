@@ -96,9 +96,16 @@ const DigitalProducts = () => {
             </p>
             <div className="pt-[12px]">
               <Select placeholder="Select category" size="lg">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="option1">Relationship</option>
+                <option value="option2">Science</option>
+                <option value="option3">Business & Finance</option>
+                <option value="option3">Fiction</option>
+                <option value="option3">Health & Living</option>
+                <option value="option3">Memoir</option>
+                <option value="option3">Educational</option>
+                <option value="option3">Self help</option>
+                <option value="option3">Religion & Belief</option>
+                <option value="option3">Romance</option>
               </Select>
             </div>
             <div className="flex items-center space-x-[12px] mt-[33px]">
