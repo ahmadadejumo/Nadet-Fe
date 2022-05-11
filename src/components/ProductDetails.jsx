@@ -3,15 +3,14 @@ import download from "../assets/images/download.svg";
 import ImageUploading from "react-images-uploading";
 import X from "../assets/images/X.svg";
 
-const ProductDetails = () => {
+const ProductDetails = ({ images, setImages }) => {
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
 
   const handleOriginalPrice = () => {
     setShowOriginalPrice(!showOriginalPrice);
   };
 
-  const [images, setImages] = useState([]);
-  const maxNumber = 5;
+  const maxNumber = 2;
   const maxFileSize = 5000000;
   const acceptType = ["jpg", "png"];
   const resolutionType = "absolute" | "less" | "more" | "ratio";

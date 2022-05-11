@@ -20,6 +20,7 @@ const DigitalProducts = () => {
   const [preOrderDateValue, setPreOrderDateValue] = useState();
   const [productContent, setProductContent] = useState();
   const [productUrl, setProductUrl] = useState("");
+  const [images, setImages] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
   const [toggleState, setToggleState] = useState(1);
   const [toggleButtonState, setToggleButtonState] = useState(1);
@@ -52,7 +53,7 @@ const DigitalProducts = () => {
         <BackNavigation />
         <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
       </div>
-      <ProductDetails />
+      <ProductDetails images={images} setImages={setImages} />
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
         {/* Product Detail Tab component */}
