@@ -10,6 +10,11 @@ import AdvancedOptions from "../../../components/AdvancedOptions";
 import BackNavigation from "../../../components/BackNavigation";
 
 const DigitalProducts = () => {
+  const [productName, setProductName] = useState("");
+  const [productDesc, setProductDesc] = useState("");
+  const [productType, setProductType] = useState("");
+  const [productCover, setProductCover] = useState("");
+  const [productCategory, setProductCategory] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [toggleState, setToggleState] = useState(1);
   const [toggleButtonState, setToggleButtonState] = useState(1);
