@@ -191,6 +191,8 @@ const DigitalProducts = () => {
                 type="text"
                 placeholder="https://"
                 className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                value={productUrl}
+                onChange={(e) => setProductUrl(e.target.value)}
               />
             )}
           </div>

@@ -78,7 +78,7 @@ const ProductDetails = ({
                 key={index}
                 className="w-full bg-gray-300 flex justify-between mb-1"
               >
-                <img src={image["data_url"]} alt="" width="75" />
+                <img src={image["data_url"]} alt="" width="60" />
                 <div>
                   <img
                     onClick={() => onImageRemove(index)}
