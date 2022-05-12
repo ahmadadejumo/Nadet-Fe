@@ -161,7 +161,7 @@ const DigitalProducts = () => {
                   <FileUploader
                     accepts={["image/*", ".zip", ".pdf"]}
                     maxFileSize={786432000}
-                    fileSize={"750MB"}
+                    fileSize="750MB"
                     files={files}
                     setFiles={setFiles}
                     note="To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
@@ -170,7 +170,7 @@ const DigitalProducts = () => {
                   <FileUploader
                     accepts={[".pdf"]}
                     maxFileSize={10485760}
-                    fileSize={"10MB"}
+                    fileSize="10MB"
                     files={files}
                     setFiles={setFiles}
                   />
