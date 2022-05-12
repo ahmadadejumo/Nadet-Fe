@@ -11,7 +11,7 @@ const ProductDetails = ({
   productPrice,
   setProductPrice,
   originalPrice,
-  setOriinalPrice,
+  setOriginalPrice,
   productDesc,
   setProductDesc,
 }) => {
@@ -159,7 +159,7 @@ const ProductDetails = ({
             placeholder="0"
             className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
             value={originalPrice}
-            onChange={(e) => setOriinalPrice(e.target.value)}
+            onChange={(e) => setOriginalPrice(e.target.value)}
           />
         </div>
       )}

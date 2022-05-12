@@ -8,12 +8,13 @@ import ProductTab from "../../../components/ProductTab";
 import UpAndCrossSells from "../../../components/UpAndCrossSells";
 import AdvancedOptions from "../../../components/AdvancedOptions";
 import BackNavigation from "../../../components/BackNavigation";
+import axios from "../../../Api/axios";
 
 const DigitalProducts = () => {
   const [productName, setProductName] = useState("");
   const [productDesc, setProductDesc] = useState("");
-  const [productPrice, setProductPrice] = useState();
-  const [originalPrice, setOriginalPrice] = useState();
+  const [productPrice, setProductPrice] = useState(0);
+  const [originalPrice, setOriginalPrice] = useState(0);
   const [productCategory, setProductCategory] = useState("");
   const [files, setFiles] = useState([]);
   const [productUrl, setProductUrl] = useState("");
@@ -24,6 +25,7 @@ const DigitalProducts = () => {
   const [preOrderDate, setPreOrderDate] = useState(false);
   const [accessFile, setAccessFile] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState(false);
+  // const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -42,6 +44,38 @@ const DigitalProducts = () => {
 
   const showRedirectUrl = () => {
     setRedirectUrl(!redirectUrl);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append("name", productName);
+    data.append("description", productDesc);
+    data.append("product_type", "digital");
+    // data.append("cover", images);
+    data.append("category", productCategory);
+    // data.append("content", files);
+    data.append("content_url", productUrl);
+    data.append("price", productPrice);
+    data.append("original_price", originalPrice);
+    // data.append("preoder_date", preOrderDate);
+    try {
+      await axios.post(
+        "https://nadetapi.herokuapp.com/ps/product-create/",
+        data,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+          withCredentials: false,
+        }
+      );
+    } catch (err) {
+      if (!err.response) {
+        console.log("error");
+      }
+    }
   };
 
   return (
@@ -200,7 +234,10 @@ const DigitalProducts = () => {
         {toggleState === 2 && <UpAndCrossSells />}
         {toggleState === 3 && <AdvancedOptions />}
         <div className="mx-[24px] md:mx-[35px]">
-          <button className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]">
+          <button
+            onClick={handleSubmit}
+            className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]"
+          >
             Create Product
           </button>
         </div>
