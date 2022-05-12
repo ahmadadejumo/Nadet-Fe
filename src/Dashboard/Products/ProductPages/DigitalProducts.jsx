@@ -159,7 +159,7 @@ const DigitalProducts = () => {
                 </div>
                 {toggleButtonState === 1 ? (
                   <FileUploader
-                    accepts={["image/*", ".zip"]}
+                    accepts={["image/*", ".zip", ".pdf"]}
                     maxFileSize={786432000}
                     fileSize={"750MB"}
                     files={files}
