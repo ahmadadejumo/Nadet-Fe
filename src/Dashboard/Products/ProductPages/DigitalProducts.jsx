@@ -55,7 +55,9 @@ const DigitalProducts = () => {
     // data.append("cover", images);
     data.append("category", productCategory);
     // data.append("content", files);
-    data.append("content_url", productUrl);
+    if (!redirectUrl) {
+      data.append("content_url", productUrl);
+    }
     data.append("price", productPrice);
     data.append("original_price", originalPrice);
     if (!preOrderDate) {
