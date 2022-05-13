@@ -10,6 +10,8 @@ import AdvancedOptions from "../../../components/AdvancedOptions";
 import BackNavigation from "../../../components/BackNavigation";
 import axios from "../../../Api/axios";
 
+const CREATE_PRODUCT_URL = process.env.REACT_APP_CREATE_PRODUCT_URL;
+
 const DigitalProducts = () => {
   const [productName, setProductName] = useState("");
   const [productDesc, setProductDesc] = useState("");
@@ -69,17 +71,13 @@ const DigitalProducts = () => {
       data.append("preoder_date", preOrderDate);
     }
     try {
-      await axios.post(
-        "https://nadetapi.herokuapp.com/ps/product-create/",
-        data,
-        {
-          headers: {
-            "content-type": "multipart/form-data",
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-          withCredentials: false,
-        }
-      );
+      await axios.post(CREATE_PRODUCT_URL, data, {
+        headers: {
+          "content-type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+        withCredentials: false,
+      });
     } catch (err) {
       if (!err.response) {
         console.log("error");
