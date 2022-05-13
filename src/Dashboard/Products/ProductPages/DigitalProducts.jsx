@@ -58,7 +58,9 @@ const DigitalProducts = () => {
     data.append("content_url", productUrl);
     data.append("price", productPrice);
     data.append("original_price", originalPrice);
-    // data.append("preoder_date", preOrderDate);
+    if (!preOrderDate) {
+      data.append("preoder_date", preOrderDate);
+    }
     try {
       await axios.post(
         "https://nadetapi.herokuapp.com/ps/product-create/",
@@ -144,16 +146,16 @@ const DigitalProducts = () => {
                 value={productCategory}
                 onChange={(e) => setProductCategory(e.target.value)}
               >
-                <option value="option1">Relationship</option>
-                <option value="option2">Science</option>
-                <option value="option3">Business & Finance</option>
-                <option value="option3">Fiction</option>
-                <option value="option3">Health & Living</option>
-                <option value="option3">Memoir</option>
-                <option value="option3">Educational</option>
-                <option value="option3">Self help</option>
-                <option value="option3">Religion & Belief</option>
-                <option value="option3">Romance</option>
+                <option value="relationship">Relationship</option>
+                <option value="science">Science</option>
+                <option value="business_&finance">Business & Finance</option>
+                <option value="fiction">Fiction</option>
+                <option value="health_&_living">Health & Living</option>
+                <option value="memoir">Memoir</option>
+                <option value="educational">Educational</option>
+                <option value="self_help">Self help</option>
+                <option value="religion_&_belief">Religion & Belief</option>
+                <option value="romance">Romance</option>
               </Select>
             </div>
             <div className="flex items-center space-x-[12px] mt-[33px]">
