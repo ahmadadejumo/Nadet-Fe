@@ -25,6 +25,7 @@ const DigitalProducts = () => {
   const [preOrderDate, setPreOrderDate] = useState(false);
   const [accessFile, setAccessFile] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState(false);
+  const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   // const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
@@ -57,7 +58,6 @@ const DigitalProducts = () => {
     if (!accessFile) {
       data.append("content", files);
     }
-
     if (!redirectUrl) {
       data.append("content_url", productUrl);
     }
@@ -102,6 +102,8 @@ const DigitalProducts = () => {
         setOriginalPrice={setOriginalPrice}
         productDesc={productDesc}
         setProductDesc={setProductDesc}
+        showOriginalPrice={showOriginalPrice}
+        setShowOriginalPrice={setShowOriginalPrice}
       />
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">

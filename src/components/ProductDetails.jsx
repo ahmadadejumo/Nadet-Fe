@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import download from "../assets/images/download.svg";
 import ImageUploading from "react-images-uploading";
 import X from "../assets/images/X.svg";
@@ -14,9 +14,9 @@ const ProductDetails = ({
   setOriginalPrice,
   productDesc,
   setProductDesc,
+  showOriginalPrice,
+  setShowOriginalPrice,
 }) => {
-  const [showOriginalPrice, setShowOriginalPrice] = useState(false);
-
   const handleOriginalPrice = () => {
     setShowOriginalPrice(!showOriginalPrice);
   };
