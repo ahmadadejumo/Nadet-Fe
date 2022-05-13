@@ -54,7 +54,10 @@ const DigitalProducts = () => {
     data.append("product_type", "digital");
     // data.append("cover", images);
     data.append("category", productCategory);
-    // data.append("content", files);
+    if (!accessFile) {
+      data.append("content", files);
+    }
+
     if (!redirectUrl) {
       data.append("content_url", productUrl);
     }
