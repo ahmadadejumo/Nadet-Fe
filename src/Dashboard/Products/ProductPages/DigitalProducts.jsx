@@ -62,7 +62,9 @@ const DigitalProducts = () => {
       data.append("content_url", productUrl);
     }
     data.append("price", productPrice);
-    data.append("original_price", originalPrice);
+    if (!showOriginalPrice) {
+      data.append("original_price", originalPrice);
+    }
     if (!preOrderDate) {
       data.append("preoder_date", preOrderDate);
     }
