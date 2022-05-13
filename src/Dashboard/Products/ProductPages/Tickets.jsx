@@ -59,7 +59,7 @@ const Tickets = () => {
                 className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
               />
               <p className="text-sm pt-1">
-                Set price to <span className="text-[#FBBC15]">0</span> for
+                Set number to <span className="text-[#FBBC15]">0</span> for
                 unlimited
               </p>
               <h1 className="text-[20px] font-medium pt-[32px]">Categories</h1>

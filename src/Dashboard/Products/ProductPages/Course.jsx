@@ -81,9 +81,16 @@ const Course = () => {
             </p>
             <div className="pt-[12px]">
               <Select placeholder="Select category" size="lg">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="relationship">Relationship</option>
+                <option value="science">Science</option>
+                <option value="business_&finance">Business & Finance</option>
+                <option value="fiction">Fiction</option>
+                <option value="health_&_living">Health & Living</option>
+                <option value="memoir">Memoir</option>
+                <option value="educational">Educational</option>
+                <option value="self_help">Self help</option>
+                <option value="religion_&_belief">Religion & Belief</option>
+                <option value="romance">Romance</option>
               </Select>
             </div>
             <div className="flex items-center space-x-[12px] mt-[25px]">
