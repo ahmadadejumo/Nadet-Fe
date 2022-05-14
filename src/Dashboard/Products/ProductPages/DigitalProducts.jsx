@@ -55,7 +55,7 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
-    // data.append("cover", images);
+    data.append("cover", images);
     data.append("category", productCategory);
     if (!accessFile) {
       data.append("content", files);
