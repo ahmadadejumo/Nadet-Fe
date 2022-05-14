@@ -55,10 +55,26 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
-    data.append("cover", images);
+    // data.append("cover", images);
+    Object.keys(images).forEach((key) => {
+      const file = images[key];
+      data.append(
+        "cover",
+        new Blob([file], { type: file.type }),
+        file.name || "file"
+      );
+    });
     data.append("category", productCategory);
     if (!accessFile) {
-      data.append("content", files);
+      Object.keys(files).forEach((key) => {
+        const file = files[key];
+        data.append(
+          "content",
+          new Blob([file], { type: file.type }),
+          file.name || "file"
+        );
+      });
+      // data.append("content", files);
     }
     if (!redirectUrl) {
       data.append("content_url", productUrl);
