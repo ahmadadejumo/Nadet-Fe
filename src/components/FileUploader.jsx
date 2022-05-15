@@ -15,6 +15,7 @@ const FileUploader = ({
 
   const onFilesChange = (files) => {
     setFiles(files);
+    console.log(files);
   };
 
   const onFilesError = (error) => {

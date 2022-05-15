@@ -29,6 +29,7 @@ const ProductDetails = ({
   const onChange = (imageList) => {
     // data for submit
     setImages(imageList);
+    console.log(images);
   };
 
   return (

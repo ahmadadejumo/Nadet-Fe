@@ -55,11 +55,21 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
-    // data.append("cover", images);
-    Object.keys(images).forEach((key) => {
-      const file = images[key];
+    // data.append("images", images);
+    // Object.keys(images).forEach((key) => {
+    //   const image = images[key];
+    //   data.append(
+    //     "images",
+    //     new File([image], { type: image.type }),
+    //     image.name || "image"
+    //   );
+    //   console.log(image);
+    // });
+
+    Object.keys(files).forEach((key) => {
+      const file = files[key];
       data.append(
-        "cover",
+        "images",
         new Blob([file], { type: file.type }),
         file.name || "file"
       );
