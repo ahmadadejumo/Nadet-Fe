@@ -8,14 +8,14 @@ const FileUploader = ({
   note,
   maxFileSize,
   accepts,
-  files,
+  filess,
   setFiles,
 }) => {
   const [error, setError] = useState("");
 
   const onFilesChange = (files) => {
     setFiles(files);
-    console.log(files);
+    console.log(...filess, files);
   };
 
   const onFilesError = (error) => {
@@ -23,7 +23,7 @@ const FileUploader = ({
   };
 
   const filesRemoveOne = (file) => {
-    const newFiles = [...files];
+    const newFiles = [...filess];
     newFiles.splice(file, 1);
     setFiles(newFiles);
   };
@@ -41,7 +41,8 @@ const FileUploader = ({
         onChange={onFilesChange}
         onError={onFilesError}
         accepts={accepts}
-        multiple={false}
+        multiple
+        minFiles={10}
         maxFileSize={maxFileSize}
         minFileSize={0}
         clickable
@@ -56,13 +57,16 @@ const FileUploader = ({
           </p>
         </div>
       </Files>
-      {files.length > 0 ? (
-        <div className="bg-gray-300 mb-10">
+      {filess.length > 0 ? (
+        <div>
           <ul>
-            {files.map((file) => (
-              <div className="flex justify-between" key={file.id}>
-                <li className="flex space-x-2 h-16">
-                  <div className="w-16 flex justify-center">
+            {filess.map((file) => (
+              <li
+                key={file.id}
+                className="flex mb-2 justify-between bg-gray-300"
+              >
+                <div className="flex space-x-2">
+                  <div className="flex justify-center">
                     {file.preview.type === "image" ? (
                       <img
                         className="w-16 object-contain"
@@ -81,7 +85,7 @@ const FileUploader = ({
                       {file.sizeReadable}
                     </div>
                   </div>
-                </li>
+                </div>
                 <div className="flex items-center pr-1 cursor-pointer">
                   <img
                     src={X}
@@ -91,7 +95,7 @@ const FileUploader = ({
                     onClick={() => filesRemoveOne(file.id)}
                   />
                 </div>
-              </div>
+              </li>
             ))}
           </ul>
         </div>

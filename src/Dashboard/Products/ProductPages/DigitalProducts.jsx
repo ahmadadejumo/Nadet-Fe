@@ -56,22 +56,12 @@ const DigitalProducts = () => {
     data.append("description", productDesc);
     data.append("product_type", "digital");
     // data.append("images", images);
-    // Object.keys(images).forEach((key) => {
-    //   const image = images[key];
-    //   data.append(
-    //     "images",
-    //     new File([image], { type: image.type }),
-    //     image.name || "image"
-    //   );
-    //   console.log(image);
-    // });
-
-    Object.keys(files).forEach((key) => {
-      const file = files[key];
+    Object.keys(images).forEach((key) => {
+      const image = images[key];
       data.append(
-        "images",
-        new Blob([file], { type: file.type }),
-        file.name || "file"
+        "cover_images",
+        new Blob([image], { type: image.type }),
+        image.name || "image"
       );
     });
     data.append("category", productCategory);
@@ -231,7 +221,7 @@ const DigitalProducts = () => {
                     accepts={["image/*", ".zip", ".pdf"]}
                     maxFileSize={786432000}
                     fileSize="750MB"
-                    files={files}
+                    filess={files}
                     setFiles={setFiles}
                     note="To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
                   />
@@ -240,7 +230,7 @@ const DigitalProducts = () => {
                     accepts={[".pdf"]}
                     maxFileSize={10485760}
                     fileSize="10MB"
-                    files={files}
+                    filess={files}
                     setFiles={setFiles}
                   />
                 )}
