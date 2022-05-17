@@ -15,7 +15,7 @@ const FileUploader = ({
 
   const onFilesChange = (files) => {
     setFiles(files);
-    console.log(...filess, files);
+    console.log(files);
   };
 
   const onFilesError = (error) => {
@@ -58,47 +58,40 @@ const FileUploader = ({
         </div>
       </Files>
       {filess.length > 0 ? (
-        <div>
-          <ul>
-            {filess.map((file) => (
-              <li
-                key={file.id}
-                className="flex mb-2 justify-between bg-gray-300"
-              >
-                <div className="flex space-x-2">
-                  <div className="flex justify-center">
-                    {file.preview.type === "image" ? (
-                      <img
-                        className="w-16 object-contain"
-                        src={file.preview.url}
-                        alt="file"
-                      />
-                    ) : (
-                      <div className="w-16 text-2xl  h-16 text-center bg-gray-400 pt-4">
-                        {file.extension}
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <div className="text-base font-semibold">{file.name}</div>
-                    <div className="text-sm font-medium">
-                      {file.sizeReadable}
+        <ul>
+          {filess.map((file) => (
+            <li key={file.id} className="flex mb-2 justify-between bg-gray-300">
+              <div className="flex space-x-2">
+                <div className="flex justify-center">
+                  {file.preview.type === "image" ? (
+                    <img
+                      className="w-16 object-contain"
+                      src={file.preview.url}
+                      alt="file"
+                    />
+                  ) : (
+                    <div className="w-16 text-2xl  h-16 text-center bg-gray-400 pt-4">
+                      {file.extension}
                     </div>
-                  </div>
+                  )}
                 </div>
-                <div className="flex items-center pr-1 cursor-pointer">
-                  <img
-                    src={X}
-                    alt="icon"
-                    id={file.id}
-                    className="w-5"
-                    onClick={() => filesRemoveOne(file.id)}
-                  />
+                <div>
+                  <div className="text-base font-semibold">{file.name}</div>
+                  <div className="text-sm font-medium">{file.sizeReadable}</div>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+              </div>
+              <div className="flex items-center pr-1 cursor-pointer">
+                <img
+                  src={X}
+                  alt="icon"
+                  id={file.id}
+                  className="w-5"
+                  onClick={() => filesRemoveOne(file.id)}
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
       ) : null}
       {error && <p className="text-base font-medium text-red-500">{error}</p>}
     </div>

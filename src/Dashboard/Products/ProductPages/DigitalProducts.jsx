@@ -55,13 +55,13 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
-    // data.append("images", images);
+    // data.append("cover_images", images);
     Object.keys(images).forEach((key) => {
       const image = images[key];
       data.append(
         "cover_images",
-        new Blob([image], { type: image.type }),
-        image.name || "image"
+        new Blob([image], { type: image.file.type }),
+        image.file.name || "image"
       );
     });
     data.append("category", productCategory);
@@ -74,7 +74,6 @@ const DigitalProducts = () => {
           file.name || "file"
         );
       });
-      // data.append("content", files);
     }
     if (!redirectUrl) {
       data.append("content_url", productUrl);
