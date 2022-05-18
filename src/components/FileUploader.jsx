@@ -42,7 +42,7 @@ const FileUploader = ({
         onError={onFilesError}
         accepts={accepts}
         multiple
-        minFiles={10}
+        maxFiles={10}
         maxFileSize={maxFileSize}
         minFileSize={0}
         clickable
