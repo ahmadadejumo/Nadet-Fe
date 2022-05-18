@@ -7,8 +7,17 @@ import { Select } from "@chakra-ui/react";
 import BackNavigation from "../../../components/BackNavigation";
 
 const Tickets = () => {
+  const [productName, setProductName] = useState("");
+  const [productDesc, setProductDesc] = useState("");
+  const [productPrice, setProductPrice] = useState(0);
+  const [originalPrice, setOriginalPrice] = useState(0);
+  const [productCategory, setProductCategory] = useState("");
+  const [productUrl, setProductUrl] = useState("");
+  const [productQuantity, setProductQuantity] = useState("");
+  const [images, setImages] = useState([]);
   const [toggleState, setToggleState] = useState(1);
   const [redirectUrl, setRedirectUrl] = useState(false);
+  const [showOriginalPrice, setShowOriginalPrice] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -25,7 +34,20 @@ const Tickets = () => {
         <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
       </div>
       <div>
-        <ProductDetails />
+        <ProductDetails
+          images={images}
+          setImages={setImages}
+          productName={productName}
+          setProductName={setProductName}
+          productPrice={productPrice}
+          setProductPrice={setProductPrice}
+          originalPrice={originalPrice}
+          setOriginalPrice={setOriginalPrice}
+          productDesc={productDesc}
+          setProductDesc={setProductDesc}
+          showOriginalPrice={showOriginalPrice}
+          setShowOriginalPrice={setShowOriginalPrice}
+        />
       </div>
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
