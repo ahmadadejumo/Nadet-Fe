@@ -57,7 +57,6 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
-    // data.append("cover_images", images);
     Object.keys(images).forEach((key) => {
       const image = images[key];
       data.append(
