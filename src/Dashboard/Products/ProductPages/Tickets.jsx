@@ -59,18 +59,6 @@ const Tickets = () => {
             <div className="text-base font-normal border border-[#E8E8EB] h-[44px] w-full rounded pl-4 py-[10px] text-[#252525E3] mt-2">
               <p>Event Tickets</p>
             </div>
-            <div className="flex space-x-[12px] mt-[10px]">
-              <input
-                type="checkbox"
-                // defaultChecked={!preOrderDate}
-                // onClick={showPreOrderDate}
-                className="form-checkbox text-bcolor cursor-pointer w-[17px] h-[17px] border rounded mt-1"
-              />
-              <p className="text-[15px] font-medium">
-                Selling physical products? You can set the delivery locations
-                and prices on the delivery settings page.
-              </p>
-            </div>
             <div>
               <h1 className="text-xl font-medium pt-[32px]">
                 Quantity Available<span className="text-[#FBBC15]">*</span>
@@ -79,6 +67,8 @@ const Tickets = () => {
                 type="number"
                 placeholder="0"
                 className="h-[44px] w-[169px] pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                value={productQuantity}
+                onChange={(e) => setProductQuantity(e.target.value)}
               />
               <p className="text-sm pt-1">
                 Set number to <span className="text-[#FBBC15]">0</span> for
@@ -92,10 +82,15 @@ const Tickets = () => {
                 them accordingly.
               </p>
               <div className="pt-[12px]">
-                <Select placeholder="Select category" size="lg">
+                <Select
+                  placeholder="Select category"
+                  size="lg"
+                  value={productCategory}
+                  onChange={(e) => setProductCategory(e.target.value)}
+                >
                   <option value="relationship">Relationship</option>
                   <option value="science">Science</option>
-                  <option value="business_&finance">Business & Finance</option>
+                  <option value="business_&_finance">Business & Finance</option>
                   <option value="fiction">Fiction</option>
                   <option value="health_&_living">Health & Living</option>
                   <option value="memoir">Memoir</option>
@@ -119,6 +114,8 @@ const Tickets = () => {
                   type="text"
                   placeholder="https://"
                   className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                  value={productUrl}
+                  onChange={(e) => setProductUrl(e.target.value)}
                 />
               )}
             </div>
