@@ -10,6 +10,7 @@ const FileUploader = ({
   accepts,
   filess,
   setFiles,
+  fileSizeText,
 }) => {
   const [error, setError] = useState("");
 
@@ -31,8 +32,9 @@ const FileUploader = ({
   return (
     <div>
       <div>
-        <p className="pt-3 font-medium text-base">
-          Maximum file size: <span className="font-bold">{fileSize}</span>
+        <p className="font-medium text-base">
+          {fileSizeText}
+          <span className="font-bold">{fileSize}</span>
         </p>
         <p className="pt-2 font-normal text-base text-red-500">{note}</p>
       </div>
@@ -48,7 +50,7 @@ const FileUploader = ({
         clickable
       >
         <div
-          className={`mt-[12px] cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
+          className={`cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
         >
           <img src={download} alt="icon" />
           <p className="text-sm font-normal opacity-60">

@@ -193,7 +193,7 @@ const DigitalProducts = () => {
             </div>
             {!accessFile && (
               <>
-                <div className="pt-[33px] flex space-x-5 lg:space-x-0 lg:justify-start">
+                <div className="pt-[33px] flex space-x-5 lg:space-x-0 lg:justify-start pb-3">
                   <button
                     onClick={() => toggleButton(1)}
                     className={`${
@@ -222,6 +222,7 @@ const DigitalProducts = () => {
                     fileSize="750MB"
                     filess={files}
                     setFiles={setFiles}
+                    fileSizeText="Maximum file size: "
                     note="To upload multiple files or a bundle, simply zip (compress) all the files to a .zip file. Ensure it's .zip and not .rar."
                   />
                 ) : (
@@ -231,6 +232,7 @@ const DigitalProducts = () => {
                     fileSize="10MB"
                     filess={files}
                     setFiles={setFiles}
+                    fileSizeText="Maximum file size: "
                   />
                 )}
               </>

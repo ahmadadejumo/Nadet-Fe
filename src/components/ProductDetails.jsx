@@ -1,7 +1,5 @@
 import React from "react";
-import download from "../assets/images/download.svg";
-import ImageUploading from "react-images-uploading";
-import X from "../assets/images/X.svg";
+import FileUploader from "./FileUploader";
 
 const ProductDetails = ({
   images,
@@ -21,17 +19,6 @@ const ProductDetails = ({
     setShowOriginalPrice(!showOriginalPrice);
   };
 
-  const maxNumber = 2;
-  const maxFileSize = 5000000;
-  const acceptType = ["jpg", "png"];
-  const resolutionType = "absolute" | "less" | "more" | "ratio";
-
-  const onChange = (imageList) => {
-    // data for submit
-    setImages(imageList);
-    console.log(images);
-  };
-
   return (
     <div className="bg-white font-Lato px-[24px] md:px-11 mt-[16px]">
       <h1 className="pt-[24px] font-bold text-[20px]">Product details</h1>
@@ -42,75 +29,12 @@ const ProductDetails = ({
       <p className="text-sm font-medium">
         Your image needs to be at least 300x300
       </p>
-      <ImageUploading
-        multiple
-        value={images}
-        onChange={onChange}
-        maxNumber={maxNumber}
-        acceptType={acceptType}
-        maxFileSize={maxFileSize}
-        resolutionType={resolutionType}
-        dataURLKey="data_url"
-      >
-        {({
-          imageList,
-          onImageUpload,
-          onImageRemove,
-          isDragging,
-          dragProps,
-          errors,
-        }) => (
-          <div>
-            <div
-              onClick={onImageUpload}
-              {...dragProps}
-              className={`${
-                isDragging ? "text-red-700" : null
-              }mt-1 shadow-inner cursor-pointer shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
-            >
-              <img src={download} alt="icon" />
-              <p className="text-sm font-normal opacity-60">
-                Drag or <span className="text-[#FBBC15]">upload</span> your
-                product images
-              </p>
-            </div>
-            {imageList.map((image, index) => (
-              <div
-                key={index}
-                className="w-full bg-gray-300 flex justify-between mb-1"
-              >
-                <img src={image["data_url"]} alt="" width="60" />
-                <div>
-                  <img
-                    onClick={() => onImageRemove(index)}
-                    src={X}
-                    alt="icon"
-                    className="w-[20px] h-[15px] mt-2 mr-2"
-                  />
-                </div>
-              </div>
-            ))}
-            {errors && (
-              <div className="text-red-600 font-medium text-sm pt-1">
-                {errors.maxNumber && (
-                  <span>Number of selected images exceed maxNumber</span>
-                )}
-                {errors.acceptType && (
-                  <span>Your selected file type is not allow</span>
-                )}
-                {errors.maxFileSize && (
-                  <span>Selected file size exceed maxFileSize</span>
-                )}
-                {errors.resolution && (
-                  <span>
-                    Selected file is not match your desired resolution
-                  </span>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-      </ImageUploading>
+      <FileUploader
+        accepts={["image/*"]}
+        maxFileSize={10485760}
+        filess={images}
+        setFiles={setImages}
+      />
       <div>
         <h1 className="text-xl font-medium pt-[32px]">
           Product Name<span className="text-[#FBBC15]">*</span>
