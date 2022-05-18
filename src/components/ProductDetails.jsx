@@ -34,6 +34,8 @@ const ProductDetails = ({
         maxFileSize={10485760}
         filess={images}
         setFiles={setImages}
+        multiple={true}
+        maxFiles={5}
       />
       <div>
         <h1 className="text-xl font-medium pt-[32px]">

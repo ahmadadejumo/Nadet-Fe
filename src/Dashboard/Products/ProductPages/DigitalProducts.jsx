@@ -220,6 +220,7 @@ const DigitalProducts = () => {
                     accepts={["image/*", ".zip", ".pdf"]}
                     maxFileSize={786432000}
                     fileSize="750MB"
+                    multiple={false}
                     filess={files}
                     setFiles={setFiles}
                     fileSizeText="Maximum file size: "
@@ -229,6 +230,7 @@ const DigitalProducts = () => {
                   <FileUploader
                     accepts={[".pdf"]}
                     maxFileSize={10485760}
+                    multiple={false}
                     fileSize="10MB"
                     filess={files}
                     setFiles={setFiles}

@@ -11,6 +11,8 @@ const FileUploader = ({
   filess,
   setFiles,
   fileSizeText,
+  multiple,
+  maxFiles,
 }) => {
   const [error, setError] = useState("");
 
@@ -43,8 +45,8 @@ const FileUploader = ({
         onChange={onFilesChange}
         onError={onFilesError}
         accepts={accepts}
-        multiple
-        maxFiles={10}
+        multiple={multiple}
+        maxFiles={maxFiles}
         maxFileSize={maxFileSize}
         minFileSize={0}
         clickable
