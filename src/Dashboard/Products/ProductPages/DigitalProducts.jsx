@@ -28,7 +28,7 @@ const DigitalProducts = () => {
   const [accessFile, setAccessFile] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
-  const [downloadableFile, setDownloadableFile] = useState(false);
+  const [downloadableFile, setDownloadableFile] = useState(true);
   // const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
@@ -36,9 +36,12 @@ const DigitalProducts = () => {
   };
   const toggleButton = (index) => {
     setToggleButtonState(index);
-    setDownloadableFile(!downloadableFile);
+    if (index === 1) {
+      setDownloadableFile(true);
+    } else {
+      setDownloadableFile(false);
+    }
   };
-
   const showPreOrderDate = () => {
     setPreOrderDate(!preOrderDate);
   };
@@ -57,6 +60,7 @@ const DigitalProducts = () => {
     data.append("name", productName);
     data.append("description", productDesc);
     data.append("product_type", "digital");
+    data.append("downloadable_file", downloadableFile);
     Object.keys(images).forEach((key) => {
       const image = images[key];
       data.append(
@@ -171,7 +175,7 @@ const DigitalProducts = () => {
               >
                 <option value="relationship">Relationship</option>
                 <option value="science">Science</option>
-                <option value="business_&finance">Business & Finance</option>
+                <option value="business_&_finance">Business & Finance</option>
                 <option value="fiction">Fiction</option>
                 <option value="health_&_living">Health & Living</option>
                 <option value="memoir">Memoir</option>
