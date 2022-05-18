@@ -268,6 +268,9 @@ const DigitalProducts = () => {
         {toggleState === 3 && <AdvancedOptions />}
         <div className="mx-[24px] md:mx-[35px]">
           <button
+            disabled={
+              !productDesc || !productName || !productCategory || !files
+            }
             onClick={handleSubmit}
             className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]"
           >
