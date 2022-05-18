@@ -28,6 +28,7 @@ const DigitalProducts = () => {
   const [accessFile, setAccessFile] = useState(false);
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
+  const [downloadableFile, setDownloadableFile] = useState(false);
   // const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
@@ -35,6 +36,7 @@ const DigitalProducts = () => {
   };
   const toggleButton = (index) => {
     setToggleButtonState(index);
+    setDownloadableFile(!downloadableFile);
   };
 
   const showPreOrderDate = () => {
