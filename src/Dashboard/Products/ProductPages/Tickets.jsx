@@ -6,6 +6,8 @@ import AdvancedOptions from "../../../components/AdvancedOptions";
 import { Select } from "@chakra-ui/react";
 import BackNavigation from "../../../components/BackNavigation";
 
+const CREATE_PRODUCT_URL = process.env.REACT_APP_CREATE_PRODUCT_URL;
+
 const Tickets = () => {
   const [productName, setProductName] = useState("");
   const [productDesc, setProductDesc] = useState("");
