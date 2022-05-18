@@ -60,8 +60,8 @@ const DigitalProducts = () => {
       const image = images[key];
       data.append(
         "cover_images",
-        new Blob([image], { type: image.file.type }),
-        image.file.name || "image"
+        new Blob([image], { type: image.type }),
+        image.name || "image"
       );
     });
     data.append("category", productCategory);
