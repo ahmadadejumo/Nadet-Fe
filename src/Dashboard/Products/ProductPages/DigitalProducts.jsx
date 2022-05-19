@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProductDetails from "../../../components/ProductDetails";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,6 +9,7 @@ import UpAndCrossSells from "../../../components/UpAndCrossSells";
 import AdvancedOptions from "../../../components/AdvancedOptions";
 import BackNavigation from "../../../components/BackNavigation";
 import axios from "../../../Api/axios";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
 
 const CREATE_PRODUCT_URL = process.env.REACT_APP_CREATE_PRODUCT_URL;
 
@@ -29,7 +30,7 @@ const DigitalProducts = () => {
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   const [downloadableFile, setDownloadableFile] = useState(true);
-  // const [errMsg, setErrMsg] = useState("");
+  const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -53,6 +54,11 @@ const DigitalProducts = () => {
   const showRedirectUrl = () => {
     setRedirectUrl(!redirectUrl);
   };
+
+  const errRef = useRef();
+  useEffect(() => {
+    setErrMsg("");
+  }, [productName, productDesc, productCategory]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -99,8 +105,14 @@ const DigitalProducts = () => {
         withCredentials: false,
       });
     } catch (err) {
-      if (!err.response) {
-        console.log("error");
+      if (!err?.response) {
+        setErrMsg("Check your internet and try again");
+      } else if (!productName) {
+        setErrMsg("Product name is empty");
+      } else if (!productCategory) {
+        setErrMsg("You need to select a category");
+      } else if (!productDesc) {
+        setErrMsg("You need to add a description");
       }
     }
   };
@@ -110,6 +122,16 @@ const DigitalProducts = () => {
       <div className="px-5 lg:px-0">
         <BackNavigation />
         <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
+        <div
+          className={`${
+            errMsg ? "block" : "hidden"
+          } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+          aria-live="assertive"
+          ref={errRef}
+        >
+          <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
+          <p className="text-center py-5">{errMsg}</p>
+        </div>
       </div>
       <ProductDetails
         images={images}
@@ -268,9 +290,6 @@ const DigitalProducts = () => {
         {toggleState === 3 && <AdvancedOptions />}
         <div className="mx-[24px] md:mx-[35px]">
           <button
-            disabled={
-              !productDesc || !productName || !productCategory || !files
-            }
             onClick={handleSubmit}
             className="rounded h-[44px] w-full mt-[32px] bg-bcolor font-bold text-base mb-[34px]"
           >
