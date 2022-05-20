@@ -42,7 +42,8 @@ const Tickets = () => {
     const data = new FormData();
     data.append("name", productName);
     data.append("description", productDesc);
-    data.append("product_type", "digital");
+    data.append("product_type", "ticket");
+    data.append("quantity", productQuantity);
     Object.keys(images).forEach((key) => {
       const image = images[key];
       data.append(
