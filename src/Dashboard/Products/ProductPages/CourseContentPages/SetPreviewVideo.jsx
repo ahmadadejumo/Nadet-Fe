@@ -5,6 +5,7 @@ import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
 import X from "../../../../assets/images/X.svg";
 import redX from "../../../../assets/images/redX.svg";
+import cloudUpload from "../../../../assets/images/cil_cloud-upload.svg";
 
 const SetPreviewVideo = () => {
   const [error, setError] = useState("");
@@ -35,7 +36,7 @@ const SetPreviewVideo = () => {
           Course Settings
         </p>
       </div>
-      <div className="flex justify-center mt-[24px] space-x-2 px-5 md:mx-16 lg:mx-0 mx-5 py-[12px] rounded-lg bg-[#FAF1D8] border border-[#555557]">
+      <div className="flex justify-center mt-[24px] lg:mt-[36px] space-x-2 px-5 md:mx-16 lg:mx-0 mx-5 py-[12px] rounded-lg bg-[#FAF1D8] border border-[#555557]">
         <div>
           <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
         </div>
@@ -47,7 +48,7 @@ const SetPreviewVideo = () => {
           you want to be considerate to your customers watching the videos.
         </p>
       </div>
-      <div className="mt-[32px] bg-white px-5 md:mx-16 lg:mx-0 mb-[65px] md:rounded-lg">
+      <div className="mt-[32px] bg-white px-5 md:px-[25px] md:mx-16 lg:mx-0 mb-[65px] md:rounded-lg">
         <h1 className="font-bold text-xl pt-[24px]">Upload Preview Video</h1>
         <hr className="bg-[#55555733] mt-[12px] mb-[18px]" />
         <Files
@@ -60,16 +61,21 @@ const SetPreviewVideo = () => {
           clickable
         >
           <div
-            className={`cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
+            className={`cursor-pointer md:hidden shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
           >
             <img src={download} alt="icon" />
-            <p className="text-sm font-normal opacity-60 hidden md:block">
-              Drag or <span className="text-[#FBBC15]">upload</span> your
-              product files
+            <p className="text-sm font-normal opacity-60">
+              <span className="text-[rgb(251,188,21)]">upload</span> your video
             </p>
-            <p className="text-sm font-normal opacity-60 md:hidden">
-              <span className="text-[#FBBC15]">upload</span> your video
-            </p>
+          </div>
+          <div className="hidden md:block mt-7">
+            <div className="flex space-x-5 cursor-pointer justify-center items-center border border-dashed border-black rounded-lg py-3">
+              <img src={cloudUpload} alt="icon" className="hidden md:block" />
+              <p className="text-xl font-bold hidden md:block">
+                Drag and drop or
+                <span className="text-[#FBBC15]"> Browse to choose a file</span>
+              </p>
+            </div>
           </div>
         </Files>
         {filess.length > 0 ? (
