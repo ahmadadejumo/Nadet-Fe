@@ -15,6 +15,15 @@ const Course = () => {
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [preOrderDate, setPreOrderDate] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
+  const [productName, setProductName] = useState("");
+  const [productDesc, setProductDesc] = useState("");
+  const [productPrice, setProductPrice] = useState(0);
+  const [originalPrice, setOriginalPrice] = useState(0);
+  const [productCategory, setProductCategory] = useState("");
+  const [productUrl, setProductUrl] = useState("");
+  const [images, setImages] = useState([]);
+  const [showOriginalPrice, setShowOriginalPrice] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -35,7 +44,20 @@ const Course = () => {
         <h1 className="font-bold text-xl pt-[32px]">Add Product</h1>
       </div>
       <div>
-        <ProductDetails />
+        <ProductDetails
+          images={images}
+          setImages={setImages}
+          productName={productName}
+          setProductName={setProductName}
+          productPrice={productPrice}
+          setProductPrice={setProductPrice}
+          originalPrice={originalPrice}
+          setOriginalPrice={setOriginalPrice}
+          productDesc={productDesc}
+          setProductDesc={setProductDesc}
+          showOriginalPrice={showOriginalPrice}
+          setShowOriginalPrice={setShowOriginalPrice}
+        />
       </div>
       {/* Products information */}
       <div className="mt-[25px] bg-white mb-[80px] lg:mb-[157px]">
@@ -80,10 +102,15 @@ const Course = () => {
               you can create the product categories and select them accordingly.
             </p>
             <div className="pt-[12px]">
-              <Select placeholder="Select category" size="lg">
+              <Select
+                placeholder="Select category"
+                size="lg"
+                value={productCategory}
+                onChange={(e) => setProductCategory(e.target.value)}
+              >
                 <option value="relationship">Relationship</option>
                 <option value="science">Science</option>
-                <option value="business_&finance">Business & Finance</option>
+                <option value="business_&_finance">Business & Finance</option>
                 <option value="fiction">Fiction</option>
                 <option value="health_&_living">Health & Living</option>
                 <option value="memoir">Memoir</option>
@@ -107,6 +134,8 @@ const Course = () => {
                 type="text"
                 placeholder="https://"
                 className="h-[44px] w-full pl-[16px] border rounded border-[#E8E8EB] mt-1 outline-none text-base"
+                value={productUrl}
+                onChange={(e) => setProductUrl(e.target.value)}
               />
             )}
           </div>
