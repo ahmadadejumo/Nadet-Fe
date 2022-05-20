@@ -1,8 +1,28 @@
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
-import React from "react";
+import React, { useState } from "react";
 import BackNavigation from "../../../../components/BackNavigation";
+import Files from "react-files";
+import download from "../../../../assets/images/download.svg";
+import X from "../../../../assets/images/X.svg";
 
 const SetPreviewVideo = () => {
+  const [error, setError] = useState("");
+  const [filess, setFiles] = useState([]);
+
+  const onFilesChange = (files) => {
+    setFiles(files);
+  };
+
+  const onFilesError = (error) => {
+    setError(error.message);
+  };
+
+  const filesRemoveOne = (file) => {
+    const newFiles = [...filess];
+    newFiles.splice(file, 1);
+    setFiles(newFiles);
+  };
+
   return (
     <div className="font-Lato lg:px-[150px]">
       <div className="px-5 lg:px-0">
@@ -21,6 +41,72 @@ const SetPreviewVideo = () => {
           to upload videos in the range 20MB to 100MB per video; this is because
           you want to be considerate to your customers watching the videos.
         </p>
+      </div>
+      <div className="mt-[32px] bg-white px-5">
+        <Files
+          onChange={onFilesChange}
+          onError={onFilesError}
+          accepts={["video/mp4"]}
+          multiple={false}
+          maxFileSize={104857600}
+          minFileSize={20971520}
+          clickable
+        >
+          <div
+            className={`cursor-pointer shadow-inner shadow-[#E8E8EB] border pt-[12px] pb-[15px] border-dashed border-[#E8E8EB] w-full rounded flex pl-[18px] space-x-3`}
+          >
+            <img src={download} alt="icon" />
+            <p className="text-sm font-normal opacity-60 hidden lg:block">
+              Drag or <span className="text-[#FBBC15]">upload</span> your
+              product files
+            </p>
+            <p className="text-sm font-normal opacity-60 md:hidden">
+              <span className="text-[#FBBC15]">upload</span> your video
+            </p>
+          </div>
+        </Files>
+        {filess.length > 0 ? (
+          <ul>
+            {filess.map((file) => (
+              <li
+                key={file.id}
+                className="flex mb-2 justify-between bg-gray-300"
+              >
+                <div className="flex space-x-2">
+                  <div className="flex justify-center">
+                    {file.preview.type === "image" ? (
+                      <img
+                        className="w-16 object-contain"
+                        src={file.preview.url}
+                        alt="file"
+                      />
+                    ) : (
+                      <div className="w-16 text-2xl  h-16 text-center bg-gray-400 pt-4">
+                        {file.extension}
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-base font-semibold">{file.name}</div>
+                    <div className="text-sm font-medium">
+                      {file.sizeReadable}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center pr-1 cursor-pointer">
+                  <img
+                    src={X}
+                    alt="icon"
+                    id={file.id}
+                    className="w-5"
+                    onClick={() => filesRemoveOne(file.id)}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {error && <p className="text-base font-medium text-red-500">{error}</p>}
       </div>
     </div>
   );
