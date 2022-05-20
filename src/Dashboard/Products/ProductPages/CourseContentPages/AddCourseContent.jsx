@@ -71,7 +71,7 @@ const AddCourseContent = () => {
 
   return (
     <div className="font-Lato md:px-10 lg:px-[140px]">
-      <div className="px-5">
+      <div className="px-5 lg:px-0">
         <BackNavigation />
       </div>
       <div className="pt-[32px] px-5 md:px-0">
