@@ -4,6 +4,7 @@ import BackNavigation from "../../../../components/BackNavigation";
 import Files from "react-files";
 import download from "../../../../assets/images/download.svg";
 import X from "../../../../assets/images/X.svg";
+import redX from "../../../../assets/images/redX.svg";
 
 const SetPreviewVideo = () => {
   const [error, setError] = useState("");
@@ -42,7 +43,9 @@ const SetPreviewVideo = () => {
           you want to be considerate to your customers watching the videos.
         </p>
       </div>
-      <div className="mt-[32px] bg-white px-5">
+      <div className="mt-[32px] bg-white px-5 mb-[65px]">
+        <h1 className="font-bold text-xl pt-[24px]">Upload Preview Video</h1>
+        <hr className="bg-[#55555733] mt-[12px] mb-[18px]" />
         <Files
           onChange={onFilesChange}
           onError={onFilesError}
@@ -107,6 +110,19 @@ const SetPreviewVideo = () => {
           </ul>
         ) : null}
         {error && <p className="text-base font-medium text-red-500">{error}</p>}
+        <div className="flex justify-between items-center pt-[40px] pb-[44px]">
+          <div className="text-[#ED0B4CE5] lg:cursor-pointer flex space-x-3 lg:space-x-3 items-center font-bold text-lg lg:text-lg w-[55px]">
+            <img
+              src={redX}
+              alt="icon"
+              className="w-[11px] h-[11px] lg:h-[11px] lg:w-[11px]"
+            />
+            <p>Cancel</p>
+          </div>
+          <button className="w-[120px] h-[42px] bg-bcolor text-base font-bold rounded">
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );
