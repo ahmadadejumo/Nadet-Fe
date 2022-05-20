@@ -137,7 +137,7 @@ const Service = () => {
               >
                 <option value="relationship">Relationship</option>
                 <option value="science">Science</option>
-                <option value="business_&finance">Business & Finance</option>
+                <option value="business_&_finance">Business & Finance</option>
                 <option value="fiction">Fiction</option>
                 <option value="health_&_living">Health & Living</option>
                 <option value="memoir">Memoir</option>
