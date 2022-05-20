@@ -82,9 +82,7 @@ const AddCourseContent = () => {
           </p>
           <div className="flex justify-between space-x-[25px] md:space-x-16 lg:space-x-[32px] pt-[24px] lg:pt-0">
             <button
-              onClick={() =>
-                navigate("/dashboard/add-course-content/set-preview-video")
-              }
+              onClick={() => navigate("/dashboard/set-preview-video")}
               className="bg-bcolor h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base"
             >
               Set Preview Video
