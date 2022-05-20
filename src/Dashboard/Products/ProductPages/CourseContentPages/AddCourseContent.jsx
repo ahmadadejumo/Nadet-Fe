@@ -6,8 +6,10 @@ import AddLectureModal from "../../../../components/AddLectureModal";
 import DataContext from "../../../../Context/DataContext";
 import AddSection from "./AddSection";
 import AddSectionModal from "../../../../components/AddSectionModal";
+import { useNavigate } from "react-router-dom";
 
 const AddCourseContent = () => {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [showSection, setShowSection] = useState(false);
   const [lectures, setLectures] = useState([]);
@@ -79,7 +81,12 @@ const AddCourseContent = () => {
             Manage course curriculum
           </p>
           <div className="flex justify-between space-x-[25px] md:space-x-16 lg:space-x-[32px] pt-[24px] lg:pt-0">
-            <button className="bg-bcolor h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base">
+            <button
+              onClick={() =>
+                navigate("/dashboard/add-course-content/set-preview-video")
+              }
+              className="bg-bcolor h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base"
+            >
               Set Preview Video
             </button>
             <button className="bg-bcolor lg:flex lg:justify-between lg:px-6 lg:items-center  h-[38px] lg:w-[195px] lg:h-[43px] rounded w-full font-bold text-xs lg:text-base">

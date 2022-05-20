@@ -13,6 +13,7 @@ import Subscription from "./Products/ProductPages/Subscription";
 import Tickets from "./Products/ProductPages/Tickets";
 import AddCourseContent from "./Products/ProductPages/CourseContentPages/AddCourseContent";
 import EditCourseSection from "./Products/ProductPages/CourseContentPages/EditCourseSection";
+import SetPreviewVideo from "./Products/ProductPages/CourseContentPages/SetPreviewVideo";
 
 const Home = () => {
   const [open, setIsOpen] = useState(false);
@@ -42,6 +43,7 @@ const Home = () => {
               path="upload-course-lecture/:id/:name"
               element={<EditCourseSection />}
             />
+            <Route path="set-preview-video" element={<SetPreviewVideo />} />
           </Routes>
         </div>
       </div>
