@@ -53,18 +53,6 @@ const EditCourseSection = () => {
     }, 3000);
   };
 
-  //   const fileUpload = () => {
-  //     const formData = new FormData();
-  //     Object.keys(files).forEach((key) => {
-  //       const file = this.state.files[key];
-  //       formData.append(
-  //         key,
-  //         new Blob([file], { type: file.type }),
-  //         file.name || "file"
-  //       );
-  //     });
-  //   };
-
   return (
     <div className="font-Lato md:h-screen lg:h-auto lg:px-[140px]">
       <div className="px-5 lg:px-0">
