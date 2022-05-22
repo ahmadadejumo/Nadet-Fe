@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useRefreshToken from "../hooks/useRefreshToken";
 import useAuth from "../hooks/useAuth";
+import { RotatingLines } from "react-loader-spinner";
 
 const PersistLogin = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +29,15 @@ const PersistLogin = () => {
 
   useEffect(() => {}, [isLoading]);
 
-  return <>{isLoading ? <p>Loading...</p> : <Outlet />}</>;
+  return (
+    <div className="fixed left-0 top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+      {isLoading ? (
+        <RotatingLines strokeColor="#FBBC15" height={70} width={70} />
+      ) : (
+        <Outlet />
+      )}
+    </div>
+  );
 };
 
 export default PersistLogin;
