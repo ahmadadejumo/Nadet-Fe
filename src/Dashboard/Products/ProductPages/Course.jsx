@@ -97,7 +97,7 @@ const Course = () => {
     } finally {
       setIsLoading(false);
     }
-    // navigate("/dashboard/add-course-content");
+    navigate("/dashboard/add-course-content");
   };
 
   return (
