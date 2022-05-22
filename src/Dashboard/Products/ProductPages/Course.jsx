@@ -94,9 +94,13 @@ const Course = () => {
         setErrMsg("You need to select a category");
       } else if (!productDesc) {
         setErrMsg("You need to add a description");
+      } else if (err) {
+        setErrMsg("Upgrade your Subscription Plan to add a course");
       }
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     }
   };
 
@@ -108,12 +112,12 @@ const Course = () => {
         <div
           className={`${
             errMsg ? "block" : "hidden"
-          } rounded-xl border border-red-600 bg-red-200 mt-3 flex justify-center items-center`}
+          } rounded-xl border border-red-600 space-x-1 bg-red-200 mt-3 flex justify-center items-center py-5`}
           aria-live="assertive"
           ref={errRef}
         >
           <ExclamationCircleIcon className="h-[25px] w-[25px] text-red-700" />
-          <p className="text-center py-5">{errMsg}</p>
+          <p className="text-sm md:text-base">{errMsg}</p>
         </div>
       </div>
       <div>
