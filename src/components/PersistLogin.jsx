@@ -30,9 +30,11 @@ const PersistLogin = () => {
   useEffect(() => {}, [isLoading]);
 
   return (
-    <div className="fixed left-0 top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+    <div>
       {isLoading ? (
-        <RotatingLines strokeColor="#FBBC15" height={70} width={70} />
+        <div className="fixed left-0 top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+          <RotatingLines strokeColor="#FBBC15" height={70} width={70} />
+        </div>
       ) : (
         <Outlet />
       )}

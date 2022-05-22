@@ -27,6 +27,7 @@ const Course = () => {
   const [images, setImages] = useState([]);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -46,6 +47,7 @@ const Course = () => {
   }, [productName, productDesc, productCategory]);
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     const data = new FormData();
     data.append("name", productName);
@@ -92,8 +94,10 @@ const Course = () => {
       } else if (!productDesc) {
         setErrMsg("You need to add a description");
       }
+    } finally {
+      setIsLoading(false);
     }
-    navigate("/dashboard/add-course-content");
+    // navigate("/dashboard/add-course-content");
   };
 
   return (
@@ -219,7 +223,7 @@ const Course = () => {
             Create Product
           </button>
         </div>
-        <CreateProductLoader />
+        {isLoading && <CreateProductLoader />}
       </div>
     </div>
   );
