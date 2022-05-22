@@ -71,7 +71,7 @@ const SignUp = () => {
   const from = location.state?.from?.pathname || "/dashboard";
 
   useEffect(() => {
-    userRef.current.focus();
+    fullNameRef.current.focus();
   }, []);
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const SignUp = () => {
   }, []);
 
   useEffect(() => {
-    fullNameRef.current.focus();
+    userRef.current.focus();
   }, []);
 
   useEffect(() => {

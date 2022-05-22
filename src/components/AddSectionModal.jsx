@@ -1,15 +1,34 @@
 import React, { useContext } from "react";
 import DataContext from "../Context/DataContext";
 import { motion } from "framer-motion";
+import axios from "../Api/axios";
 
 const AddSectionModal = ({ showModal, onClick }) => {
   const { sectionName, setSectionName } = useContext(DataContext);
 
-  const handlSubmit = (e) => {
+  const handlSubmit = async (e) => {
     e.preventDefault();
     setSectionName("");
     onClick();
     showModal();
+    try {
+      await axios.post(
+        "https://nadetapi.herokuapp.com/ps/section-create/",
+        {
+          name: sectionName,
+          course: 120,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+          withCredentials: false,
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div
