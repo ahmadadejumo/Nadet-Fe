@@ -84,6 +84,7 @@ const Course = () => {
           withCredentials: false,
         }
       );
+      navigate("/dashboard/add-course-content");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Check your internet and try again");
@@ -97,7 +98,6 @@ const Course = () => {
     } finally {
       setIsLoading(false);
     }
-    navigate("/dashboard/add-course-content");
   };
 
   return (
