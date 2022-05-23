@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import DataContext from "../Context/DataContext";
 import { motion } from "framer-motion";
 import axios from "../Api/axios";
+import noContent from "../assets/images/no-content.png";
 
 const AddSectionModal = ({ showModal, onClick }) => {
   const { sectionName, setSectionName } = useContext(DataContext);
