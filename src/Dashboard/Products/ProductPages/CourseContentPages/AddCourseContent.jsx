@@ -95,7 +95,7 @@ const AddCourseContent = () => {
           </div>
         </div>
       </div>
-      {sections ? (
+      {!sections ? (
         <img src={noContent} alt="img" />
       ) : (
         <div className="mt-[32px] space-y-5">
