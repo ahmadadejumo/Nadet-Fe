@@ -7,6 +7,7 @@ import DataContext from "../../../../Context/DataContext";
 import AddSection from "./AddSection";
 import AddSectionModal from "../../../../components/AddSectionModal";
 import { useNavigate } from "react-router-dom";
+import noContent from "../../../../assets/images/no-content.png";
 
 const AddCourseContent = () => {
   const navigate = useNavigate();
@@ -94,19 +95,23 @@ const AddCourseContent = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[32px] space-y-5">
-        {sections.map(({ sectionName }, index) => (
-          <AddSection
-            key={index}
-            lectures={lectures}
-            sectionName={sectionName}
-            id={lectureId}
-            setLectureName={setLectureName}
-            updateLectureName={updateLectureName}
-            showModal={showModal}
-          />
-        ))}
-      </div>
+      {sections ? (
+        <img src={noContent} alt="img" />
+      ) : (
+        <div className="mt-[32px] space-y-5">
+          {sections.map(({ sectionName }, index) => (
+            <AddSection
+              key={index}
+              lectures={lectures}
+              sectionName={sectionName}
+              id={lectureId}
+              setLectureName={setLectureName}
+              updateLectureName={updateLectureName}
+              showModal={showModal}
+            />
+          ))}
+        </div>
+      )}
       <div className="flex justify-center md:justify-start mt-[32px] mb-[37px]">
         <button
           onClick={showModalSection}
