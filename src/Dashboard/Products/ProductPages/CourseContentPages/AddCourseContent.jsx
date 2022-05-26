@@ -95,8 +95,15 @@ const AddCourseContent = () => {
           </div>
         </div>
       </div>
-      {!sections ? (
-        <img src={noContent} alt="img" />
+      {sections.length === 0 ? (
+        <div className="pt-3 pb-4">
+          <div className="flex justify-center items-center">
+            <img src={noContent} alt="img" className="w-80 lg:w-72" />
+          </div>
+          <p className="text-center text-base font-medium">
+            No section added yet!
+          </p>
+        </div>
       ) : (
         <div className="mt-[32px] space-y-5">
           {sections.map(({ sectionName }, index) => (
