@@ -16,7 +16,7 @@ const AddSectionModal = ({ showModal, onClick }) => {
         "https://nadetapi.herokuapp.com/ps/section-create/",
         {
           name: sectionName,
-          course: 120,
+          // course: 120,
         },
         {
           headers: {
