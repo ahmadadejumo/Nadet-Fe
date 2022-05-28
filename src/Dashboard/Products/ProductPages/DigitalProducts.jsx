@@ -10,6 +10,7 @@ import AdvancedOptions from "../../../components/AdvancedOptions";
 import BackNavigation from "../../../components/BackNavigation";
 import axios from "../../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import CreateProductLoader from "../../../components/CreateProductLoader";
 
 const CREATE_PRODUCT_URL = process.env.REACT_APP_CREATE_PRODUCT_URL;
 
@@ -31,6 +32,7 @@ const DigitalProducts = () => {
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   const [downloadableFile, setDownloadableFile] = useState(true);
   const [errMsg, setErrMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -61,6 +63,7 @@ const DigitalProducts = () => {
   }, [productName, productDesc, productCategory]);
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     const data = new FormData();
     data.append("name", productName);
@@ -114,6 +117,10 @@ const DigitalProducts = () => {
       } else if (!productDesc) {
         setErrMsg("You need to add a description");
       }
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
     }
   };
 
@@ -296,6 +303,7 @@ const DigitalProducts = () => {
             Create Product
           </button>
         </div>
+        {isLoading && <CreateProductLoader />}
       </div>
     </div>
   );
