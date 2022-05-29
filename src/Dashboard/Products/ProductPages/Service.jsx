@@ -78,6 +78,10 @@ const Service = () => {
       } else if (!productDesc) {
         setErrMsg("You need to add a description");
       }
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
     }
   };
 
