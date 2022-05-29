@@ -22,6 +22,7 @@ const Service = () => {
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -37,6 +38,7 @@ const Service = () => {
   }, [productName, productDesc, productCategory]);
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     const data = new FormData();
     data.append("name", productName);
