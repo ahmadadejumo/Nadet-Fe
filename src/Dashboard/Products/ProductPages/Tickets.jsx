@@ -7,6 +7,7 @@ import { Select } from "@chakra-ui/react";
 import BackNavigation from "../../../components/BackNavigation";
 import axios from "../../../Api/axios";
 import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import CreateProductLoader from "../../../components/CreateProductLoader";
 
 const CREATE_PRODUCT_URL = process.env.REACT_APP_CREATE_PRODUCT_URL;
 
@@ -195,6 +196,7 @@ const Tickets = () => {
             Create Product
           </button>
         </div>
+        {isLoading && <CreateProductLoader />}
       </div>
     </div>
   );
