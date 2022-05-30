@@ -24,6 +24,7 @@ const Tickets = () => {
   const [redirectUrl, setRedirectUrl] = useState(false);
   const [showOriginalPrice, setShowOriginalPrice] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -39,6 +40,7 @@ const Tickets = () => {
   }, [productName, productDesc, productCategory]);
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     const data = new FormData();
     data.append("name", productName);
@@ -79,6 +81,10 @@ const Tickets = () => {
       } else if (!productDesc) {
         setErrMsg("You need to add a description");
       }
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
     }
   };
 
