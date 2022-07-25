@@ -72,7 +72,7 @@ const EditCourseSection = () => {
             clickable
           >
             <button className="w-[208px] lg:w-[253px] h-[37px] lg:h-[42px] text-xs lg:text-[16px] font-bold rounded mt-[24px] bg-bcolor">
-              Upload Course Resource
+              Upload Course Resources
             </button>
           </Files>
         </div>
